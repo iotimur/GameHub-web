@@ -20,7 +20,7 @@
         </ul>
      </li>
      <li>
-        Game page (Макарова Анастасия)
+        Game page (Макарова Екатерина)
         <ul>
             <li>About product</li>
             <li>System requirements</li>
@@ -38,7 +38,7 @@
         </ul>
      </li>
      <li>
-        Personal account (Федорова Алёна)
+        Personal account (Федорова Елена)
         <ul>
             <li>Entrance or authorisation</li>
             <li>Personal Information</li>
