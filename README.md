@@ -1,6 +1,6 @@
 # GameHub-web
 
-![Logo Image](/Docs/gamehub.jpeg)
+![Logo Image](gamehub.jpeg)
 
 ### Online store for computer games
 
