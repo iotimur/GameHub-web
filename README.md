@@ -1,49 +1,40 @@
-<h1 align="center">GameHub-web
-<img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
-<h3 align="center">Online store for computer games</h3>
-<ul>
-     <li>
-        Main (Мухаметов Тимур)
-        <ul>
-            <li>Store logo</li>
-            <li>Main navigation menu, buttons for logging in or registering users</li>
-            <li>Search bar</li>
-            <li>New products and bestsellers</li>
-        </ul>
-     </li>
-     <li>
-        Shopping cart (Майорова Анастасия)
-        <ul>
-            <li>Goods</li>
-            <li>Price list</li>
-            <li>Shipping and payment method</li>
-        </ul>
-     </li>
-     <li>
-        Game page (Макарова Екатерина)
-        <ul>
-            <li>About product</li>
-            <li>System requirements</li>
-            <li>Reviews & ratings</li>
-            <li>Price</li>
-        </ul>
-     </li>
-     <li>
-         Сategories (Ахмадуллина Эмилия)
-        <ul>
-            <li>Search</li>
-            <li>Top sellers</li>
-            <li>New releases</li>
-            <li>Specials</li>
-        </ul>
-     </li>
-     <li>
-        Personal account (Федорова Елена)
-        <ul>
-            <li>Entrance or authorisation</li>
-            <li>Personal Information</li>
-            <li>My purchases</li>
-            <li>Help/Questions</li>
-        </ul>
-     </li>
-   </ul>
+# GameHub-web
+
+![Logo Image](/Docs/gamehub.jpeg)
+
+### Online store for computer games
+
+- **Main (Мухаметов Тимур)**
+
+  - Store logo
+  - Main navigation menu, buttons for logging in or registering users
+  - Search bar
+  - New products and bestsellers
+
+- **Shopping cart (Майорова Анастасия)**
+
+  - Goods
+  - Price list
+  - Shipping and payment method
+
+- **Game page (Макарова Екатерина)**
+
+  - About product
+  - System requirements
+  - Reviews & ratings
+  - Price
+
+- **Categories (Ахмадуллина Эмилия)**
+
+  - Search
+  - Top sellers
+  - New releases
+  - Specials
+
+- **Personal account (Федорова Елена)**
+  - Entrance or authorisation
+  - Personal Information
+  - My purchases
+  - Help/Questions
+
+Figma project link https://www.figma.com/file/qURRXeUGf5GBGJcVyZkoyr/main_sheet?type=design&node-id=0%3A1&mode=design&t=2EXSWHVVS405mJid-1
