@@ -37,4 +37,4 @@
   - My purchases
   - Help/Questions
 
-Figma project link https://www.figma.com/file/qURRXeUGf5GBGJcVyZkoyr/main_sheet?type=design&node-id=0%3A1&mode=design&t=2EXSWHVVS405mJid-1
+[Figma](https://www.figma.com/file/qURRXeUGf5GBGJcVyZkoyr/main_sheet?type=design&node-id=0%3A1&mode=design&t=2EXSWHVVS405mJid-1)
