@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="game_page.css">
+<link rel="stylesheet" href="header_footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elden Ring</title>
+</head>
+<header class="header">
+    <div class="in_header d-flex">    
+        <nav class="header_links">  
+            <img class="main_logo" src="images/gamehub.jpg" alt="logo_gamehub" />
+            <a href="#">GameHub</a> 
+            <div class="links3">
+                <img src="images/categories.png" alt="categories">
+                <a href="#">Категории</a>
+            </div>          
+        </nav>
+        <form name="search" action="#" method="get">
+            <div class="d-flex">
+                <input type="text" name="search" placeholder="Поиск" >
+                <input type="submit" name="search" value="" />
+            </div>
+        </form>
+        <nav class="header_links2">
+            <div class="links3">
+                <img src="images/LK.png" alt="lk">
+            <a href="#">Войти</a>
+            </div>
+            <div class="links3">
+                <img src="images/basket.png" alt="basket">
+                <a href="#">Корзина</a>
+            </div>
+            
+            <img src="images/eye.png" alt="eye">
+        </nav>
+    </div>  
+</header>
+<body>
+<div class="main">
+
+<div class="header2">
+    <h1>Elden Ring</h1>
+</div>
+
+<div class="group_tr_game-info">
+    <div class="trailer">
+        <iframe width="598" height="346" src="https://www.youtube.com/embed/AKXiKBnzpBQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <div class="game-info">
+        <div class="game-info-text">
+            <ul>
+                <li><strong>Жанр:</strong> Экшены, RPG</li>
+                <li><strong>Язык:</strong> Русский (субтитры)</li>
+                <li><strong>Дата выхода:</strong> 25 февраля 2022</li>
+                <li><strong>Издатель:</strong> FromSoftware Inc., BANDAI NAMCO Entertainment</li>
+                <li><strong>Разработчик:</strong> FromSoftware Inc.</li>
+                <li><strong>Особенности:</strong> 
+                    <ul>
+                        <li>Для одного игрока</li>
+                        <li>Кооперативная игра</li>
+                        <li>Для нескольких игроков</li>
+                        <li>Контроллер</li>
+                    </ul>
+                </li>
+                <li><strong>Регион:</strong> Россия, Украина и СНГ</li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+<div class="gallery-container">
+    <div class="gallery">
+        <img class="screenshot" src="..\скрины\screen1.jpeg" alt="Screenshot 1">
+        <img class="screenshot" src="..\скрины\Elden-Ring-combat.jpg" alt="Screenshot 2">
+        <img class="screenshot" src="..\скрины\1636053124_2415.jpeg" alt="Screenshot 3">
+        <img class="screenshot" src="..\скрины\Elden-Ring-Screenshot-024.jpg" alt="Screenshot 4">
+        <img class="screenshot" src="..\скрины\1636053111_5288.jpeg" alt="Screenshot 5">
+        <img class="screenshot" src="..\скрины\1636053101_6478.jpeg" alt="Screenshot 6">
+        <img class="screenshot" src="..\скрины\Elden-Ring-Screenshot-017.jpg" alt="Screenshot 7">
+    </div>
+    <button class="btn-scroll" onclick="scrollGallery(-1)" style="position: absolute; left: 0; width: 64px; height: 103px;">Назад</button>
+    <button class="btn-scroll" onclick="scrollGallery(1)" style="position: absolute; right: 0; width: 64px; height: 103px;">Вперед</button>
+</div>
+
+<script>
+    // Получаем ссылки на кнопки
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Добавляем обработчики событий для кнопок
+    prevBtn.addEventListener('click', function() {
+        scrollGallery(-1);
+    });
+
+    nextBtn.addEventListener('click', function() {
+        scrollGallery(1);
+    });
+</script>
+
+
+
+<script>
+    const gallery = document.querySelector('.gallery');
+    const scrollDistance = gallery.offsetWidth / 5; // Расстояние для прокрутки, равное ширине одного скриншота
+
+    function scrollGallery(direction) {
+        gallery.scrollBy(scrollDistance * direction, 0);
+    }
+</script>
+
+<div class="price-block">
+    <div class="additional-rectangle">
+        <p class="discount">-8%</p>
+    </div>
+    <div class="price-details">
+        <p class="price-new">3295руб/</p>
+        <p class="price-old">3599руб</p>
+        
+    </div>
+    <div class="price-image">
+        <img src="..\скрины\logo_mic.png" alt="logo_microsoft" width="40" height="36">
+    </div>
+    <button class="price-rectangle">
+        <p class="price-text">В корзину</p>
+    </button>
+    
+    
+</div>
+
+<div class="group_rating_about-game">
+    <div class="about-game">
+        <!-- Ваш контент "Об игре" здесь -->
+        <h2 class="about-game-title">Об игре</h2>
+        <h3 class="about-game-subtitle">Новый фэнтезийный ролевой боевик</h3>
+        <p class="about-game-text">
+            Восстань, погасшая душа! Междуземье ждёт своего повелителя. Пусть благодать приведёт тебя к Кольцу Элден.
+        </p>
+        <h3 class="about-game-subtitle">Огромный захватывающий мир</h3>
+        <p class="about-game-text">
+            Огромный мир с открытыми полями, множеством ситуаций и гигантскими подземельями, где сложные трёхмерные конструкции сочетаются воедино. Путешествуйте, преодолевайте смертельные опасности и радуйтесь успехам.
+        </p>
+        <h3 class="about-game-subtitle">Создайте своего персонажа</h3>
+        <p class="about-game-text">
+            Вы можете не только изменить внешность персонажа, но также комбинировать оружие, броню и предметы. Развивайте персонажа по своему вкусу. Наращивайте мышцы или постигайте таинства магии.
+        </p>
+        <h3 class="about-game-subtitle">Эпическая драма, выросшая из мифа</h3>
+        <p class="about-game-text">
+            Многослойная история, разбитая на фрагменты. Эпическая драма, в которой мысли персонажей пересекаются в Междуземье.
+        </p>
+        <h3 class="about-game-subtitle">Уникальный сетевой режим, приближающий вас к другим игрокам
+            это подзаголовки</h3>
+        <p class="about-game-text">
+            Помимо многопользовательского режима, в котором вы напрямую подключаетесь к другим игрокам и путешествуете вместе, есть асинхронный сетевой режим, позволяющий ощутить присутствие других игроков.
+        </p>
+    </div>
+    
+    <div class="rating-block">
+        <div class="rating-block1">
+            <img src="rating_image.png" alt="Рейтинг" class="rating-image">
+            <div class="rating-text">
+                <p>ДЛЯ ДЕТЕЙ СТАРШЕ 16 ЛЕТ</p>
+                <p>Рейтинг от: Закон о рейтинге контента</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="system-requirements">
+    <h2 class="system-requirements-title">СИСТЕМНЫЕ ТРЕБОВАНИЯ</h2>
+    <div class="requirements-columns">
+        <div class="column">
+            <h3 class="requirements-subtitle">РЕКОМЕНДУЕМЫЕ:</h3>
+            <ul class="requirements-list">
+                <li>64-разрядные процессор и операционная система</li>
+                <li>ОС: Windows 10</li>
+                <li>Процессор: INTEL CORE I5-8400 or AMD RYZEN 3 3300X</li>
+                <li>Оперативная память: 12 GB ОЗУ</li>
+                <li>Видеокарта: NVIDIA GEFORCE GTX 1060 3 GB or AMDRADEON RX 580 4 GB</li>
+                <li>DirectX: версии 12</li>
+                <li>Место на диске: 60 GB</li>
+                <li>Звуковая карта: Windows Compatible Audio Device</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3 class="requirements-subtitle">МИНИМАЛЬНЫЕ:</h3>
+            <ul class="requirements-list">
+                <li>64-разрядные процессор и операционная система</li>
+                <li>ОС: Windows 10/11</li>
+                <li>Процессор: INTEL CORE I7-8700K or AMD RYZEN 5 3600X</li>
+                <li>Оперативная память: 16 GB ОЗУ</li>
+                <li>Видеокарта: NVIDIA GEFORCE GTX 1070 8 GB or AMD RADEON RX VEGA 56 8 GB</li>
+                <li>DirectX: версии 12</li>
+                <li>Место на диске: 60 GB</li>
+                <li>Звуковая карта: Windows Compatible Audio Device</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="comments-section">
+    <h2 class="comments-title">Комментарии</h2>
+    <div class="comment-block">
+        <div class="comment">
+            <div class="avatar"></div>
+            <div class="comment-content">
+                <h3 class="comment-name">Имя пользователя</h3>
+                <p class="comment-text">Текст комментария</p>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="avatar"></div>
+            <div class="comment-content">
+                <h3 class="comment-name">Имя пользователя</h3>
+                <p class="comment-text">Текст комментария</p>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="avatar"></div>
+            <div class="comment-content">
+                <h3 class="comment-name">Имя пользователя</h3>
+                <p class="comment-text">Текст комментария</p>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="avatar"></div>
+            <div class="comment-content">
+                <h3 class="comment-name">Имя пользователя</h3>
+                <p class="comment-text">Текст комментария</p>
+            </div>
+        </div>
+    </div>
+    
+    <button class="show-more-button">Показать больше</button>
+</div>
+
+
+</div>
+</body>
+</html>
+
