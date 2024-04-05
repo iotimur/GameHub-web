@@ -1,0 +1,562 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #102D59;
+    /* margin: 0 210px; Отступы по 200px с обеих сторон */
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    height: auto;
+    position: relative;
+    
+}
+.main{
+    max-width: 1120px; /* Максимальная ширина блока */
+    width: 90%; /* Ширина блока от начала до конца при меньших размерах экрана */
+    min-width: 600px;
+    margin: 0 auto; /* Центрируем блок на странице */
+    color: white;
+}
+.header2 {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    color: white;
+    padding: 20px;
+}
+
+.group_tr_game-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Для мобильных устройств располагаем элементы в столбец */
+}
+
+.trailer {
+    width: 100%; /* Занимает всю доступную ширину */
+    height: auto; /* Автоматическая высота */
+    
+}
+
+.game-info {
+    width: 100%;
+    background-color: #18396C;
+    color: white;
+    border-radius: 0;
+    padding: 20px; /* Общий внутренний отступ */
+    box-sizing: border-box; /* Общий размер включая padding и border */
+}
+
+.game-info-text {
+    
+    font-style: italic;
+    font-size: 20px;
+    font-style: italic; /* Италик */
+    margin: 0;
+    margin-top: 10px;
+    padding-bottom: 20px;   
+}
+
+@media screen and (min-width: 1000px) {
+    .group_tr_game-info {
+        flex-direction: row; /* Для планшетов и более крупных устройств располагаем элементы в строку */
+    }
+    .trailer {
+        width: auto; /* Возвращаем обычную ширину для трейлеров */
+        margin-bottom: 0; /* Убираем отступ снизу */
+        margin-right: 20px; /* Возвращаем правый отступ */
+    }
+    .game-info {
+        min-height: 346px;
+        width: calc(100% - 200px); /* Ширина занимает все оставшееся пространство после трейлера */
+    }
+}
+
+
+
+
+.gallery-container {
+
+
+ /* Отступ от левого края (200px) */
+overflow: hidden;
+clear: both; /* Очистка обтекания */
+position: relative; /* Установка позиции */
+display: flex; /* Располагаем элементы в строку */
+align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.gallery {
+    margin-top: 15px;
+    display: flex;
+    transition: transform 0.5s ease; /* Анимация для плавного скролла */
+    
+    width: calc(100% / 5); /* Ширина соответствует 1/5 прокрутки */
+    flex-shrink: 0; /* Запрет на уменьшение элемента при недостатке места */
+}
+
+.btn-scroll {
+    margin-top: 15px;
+    width: 60px; /* Ширина кнопок */
+    height: 100px; /* Высота кнопок */
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 50px; /* Выравнивание по центру по вертикали */
+    
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.left-btn {
+    position: fixed;
+    left: 0;
+    margin-left: 15px;/* Кнопка "Назад" будет выталкивать "Вперед" вправо */
+}
+
+.right-btn {
+    position: fixed;
+    right: 0;
+    margin-right: 15px;/* Кнопка "Вперед" будет выталкивать "Назад" влево */
+}
+
+
+
+
+.screenshot {
+    width: 240px;
+    height: 100px;
+    /* flex: 0 0 calc(100% / 5); /* Каждый скриншот занимает 1/5 ширины прокрутки */
+    /* margin-right: 20px; Отступ между скриншотами */ 
+}
+
+@media screen and (max-width: 1000px) {
+    .price-image{
+        display: none;
+    }
+    .price-details {
+        
+        display: flex;
+        flex-wrap: wrap; /* Размещаем элементы в линию */
+        
+        justify-content: center; /* Центрируем содержимое по горизонтали */
+        align-items: center; 
+        }
+   
+}
+.price-block {
+margin-top: 15px;
+width: 100%; /* Ширина блока от начала до конца */
+min-height: 80px; /* Высота блока 80px */
+height: 80px;
+background-color: #6E99D6; /* Цвет фона блока */
+display: flex;
+flex-wrap: wrap;
+position: relative; 
+}
+.price-image {
+    position: absolute;
+    right: 260px;
+    top: 50%; /* Расположение по вертикали на 50% */
+    transform: translateY(-50%);
+}
+.price-rectangle {
+width: 240px;
+height: 60px;
+background-color: #F39A46;
+position: absolute; /* Позиционирование внутри блока .price-block */
+top: 10px; /* Отступ сверху */
+right: 10px; /* Отступ справа */
+border-radius: 36px; /* Радиус углов */
+display: flex;
+justify-content: center; /* Выравнивание содержимого по горизонтали */
+align-items: center; /* Выравнивание содержимого по вертикали */
+border: none; 
+cursor: pointer; /* Задаем стандартный курсор при наведении */
+transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+.price-rectangle:hover {
+    background-color: #E0883C; /* Изменение цвета при наведении */
+}
+.price-text {
+font-size: 30px;
+font-weight: 600; /* semi bold */
+font-style: italic;
+color: black; /* Цвет текста */
+margin: 0; /* Убираем внутренние отступы у параграфа */
+}
+.additional-rectangle {
+width: 78px;
+height: 65px;
+background-color: #6E99D6;
+position: absolute;
+left: 10px;
+top: 50%; 
+transform: translateY(-50%);
+border: 5px solid #643AA0; /* Обводка */
+display: flex;
+justify-content: center; /* Центрируем содержимое по горизонтали */
+align-items: center; /* Центрируем содержимое по вертикали */
+}
+
+.discount {
+    font-size: 35px;
+    font-weight: 600; 
+    color: #643AA0; /* Цвет текста соответствует цвету обводки */
+}
+.price-details {
+margin-left: 110px;
+display: flex;
+flex-wrap: wrap; /* Размещаем элементы в линию */
+
+justify-content: center; /* Центрируем содержимое по горизонтали */
+align-items: center; 
+}
+
+
+
+.price-old {
+    
+    display: flex;
+    
+    font-weight: 600;
+
+    font-size: 20px;
+    color: #793131; /* Цвет текста */
+    
+}
+
+.price-new {
+    display: flex;
+    font-size: 35px;
+    font-weight: 600;
+    color: black; /* Цвет текста */   
+}
+
+.group_rating_about-game{
+    display: flex; /* Устанавливаем flex-контейнер */
+    flex-direction: row; /* Выравнивание элементов по верхнему краю */
+}
+.about-game {
+   
+    margin-top: 15px;
+max-width: 760px;
+min-height: 662px;
+background-color: #18396C;
+color: white;
+padding-top: 30px; /* Отступ сверху */
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 20px;
+}
+.about-game-title {
+font-size: 27px;
+font-style: italic; /* Италик */
+padding-bottom: 20px;
+margin: 0;
+}
+.about-game-subtitle {
+
+font-size: 23px;
+font-style: italic;
+margin: 0;
+}
+.about-game-text {
+    font-size: 20px;
+    font-style: italic; /* Италик */
+    
+    margin-left: 10%;
+    margin-top: 10px;
+    padding-bottom: 20px;   
+}
+
+.rating-block {
+    flex-direction: column;
+    width: 100%;
+    
+    display: flex;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.rating-block-age {
+    background-color: #021B40;
+    display: flex;
+    height: 150px;
+    min-width: 280px;
+    align-items: center;
+}
+
+.rating-block-age-square {
+    
+    width: 100px; /* Размер квадрата */
+    height: 100px;
+    background-color: #EB600A; /* Цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Отступ между квадратом и текстом */
+    margin-left: 10px; 
+    border-radius: 10px; 
+    font-size: 3em;
+}
+.rating-block-age-square-text{
+    font-size: 0.8em;
+}
+
+/* Стили для текста */
+.rating-block-age-text {
+    font-size: 0.8em; /* Размер шрифта */
+    margin-right: 10px;
+    
+}
+
+.rating-block-gamestar {
+    margin-top: 10px;
+    background-color: #021B40;
+    display: flex;
+    height: 100px;
+    min-width: 280px;
+    align-items: center;
+    
+}
+.rating-block-gamestar-square {
+    
+    width: 60px; /* Размер квадрата */
+    height: 60px;
+    background-color: #00b77d; /* Цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Отступ между квадратом и текстом */
+    margin-left: 10px; 
+    border-radius: 10px; 
+    font-size: 2.5em;
+}
+.rating-block-gamestar-square-text{
+  
+    font-weight: 500;
+}
+
+/* Стили для текста */
+.rating-block-gamestar-text {
+    
+    font-size: 3em;/* Размер шрифта */
+    
+}
+
+.rating-block-metacritic {
+    margin-top: 10px;
+    background-color: #021B40;
+    display: flex;
+    height: 100px;
+    min-width: 280px;
+    align-items: center;
+    
+}
+.rating-block-metacritic-square {
+    
+    width: 60px; /* Размер квадрата */
+    height: 60px;
+    background-color: #c4d200; /* Цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Отступ между квадратом и текстом */
+    margin-left: 10px; 
+    border-radius: 10px; 
+    font-size: 2.5em;
+}
+.rating-block-metacritic-square-text{
+  
+    font-weight: 500;
+}
+
+/* Стили для текста */
+.rating-block-metacritic-text {
+    
+    font-size: 3em;/* Размер шрифта */
+    
+}
+
+.rating-block-opencritic {
+    margin-top: 10px;
+    background-color: #021B40;
+    display: flex;
+    height: 100px;
+    min-width: 280px;
+    align-items: center;
+    
+}
+.rating-block-opencritic-square {
+    
+    width: 60px; /* Размер квадрата */
+    height: 60px;
+    background-color: #b52002; /* Цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Отступ между квадратом и текстом */
+    margin-left: 10px; 
+    border-radius: 10px; 
+    font-size: 2.5em;
+}
+.rating-block-opencritic-square-text{
+  
+    font-weight: 500;
+}
+
+/* Стили для текста */
+.rating-block-opencritic-text {
+    
+    font-size: 3em;/* Размер шрифта */
+    
+}
+
+
+@media screen and (max-width: 1000px) {
+    .group_rating_about-game {
+        flex-direction: column; /* Для планшетов и более крупных устройств располагаем элементы в строку */
+    }
+    .about-game {
+        width: auto; /* Возвращаем обычную ширину для трейлеров */
+        margin-bottom: 0; /* Убираем отступ снизу */
+        
+    }
+    .rating-block {
+        display: none;
+    
+    }
+}
+
+.system-requirements {
+margin-top: 15px;
+width: 100% - padding; /* Ширина блока от начала до конца */
+min-height: 390px; /* Высота блока 80px */
+background-color: #021B40; /* Цвет фона блока */
+position: relative; 
+
+color: white;
+padding: 35px;
+}
+
+.system-requirements-title {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.requirements-columns {
+display: flex;
+}
+
+.column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.requirements-subtitle {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.requirements-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    
+}
+
+.requirements-list li {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.comments-section {
+    background-color: #102D59;
+    color: white;
+    
+    margin-bottom: 20px;
+
+    margin-top: 30px;
+    width: 100% - padding; /* Ширина блока от начала до конца */
+    min-height: 480px; /* Высота блока 80px */
+    
+    position: relative; 
+}
+
+/* Стили для заголовка "Комментарии" */
+.comments-title {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.comment-block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Выравниваем по горизонтали */
+    align-items: center; /* Выравниваем по вертикали */
+
+}
+/* Стили для ячейки комментария */
+.comment {
+
+    background-color: #072149;
+    border-bottom: 2px solid #4874B2;
+    
+    width: 520px;
+    min-height: 139px;
+    height: 139;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Стили для кнопки "Показать больше" */
+.show-more-button {
+    width: 100%;
+    height: 64;
+    background-color: #18396C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.show-more-button:active {
+    background-color: #2E5A99; /* Новый цвет фона при нажатии */
+}
+
+/* Стили для аватарки */
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #18396C;
+    margin-top: 15px;
+    
+    margin-right: 15px;
+    
+}
+
+
+/* Стили для содержимого комментария */
+.comment-content {
+    
+    flex: 1; /* Занимаем доступное пространство */
+}
+
+/* Стили для имени пользователя */
+.comment-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Стили для текста комментария */
+.comment-text {
+    font-style: italic;
+}
+
