@@ -8,6 +8,7 @@
     <link href="css/menu.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/card.css" rel="stylesheet" />
+    <link href="css/search.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -36,152 +37,136 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
     <header>
-      <a href="#" class="logo">
-        <img src="assets/logo.png" alt="Logo" width="60" height="60px" />
-      </a>
-      <nav class="menu">
-        <ul>
-          <li>
-            <a href="/categories">
-              <span
-                ><img
-                  src="assets/categories.png"
-                  alt="Logo"
-                  width="40px"
-                  height="40px" /></span
-              >Категории</a
-            >
-          </li>
-          <li>
-            <div class="search-box">
-              <input
-                class="search-txt"
-                type="text"
-                name=""
-                placeholder="Type to search"
-              />
-              <a class="search-btn" href="#">
-                <i class="fas fa-search"></i>
-              </a>
-            </div>
-          </li>
-          <li>
-            <a href="/authentication"
-              ><span
-                ><img
-                  src="assets/login.png"
-                  alt="Logo"
-                  width="40"
-                  height="40px" /></span
-              >Войти</a
-            >
-          </li>
-          <li>
-            <a href="/basket"
-              ><span
-                ><img
-                  src="assets/basket.png"
-                  alt="Logo"
-                  width="40"
-                  height="40px" /></span
-              >Корзина</a
-            >
-          </li>
-        </ul>
-      </nav>
+      <div class="outer">
+        <nav>
+          <label class="logo">GameHub</label>
+          <ul class="menu_items">
+            <li><a href="#" class="active">Категории</a></li>
+            <li><a href="#">Войти</a></li>
+            <li><a href="#">Корзина</a></li>
+          </ul>
+        </nav>
+      </div>
+
     </header>
 
     <main>
-      <!-- <div class="wrapper">
-        <div class="card">
-          <img
-            src="assets/The_Witcher_3-_Wild_Hunt_Cover.jpg"
-            alt="Card Product"
-            class="card-img"
-          />
-          <div class="card-price">200 руб.</div>
+      <div class="container">
+        <div class="wrapper">
+          <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input type="text" placeholder="Type to search.." />
+            <div class="autocom-box">
+              <!-- here list are inserted from javascript -->
+            </div>
+            <div class="icon"><i class="fas fa-search"></i></div>
+          </div>
         </div>
-      </div> -->
-      <div class="title">
-        <h2>Лидеры продаж</h2>
-      </div>
+          <div class="title">
+            <h2>Лидеры продаж</h2>
+          </div>
+
+          <div class="cards">
+            <img class="arrow-left"
+                src="assets/arrow_left.png"
+                alt="arrow_left"
+              />
+            <div class="product-card-top-sail">
+              <img
+                src="assets/The_Witcher_3-_Wild_Hunt_Cover.jpg"
+                alt="Card Product"
+              />
+              <div class="text-card">
+                <span>$299</span>
+                <button>+</button>
+              </div>
+            </div>
+            <div class="product-card-top-sail">
+              <img
+                src="assets/Red_Dead_Redemption_2_coverart.jpg"
+                alt="Card Product"
+              />
+              <div class="text-card">
+                <span>$299</span>
+                <button>+</button>
+              </div>
+            </div>
+            <div class="product-card-top-sail">
+              <img src="assets/Forza.jpg" alt="Card Product" />
+              <div class="text-card">
+                <span>$299</span>
+                <button>+</button>
+              </div>
+            </div>
+            <div class="product-card-top-sail">
+              <img src="assets/atomic.jpg" alt="Card Product" />
+              <div class="text-card">
+                <span>$299</span>
+                <button>+</button>
+              </div>
+            </div>
+            <img class="arrow-right"
+                src="assets/arrow_right.png"
+                alt="arrow_right"
+              />
+          </div>
+
+        <div class="title">
+          <h2>Категории</h2>
+        </div>
+
+        <div class="cards">
+          <img class="arrow-left"
+                src="assets/arrow_left.png"
+                alt="arrow_left"
+              />
+
+          <div class="product-card-categories">
+            <img src="assets/гонки.jpg" alt="Card Product" />
+            <div class="text-card">
+              <span>гонки</span>
+            </div>
+          </div>
+          <div class="product-card-categories">
+            <img src="assets/глубокий сюжет.jpg" alt="Card Product" />
+            <div class="text-card">
+              <span>глубокий сюжет</span>
+            </div>
+          </div>
+          <div class="product-card-categories">
+            <img src="assets/симуляторы.jpg" alt="Card Product" />
+            <div class="text-card">
+              <span>симуляторы</span>
+            </div>
+          </div>
+          <div class="product-card-categories">
+            <img src="assets/игры с открытым миром.jpg" alt="Card Product" />
+            <div class="text-card">
+              <span>открытый мир</span>
+            </div>
+          </div>
+          <img class="arrow-right"
+                src="assets/arrow_right.png"
+                alt="arrow_right"
+              />
+        </div>
+
+        <div class="title">
+          <h2>Новости</h2>
+        </div>
 
       <div class="cards">
-        <div class="product-card">
-          <img
-            src="assets/The_Witcher_3-_Wild_Hunt_Cover.jpg"
-            alt="Card Product"
-          />
-          <div class="text-card">
-            <span>$299</span>
-            <button>+</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img
-            src="assets/Red_Dead_Redemption_2_coverart.jpg"
-            alt="Card Product"
-          />
-          <div class="text-card">
-            <span>$299</span>
-            <button>+</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="assets/Forza.jpg" alt="Card Product" />
-          <div class="text-card">
-            <span>$299</span>
-            <button>+</button>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="assets/atomic.jpg" alt="Card Product" />
-          <div class="text-card">
-            <span>$299</span>
-            <button>+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="title">
-        <h2>Категории</h2>
-      </div>
-
-      <div class="cards">
-        <div class="product-card-categories">
-          <img src="assets/гонки.jpg" alt="Card Product" />
-          <div class="text-card">
-            <span>гонки</span>
-          </div>
-        </div>
-        <div class="product-card-categories">
-          <img src="assets/глубокий сюжет.jpg" alt="Card Product" />
-          <div class="text-card">
-            <span>глубокий сюжет</span>
-          </div>
-        </div>
-        <div class="product-card-categories">
-          <img src="assets/симуляторы.jpg" alt="Card Product" />
-          <div class="text-card">
-            <span>симуляторы</span>
-          </div>
-        </div>
-        <div class="product-card-categories">
-          <img src="assets/игры с открытым миром.jpg" alt="Card Product" />
-          <div class="text-card">
-            <span>открытый мир</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="title">
-        <h2>Новости</h2>
-      </div>
-
-      <div class="cards">
+        <img class="arrow-left"
+                src="assets/arrow_left.png"
+                alt="arrow_left"
+              />
         <div class="product-card-news">
           <img src="assets/новость1.jpg" alt="Card Product" />
           <div class="text-card_news">
@@ -200,7 +185,13 @@
             </p>
           </div>
         </div>
+        <img class="arrow-right"
+                src="assets/arrow_right.png"
+                alt="arrow_right"
+              />
       </div>
+    </div>
+    </div>
     </main>
   </body>
 </html>
