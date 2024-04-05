@@ -14,6 +14,7 @@ body {
     width: 90%; /* Ширина блока от начала до конца при меньших размерах экрана */
     min-width: 600px;
     margin: 0 auto; /* Центрируем блок на странице */
+    color: white;
 }
 .header2 {
     font-family: Arial, sans-serif;
@@ -22,39 +23,27 @@ body {
     padding: 20px;
 }
 
-.group_tr_game-info{
-    display: flex; /* Устанавливаем flex-контейнер */
-    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+.group_tr_game-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Для мобильных устройств располагаем элементы в столбец */
 }
 
 .trailer {
-    display: inline-block;
-    max-width: auto;
-    height: auto;
-    margin-top: 15px; /* Отступ от трейлера */
-    margin-right: 20px;
+    width: 100%; /* Занимает всю доступную ширину */
+    height: auto; /* Автоматическая высота */
     
 }
 
 .game-info {
-    font-size: 20px;
-    display: inline-block;
     width: 100%;
-    min-height: 346px;
-    margin-top: 15px; /* Отступ от трейлера */
     background-color: #18396C;
     color: white;
-    align-items: center;
-    
-    border-radius: 0; /* Убираем скругления углов */
-    border-top-right-radius: 10px; /* Острые верхние углы */
-    border-bottom-right-radius: 10px; /* Острые нижние углы */
-    
-    padding-top: 30px; /* Отступ сверху */
-    padding-left: 30px;
-    padding-right: 30px;
- 
+    border-radius: 0;
+    padding: 20px; /* Общий внутренний отступ */
+    box-sizing: border-box; /* Общий размер включая padding и border */
 }
+
 .game-info-text {
     
     font-style: italic;
@@ -65,9 +54,27 @@ body {
     padding-bottom: 20px;   
 }
 
+@media screen and (min-width: 1000px) {
+    .group_tr_game-info {
+        flex-direction: row; /* Для планшетов и более крупных устройств располагаем элементы в строку */
+    }
+    .trailer {
+        width: auto; /* Возвращаем обычную ширину для трейлеров */
+        margin-bottom: 0; /* Убираем отступ снизу */
+        margin-right: 20px; /* Возвращаем правый отступ */
+    }
+    .game-info {
+        min-height: 346px;
+        width: calc(100% - 200px); /* Ширина занимает все оставшееся пространство после трейлера */
+    }
+}
+
+
+
+
 .gallery-container {
 
-margin-top: 15px; /* Отступ от трейлера */
+
  /* Отступ от левого края (200px) */
 overflow: hidden;
 clear: both; /* Очистка обтекания */
@@ -120,6 +127,20 @@ align-items: center; /* Выравнивание по центру по верт
     /* margin-right: 20px; Отступ между скриншотами */ 
 }
 
+@media screen and (max-width: 1000px) {
+    .price-image{
+        display: none;
+    }
+    .price-details {
+        
+        display: flex;
+        flex-wrap: wrap; /* Размещаем элементы в линию */
+        
+        justify-content: center; /* Центрируем содержимое по горизонтали */
+        align-items: center; 
+        }
+   
+}
 .price-block {
 margin-top: 15px;
 width: 100%; /* Ширина блока от начала до конца */
@@ -212,9 +233,10 @@ align-items: center;
 
 .group_rating_about-game{
     display: flex; /* Устанавливаем flex-контейнер */
-    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+    flex-direction: row; /* Выравнивание элементов по верхнему краю */
 }
 .about-game {
+   
     margin-top: 15px;
 max-width: 760px;
 min-height: 662px;
@@ -240,34 +262,168 @@ margin: 0;
 .about-game-text {
     font-size: 20px;
     font-style: italic; /* Италик */
-    margin: 0;
+    
+    margin-left: 10%;
     margin-top: 10px;
     padding-bottom: 20px;   
 }
 
 .rating-block {
-    background-color: #021B40;
+    flex-direction: column;
     width: 100%;
-
+    
     display: flex;
     margin-top: 15px;
     margin-left: 10px;
 }
-/* .rating-block1 {
+.rating-block-age {
+    background-color: #021B40;
+    display: flex;
+    height: 150px;
+    min-width: 280px;
+    align-items: center;
+}
 
+.rating-block-age-square {
     
-} */
-/* Стили для картинки */
-.rating-image {
-    width: 50px; /* Ширина картинки */
-    height: auto; /* Автоматическая высота */
-    margin-right: 10px; /* Отступ справа */
+    width: 100px; /* Размер квадрата */
+    height: 100px;
+    background-color: #EB600A; /* Цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Отступ между квадратом и текстом */
+    margin-left: 10px; 
+    border-radius: 10px; 
+    font-size: 3em;
+}
+.rating-block-age-square-text{
+    font-size: 0.8em;
 }
 
 /* Стили для текста */
-.rating-text {
-    font-size: 14px; /* Размер шрифта */
+.rating-block-age-text {
+    font-size: 0.8em; /* Размер шрифта */
+    margin-right: 10px;
     
+}
+
+.rating-block-gamestar {
+    margin-top: 10px;
+    background-color: #021B40;
+    display: flex;
+    height: 100px;
+    min-width: 280px;
+    align-items: center;
+    
+}
+.rating-block-gamestar-square {
+    
+    width: 60px; /* Размер квадрата */
+    height: 60px;
+    background-color: #00b77d; /* Цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Отступ между квадратом и текстом */
+    margin-left: 10px; 
+    border-radius: 10px; 
+    font-size: 2.5em;
+}
+.rating-block-gamestar-square-text{
+  
+    font-weight: 500;
+}
+
+/* Стили для текста */
+.rating-block-gamestar-text {
+    
+    font-size: 3em;/* Размер шрифта */
+    
+}
+
+.rating-block-metacritic {
+    margin-top: 10px;
+    background-color: #021B40;
+    display: flex;
+    height: 100px;
+    min-width: 280px;
+    align-items: center;
+    
+}
+.rating-block-metacritic-square {
+    
+    width: 60px; /* Размер квадрата */
+    height: 60px;
+    background-color: #c4d200; /* Цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Отступ между квадратом и текстом */
+    margin-left: 10px; 
+    border-radius: 10px; 
+    font-size: 2.5em;
+}
+.rating-block-metacritic-square-text{
+  
+    font-weight: 500;
+}
+
+/* Стили для текста */
+.rating-block-metacritic-text {
+    
+    font-size: 3em;/* Размер шрифта */
+    
+}
+
+.rating-block-opencritic {
+    margin-top: 10px;
+    background-color: #021B40;
+    display: flex;
+    height: 100px;
+    min-width: 280px;
+    align-items: center;
+    
+}
+.rating-block-opencritic-square {
+    
+    width: 60px; /* Размер квадрата */
+    height: 60px;
+    background-color: #b52002; /* Цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Отступ между квадратом и текстом */
+    margin-left: 10px; 
+    border-radius: 10px; 
+    font-size: 2.5em;
+}
+.rating-block-opencritic-square-text{
+  
+    font-weight: 500;
+}
+
+/* Стили для текста */
+.rating-block-opencritic-text {
+    
+    font-size: 3em;/* Размер шрифта */
+    
+}
+
+
+@media screen and (max-width: 1000px) {
+    .group_rating_about-game {
+        flex-direction: column; /* Для планшетов и более крупных устройств располагаем элементы в строку */
+    }
+    .about-game {
+        width: auto; /* Возвращаем обычную ширину для трейлеров */
+        margin-bottom: 0; /* Убираем отступ снизу */
+        
+    }
+    .rating-block {
+        display: none;
+    
+    }
 }
 
 .system-requirements {
