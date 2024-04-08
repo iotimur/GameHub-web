@@ -12,7 +12,8 @@
   background: #6610f2;
 } */
 header {
-  background: #0082e6;
+  /* background: #0082e6; */
+  background-image: linear-gradient(#f39a46 40%, #643aa0);
 }
 nav {
   height: 80px;
@@ -46,12 +47,12 @@ nav ul li a {
   color: white;
   font-size: 17px;
   padding: 7px 13px;
-  border-radius: 3px;
+  border-radius: 10px;
   text-transform: uppercase;
 }
 a.active,
 a:hover {
-  background: #1b9bff;
+  background: #643aa0;
   transition: 0.5s;
 }
 .checkbtn {

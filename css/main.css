@@ -1,5 +1,5 @@
 body {
-  background: #324486;
+  background: #102d59;
   font-family: "Roboto", sans-serif;
   font-style: normal;
 }
@@ -62,8 +62,8 @@ html {
   margin-bottom: 10px;
   font-style: italic;
 }
-.product-card-top-sail:last-child {
-  margin-right: 0px;
+.cards .product-card-top-sail :last-child {
+  background-color: #000;
 }
 .product-card-top-sail img {
   width: 100%; /* Устанавливаем ширину изображения в 100% от родительского контейнера */

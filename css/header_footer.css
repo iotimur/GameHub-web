@@ -1,120 +1,28 @@
-* { /* обращение ко всем элементам */
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
-@font-face {
-    font-family: inter;
-    font-weight: normal;
-    font-style: normal;
-    src: url("../fonts/Inter-Regular.ttf"); /* подключаем шрифт */
-}
-
-.header {
-    width: 100%;
-}
-
-.in_header {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
+/* footer */
 .d-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.links3 {
-    display: inline;
-}
-
-.header_links img, .header_links2 img {
-    width: 40px;
-    height: 40px;
-}
-
-.header_links .main_logo {
-    width: 121px;
-    height: 116px;
-}
-
-.in_header a{
-    font-size: 25px;
-    font-weight: 400;
-    color: #080a21;
-    text-decoration: none;
-    margin: 0px 0px ;
-}
-
-.header_links main {
-    margin-left: 0px;
-}
-
-header > .in_header {
-    padding: 10px;
-}
-
-
-header {
-    background: linear-gradient(360deg, #643aa0 9%, #f39a46 100%);
-}
-
-header form div {
-    justify-content: center;
-    padding: 15px;
-    border: 1px solid #2092C5;
-    border-radius: 20px;
-    background-color: #D2C1EC;
-    
-    
-}
-
-header form div input[type='submit'] {
-    border: none;
-    margin-left: 10px;
-    
-}
-
-header form div input[type='submit'] {
-    width: 40px;
-    height: 40px;
-    background: url("../images/search.png") no-repeat;
-    background-size: cover;
-    border: none;
-}
-
-header form div input[type='text'] {
-    background: none;
-    border: none;
-    font-weight: 400;
-    font-size: 25px;
-    letter-spacing: 0.15em;
-    color: rgba(0, 0, 0, 0.55);
-    font-style: italic;
-}
-
-header form div input[type="submit"]:hover {
-    cursor: pointer;
-
-}
-
-body {
-    font-family: "inter", Arial, Helvetica, sans-serif;
-    width: 100%;  /* ширина */
-    font-size: 16px; /* размер шрифта по умолчанию */
-}
-
-
-/* footer */
 footer {
     background: linear-gradient(180deg, #102d59 0%, #05152d 52.5%);
-    padding-top: 40px;
     padding-bottom: 30px;
     color: #fff;
     font-size: 22px;
     width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .in_footer {
@@ -138,12 +46,12 @@ footer {
 .in_footer .main {
     font-weight: 700;
     margin-left: 15px;
+    margin-bottom: 50px;
 }
 .in_footer p {
     font-weight: 700;
     margin-top: 20px;
     margin-bottom: 10px;
-
 }
 
 .in_footer .end {
@@ -151,10 +59,34 @@ footer {
     font-size: 25px;
 }
 
+.in_footer1 {
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
 footer .bott {
     text-align: center;
 }
 
+footer figure {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
+footer figure img {
+    width: 50px;
+    height: 54px;
+    vertical-align: top;
+}
 
-
+footer figure figcaption {
+    font-weight: 300;
+    font-size: 25px;
+    display: table;
+    text-align: center;
+}
+footer hr {
+    margin: 40px 0px;
+}
