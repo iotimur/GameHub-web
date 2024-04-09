@@ -1,0 +1,355 @@
+/* CSS стили для шапки сайта */
+header {
+  
+    background: linear-gradient(360deg, #643aa0 9%, #f39a46 100%);
+    padding: 20px; /* Отступы */
+    display: flex; /* Используем флексбокс для расположения элементов в одной строке */
+    align-items: center; /* Выравнивание элементов по вертикали */
+}
+.site-title {
+    margin-left: 10px; /* Добавляем отступ слева между логотипом и названием сайта */
+}
+header > *:not(.site-title) {
+    flex-grow: 1;
+}
+
+header > * {
+    margin-right: 10px; /* Отступы между элементами */
+}
+
+header > *:last-child {
+    margin-right: 0; /* Убираем отступ после последнего элемента */
+}
+
+nav ul {
+    
+    float: right;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Используем флексбокс для расположения элементов категорий в одной строке */
+}
+
+nav ul li {
+    
+    margin-right: 200px; /* Отступы между элементами */
+    list-style: none; /* Убираем маркеры списка */
+}
+
+.search input[type="text"],
+.search button {
+    margin-right: 0; /* Убираем отступ между полем поиска и кнопкой */
+}
+
+
+body 
+{
+    min-height: 100%;
+    width: 100%;    
+    box-sizing: border-box;
+    min-height: 100vh;
+    line-height: 1.5;
+    font-size: 2vh;
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'Poppins', sans-serif;
+    background-color: #102D59; /* Цвет фона body */
+}
+
+
+
+html {
+
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    
+}
+
+
+
+.oval {
+    width: 300px;
+    height: 64px;
+    border-radius: 20px;
+    background-color: #F39A46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color:black; 
+    font-size: 4vh; 
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.oval1 {
+    width: 257px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #B0C15C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black; 
+    font-size: 2.8vh; 
+    margin-left: 550px;
+    margin-top: -80px;
+}
+
+.oval2 {
+    width: 257px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #B0C15C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black; 
+    font-size: 2.8vh; 
+    margin-left: 950px;
+    margin-top: -60px;
+}
+
+img {
+    margin-top: 40px; /* Отступ сверху */
+    margin-left: 40px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+
+}
+.container {
+    padding-bottom: 30px;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative; 
+    justify-content: space-between; 
+    display: flex;
+    flex-direction: row; /* Располагаем элементы в строку */
+    align-items: flex-start;
+    background-color: #18396C;
+    margin-left: 40px;
+    margin-right: 50px;
+
+}
+
+.h1
+{
+    font-style: italic;
+    letter-spacing: 10%;
+    font-size: 4vh; 
+    color: white;
+    margin-top: 35px;
+    margin-left: 30px;
+    margin-bottom: -10px;
+    
+}
+
+.h2,.h3{
+    color: white;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 20px; 
+    font-weight: normal;
+    text-align: left;
+    
+}
+.small-image {
+    vertical-align: middle;   
+    margin-left: 800px; /* Отступ слева от обертки картинки */
+}
+.small-image img {
+    border-radius: 0px;
+    vertical-align: middle;
+    width: 40px; /* Ширина изображения */
+    height: auto; /* Автоматическая высота */
+    margin-top: -30px;
+}
+
+.price {
+    font-weight: bold; /* Задаем полужирное начертание */
+    font-size: 3vh; 
+    margin-left: 200px;
+    color: white;
+    margin-top: -80px;
+}
+
+
+.price1 {
+    font-weight: bold; /* Задаем полужирное начертание */
+    font-size: 3vh; 
+    margin-left: 150px;
+    color: white;
+    margin-top: 0px;
+}
+
+.delete {
+    margin-top: 130px;
+    margin-left: 1020px;
+    font-size: 2vh;
+    font-weight: bold;
+    color: red; /* Цвет текста */
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+
+.delete1 {
+    margin-top: 70px;
+    margin-left: 980px;
+    font-size: 2vh;
+    font-weight: bold;
+    color: red; /* Цвет текста */
+    text-decoration: underline;
+}
+
+
+
+.total {
+    color: white;
+    display: flex; /* Располагаем элементы в строку */
+    justify-content: 200px; /* Равномерно распределяем пространство между элементами */
+    margin-top: 150px; /* Добавляем отступ сверху */
+    font-weight: bold; /* Задаем полужирное начертание */
+    font-size: 30px; /* Задаем размер шрифта */
+}
+.total span:first-child {
+    margin-left: 550px; /* Отступ справа для первого элемента span в блоке .total */
+}
+
+
+
+.info {
+    margin-top: 30px;
+    display: grid; /* Используем grid layout */
+    grid-template-columns: auto; /* Один столбец */    
+    font-size: 3vh;
+   
+}
+.h4 {
+    margin-top: 20px;
+    margin: 10px;
+    color: white;
+    margin-right: 10px;
+    display: inline; /* Отображаем заголовки в строку */
+    text-decoration: underline;
+}
+
+.NDS{
+    width: 40px;
+    display: inline;
+    margin-bottom: auto;
+    margin-left: 5px;
+    color: white;
+    font-style: italic;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+  }
+
+/* footer */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+/* footer */
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    background: linear-gradient(180deg, #102d59 0%, #05152d 52.5%);
+    padding-bottom: 30px;
+    color: #fff;
+    font-size: 2.5vh;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.in_footer {
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.in_footer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 200;
+}
+
+.in_footer .left img {
+    width: 33px;
+    height: 21px;
+    margin-top: 10px;
+    border-radius: 0px;
+
+}
+
+.in_footer .main {
+    font-weight: 700;
+    margin-left: 15px;
+    margin-bottom: 50px;
+}
+.in_footer p {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.in_footer .end {
+    font-weight: 400;
+    font-size: 2.5vh;
+}
+
+.in_footer1 {
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+footer .bott {
+    text-align: center;
+}
+
+footer figure {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+footer figure img {
+    width: 50px;
+    height: 54px;
+    vertical-align: top;
+}
+
+footer figure figcaption {
+    font-weight: 300;
+    font-size: 2.7vh;
+    display: table;
+    text-align: center;
+}
+footer hr {
+    margin: 40px 0px;
+}
