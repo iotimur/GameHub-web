@@ -26,7 +26,7 @@
 
 - **Categories (Ахмадуллина Эмилия)**
 
-  - Search
+  - Sorting games
   - Top sellers
   - New releases
   - Specials

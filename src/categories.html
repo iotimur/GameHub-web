@@ -2,30 +2,39 @@
 <html lang="ru">
 
 <head>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/css/rezet.css">
-    <link rel="stylesheet" href="/css/style_categories.css">
-    <link rel="stylesheet" href="/css/header_footer.css">
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/categories.css">
+    <link rel="stylesheet" href="./css/footer.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
 </head>
-<!-- header -->
 
 <body>
+    <header>
+        <div class="outer">
+          <nav>
+            <label class="logo">GameHub</label>
+            <ul class="menu_items">
+              <li><a href="categories.html" class="active">Категории</a></li>
+              <li><a href="#">Войти</a></li>
+              <li><a href="basket.html">Корзина</a></li>
+            </ul>
+          </nav>
+        </div>
 
+      </header>
     <div class="main">
         <div style="height: 40px;"></div>
         <span class="sort-txt">Сортировать по</span>
         <button class="filter">
-            <img src="/img/стрелка.png" alt="стрелка вниз" width="34" height="21"
+            <img src="/assets/images/стрелка.png" alt="стрелка вниз" width="34" height="21"
                 style="margin-left: auto; margin-right: 0px;">
         </button>
 
@@ -38,9 +47,9 @@
         <div style="height: 20px;"></div>
 
         <button class="card ">
-            <img class="card-img" src="/img/image 4.jpg" alt="Обложка игры Counter-Strike 2" width="345" />
+            <img class="card-img" src="/assets/images/image 4.jpg" alt="Обложка игры Counter-Strike 2"  />
             <span class="title-game">Counter-Strike 2</span>
-            <img class="img-windows" src="/img/иконка windows.png" width="40" />
+            <img class="img-windows" src="/assets/images/windows.png" width="40" />
             <span class="price-tx price-txt">Бесплатно</span>
         </button>
 
@@ -48,18 +57,18 @@
 
 
         <button class="card">
-            <img class="card-img" src="/img/image 5.jpg" alt="Обложка игры Palworld" width="345" />
+            <img class="card-img" src="/assets/images/image 5.jpg" alt="Обложка игры Palworld"  />
             <span class="title-game">Palworld</span>
-            <img class="img-windows" src="/img/иконка windows.png" width="40" />
+            <img class="img-windows" src="/assets/images/windows.png" width="40" />
             <span class="new-price">990 руб.</span>
             <span class="old-price">1100 руб.</span>
         </button>
 
         <div style="height: 5px;"></div>
         <button class="card group-tr-game-info">
-            <img class="card-img" src="/img/image 6.jpg" alt="Обложка игры " width="345" />
+            <img class="card-img" src="/assets/images/image 6.jpg" alt="Обложка игры "  />
             <span class="title-game">PUBG: BATTLEGROUNDS</span>
-            <img class="img-windows" src="/img/иконка windows.png" width="40" />
+            <img class="img-windows" src="/assets/images/windows.png" width="40" />
             <span class="price-tx price-txt">Бесплатно</span>
         </button>
         <div style="height: 5px;"></div>
@@ -74,18 +83,16 @@
         </div>
         <div style="height: 20px;"></div>
         <button class="card">
-            <img class="card-img" src="/img/alpha league.jpg" alt="Обложка игры Alpha League" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
+            <img class="card-img" src="/assets/images/alpha league.jpg" alt="Обложка игры Alpha League"/>
+            <img class="img-windows" src="/assets/images/windows.png" width="40" height="40" />
             <span class="title-game">Alpha League</span>
             <span class="price-tx price-txt">Бесплатно</span>
         </button>
         <div style="height: 5px;"></div>
 
         <button class="card">
-            <img class="card-img" src="/img/sons of the forests.jpg" alt="Обложка игры Sons Of The Forests" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
+            <img class="card-img" src="/assets/images/sons of the forests.jpg" alt="Обложка игры Sons Of The Forests"/>
+            <img class="img-windows" src="/assets/images/windows.png" width="40" height="40" />
             <span class="title-game">Sons Of The Forests</span>
             <span class="old-price">1100 руб.</span>
             <span class="new-price">820 руб.</span>
@@ -93,9 +100,8 @@
         <div style="height: 5px;"></div>
 
         <button class="card">
-            <img class="card-img" src="/img/pacific drive.jpg" alt="Обложка игры Pacific Drives" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
+            <img class="card-img" src="/assets/images/pacific drive.jpg" alt="Обложка игры Pacific Drives"/>
+            <img class="img-windows" src="/assets/images/windows.png" width="40" height="40" />
             <span class="title-game">Pacific Drives</span>
             <span class="new-price">1799 руб.</span>
         </button>
@@ -109,26 +115,24 @@
         </div>
         <div style="height: 20px;"></div>
         <button class="card">
-            <img class="card-img" src="/img/How to Survive.jpg" alt="Обложка игры How to Survive" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
+            <img class="card-img" src="/assets/images/How to Survive.jpg" alt="Обложка игры How to Survive"/>
+            <img class="img-windows" src="/assets/images/windows.png" width="40" height="40" />
             <span class="title-game">How to Survive</span>
             <span class="new-price">83 руб.</span>
         </button>
         <div style="height: 5px;"></div>
 
         <button class="card">
-            <img class="card-img" src="/img/Red Solstice 2 Survivors.jpg" alt="Обложка игры Red Solstice 2 Survivors"
+            <img class="card-img" src="/assets/images/Red Solstice 2 Survivors.jpg" alt="Обложка игры Red Solstice 2 Survivors"
                 width="356" height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
+            <img class="img-windows" src="/assets/images/windows.png" width="40" height="40" />
             <span class="title-game">Red Solstice 2 Survivors</span>
             <span class="new-price">561 руб.</span>
         </button>
         <div style="height: 5px;"></div>
         <button class="card">
-            <img class="card-img" src="/img/sons of the forests.jpg" alt="Обложка игры Sons Of The Forests" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
+            <img class="card-img" src="/assets/images/sons of the forests.jpg" alt="Обложка игры Sons Of The Forests"/>
+            <img class="img-windows" src="/assets/images/windows.png" width="40" height="40" />
             <span class="title-game">Sons Of The Forests</span>
             <span class="old-price">1100 руб.</span>
             <span class="new-price">820 руб.</span>
@@ -137,7 +141,7 @@
         <button class="show-more-btn">
             <span>Показать больше</span>
         </button>
-        <div style="height: 20px;"></div>
+        <div style="height: 40px;"></div>
     </div>
 
 
