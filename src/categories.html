@@ -2,200 +2,197 @@
 <html lang="ru">
 
 <head>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"> -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/menu.css" />
-    <link rel="stylesheet" href="/css_categories/reset.css">
-    <link rel="stylesheet" href="/css_categories/style_categories.css">
-    <link rel="stylesheet" href="/css_categories/header_footer.css">
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/categories.css">
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon_io/favicon-16x16.png" />
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
 </head>
-<!-- header -->
 
 <body>
     <header>
         <div class="outer">
-          <nav>
-            <label class="logo">GameHub</label>
-            <ul class="menu_items">
-              <li><a href="categories.html" class="active">Категории</a></li>
-              <li><a href="#">Войти</a></li>
-              <li><a href="basket.html">Корзина</a></li>
-            </ul>
-          </nav>
+            <nav>
+                <label class="logo">GameHub</label>
+                <ul class="menu_items">
+                    <li><a href="categories.html" class="active">Категории</a></li>
+                    <li><a href="#">Войти</a></li>
+                    <li><a href="basket.html">Корзина</a></li>
+                </ul>
+            </nav>
         </div>
 
-      </header>
-    <div class="main">
-        <div style="height: 40px;"></div>
-        <span class="sort-txt">Сортировать по</span>
-        <button class="filter">
-            <img src="/img/стрелка.png" alt="стрелка вниз" width="34" height="21"
-                style="margin-left: auto; margin-right: 0px;">
-        </button>
+    </header>
+    <main>
+        <div>
+            <div style="height: 40px;"></div>
+            <span class="sort-txt">Сортировать по</span>
+            <button class="filter">
+                <img class="filter-img" src="../assets/images/стрелка.png" alt="стрелка вниз" width="34" height="21">
+            </button>
 
-        <div class="rounded-rectangle">
-            <h1 class=" intro-title">
-                Лидеры продаж
-            </h1>
+            <div class="rounded-rectangle">
+                <h1 class=" intro-title">
+                    Лидеры продаж
+                </h1>
+            </div>
+
+            <div style="height: 20px;"></div>
+
+            <button class="card ">
+                <img class="card-img" src="../assets/images/image 4.jpg" alt="Обложка игры Counter-Strike 2" />
+                <span class="title-game">Counter-Strike 2</span>
+                <img class="img-windows" src="../assets/images/windows.png" width="40" />
+                <span class="price-tx price-txt">Бесплатно</span>
+            </button>
+
+            <div style="height: 5px;"></div>
+
+
+            <button class="card">
+                <img class="card-img" src="../assets/images/image 5.jpg" alt="Обложка игры Palworld" />
+                <span class="title-game">Palworld</span>
+                <img class="img-windows" src="../assets/images/windows.png" width="40" />
+                <span class="new-price">990 руб.</span>
+                <span class="old-price">1100 руб.</span>
+            </button>
+
+            <div style="height: 5px;"></div>
+            <button class="card group-tr-game-info">
+                <img class="card-img" src="../assets/images/image 6.jpg" alt="Обложка игры " />
+                <span class="title-game">PUBG: BATTLEGROUNDS</span>
+                <img class="img-windows" src="../assets/images/windows.png" width="40" />
+                <span class="price-tx price-txt">Бесплатно</span>
+            </button>
+            <div style="height: 5px;"></div>
+            <button class="show-more-btn">
+                <span>Показать больше</span>
+            </button>
+            <div style="height: 40px;"></div>
+            <div class="rounded-rectangle">
+                <span class="intro-title">
+                    Новинки
+                </span>
+            </div>
+            <div style="height: 20px;"></div>
+            <button class="card">
+                <img class="card-img" src="../assets/images/alpha league.jpg" alt="Обложка игры Alpha League" />
+                <img class="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                <span class="title-game">Alpha League</span>
+                <span class="price-tx price-txt">Бесплатно</span>
+            </button>
+            <div style="height: 5px;"></div>
+
+            <button class="card">
+                <img class="card-img" src="../assets/images/sons of the forests.jpg"
+                    alt="Обложка игры Sons Of The Forests" />
+                <img class="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                <span class="title-game">Sons Of The Forests</span>
+                <span class="old-price">1100 руб.</span>
+                <span class="new-price">820 руб.</span>
+            </button>
+            <div style="height: 5px;"></div>
+
+            <button class="card">
+                <img class="card-img" src="../assets/images/pacific drive.jpg" alt="Обложка игры Pacific Drives" />
+                <img class="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                <span class="title-game">Pacific Drives</span>
+                <span class="new-price">1799 руб.</span>
+            </button>
+            <div style="height: 5px;"></div>
+            <button class="show-more-btn">
+                <span>Показать больше</span>
+            </button>
+            <div style="height: 40px;"></div>
+            <div class="rounded-rectangle">
+                <h1 class="intro-title">Скидки</h1>
+            </div>
+            <div style="height: 20px;"></div>
+            <button class="card">
+                <img class="card-img" src="../assets/images/How to Survive.jpg" alt="Обложка игры How to Survive" />
+                <img class="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                <span class="title-game">How to Survive</span>
+                <span class="new-price">83 руб.</span>
+            </button>
+            <div style="height: 5px;"></div>
+
+            <button class="card">
+                <img class="card-img" src="../assets/images/Red Solstice 2 Survivors.jpg"
+                    alt="Обложка игры Red Solstice 2 Survivors" width="356" height="166" />
+                <img class="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                <span class="title-game">Red Solstice 2 Survivors</span>
+                <span class="new-price">561 руб.</span>
+            </button>
+            <div style="height: 5px;"></div>
+            <button class="card">
+                <img class="card-img" src="../assets/images/sons of the forests.jpg"
+                    alt="Обложка игры Sons Of The Forests" />
+                <img class="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                <span class="title-game">Sons Of The Forests</span>
+                <span class="old-price">1100 руб.</span>
+                <span class="new-price">820 руб.</span>
+            </button>
+            <div style="height: 5px;"></div>
+            <button class="show-more-btn">
+                <span>Показать больше</span>
+            </button>
+            <div style="height: 40px;"></div>
         </div>
 
-        <div style="height: 20px;"></div>
-
-        <button class="card ">
-            <img class="card-img" src="/img/image 4.jpg" alt="Обложка игры Counter-Strike 2" width="345" />
-            <span class="title-game">Counter-Strike 2</span>
-            <img class="img-windows" src="/img/иконка windows.png" width="40" />
-            <span class="price-tx price-txt">Бесплатно</span>
-        </button>
-
-        <div style="height: 5px;"></div>
-
-
-        <button class="card">
-            <img class="card-img" src="/img/image 5.jpg" alt="Обложка игры Palworld" width="345" />
-            <span class="title-game">Palworld</span>
-            <img class="img-windows" src="/img/иконка windows.png" width="40" />
-            <span class="new-price">990 руб.</span>
-            <span class="old-price">1100 руб.</span>
-        </button>
-
-        <div style="height: 5px;"></div>
-        <button class="card group-tr-game-info">
-            <img class="card-img" src="/img/image 6.jpg" alt="Обложка игры " width="345" />
-            <span class="title-game">PUBG: BATTLEGROUNDS</span>
-            <img class="img-windows" src="/img/иконка windows.png" width="40" />
-            <span class="price-tx price-txt">Бесплатно</span>
-        </button>
-        <div style="height: 5px;"></div>
-        <button class="show-more-btn">
-            <span>Показать больше</span>
-        </button>
-        <div style="height: 40px;"></div>
-        <div class="rounded-rectangle">
-            <span class="intro-title">
-                Новинки
-            </span>
         </div>
-        <div style="height: 20px;"></div>
-        <button class="card">
-            <img class="card-img" src="/img/alpha league.jpg" alt="Обложка игры Alpha League" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
-            <span class="title-game">Alpha League</span>
-            <span class="price-tx price-txt">Бесплатно</span>
-        </button>
-        <div style="height: 5px;"></div>
-
-        <button class="card">
-            <img class="card-img" src="/img/sons of the forests.jpg" alt="Обложка игры Sons Of The Forests" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
-            <span class="title-game">Sons Of The Forests</span>
-            <span class="old-price">1100 руб.</span>
-            <span class="new-price">820 руб.</span>
-        </button>
-        <div style="height: 5px;"></div>
-
-        <button class="card">
-            <img class="card-img" src="/img/pacific drive.jpg" alt="Обложка игры Pacific Drives" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
-            <span class="title-game">Pacific Drives</span>
-            <span class="new-price">1799 руб.</span>
-        </button>
-        <div style="height: 5px;"></div>
-        <button class="show-more-btn">
-            <span>Показать больше</span>
-        </button>
-        <div style="height: 40px;"></div>
-        <div class="rounded-rectangle">
-            <h1 class="intro-title">Скидки</h1>
-        </div>
-        <div style="height: 20px;"></div>
-        <button class="card">
-            <img class="card-img" src="/img/How to Survive.jpg" alt="Обложка игры How to Survive" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
-            <span class="title-game">How to Survive</span>
-            <span class="new-price">83 руб.</span>
-        </button>
-        <div style="height: 5px;"></div>
-
-        <button class="card">
-            <img class="card-img" src="/img/Red Solstice 2 Survivors.jpg" alt="Обложка игры Red Solstice 2 Survivors"
-                width="356" height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
-            <span class="title-game">Red Solstice 2 Survivors</span>
-            <span class="new-price">561 руб.</span>
-        </button>
-        <div style="height: 5px;"></div>
-        <button class="card">
-            <img class="card-img" src="/img/sons of the forests.jpg" alt="Обложка игры Sons Of The Forests" width="356"
-                height="166" />
-            <img class="img-windows" src="/img/иконка windows.png" width="40" height="40" />
-            <span class="title-game">Sons Of The Forests</span>
-            <span class="old-price">1100 руб.</span>
-            <span class="new-price">820 руб.</span>
-        </button>
-        <div style="height: 5px;"></div>
-        <button class="show-more-btn">
-            <span>Показать больше</span>
-        </button>
-        <div style="height: 20px;"></div>
-    </div>
-
-
-
-    </div>
+    </main>
 </body>
 
-<footer class="footer">
+<footer class="footer"> 
     <div class="d-flex in_footer1">
         <figure>
-            <img src="/images/f1.png" alt="Лучшая цена">
+            <img src="..\assets\images/f1.png" alt="Лучшая цена">
             <figcaption>Лучшая цена</figcaption>
         </figure>
         <figure>
-            <img src="/images/f2.png" alt="Гарантия 100%">
+            <img src="..\assets\images/f2.png" alt="Гарантия 100%">
             <figcaption>Гарантия 100%</figcaption>
         </figure>
         <figure>
-            <img src="/images/f3.png" alt="Все способы оплаты">
+            <img src="..\assets\images/f3.png" alt="Все способы оплаты">
             <figcaption>Все способы оплаты</figcaption>
         </figure>
         <figure>
-            <img src="/images/f4.png" alt="Регулярные акции и скидки">
+            <img src="..\assets\images/f4.png" alt="Регулярные акции и скидки">
             <figcaption>Регулярные акции и скидки</figcaption>
         </figure>
     </div>
-    <hr>
-    <div class="in_footer d-flex">
+    <hr> 
+    <div class="in_footer d-flex" > 
         <div class="left">
             <p class="main">Наши контакты:</p>
             <nav>
                 <p>Техническая поддержка по общим вопросам:</p>
-                <img src="/images/cmc.jpg" alt="cmc">
+                <img src="..\assets\images/cmc.jpg" alt="cmc">
                 <a href="gamehub@gmail.com">gamehub@gmail.com</a>
-            </nav>
+            </nav>      
             <nav>
-                <p>Администрация:</p>
-                <img src="/images/cmc.jpg" alt="cmc">
+               <p>Администрация:</p>
+                <img src="..\assets\/images/cmc.jpg" alt="cmc">
                 <a href="gamehub_admin@gmail.com">gamehub_admin@gmail.com</a>
             </nav>
         </div>
         <div class="right">
             <p class="main">Схема проезда:</p>
-            <script type="text/javascript" charset="utf-8" async
-                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0844633aa054e3fd4986d5bc536bafdec51e39238788989fb3ff3f219e249b26&amp;width=320&amp;height=260&amp;lang=ru_RU&amp;scroll=true"></script>
-        </div>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0844633aa054e3fd4986d5bc536bafdec51e39238788989fb3ff3f219e249b26&amp;width=320&amp;height=260&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>    
     </div>
     <div class="bott">
         <p class="end">Казань, 2024</p>
