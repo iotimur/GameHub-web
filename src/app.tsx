@@ -1,8 +1,8 @@
 import React from 'react';
-
+import Categories from './categories';
 const App = () => {
   return (
-    <h1>Hello world для проекта - gamehub-web</h1>
+    <Categories />
   );
 };
 
