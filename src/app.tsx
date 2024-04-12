@@ -1,10 +1,15 @@
+
+
 import React from 'react';
-import Categories from './categories';
+import Game_page from './pages/game_page';
 const App = () => {
   return (
-    <Categories />
+    <>
+    <Game_page/>
+    </>
   );
 };
 
 export default App;
+
 

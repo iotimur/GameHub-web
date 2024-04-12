@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" type="text/css" href="/src/css/header/menu.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/header_footer1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/game_page.css">
-<link rel="stylesheet" href="./css/header_footer.css">
+<link rel="stylesheet" href="./css/header/menu.css">
+<link rel="stylesheet" href="./css/header_footer1.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elden Ring</title>
 </head>
-<header class="header">
-        <div class="in_header d-flex">    
-            <nav class="header_links">  
-                <img class="main_logo" src="..\assets\images/gamehub.jpg" alt="logo_gamehub" />
-                <a href="#">GameHub</a> 
-                <div class="links3">
-                    <img src="..\assets\images/categories.png" alt="categories">
-                    <a href="#">Категории</a>
-                </div>          
-            </nav>
-            <form name="search" action="#" method="get">
-                <div class="d-flex">
-                    <input type="text" name="search" placeholder="Поиск" >
-                    <input type="submit" name="search" value="" />
-                </div>
-            </form>
-            <nav class="header_links2">
-                <div class="links3">
-                    <img src="..\assets\images/LK.png" alt="lk">
-                <a href="#">Войти</a>
-                </div>
-                <div class="links3">
-                    <img src="..\assets\images/basket.png" alt="basket">
-                    <a href="#">Корзина</a>
-                </div>
-                
-                <img src="..\assets\images/eye.png" alt="eye">
-            </nav>
-        </div>  
-    </header>
-
+<header>
+    <div class="outer">
+        <nav>
+            <label class="logo">GameHub</label>
+            <ul class="menu_items">
+            <li><a href="categories.html" class="active">Категории</a></li>
+            <li><a href="#">Войти</a></li>
+            <li><a href="basket.html">Корзина</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <body>
 <div class="main">
 
@@ -280,19 +264,19 @@
 <footer class="footer"> 
     <div class="d-flex in_footer1">
         <figure>
-            <img src="..\assets\images/f1.png" alt="Лучшая цена">
+            <img src="/assets/images/f1.png" alt="Лучшая цена">
             <figcaption>Лучшая цена</figcaption>
         </figure>
         <figure>
-            <img src="..\assets\images/f2.png" alt="Гарантия 100%">
+            <img src="/assets/images/f2.png" alt="Гарантия 100%">
             <figcaption>Гарантия 100%</figcaption>
         </figure>
         <figure>
-            <img src="..\assets\images/f3.png" alt="Все способы оплаты">
+            <img src="/assets/images/f3.png" alt="Все способы оплаты">
             <figcaption>Все способы оплаты</figcaption>
         </figure>
         <figure>
-            <img src="..\assets\images/f4.png" alt="Регулярные акции и скидки">
+            <img src="/assets/images/f4.png" alt="Регулярные акции и скидки">
             <figcaption>Регулярные акции и скидки</figcaption>
         </figure>
     </div>
@@ -302,12 +286,12 @@
             <p class="main">Наши контакты:</p>
             <nav>
                 <p>Техническая поддержка по общим вопросам:</p>
-                <img src="..\assets\images/cmc.jpg" alt="cmc">
+                <img src="/assets/images/cmc.jpg" alt="cmc">
                 <a href="gamehub@gmail.com">gamehub@gmail.com</a>
             </nav>      
             <nav>
                <p>Администрация:</p>
-                <img src="/images/cmc.jpg" alt="cmc">
+                <img src="/assets/images/cmc.jpg" alt="cmc">
                 <a href="gamehub_admin@gmail.com">gamehub_admin@gmail.com</a>
             </nav>
         </div>
