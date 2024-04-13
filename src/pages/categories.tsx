@@ -1,8 +1,8 @@
 import React from "react";
-import './css/reset.css';
-import './css/categories.css';
-import './css/menu.css';
-import './css/footer.css';
+import '../css/reset.css';
+import '../css/categories.css';
+import '../css/menu.css';
+import '../css/footer.css';
 
 const Categories = () => {
     return (
