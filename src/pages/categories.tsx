@@ -3,6 +3,7 @@ import '../css/reset.css';
 import '../css/categories.css';
 import '../css/menu.css';
 import '../css/footer.css';
+import { switch_, windows,leaders_game1,leaders_game2,leaders_game3,new_game1,new_game2,new_game3,sales_game1,sales_game2 } from '../../assets/images'
 
 const Categories = () => {
     return (
@@ -27,7 +28,7 @@ const Categories = () => {
                         <div className="big-separator"></div>
                         <span className="sort-txt">Сортировать по</span>
                         <button className="filter">
-                            <img className="filter-img" src="../assets/images/стрелка.png" alt="стрелка вниз" width="34" height="21" />
+                            <img className="filter-img" src={switch_} alt="стрелка вниз" width="34" height="21" />
                         </button>
 
                         <div className="rounded-rectangle">
@@ -38,26 +39,26 @@ const Categories = () => {
                         <div className="big-separator"></div>
 
                         <button className="card ">
-                            <img className="card-img" src="../assets/images/image 4.jpg" alt="Обложка игры Counter-Strike 2" />
+                            <img className="card-img" src={leaders_game1} alt="Обложка игры Counter-Strike 2" />
                             <span className="title-game">Counter-Strike 2</span>
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" />
+                            <img className="img-windows" src={windows} width="40" />
                             <span className="price-tx price-txt">Бесплатно</span>
                         </button>
 
                         <div className="separator"></div>
                         <button className="card">
-                            <img className="card-img" src="../assets/images/image 5.jpg" alt="Обложка игры Palworld" />
+                            <img className="card-img" src={leaders_game2} alt="Обложка игры Palworld" />
                             <span className="title-game">Palworld</span>
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" />
+                            <img className="img-windows" src={windows} width="40" />
                             <span className="new-price">990 руб.</span>
                             <span className="old-price">1100 руб.</span>
                         </button>
 
                         <div className="separator"></div>
                         <button className="card group-tr-game-info">
-                            <img className="card-img" src="../assets/images/image 6.jpg" alt="Обложка игры " />
+                            <img className="card-img" src={leaders_game3} alt="Обложка игры " />
                             <span className="title-game">PUBG: BATTLEGROUNDS</span>
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" />
+                            <img className="img-windows" src={windows} width="40" />
                             <span className="price-tx price-txt">Бесплатно</span>
                         </button>
                         <div className="separator"></div>
@@ -73,17 +74,17 @@ const Categories = () => {
                         </div>
                         <div className="big-separator"></div>
                         <button className="card">
-                            <img className="card-img" src="../assets/images/alpha league.jpg" alt="Обложка игры Alpha League" />
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                            <img className="card-img" src={new_game1} alt="Обложка игры Alpha League" />
+                            <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">Alpha League</span>
                             <span className="price-tx price-txt">Бесплатно</span>
                         </button>
                         <div className="separator"></div>
 
                         <button className="card">
-                            <img className="card-img" src="../assets/images/sons of the forests.jpg"
+                            <img className="card-img" src={new_game2}
                                 alt="Обложка игры Sons Of The Forests" />
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                            <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">Sons Of The Forests</span>
                             <span className="old-price">1100 руб.</span>
                             <span className="new-price">820 руб.</span>
@@ -91,8 +92,8 @@ const Categories = () => {
                         <div className="separator"></div>
 
                         <button className="card">
-                            <img className="card-img" src="../assets/images/pacific drive.jpg" alt="Обложка игры Pacific Drives" />
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                            <img className="card-img" src={new_game3} alt="Обложка игры Pacific Drives" />
+                            <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">Pacific Drives</span>
                             <span className="new-price">1799 руб.</span>
                         </button>
@@ -108,7 +109,7 @@ const Categories = () => {
                         <div className="big-separator"></div>
                         <button className="card">
                             <img className="card-img" src="../assets/images/How to Survive.jpg" alt="Обложка игры How to Survive" />
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                            <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">How to Survive</span>
                             <span className="new-price">83 руб.</span>
                         </button>
@@ -117,7 +118,7 @@ const Categories = () => {
                         <button className="card">
                             <img className="card-img" src="../assets/images/Red Solstice 2 Survivors.jpg"
                                 alt="Обложка игры Red Solstice 2 Survivors" width="356" height="166" />
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                            <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">Red Solstice 2 Survivors</span>
                             <span className="new-price">561 руб.</span>
                         </button>
@@ -125,7 +126,7 @@ const Categories = () => {
                         <button className="card">
                             <img className="card-img" src="../assets/images/sons of the forests.jpg"
                                 alt="Обложка игры Sons Of The Forests" />
-                            <img className="img-windows" src="../assets/images/windows.png" width="40" height="40" />
+                            <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">Sons Of The Forests</span>
                             <span className="old-price">1100 руб.</span>
                             <span className="new-price">820 руб.</span>
