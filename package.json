@@ -1,5 +1,5 @@
 {
-    "name": "gamehub-web",
+    "name": "gamehub",
     "version": "1.0.0",
     "description": "![Logo Image](gamehub.jpeg)",
     "main": "./src/index.tsx",
