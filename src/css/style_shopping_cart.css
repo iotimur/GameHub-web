@@ -1,0 +1,194 @@
+/*main shopping cart*/
+
+.oval {
+    width: 300px;
+    height: 64px;
+    border-radius: 20px;
+    background-color: #F39A46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color:black; 
+    font-size: 4vh; 
+    margin-left: 15vh;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.oval1 {
+    width: 257px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #B0C15C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black; 
+    font-size: 2.8vh; 
+    margin-left: 550px;
+    margin-top: -80px;
+}
+
+.oval2 {
+    width: 257px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #B0C15C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black; 
+    font-size: 2.8vh; 
+    margin-left: 950px;
+    margin-top: -60px;
+}
+
+img {
+    margin-top: 40px; /* Отступ сверху */
+    margin-left: 40px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+
+}
+.container {
+   
+    padding-bottom: 5vh;    
+    padding-left: 5vh;
+    padding-right: 10vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    
+    position: relative; 
+    justify-content: space-between; 
+    display: flex;
+    flex-direction: row; /* Располагаем элементы в строку */
+    align-items: flex-start;
+    background-color: #18396C;
+    
+
+}
+
+.h1
+{
+    font-style: italic;
+    letter-spacing: 10%;
+    font-size: 4vh; 
+    color: white;
+    margin-top: 35px;
+    margin-left: 30px;
+    margin-bottom: -10px;
+    
+}
+
+.h2,.h3{
+    color: white;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 20px; 
+    font-weight: normal;
+    text-align: left;
+    
+}
+.small-image {
+    vertical-align: middle;   
+    margin-left: 800px; /* Отступ слева от обертки картинки */
+}
+.small-image img {
+    border-radius: 0px;
+    vertical-align: middle;
+    width: 40px; /* Ширина изображения */
+    height: auto; /* Автоматическая высота */
+    margin-top: -30px;
+}
+
+.price {
+    font-weight: bold; /* Задаем полужирное начертание */
+    font-size: 3vh; 
+    margin-left: 200px;
+    color: white;
+    margin-top: -80px;
+}
+
+
+.price1 {
+    font-weight: bold; /* Задаем полужирное начертание */
+    font-size: 3vh; 
+    margin-left: 150px;
+    color: white;
+    margin-top: 0px;
+}
+
+.delete {
+    margin-top: 130px;
+    margin-left: 1020px;
+    font-size: 2vh;
+    font-weight: bold;
+    color: red; /* Цвет текста */
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+
+.delete1 {
+    margin-top: 70px;
+    margin-left: 980px;
+    font-size: 2vh;
+    font-weight: bold;
+    color: red; /* Цвет текста */
+    text-decoration: underline;
+}
+
+
+
+.total {
+    color: white;
+    display: flex; /* Располагаем элементы в строку */
+    justify-content: 200px; /* Равномерно распределяем пространство между элементами */
+    margin-top: 150px; /* Добавляем отступ сверху */
+    font-weight: bold; /* Задаем полужирное начертание */
+    font-size: 30px; /* Задаем размер шрифта */
+}
+.total span:first-child {
+    margin-left: 550px; /* Отступ справа для первого элемента span в блоке .total */
+}
+
+
+
+.info {
+    margin-top: 30px;
+    display: grid; /* Используем grid layout */
+    grid-template-columns: auto; /* Один столбец */    
+    font-size: 3vh;
+   
+}
+.h4 {
+    margin-top: 20px;
+    margin: 10px;
+    color: white;
+    margin-right: 10px;
+    display: inline; /* Отображаем заголовки в строку */
+    text-decoration: underline;
+}
+
+.NDS{
+    width: 40px;
+    display: inline;
+    margin-bottom: auto;
+    margin-left: 5px;
+    color: white;
+    font-style: italic;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+  }
+
