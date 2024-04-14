@@ -1,9 +1,9 @@
 import React from "react";
 import '../css/reset.css';
 import '../css/categories.css';
-import '../css/menu.css';
+import '../css/header/menu.css';
 import '../css/footer.css';
-import { switch_, windows,leaders_game1,leaders_game2,leaders_game3,new_game1,new_game2,new_game3,sales_game1,sales_game2 } from '../../assets/images'
+import { switch_, windows, leaders_game1, leaders_game2, leaders_game3, new_game1, new_game2, new_game3, sales_game1, sales_game2 } from '../../assets/images'
 
 const Categories = () => {
     return (
@@ -56,7 +56,7 @@ const Categories = () => {
 
                         <div className="separator"></div>
                         <button className="card group-tr-game-info">
-                            <img className="card-img" src={leaders_game3} alt="Обложка игры " />
+                            <img className="card-img" src={leaders_game3} alt="Обложка игры PUBG: BATTLEGROUNDS" />
                             <span className="title-game">PUBG: BATTLEGROUNDS</span>
                             <img className="img-windows" src={windows} width="40" />
                             <span className="price-tx price-txt">Бесплатно</span>
@@ -108,7 +108,7 @@ const Categories = () => {
                         </div>
                         <div className="big-separator"></div>
                         <button className="card">
-                            <img className="card-img" src="../assets/images/How to Survive.jpg" alt="Обложка игры How to Survive" />
+                            <img className="card-img" src={sales_game1} alt="Обложка игры How to Survive" />
                             <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">How to Survive</span>
                             <span className="new-price">83 руб.</span>
@@ -116,7 +116,7 @@ const Categories = () => {
                         <div className="separator"></div>
 
                         <button className="card">
-                            <img className="card-img" src="../assets/images/Red Solstice 2 Survivors.jpg"
+                            <img className="card-img" src={sales_game2}
                                 alt="Обложка игры Red Solstice 2 Survivors" width="356" height="166" />
                             <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">Red Solstice 2 Survivors</span>
@@ -124,8 +124,7 @@ const Categories = () => {
                         </button>
                         <div className="separator"></div>
                         <button className="card">
-                            <img className="card-img" src="../assets/images/sons of the forests.jpg"
-                                alt="Обложка игры Sons Of The Forests" />
+                            <img className="card-img" src={new_game2} alt="Обложка игры Sons Of The Forests" />
                             <img className="img-windows" src={windows} width="40" height="40" />
                             <span className="title-game">Sons Of The Forests</span>
                             <span className="old-price">1100 руб.</span>
@@ -176,7 +175,7 @@ const Categories = () => {
                     </div>
                     <div className="right">
                         <p className="main">Схема проезда:</p>
-                        <script type="text/javascript" charSet="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0844633aa054e3fd4986d5bc536bafdec51e39238788989fb3ff3f219e249b26&amp;width=320&amp;height=260&amp;lang=ru_RU&amp;scroll=true"></script>
+                        <script type="text/javascript" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0844633aa054e3fd4986d5bc536bafdec51e39238788989fb3ff3f219e249b26&amp;width=320&amp;height=260&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
                 </div>
                 <div className="bott">
