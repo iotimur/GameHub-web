@@ -15,7 +15,10 @@
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
+body
+{
+    background-color: #102d59;
+}
 .oval1 {
     width: 257px;
     height: 60px;
@@ -90,6 +93,7 @@ img {
     margin-bottom: 20px; 
     font-weight: normal;
     text-align: left;
+    font-size: 3vh; 
     
 }
 .small-image {

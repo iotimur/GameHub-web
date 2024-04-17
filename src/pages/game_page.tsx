@@ -25,7 +25,7 @@ const Game_page = () => {
                     <ul className="menu_items">
                     <li><a href="categories.html" className="active">Категории</a></li>
                     <li><a href="#">Войти</a></li>
-                    <li><a href="basket.html">Корзина</a></li>
+                    <li><a href="shopping_cart.html">Корзина</a></li>
                     </ul>
                 </nav>
             </div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="stylesheet" href="src/css/style_shopping_cart.css">
-  <link rel="stylesheet" type="text/css" href="/src/css/header_footer1.css">
+  <link rel="stylesheet" href="../src/css/style_shopping_cart.css">
   <link rel="stylesheet" type="text/css" href="/src/css/header/menu.css">
+  <link rel="stylesheet" type="text/css" href="/src/css/header_footer1.css">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,29 +17,28 @@
 </head>
 
 <body>
-  <header>
   
-    <h1>GameHub</h1>
-    <nav>
-      <ul>
-        
-        <li><a href="#01">Категории</a></li>        
-        <li><a href="#02">Войти</a></li>
-        <li><a href="#03">Корзина</a></li>
-         
-      </ul>
-    </nav>
-   
-  </header>
+  <header>
+    <div className="outer">
+        <nav>
+            <label className="logo">GameHub</label>
+            <ul className="menu_items">
+            <li><a href="categories.html" className="active">Категории</a></li>
+            <li><a href="#">Войти</a></li>
+            <li><a href="shopping_cart.html">Корзина</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
   <div class="oval">
     Ваша корзина
   </div>
     <div class="container">
-    <img src="assets\images\mortal.png" alt="Игра Мортал Комбат. Змея.">
+    <img src="..\assets\images\mortal.png" alt="Игра Мортал Комбат. Змея.">
     <div>
       <p class="h1">Mortal Kombat 11</p>
       <div class="small-image">
-        <img src="assets\images\windows.png" alt="Иконка Виндоус">
+        <img src="..\assets\images\windows.png" alt="Иконка Виндоус">
         <div class="price">300 руб.</div>
       </div>
       <p class="h2">Дата выпуска: 23 апр. 2019 </p>
@@ -51,11 +50,11 @@
     
   </div>
   <div class="container">
-    <img src="assets\images\game2.png" alt="Игра Фифа 23.">
+    <img src="..\assets\images\image2.png" alt="Игра Фифа 23.">
     <div>
       <p class="h1">EA SPORTS™ FIFA 23</p>
       <div class="small-image">
-        <img src="assets\images\windows.png" alt="Иконка Виндоус">
+        <img src="..\assets\images\windows.png" alt="Иконка Виндоус">
         <div class="price">300 руб.</div>
       </div>
       
@@ -66,15 +65,14 @@
     <div class="delete">Удалить</div>
     <hr>
     </div>
-
   </div>
 
   <div class="container">
-    <img src="assets\images\game1.png" alt="Игра в Ведьмака.">
+    <img src="..\assets\images\Ведьмак.png" alt="Игра в Ведьмака.">
     <div>
       <p class="h1">Ведьмак: Дикая Охота</p>
       <div class="small-image">
-        <img src="assets\images\windows.png" alt="Иконка Виндоус">
+        <img src="..\assets\images\windows.png" alt="Иконка Виндоус">
         <div class="price">300 руб.</div>
         
       </div>
@@ -112,19 +110,19 @@
   <footer class="footer">
     <div class="d-flex in_footer1">
         <figure>
-            <img src="assets/images/f1.png" alt="Лучшая цена">
+            <img src="..\assets\images\f1.png" alt="Лучшая цена">
             <figcaption>Лучшая цена</figcaption>
         </figure>
         <figure>
-            <img src="assets/images/f2.png" alt="Гарантия 100%">
+            <img src="..\assets\images\f2.png" alt="Гарантия 100%">
             <figcaption>Гарантия 100%</figcaption>
         </figure>
         <figure>
-            <img src="assets\images\f3.png" alt="Все способы оплаты">
+            <img src="..\assets\images\f3.png" alt="Все способы оплаты">
             <figcaption>Все способы оплаты</figcaption>
         </figure>
         <figure>
-            <img src="assets\images\f4.png" alt="Регулярные акции и скидки">
+            <img src="..\assets\images\f4.png" alt="Регулярные акции и скидки">
             <figcaption>Регулярные акции и скидки</figcaption>
         </figure>
     </div>
@@ -134,12 +132,12 @@
             <p class="main">Наши контакты:</p>
             <nav>
                 <p>Техническая поддержка по общим вопросам:</p>
-                <img src="assets\images\cmc.jpg" alt="cmc">
+                <img src="..\assets\images\cmc.jpg" alt="cmc">
                 <a href="gamehub@gmail.com">gamehub@gmail.com</a>
             </nav>
             <nav>
                 <p>Администрация:</p>
-                <img src="assets\images\cmc.jpg" alt="cmc">
+                <img src="..\assets\images\cmc.jpg" alt="cmc">
                 <a href="gamehub_admin@gmail.com">gamehub_admin@gmail.com</a>
             </nav>
         </div>
@@ -154,6 +152,7 @@
     </div>
 
 </footer>
+  
   
 </body>
 </html>

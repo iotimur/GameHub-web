@@ -17,3 +17,12 @@ export { default as new_game3 } from './pacific drive.jpg';
 export { default as sales_game1 } from './How to Survive.jpg';
 export { default as sales_game2 } from './Red Solstice 2 Survivors.jpg';
 export { default as windows } from './windows.png';
+
+export {default as mortal} from './mortal.png';
+export {default as cmc} from './cmc.jpg';
+export {default as f1} from './f1.png';
+export {default as f2} from './f2.png';
+export {default as f3} from './f3.png';
+export {default as f4} from './f4.png';
+export {default as fifa} from './image2.png';
+export {default as ved} from './Ведьмак.png';
