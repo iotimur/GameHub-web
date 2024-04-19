@@ -26,3 +26,6 @@ export {default as f3} from './f3.png';
 export {default as f4} from './f4.png';
 export {default as fifa} from './image2.png';
 export {default as ved} from './Ведьмак.png';
+
+export {default as game11} from './game1.jpg';
+export {default as game22} from './game2.jpg';
