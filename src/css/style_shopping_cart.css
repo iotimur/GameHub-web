@@ -11,7 +11,7 @@
     font-weight: bold;
     color:black; 
     font-size: 4vh; 
-    margin-left: 15vh;
+    margin-left: -5vh;
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -20,8 +20,8 @@ body
     background-color: #102d59;
 }
 .oval1 {
-    width: 257px;
-    height: 60px;
+    width: 500px;
+    height: 70px;
     border-radius: 20px;
     background-color: #B0C15C;
     display: flex;
@@ -30,8 +30,8 @@ body
     font-weight: bold;
     color: black; 
     font-size: 2.8vh; 
-    margin-left: 550px;
-    margin-top: -80px;
+    margin-left: 800px;
+    margin-top: -150px;
 }
 
 .oval2 {
@@ -45,24 +45,18 @@ body
     font-weight: bold;
     color: black; 
     font-size: 2.8vh; 
-    margin-left: 950px;
-    margin-top: -60px;
+    margin-left: 400px;
+    margin-top: -150px;
 }
 
-img {
-    margin-top: 40px; /* Отступ сверху */
-    margin-left: 40px;
-    margin-bottom: 50px;
-    border-radius: 20px;
 
-}
-.container {
+.container_my {
    
     padding-bottom: 5vh;    
     padding-left: 5vh;
     padding-right: 10vh;
-    margin-left: 10vh;
-    margin-right: 10vh;
+    margin-left: -25vh;
+    margin-right: -25vh;
     
     position: relative; 
     justify-content: space-between; 
@@ -88,9 +82,9 @@ img {
 
 .h2,.h3{
     color: white;
-    margin-top: 30px;
+    margin-top: 90px;
     margin-left: 30px;
-    margin-bottom: 20px; 
+    margin-bottom: -50px; 
     font-weight: normal;
     text-align: left;
     font-size: 3vh; 
@@ -113,7 +107,7 @@ img {
     font-size: 3vh; 
     margin-left: 200px;
     color: white;
-    margin-top: -80px;
+    margin-top: -20px;
 }
 
 
@@ -137,8 +131,8 @@ img {
 
 
 .delete1 {
-    margin-top: 70px;
-    margin-left: 980px;
+    margin-top: 10px;
+    margin-left: 1000px;
     font-size: 2vh;
     font-weight: bold;
     color: red; /* Цвет текста */
@@ -181,7 +175,7 @@ img {
     width: 40px;
     display: inline;
     margin-bottom: auto;
-    margin-left: 5px;
+    margin-left: -60px;
     color: white;
     font-style: italic;
 

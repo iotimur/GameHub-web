@@ -28,12 +28,12 @@ const shopping_cart = () => {
                 <div className="oval">
                               Ваша корзина
                           </div>
-                        <div className="container">
-                          <img src={mortal} alt="Игра Мортал Комбат. Змея."/>
+                        <div className="container_my">
+                          <img src={mortal} alt="Игра Мортал Комбат. Змея."style={{ marginTop: '4.5vh' }} />
                           <div>
                             <p className="h1">Mortal Kombat 11</p>
                             <div className="small-image">
-                                <img src={windows} alt="Иконка Виндоус"/>                            
+                                <img src={windows} alt="Иконка Виндоус"style={{ marginTop: '-8vh' }} />                            
                                 <div className="price">300 руб.</div>
                               </div>
                              <p className="h2">Дата выпуска: 23 апр. 2019 </p>
@@ -43,12 +43,12 @@ const shopping_cart = () => {
                         </div>
                       </div>
 
-                      <div className="container">
-                            <img src={fifa} alt="Игра Фифа 23."/>
+                      <div className="container_my">
+                            <img src={fifa} alt="Игра Фифа 23."style={{ marginTop: '4.5vh' }} />
                               <div>
                                <p className="h1">EA SPORTS™ FIFA 23</p>
                               <div className="small-image">
-                                <img src={windows} alt="Иконка Виндоус"/>
+                                <img src={windows} alt="Иконка Виндоус"style={{ marginTop: '-8vh' }} />
                                 <div className="price">300 руб.</div>
                               </div>      
                             <p className="h2">Дата выпуска: 30 сен. 2022</p>
@@ -60,12 +60,13 @@ const shopping_cart = () => {
                         </div>
                     </div>
 
-                    <div className="container">
-                            <img src={ved} alt="Игра в Ведьмака."/>
+                    <div className="container_my">
+                        <img src={ved} alt="Игра в Ведьмака." style={{ marginTop: '4.5vh' }} />
+
                         <div>
                             <p className="h1">Ведьмак: Дикая Охота</p>
                         <div className="small-image">
-                        <img src={windows} alt="Иконка Виндоус"/>
+                        <img src={windows} alt="Иконка Виндоус"style={{ marginTop: '-8vh' }} />
                         <div className="price">300 руб.</div>
         
                         </div>
@@ -85,13 +86,14 @@ const shopping_cart = () => {
             </div>
         </div>
     </div>
-
+        <div className="container_my">
             <div className="oval1">
                 Купить для себя
              </div>
             <div className="oval2">
                 Купить в подарок
             </div>
+        </div>
             <div className="delete1">
             <p>Удалить все товары</p>
             </div>  
