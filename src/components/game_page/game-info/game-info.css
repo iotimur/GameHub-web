@@ -1,0 +1,19 @@
+.game-info {
+    width: 100%;
+    background-color: #18396C;
+    color: white;
+    border-radius: 0;
+    padding: 15px; /* Общий внутренний отступ */
+    box-sizing: border-box; /* Общий размер включая padding и border */
+}
+
+
+
+.game-info-text li {
+    font-style: italic;
+    font-size: 20px;
+    line-height: 0.8; /* Устанавливаем меньшее значение для уменьшения отступов между строками */
+    margin: 0;
+    margin-top: 5px; /* Уменьшаем верхний отступ между элементами списка */
+    padding-bottom: 5px; /* Уменьшаем нижний отступ между элементами списка */
+}
