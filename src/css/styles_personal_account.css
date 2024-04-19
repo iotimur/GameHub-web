@@ -17,7 +17,7 @@ main {
 }
 
 .forms {
-    padding: 30px 70px;
+    padding: 30px 40px;
 }
 
 .form1, .form2, .form3 {
@@ -56,15 +56,21 @@ main {
     border-radius: 10px;
     background: #b0c15c;
     cursor: pointer;
+    align-items: center;
+    padding-left: 10px;
 }
 
 .block1 .change {
     display: inline;
+    display: flex;
+    
+    flex-direction: row;
 }
 
+
 .block2 .left img {
-    width: 151px;
     height: 198px;
+    width: 151px;
     margin-top: 35px;
     border-radius: 20px;
     margin-bottom: 35px;
@@ -87,6 +93,10 @@ main {
     font-size: 25px;
 }
 
+.block3 .links p {
+    font-size: 20px;
+}
+
 main .zagolov {
     border-radius: 20px;
     width: 329px;
@@ -97,7 +107,7 @@ main .zagolov {
     font-size: 37px;
     text-align: center;
     padding: 5px;
-    margin: 0px 35px;
+    margin: 35px 35px 0px 35px;
 }
 
 .block2 .add {
@@ -118,21 +128,19 @@ main .zagolov {
     flex-direction: row;
     align-items: flex-start;
     vertical-align: middle;
+    
 }
 
 .d-f p {
     margin-right: 40px;
+    font-weight: 400;
+    font-size: 20px;
 }
 
-.change {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
 
 .shops {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 60px;
+    padding-right: 0px;
 }
 
 #izm {
@@ -144,3 +152,8 @@ main .zagolov {
     padding-left: 40px;
     
 }
+
+
+
+
+

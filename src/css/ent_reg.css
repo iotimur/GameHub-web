@@ -10,6 +10,10 @@
   padding: 20px;
 }
 
+.up button {
+  display: inline;
+}
+
 .down {
   padding: 30px;
 }
@@ -68,6 +72,8 @@
   color: #000;
   margin-top: 35px;
   cursor: pointer;
+  padding-left: 80px;
+  padding-top: 7px;
 }
 
 /*  */
@@ -105,4 +111,11 @@
   color: #000;
   margin-top: 113px;
   cursor: pointer;
+  padding-left: 115px;
+  padding-top: 7px;
 }
+
+
+
+
+
