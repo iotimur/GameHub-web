@@ -32,6 +32,28 @@ main {
     margin: 40px 0px;
 }
 
+@media screen and (max-width: 768px) {
+    .block2 .d-f {
+      display: none;
+    }
+
+    .block2 img {
+        margin-right: 100px;
+        margin-left: 20px;
+    }
+  }
+
+  @media screen and (max-width: 998px) {
+    .block1 .forms  {
+        display:block;
+        margin: 0 auto;
+    } 
+
+    .block1 .form1, .form2, .form3  {
+        margin: auto;
+    } 
+  }
+  
 .block1 div input {
     border: 1px solid #2092c5;
     border-radius: 5px;
@@ -66,7 +88,6 @@ main {
     
     flex-direction: row;
 }
-
 
 .block2 .left img {
     height: 198px;
@@ -136,7 +157,6 @@ main .zagolov {
     font-weight: 400;
     font-size: 20px;
 }
-
 
 .shops {
     padding-left: 60px;
