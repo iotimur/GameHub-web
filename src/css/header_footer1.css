@@ -41,6 +41,7 @@ footer {
     width: 33px;
     height: 21px;
     margin-top: 10px;
+    display: inline;
 }
 
 .in_footer .main {
