@@ -8,7 +8,7 @@ import {   cmc, f1,f2,f3,f4, mortal, windows, ved, fifa } from '../../assets/ima
 const shopping_cart = () => {
   return (
     <>
-      <body>
+      
       
       <header>
             <div className="outer">
@@ -102,7 +102,7 @@ const shopping_cart = () => {
             
             
     </main>
-</body>
+
 
 <footer className="footer">
                 <div className="d-flex in_footer1">
