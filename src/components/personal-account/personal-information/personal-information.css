@@ -1,0 +1,73 @@
+.block1 {
+    background: #18396c;
+    margin: 60px 35px;
+}
+
+.forms {
+    padding: 30px 40px;
+}
+
+.form1, .form2, .form3 {
+    width: 274px;
+    height: 40px;
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+
+.block1 form {
+    margin: 40px 0px;
+}
+
+.block1 div input {
+    border: 1px solid #2092c5;
+    border-radius: 5px;
+    width: 274px;
+    height: 40px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.55);
+    font-style: italic;
+    padding: 8px;
+}
+
+.block1 .change button {
+    width: 141px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #000;
+    border-radius: 10px;
+    background: #b0c15c;
+    cursor: pointer;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.block1 .change {
+    display: inline;
+    display: flex;
+    flex-direction: row;
+}
+
+.block1 p {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+#izm {
+    margin-right: 15px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
