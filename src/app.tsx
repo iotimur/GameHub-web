@@ -5,7 +5,7 @@ import Shopping_cart from "./pages/shopping_cart";
 import Personal_account from "./pages/personal_account";
 import Entrance from "./pages/entrance";
 import Registration from "./pages/registration";
-import Main_page from "./pages/main_page";
+import Main_page from "./pages/main-page";
 
 const App = () => {
   return (

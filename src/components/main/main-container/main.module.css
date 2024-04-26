@@ -107,19 +107,17 @@ html {
   justify-content: center; /* Центрируем по горизонтали */
   align-items: center; /* Центрируем по вертикали */
   /* padding: 0.5em; */
-  background: #f39a46;
+  background: #2092c5;
   height: 100%;
   width: 25%;
-  border-radius: 0 0 0.5em 0;
   cursor: pointer;
 }
 .product-card-top-sail:hover {
   background-color: #1450a5;
   color: #fff;
 }
-.product-card-top-sail:hover button {
+.card-button:hover button {
   color: #000;
-  /* background-color: #643aa0; */
 }
 .text-card {
   width: 100%; /* Устанавливаем ширину изображения в 100% от родительского контейнера */
@@ -191,7 +189,7 @@ html {
 }
 
 .product-card-news {
-  flex: 0 0 45%;
+  flex: 0 0 44%;
   min-width: 12em; /* Добавляем min-width */
   background-color: #18396c;
   font-style: italic;
