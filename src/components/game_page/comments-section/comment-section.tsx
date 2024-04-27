@@ -1,21 +1,28 @@
 import React from 'react';
 import { Comment } from './comment/comment';
-import './comment-section.css';
+import { CommentsContainer, CommentsTitle, CommentBlock, ShowMoreButton } from './comment-section.styled';
 
-const CommentsSection = () => {
+const comments = [
+    { username: 'Пользователь1', text: 'Текст комментария 1' },
+    { username: 'Пользователь2', text: 'Текст комментария 2' },
+    { username: 'Пользователь3', text: 'Текст комментария 3' },
+    { username: 'Пользователь4', text: 'Текст комментария 4' },
+];
+
+const CommentsSection = ({ comments }) => {
     return (
-        <div className="comments-section">
-            <h2 className="comments-title">Комментарии</h2>
-            <div className="comment-block">
-                <Comment username="Имя пользователя" text="Текст комментария" />
-                <Comment username="Имя пользователя" text="Текст комментария" />
-                <Comment username="Имя пользователя" text="Текст комментария" />
-                <Comment username="Имя пользователя" text="Текст комментария" />
-            </div>
+        <CommentsContainer>
+            <CommentsTitle>Комментарии</CommentsTitle>
+            <CommentBlock>
+                {comments.map((comment, index) => (
+                    <Comment key={index} username={comment.username} text={comment.text} />
+                ))}
+            </CommentBlock>
             
-            <button className="show-more-button">Показать больше</button>
-        </div>
+            <ShowMoreButton>Показать больше</ShowMoreButton>
+        </CommentsContainer>
     );
 };
 
 export default CommentsSection;
+

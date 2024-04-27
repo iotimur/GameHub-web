@@ -5,15 +5,21 @@ import '../css/game_page.css';
 import '../css/header_footer1.css';
 
 
-import {PriceBlock} from '../components/game_page/price-block/price-block';
+import PriceBlock from '../components/game_page/price-block/price-block';
 import GameInfo from '../components/game_page/game-info/game-info';
-import {Trailer} from '../components/game_page/trailer/trailer';
+import Trailer from '../components/game_page/trailer/trailer';
 import Gallery from '../components/game_page/gallery-scroll/gallery-scroll';
 import {AboutGame} from '../components/game_page/about-game/about-game';
 import RatingBlock from '../components/game_page/rating-block/rating-block';
 import SystemRequirements from '../components/game_page/system-requirements/system-requirements';
 import CommentsSection from '../components/game_page/comments-section/comment-section';
 
+const comments = [
+    { username: 'Пользователь1', text: 'Текст комментария 1' },
+    { username: 'Пользователь2', text: 'Текст комментария 2' },
+    { username: 'Пользователь3', text: 'Текст комментария 3' },
+    { username: 'Пользователь4', text: 'Текст комментария 4' },
+];
 const Game_page = () => {
   return (
     <div>
@@ -89,7 +95,7 @@ const Game_page = () => {
         <SystemRequirements />
 
 
-        <CommentsSection />
+        <CommentsSection comments={comments}/>
 
 
         </div>

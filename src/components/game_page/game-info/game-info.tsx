@@ -1,10 +1,11 @@
+// GameInfo.tsx
 import React from 'react';
-import './game-info.css';
+import { GameInfoContainer, GameInfoText } from './game-info.styled';
 
 const GameInfo = () => {
     return (
-        <div className="game-info">
-            <div className="game-info-text">
+        <GameInfoContainer>
+            <GameInfoText>
                 <ul>
                     <li><strong>Жанр:</strong> Экшены, RPG</li>
                     <li><strong>Язык:</strong> Русский (субтитры)</li>
@@ -21,9 +22,10 @@ const GameInfo = () => {
                     </li>
                     <li><strong>Регион:</strong> Россия, Украина и СНГ</li>
                 </ul>
-            </div>
-        </div>
+            </GameInfoText>
+        </GameInfoContainer>
     );
 };
 
 export default GameInfo;
+

@@ -1,35 +1,34 @@
-.comments-section {
+import styled from "@emotion/styled";
+
+
+
+
+export const CommentsContainer = styled.div`
     background-color: #102D59;
     color: white;
-    
     margin-bottom: 20px;
-
     margin-top: 30px;
-    width: 100% - padding; /* Ширина блока от начала до конца */
+    width: 100% - padding;  /* Ширина блока от начала до конца с учетом отступов */
     min-height: 480px; /* Высота блока 80px */
-    
-    position: relative; 
-}
+    position: relative;
+`;
 
-/* Стили для заголовка "Комментарии" */
-.comments-title {
+export const CommentsTitle = styled.h2`
     color: white;
     font-weight: bold;
     margin-bottom: 10px;
-}
-.comment-block{
+`;
+
+export const CommentBlock = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Выравниваем по горизонтали */
     align-items: center; /* Выравниваем по вертикали */
+`;
 
-}
-/* Стили для ячейки комментария */
-
-/* Стили для кнопки "Показать больше" */
-.show-more-button {
+export const ShowMoreButton = styled.button`
     width: 100%;
-    height: 64;
+    height: 64px; /* Высота кнопки */
     background-color: #18396C;
     color: white;
     border: none;
@@ -37,8 +36,8 @@
     border-radius: 5px;
     cursor: pointer;
     justify-content: center;
-}
-.show-more-button:active {
-    background-color: #2E5A99; /* Новый цвет фона при нажатии */
-}
-
+    
+    &:active {
+        background-color: #2E5A99; /* Новый цвет фона при нажатии */
+    }
+`;

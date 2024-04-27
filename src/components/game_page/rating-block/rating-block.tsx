@@ -1,45 +1,60 @@
+// RatingBlock.tsx
+
 import React from 'react';
-import './rating-block.css';
-const RatingBlock = () => {
+import { 
+     
+    RatingBlock as StyledRatingBlock, // Изменение имени импорта
+    RatingBlockAge, 
+    RatingBlockAgeSquare, 
+    RatingBlockAgeSquareText, 
+    RatingBlockAgeText,
+    RatingBlockGamestar,
+    RatingBlockGamestarSquare,
+    RatingBlockGamestarSquareText,
+    RatingBlockGamestarText,
+    RatingBlockMetacritic,
+    RatingBlockMetacriticSquare,
+    RatingBlockMetacriticSquareText,
+    RatingBlockMetacriticText,
+    RatingBlockOpencritic,
+    RatingBlockOpencriticSquare,
+    RatingBlockOpencriticSquareText,
+    RatingBlockOpencriticText
+} from './rating-block.styled';
+
+const RatingBlock: React.FC = () => {
     return (
-        <div className="rating-block">
-            <div className="rating-block-age">
-                <div className="rating-block-age-square">
-                    <p className="rating-age-square-text">16+</p>
-                </div>
-                <div className="rating-block-age-text">
-                    <p>ДЛЯ ДЕТЕЙ СТАРШЕ 16 ЛЕТ</p>
-                    <p>Рейтинг от: Закон о рейтинге контента</p>
-                </div>
-            </div>
+        
+            <StyledRatingBlock> {/* Использование импортированного компонента с изменённым именем */}
+                <RatingBlockAge>
+                    <RatingBlockAgeSquare>
+                        <RatingBlockAgeSquareText>16+</RatingBlockAgeSquareText>
+                    </RatingBlockAgeSquare>
+                    <RatingBlockAgeText>ДЛЯ ДЕТЕЙ СТАРШЕ 16 ЛЕТ</RatingBlockAgeText>
+                </RatingBlockAge>
 
-            <div className="rating-block-gamestar">
-                <div className="rating-block-gamestar-square">
-                    <p className="rating-gamestar-square-text">93</p>
-                </div>
-                <div className="rating-block-gamestar-text">
-                    <p>GameStar</p>
-                </div>
-            </div>
+                <RatingBlockGamestar>
+                    <RatingBlockGamestarSquare>
+                        <RatingBlockGamestarSquareText>93</RatingBlockGamestarSquareText>
+                    </RatingBlockGamestarSquare>
+                    <RatingBlockGamestarText>GameStar</RatingBlockGamestarText>
+                </RatingBlockGamestar>
 
-            <div className="rating-block-metacritic">
-                <div className="rating-block-metacritic-square">
-                    <p className="rating-metacritic-square-text">94</p>
-                </div>
-                <div className="rating-block-metacritic-text">
-                    <p>metacritic</p>
-                </div>
-            </div>
+                <RatingBlockMetacritic>
+                    <RatingBlockMetacriticSquare>
+                        <RatingBlockMetacriticSquareText>94</RatingBlockMetacriticSquareText>
+                    </RatingBlockMetacriticSquare>
+                    <RatingBlockMetacriticText>metacritic</RatingBlockMetacriticText>
+                </RatingBlockMetacritic>
 
-            <div className="rating-block-opencritic">
-                <div className="rating-block-opencritic-square">
-                    <p className="rating-opencritic-square-text">92</p>
-                </div>
-                <div className="rating-block-opencritic-text">
-                    <p>OpenCritic</p>
-                </div>
-            </div>
-        </div>
+                <RatingBlockOpencritic>
+                    <RatingBlockOpencriticSquare>
+                        <RatingBlockOpencriticSquareText>92</RatingBlockOpencriticSquareText>
+                    </RatingBlockOpencriticSquare>
+                    <RatingBlockOpencriticText>OpenCritic</RatingBlockOpencriticText>
+                </RatingBlockOpencritic>
+            </StyledRatingBlock>
+      
     );
 };
 

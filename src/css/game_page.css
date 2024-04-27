@@ -29,19 +29,22 @@ body {
     flex-direction: column; /* Для мобильных устройств располагаем элементы в столбец */
 }
 
-
+.group_rating_about-game{
+    display: flex; /* Устанавливаем flex-контейнер */
+    flex-direction: row; /* Выравнивание элементов по верхнему краю */
+}
 
 
 @media screen and (min-width: 1000px) {
     .group_tr_game-info {
         flex-direction: row; /* Для планшетов и более крупных устройств располагаем элементы в строку */
     }
-    .trailer {
+    .Trailer {
         width: auto; /* Возвращаем обычную ширину для трейлеров */
         margin-bottom: 0; /* Убираем отступ снизу */
         margin-right: 20px; /* Возвращаем правый отступ */
     }
-    .game-info {
+    .GameInfo {
         min-height: 346px;
         width: calc(100% - 200px); /* Ширина занимает все оставшееся пространство после трейлера */
     }
@@ -56,12 +59,12 @@ body {
     .group_rating_about-game {
         flex-direction: column; /* Для планшетов и более крупных устройств располагаем элементы в строку */
     }
-    .about-game {
+    .AboutGame {
         width: auto; /* Возвращаем обычную ширину для трейлеров */
         margin-bottom: 0; /* Убираем отступ снизу */
         
     }
-    .rating-block {
+    .RaitingBlock {
         display: none;
     
     }
