@@ -1,0 +1,79 @@
+.reg {
+    width: 374px;
+    height: 471px;
+    background: #fff;
+    border-radius: 23px;
+    margin: 200px auto;
+  }
+  
+  .up {
+    padding: 20px;
+  }
+  
+  .up button {
+    display: inline;
+  }
+  
+  .down {
+    padding: 30px;
+  }
+
+  .reg hr {
+    fill: #fff;
+    stroke-width: 1px;
+    stroke: #000;
+  }
+
+  
+.reg_forms input {
+    border: 1px solid #2092c5;
+    border-radius: 5px;
+    width: 308px;
+    height: 48px;
+    background: #fff;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    color: rgba(0, 0, 0, 0.55);
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
+  .reg .up #entrance {
+    font-weight: 400;
+    font-size: 25px;
+    color: #080a21;
+    background-color: transparent;
+    border: none;
+    margin-left: 28px;
+    cursor: pointer;
+  }
+  
+  .reg .up #registration {
+    font-weight: 800;
+    font-size: 25px;
+    color: #080a21;
+    background-color: transparent;
+    border: none;
+    margin-left: 28px;
+    cursor: pointer;
+  }
+
+  .reg_forms #regis {
+    border: 1px solid #2092c5;
+    border-radius: 5px;
+    width: 308px;
+    height: 48px;
+    background: #d2c1ec;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #000;
+    margin-top: 35px;
+    cursor: pointer;
+    /* padding-left: 80px; */
+    /* padding-top: 7px; */
+  }
+  

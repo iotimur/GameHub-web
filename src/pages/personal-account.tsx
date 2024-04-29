@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/header/menu.css';
 import '../css/styles-personal-account.css';
 
 import { PersonalInformation } from '../components/personal-account/personal-information/personal-information';
