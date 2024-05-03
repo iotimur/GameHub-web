@@ -1,26 +1,26 @@
 import React from 'react';
-import './help.css';
+import { BlockHelpStyled, LinksStyled, TextHelpStyled, TextStyled, TextZagolovkaStyled } from './help.styled'
 
 export function Help() {
     return (
-        <div className="block3">
+        <BlockHelpStyled>
             <div className="top">
-                <p>Помощь</p>
+                <TextHelpStyled>Помощь</TextHelpStyled>
             </div>
             <hr />
             <div className="d-flex">
-                <div className="links">
-                    <p className="of">Оформление заказа</p>
-                    <p>Выберите товары и добавьте их в корзину. Оформите заказ. Подтвердите и оплатите заказ.</p>
-                    <p className="of">Способы оплаты:</p>
-                    <p>Банковская карта или электронный кошелёк.</p>
-                    <p className="of">Изменение личных данных</p>
-                    <p>Вот некоторые данные, которые можно изменить в профиле: имя, фамилия, номер телефона, электронная почта. </p>
-                    <p className="of">Добавление товара в корзину</p>
-                    <p>Чтобы добавить товар в корзину, нажмите кнопку «Купить для себя» или «Купить в подарок» на карточке товара</p>
-                </div>
+                <LinksStyled>
+                    <TextZagolovkaStyled>Оформление заказа</TextZagolovkaStyled>
+                    <TextStyled>Выберите товары и добавьте их в корзину. Оформите заказ. Подтвердите и оплатите заказ.</TextStyled>
+                    <TextZagolovkaStyled>Способы оплаты</TextZagolovkaStyled>
+                    <TextStyled>Банковская карта или электронный кошелёк.</TextStyled>
+                    <TextZagolovkaStyled>Изменение личных данных</TextZagolovkaStyled>
+                    <TextStyled>Вот некоторые данные, которые можно изменить в профиле: имя, фамилия, номер телефона, электронная почта.</TextStyled>
+                    <TextZagolovkaStyled>Добавление товара в корзину</TextZagolovkaStyled>
+                    <TextStyled>Чтобы добавить товар в корзину, нажмите кнопку «Купить для себя» или «Купить в подарок» на карточке товара.</TextStyled>
+                </LinksStyled>
             </div>
-        </div>
+        </BlockHelpStyled>
     );
 }
 

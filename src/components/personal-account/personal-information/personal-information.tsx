@@ -1,47 +1,47 @@
 import React from 'react';
-import './personal-information.css';
+import { DFlexStyled, FormsStyled, IzmStyled, TextStyled, BlockStyled, InputStyled, ChangeStyled, FormStyled, FormsInFormStyled } from './personal-information.styled'
 
 export function PersonalInformation() {
     return (
-        <div className="block1">
-            <div className="d-flex">
+        <BlockStyled>
+            <DFlexStyled>
                 <div className="top">
-                    <p>Личная информация</p>
+                    <TextStyled>Личная информация</TextStyled>
                 </div>
-                <div className="change">
-                    <button id="izm">Изменить</button>
-                </div>
-            </div>
+                <ChangeStyled>
+                    <IzmStyled>Изменить</IzmStyled>
+                </ChangeStyled>
+            </DFlexStyled>
             <hr />
             <div>
-                <div className="forms d-flex">
-                    <div className="form1">
-                        <form name="user_name" action="#" method="get">
-                            <input type="text" name="user_name" placeholder="Ваше имя:" />
-                        </form>
-                        <form name="user_surname" action="#" method="get">
-                            <input type="text" name="user_surname" placeholder="Ваша фамилия:" />
-                        </form>
-                    </div>
-                    <div className="form2">
-                        <form name="user_tel" action="#" method="get">
-                            <input type="tel" name="user_tel" placeholder="Ваш номер телефона:" />
-                        </form>
-                        <form name="user_mail" action="#" method="get">
-                            <input type="email" name="user_mail" placeholder="Ваш Email:" />
-                        </form>
-                    </div>
-                    <div className="form3">
-                        <form name="user_name" action="#" method="get">
-                            <input type="text" name="user_login" placeholder="Ваш логин:" />
-                        </form>
-                        <form name="user_surname" action="#" method="get">
-                            <input type="datetime" name="user_date" placeholder="Ваша дата рождения:" />
-                        </form>
-                    </div>
-                </div>
+                <FormsStyled>
+                    <FormsInFormStyled>
+                        <FormStyled name="user_name" action="#" method="get">
+                            <InputStyled type="text" name="user_name" placeholder="Ваше имя:" />
+                        </FormStyled>
+                        <FormStyled name="user_surname" action="#" method="get">
+                            <InputStyled type="text" name="user_surname" placeholder="Ваша фамилия:" />
+                        </FormStyled>
+                    </FormsInFormStyled>
+                    <FormsInFormStyled>
+                        <FormStyled name="user_tel" action="#" method="get">
+                            <InputStyled type="tel" name="user_tel" placeholder="Ваш номер телефона:" />
+                        </FormStyled>
+                        <FormStyled name="user_mail" action="#" method="get">
+                            <InputStyled type="email" name="user_mail" placeholder="Ваш Email:" />
+                        </FormStyled>
+                    </FormsInFormStyled>
+                    <FormsInFormStyled>
+                        <FormStyled name="user_name" action="#" method="get">
+                            <InputStyled type="text" name="user_login" placeholder="Ваш логин:" />
+                        </FormStyled>
+                        <FormStyled name="user_surname" action="#" method="get">
+                            <InputStyled type="datetime" name="user_date" placeholder="Ваша дата рождения:" />
+                        </FormStyled>
+                    </FormsInFormStyled>
+                </FormsStyled>
             </div>
-        </div>
+        </BlockStyled>
     );
 }
 

@@ -1,26 +1,26 @@
 import React from "react";
-import './entrance-component.css';
+import { RegistrStyled, ButtonEntrStyled, ButtonRegStyled, ButtonStyled, InputStyled, HRStyled, UpStyled, DownStyled } from './entrance-component.styled'
 
 const EntranceComponent = () => {
   return (
-    <div className="reg">
-      <div className="up">
-        <button id="entrance2">Вход</button>
-        <button id="registration2">Регистрация</button>
-      </div>
-      <hr />
-      <div className="down">
+    <RegistrStyled>
+      <UpStyled>
+        <ButtonEntrStyled>Вход</ButtonEntrStyled>
+        <ButtonRegStyled>Регистрация</ButtonRegStyled>
+      </UpStyled>
+      <HRStyled />
+      <DownStyled>
         <div className="reg_forms">
           <form name="user_email" action="#" method="get">
-            <input type="text" name="user_email" placeholder="Введите Email" />
+            <InputStyled type="text" name="user_email" placeholder="Введите Email" />
           </form>
           <form name="user_password" action="#" method="get">
-            <input type="password" name="user_password" placeholder="Введите пароль" />
+            <InputStyled type="password" name="user_password" placeholder="Введите пароль" />
           </form>
-          <button id="ent">Войти</button>
+          <ButtonStyled>Войти</ButtonStyled>
         </div>
-      </div>
-    </div>
+      </DownStyled>
+    </RegistrStyled>
   );
 };
 
