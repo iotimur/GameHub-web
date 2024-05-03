@@ -8,15 +8,16 @@ export const RegistrStyled = styled.div`
     margin: 200px auto;
 `;
 
-export const ButtonEntrStyled = styled.button`
+export const EntrStyled = styled.p`
     font-weight: 800;
     font-size: 25px;
     color: #080a21;
     background-color: transparent;
     border: none;
-    margin-left: 28px;
-    cursor: pointer;
+    margin-left: 30px;
     display: inline;
+    width: 95px;
+    height: 48px;
 `;
 
 export const ButtonRegStyled = styled.button`
@@ -25,9 +26,16 @@ export const ButtonRegStyled = styled.button`
     color: #080a21;
     background-color: transparent;
     border: none;
-    margin-left: 28px;
+    margin-left: 25px;
     cursor: pointer;
     display: inline;
+    width: 180px;
+    height: 48px;
+    &:hover {
+        background: #D2C1EC;
+        transition: 0.5s;
+        border-radius: 5px;
+    }
 `;
 
 export const ButtonStyled = styled.button`
@@ -43,6 +51,10 @@ export const ButtonStyled = styled.button`
     color: #000;
     margin-top: 113px;
     cursor: pointer;
+    &:hover {
+        background: #9f7cd0;
+        transition: 0.5s;
+    }
 `;
 
 export const InputStyled = styled.input`

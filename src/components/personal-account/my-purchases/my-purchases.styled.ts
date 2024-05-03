@@ -20,6 +20,13 @@ export const AddStyled = styled.button`
     border: none;
     color: #fff;
     cursor: pointer;
+    width: 150px;
+    height: 48px;
+    &:hover {
+        background: #102D59;
+        transition: 0.5s;
+        border-radius: 5px;
+    }
 `;
 
 export const TextZagolStyled = styled.p`  

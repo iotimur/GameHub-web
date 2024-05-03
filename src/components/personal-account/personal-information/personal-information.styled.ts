@@ -16,17 +16,21 @@ export const FormsStyled = styled.div`
 export const IzmStyled = styled.button`  
     margin-right: 15px;
     width: 141px;
-    height: 30px;
+    height: 35px;
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.1em;
     text-align: center;
     color: #000;
-    border-radius: 10px;
-    background: #b0c15c;
+    border-radius:5px;
+    background: #d2c1ec;
     cursor: pointer;
     align-items: center;
-    padding-left: 10px;
+    &:hover {
+        background: #9f7cd0;
+        transition: 0.5s;
+    }
+    
 `;
 
 export const TextStyled = styled.p`  

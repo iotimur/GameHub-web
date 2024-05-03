@@ -1,12 +1,12 @@
 import React from "react";
-import { RegistrStyled, ButtonEntrStyled, ButtonRegStyled, ButtonStyled, InputStyled, HRStyled, UpStyled, DownStyled } from './registration-component.styled'
+import { RegistrStyled, ButtonEntrStyled, RegStyled, ButtonStyled, InputStyled, HRStyled, UpStyled, DownStyled } from './registration-component.styled'
 
 const RegistrationComponent = () => {
     return (
         <RegistrStyled>
             <UpStyled>
                 <ButtonEntrStyled>Вход</ButtonEntrStyled>
-                <ButtonRegStyled>Регистрация</ButtonRegStyled>
+                <RegStyled>Регистрация</RegStyled>
             </UpStyled>
             <HRStyled />
             <DownStyled>

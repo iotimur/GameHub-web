@@ -1,11 +1,11 @@
 import React from "react";
-import { RegistrStyled, ButtonEntrStyled, ButtonRegStyled, ButtonStyled, InputStyled, HRStyled, UpStyled, DownStyled } from './entrance-component.styled'
+import { RegistrStyled, EntrStyled, ButtonRegStyled, ButtonStyled, InputStyled, HRStyled, UpStyled, DownStyled } from './entrance-component.styled'
 
 const EntranceComponent = () => {
   return (
     <RegistrStyled>
       <UpStyled>
-        <ButtonEntrStyled>Вход</ButtonEntrStyled>
+        <EntrStyled>Вход</EntrStyled>
         <ButtonRegStyled>Регистрация</ButtonRegStyled>
       </UpStyled>
       <HRStyled />

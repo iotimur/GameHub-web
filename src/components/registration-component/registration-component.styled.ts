@@ -14,20 +14,28 @@ export const ButtonEntrStyled = styled.button`
     color: #080a21;
     background-color: transparent;
     border: none;
-    margin-left: 28px;
+    margin-left: 23px;
     cursor: pointer;
     display: inline;
+    width: 75px;
+    height: 48px;
+    &:hover {
+        background: #D2C1EC;
+        transition: 0.5s;
+        border-radius: 5px;
+    }
 `;
 
-export const ButtonRegStyled = styled.button`
+export const RegStyled = styled.p`
     font-weight: 800;
     font-size: 25px;
     color: #080a21;
     background-color: transparent;
     border: none;
-    margin-left: 28px;
-    cursor: pointer;
+    margin-left: 15px;
     display: inline;
+    width: 200px;
+    height: 48px;
 `;
 
 export const ButtonStyled = styled.button`
@@ -43,6 +51,10 @@ export const ButtonStyled = styled.button`
     color: #000;
     margin-top: 35px;
     cursor: pointer;
+    &:hover {
+        background: #9f7cd0;
+        transition: 0.5s;
+    }
 `;
 
 export const InputStyled = styled.input`
