@@ -1,18 +1,22 @@
 import React from "react";
-import s from "./search.module.css";
-const search_inputClassName = "search-input";
+
+import {
+  WrapperSearch,
+  SearchInput,
+  InputPlace,
+  IconSearch,
+} from "./search.styled";
 
 export const Search = () => {
   return (
-    <div className={s.wrapper}>
-      <div className={s[search_inputClassName]}>
+    <WrapperSearch>
+      <SearchInput>
         <a href="" target="_blank" hidden></a>
-        <input type="text" placeholder="Type to search.." />
-        <div className="autocom-box"></div>
-        <div className={s.icon}>
+        <InputPlace type="text" placeholder="Type to search.." />
+        <IconSearch>
           <i className="fas fa-search"></i>
-        </div>
-      </div>
-    </div>
+        </IconSearch>
+      </SearchInput>
+    </WrapperSearch>
   );
 };

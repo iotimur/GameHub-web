@@ -1,28 +1,36 @@
 import React from "react";
-import h from "./header.module.css";
+import {
+  OuterMain,
+  NavMain,
+  LabelMain,
+  LiStyled,
+  RestLinkStyled,
+  StyledLink,
+  StyledHeader,
+} from "./header.styled";
 
 const Header = () => {
   return (
-    <header>
-      <div className={h.outer}>
-        <nav>
-          <label className={h.logo}>GameHub</label>
-          <ul className={h.menu_items}>
-            <li>
-              <a href="categories.html" className={h.active}>
-                Категории
-              </a>
-            </li>
-            <li>
-              <a href="#">Войти</a>
-            </li>
-            <li>
-              <a href="basket.html">Корзина</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div>
+      <StyledHeader>
+        <OuterMain>
+          <NavMain>
+            <LabelMain>GameHub</LabelMain>
+            <ul>
+              <LiStyled>
+                <StyledLink href="#">Категории</StyledLink>
+              </LiStyled>
+              <LiStyled>
+                <RestLinkStyled href="#">Войти</RestLinkStyled>
+              </LiStyled>
+              <LiStyled>
+                <RestLinkStyled href="basket.html">Корзина</RestLinkStyled>
+              </LiStyled>
+            </ul>
+          </NavMain>
+        </OuterMain>
+      </StyledHeader>
+    </div>
   );
 };
 

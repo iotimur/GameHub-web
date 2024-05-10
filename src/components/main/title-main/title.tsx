@@ -1,11 +1,11 @@
 import React from "react";
 
-import t from "./title.module.css";
+import { TitleMain } from "./title.styled";
 
 export const Title = (props) => {
   return (
-    <div className={t.title}>
+    <TitleMain>
       <h2>{props.text}</h2>
-    </div>
+    </TitleMain>
   );
 };
