@@ -5,7 +5,7 @@ import '../css/header_footer1.css';
 import {   cmc, f1,f2,f3,f4, mortal, windows, ved, fifa } from '../../assets/images'
 
 
-const shopping_cart = () => {
+const Shopping_cart = () => {
   return (
     <>
       
@@ -151,4 +151,4 @@ const shopping_cart = () => {
     );
 };
 
-export default shopping_cart;
+export default Shopping_cart;
