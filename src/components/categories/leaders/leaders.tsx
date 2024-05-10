@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { windows, leaders_game1, leaders_game2, leaders_game3 } from '../../../../assets/images'
 import { TitleRectangle, TitleCategoryStyled, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, FreePrice, NewPrice, OldPrice } from './leaders.styled';
 const Leaders = () => {
@@ -9,6 +9,7 @@ const Leaders = () => {
                 <TitleCategoryStyled>Лидеры продаж</TitleCategoryStyled>
             </TitleRectangle>
             <BigSeparator />
+            <Link to="/gamehub/game-page">
             <Card>
                 <CardImg src={leaders_game2} alt="Обложка игры Elden Ring" />
                 <TitleGame>Elden Ring</TitleGame>
@@ -16,13 +17,16 @@ const Leaders = () => {
                 <NewPrice>990 руб.</NewPrice>
                 <OldPrice>1100 руб.</OldPrice>
             </Card>
+            </Link>
             <Separator />
+            <Link to="/gamehub/game-page">
             <Card>
                 <CardImg src={leaders_game1} alt="Обложка игры Counter-Strike 2" />
                 <TitleGame>Counter-Strike 2</TitleGame>
                 <Windows src={windows} />
                 <FreePrice>Бесплатно</FreePrice>
             </Card>
+            </Link>
             <Separator />
 
             <Card>
