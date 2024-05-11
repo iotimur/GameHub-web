@@ -1,12 +1,19 @@
 import React from 'react';
 
-import { windows, new_game2, sales_game1, sales_game2 } from '../../../../assets/images'
-import { TitleRectangle, TitleCategoryStyled, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, FreePrice, NewPrice, OldPrice } from '../leaders/leaders.styled';
+import {
+    windows,
+    new_game2,
+    sales_game1,
+    sales_game2
+} from '../../../../assets/images'
+import { TitleRectangle, TitleCategory, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, NewPrice, OldPrice } from '../leaders/leaders.styled';
 const DiscountGames = () => {
     return (
         <div>
+            <BigSeparator/>
+            <BigSeparator/>
             <TitleRectangle>
-                <TitleCategoryStyled>Скидки</TitleCategoryStyled>
+                <TitleCategory>Скидки</TitleCategory>
             </TitleRectangle>
             <BigSeparator />
             <Card>

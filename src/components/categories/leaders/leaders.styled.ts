@@ -8,10 +8,14 @@ export const TitleRectangle = styled.div`
     background: #f39a46;
     width: fit-content;
     height: 64px;
-  
+    @media screen and (max-width: 1200px) {
+      height: 50px;
+    }
+    @media screen and (max-width: 800px) {
+      height: 45px;
+    }
 `;
-
-export const TitleCategoryStyled = styled.h1`
+export const TitleCategory = styled.h2`
     font-family: var(--font-family);
     font-style: italic;
     font-weight: bold;
@@ -19,6 +23,13 @@ export const TitleCategoryStyled = styled.h1`
     color: #000;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 24px;
+    }
+    @media screen and (max-width: 800px) {
+      font-size: 20px;
+    }
 `;
 export const Card = styled.button`
     width: 100%;
@@ -40,6 +51,15 @@ export const CardImg = styled.img`
     width: 350px;
     height: 150px;
     border-radius: 10px;
+    object-fit: cover; // для сохранения пропорций
+@media screen and (max-width: 988px) {
+  width: 320px;
+}
+
+@media screen and (max-width: 800px) {
+  max-width: 280px;
+}
+
 `;
 
 export const TitleGame = styled.span`
@@ -50,12 +70,27 @@ export const TitleGame = styled.span`
     font-weight: 500;
     font-size: 32px;
     color: #fff;
+
+    @media screen and (max-width: 1200px) {
+        width: 300px;
+        padding-left: 20px;
+    }
+
+    @media screen and (max-width: 998px) {
+        width: 200px;
+        font-size: 24px;
+       
+    }
+    
 `;
 
 export const Windows = styled.img`
     position: absolute;
     right: 200px;
     max-width: 40px;
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
 `;
 export const BtnMoreStyled = styled.button`
 width: 100%;
@@ -85,6 +120,12 @@ export const NewPrice = styled.span`
   font-weight: 500;
   font-size: 32px;
   color: #f39a46;
+  @media screen and (max-width: 998px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: 20px;
+  }
   `;
 
 export const OldPrice = styled.span`
@@ -108,6 +149,12 @@ export const OldPrice = styled.span`
     background: #7693bb;
     transform: translateY(10%) rotate(-7deg);
   }
+  @media screen and (max-width: 998px) {
+      font-size: 20px;
+    }
+  @media screen and (max-width: 800px) {
+      display: none;
+  }
 `;
 
 export const FreePrice = styled.span`
@@ -125,6 +172,14 @@ export const FreePrice = styled.span`
   width: fit-content;
   height: 30px;
   background: #102D59;
+
+  @media screen and (max-width: 998px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+      }
   `;
 
 export const Separator = styled.div`

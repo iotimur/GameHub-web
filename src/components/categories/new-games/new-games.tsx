@@ -1,12 +1,32 @@
 import React from 'react';
 
-import { windows, new_game1, new_game2, new_game3 } from '../../../../assets/images'
-import { TitleRectangle, TitleCategoryStyled, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, FreePrice, NewPrice, OldPrice } from '../leaders/leaders.styled';
+import {
+    windows,
+    new_game1,
+    new_game2,
+    new_game3
+} from '../../../../assets/images'
+import {
+    TitleRectangle,
+    TitleCategory,
+    Card,
+    BtnMoreStyled,
+    Separator,
+    BigSeparator,
+    TitleGame,
+    CardImg,
+    Windows,
+    FreePrice,
+    NewPrice,
+    OldPrice
+} from '../leaders/leaders.styled';
 const NewGames = () => {
     return (
         <div>
+            <BigSeparator />
+            <BigSeparator />
             <TitleRectangle>
-                <TitleCategoryStyled>Новинки</TitleCategoryStyled>
+                <TitleCategory>Новинки</TitleCategory>
             </TitleRectangle>
             <BigSeparator />
 
@@ -35,9 +55,6 @@ const NewGames = () => {
             <BtnMoreStyled>
                 Показать больше
             </BtnMoreStyled>
-            <BigSeparator />
-            <BigSeparator />
-
         </div>
 
     );

@@ -1,19 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { 
+    SortingString, 
+    Sorting,
+    SortingButton,
+    DropdownItem,
+    Dropdown 
+} from './sorting.styled';
 
-import { switch_ } from '../../../../assets/images'
-import { SortingString, Sorting, Switch } from './sorting.styled';
-import { BigSeparator } from '../leaders/leaders.styled';
 const FilterSorting = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('');
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
+    const handleOptionSelect = (option) => {
+        setSelectedOption(option);
+        setIsDropdownOpen(false);
+    };
+
     return (
         <div>
-            <BigSeparator />
-            <BigSeparator />
             <SortingString>Сортировать по</SortingString>
-            <Sorting>
-                <Switch src={switch_} />
-            </Sorting>
+            <SortingButton onClick={toggleDropdown}>
+                <Sorting>{selectedOption}</Sorting>
+                {isDropdownOpen && (
+                    <Dropdown>
+                        <DropdownItem onClick={() => handleOptionSelect('по цене max')}>по цене max</DropdownItem>
+                        <DropdownItem onClick={() => handleOptionSelect('по цене min')}>по цене min</DropdownItem>
+                    </Dropdown>
+                )}
+            </SortingButton>
         </div>
     );
 };
-
 export default FilterSorting;
