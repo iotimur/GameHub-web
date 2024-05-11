@@ -18,7 +18,7 @@ const Header = () => {
             <LabelMain>GameHub</LabelMain>
             <ul>
               <LiStyled>
-                <StyledLink href="#">Категории</StyledLink>
+                <StyledLink href="categories">Категории</StyledLink>
               </LiStyled>
               <LiStyled>
                 <RestLinkStyled href="#">Войти</RestLinkStyled>
