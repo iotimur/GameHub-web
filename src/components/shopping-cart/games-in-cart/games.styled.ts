@@ -16,36 +16,6 @@ export const Oval = styled.div`
     margin-bottom: 20px;
 `;
 
-export const Oval1 = styled.div` 
-    width: 500px;
-    height: 70px;
-    border-radius: 20px;
-    background-color: #B0C15C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: black; 
-    font-size: 2.8vh; 
-    margin-left: 800px;
-    margin-top: -150px;
-`;
-
-export const Oval2 = styled.div` 
-    width: 257px;
-    height: 60px;
-    border-radius: 20px;
-    background-color: #B0C15C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: black; 
-    font-size: 2.8vh; 
-    margin-left: 400px;
-    margin-top: -150px;
-`;
-
 
 export const Container_my = styled.div`     
     padding-bottom: 5vh;    
@@ -72,20 +42,32 @@ export const H1 = styled.p`
     margin-bottom: -10px;
 `;    
 
-export const H2,H3 = styled.p` 
+export const H2 = styled.p`
     color: white;
     margin-top: 90px;
     margin-left: 30px;
-    margin-bottom: -50px; 
+    margin-bottom: -50px;
     font-weight: normal;
     text-align: left;
-    font-size: 3vh; 
+    font-size: 3vh;
+`;
+
+export const H3 = styled.p`
+    color: white;
+    margin-top: 90px;
+    margin-left: 30px;
+    margin-bottom: -50px;
+    font-weight: normal;
+    text-align: left;
+    font-size: 3vh;
+`;
+
+export const BigImage = styled.img`
+    vertical-align: middle;   
+    margin-left: 800px; /* Отступ слева от обертки картинки */
 `; 
 
 export const SmallImage = styled.img`
-    vertical-align: middle;   
-    margin-left: 800px; /* Отступ слева от обертки картинки */
-
     border-radius: 0px;
     vertical-align: middle;
     width: 40px; /* Ширина изображения */
@@ -110,4 +92,11 @@ export const Delete = styled.p`
     color: red; /* Цвет текста */
     text-decoration: underline;
     margin-bottom: 30px;
+`;
+
+export const Hr = styled.hr`
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #ccc; /* Пример стилей линии */
+    margin: 20px 0; /* Пример отступов */
 `;
