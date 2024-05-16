@@ -17,7 +17,7 @@ const Header = () => {
               <a href="#">Войти</a>
             </li>
             <li>
-              <a href="basket.html">Корзина</a>
+              <a href="shopping_cart.html">Корзина</a>
             </li>
           </ul>
         </nav>

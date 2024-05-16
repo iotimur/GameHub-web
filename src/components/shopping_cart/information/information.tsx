@@ -3,7 +3,8 @@ import '../information/information.css';
 
 const Information = () => {
     return (
-        <div className="total">
+        <div>
+             className="total">
             <span>Промежуточный итог:</span>
             <div className="price1">900 руб.</div>
             <hr />
