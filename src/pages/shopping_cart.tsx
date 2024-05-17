@@ -10,8 +10,8 @@ const shopping_cart = () => {
   return (
     <>
         <Header />  
-        <Information/>
         <Games/>
+        <Information/>
         <Footer/>  
 
       </>
