@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 // import '../../../css/game_page.css'
 import { logo } from './index'
 
@@ -30,9 +30,11 @@ const PriceBlock: React.FC = () => {
             <PriceImage>
                 {/* Изображение логотипа */}
             </PriceImage>
+            <Link to="/gamehub/shopping-cart">
             <PriceRectangle>
                 <PriceText>В корзину</PriceText>
             </PriceRectangle>
+            </Link>
         </PriceBlockContainer>
     );
 }

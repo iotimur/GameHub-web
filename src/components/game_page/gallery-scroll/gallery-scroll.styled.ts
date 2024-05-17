@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 
 export const GalleryContainer = styled.div`
-    /* Отступ от левого края (200px) */
-    overflow: hidden;
+    
+    
+    width: 100%;
     clear: both; /* Очистка обтекания */
     position: relative; /* Установка позиции */
     display: flex; /* Располагаем элементы в строку */
@@ -11,10 +12,14 @@ export const GalleryContainer = styled.div`
 
 export const GalleryWrapper = styled.div`
     margin-top: 15px;
+    margin-left: 40px;
     display: flex;
     transition: transform 0.5s ease; /* Анимация для плавного скролла */
-    width: calc(100% / 5); /* Ширина соответствует 1/5 прокрутки */
+    width: 240px; /* Ширина соответствует 1/5 прокрутки */
     flex-shrink: 0; /* Запрет на уменьшение элемента при недостатке места */
+    
+    
+}
 `;
 
 export const ScrollButton = styled.button`
@@ -41,6 +46,6 @@ export const ScrollButton = styled.button`
 `;
 
 export const ScreenshotImage = styled.img`
-    width: 240px;
+   
     height: 100px;
 `;
