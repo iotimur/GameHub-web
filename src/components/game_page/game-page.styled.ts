@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-export const Body = styled.body`
+
+export const Body = styled.div`
   font-family: "Inter", sans-serif;
   background-color: #102D59;
   margin: 0;
@@ -28,10 +29,10 @@ export const GroupTrGameInfo = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-`;
 
-export const GroupRatingAboutGame = styled.div`
-  display: flex;
+  @media screen and (min-width: 1000px) {
+    flex-direction: row;
+  }
 `;
 
 export const Trailer = styled.div`
@@ -40,7 +41,6 @@ export const Trailer = styled.div`
   margin-right: 20px;
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
     margin-right: 0;
   }
 `;
@@ -54,6 +54,15 @@ export const GameInfo = styled.div`
   }
 `;
 
+export const GroupRatingAboutGame = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+`;
+
 export const AboutGame = styled.div`
   width: auto;
   margin-bottom: 0;
@@ -64,9 +73,9 @@ export const AboutGame = styled.div`
 `;
 
 export const RatingBlock = styled.div`
-  display: none;
+  display: block;
 
-  @media screen and (min-width: 1000px) {
-    display: block;
+  @media screen and (max-width: 1000px) {
+    display: none;
   }
 `;
