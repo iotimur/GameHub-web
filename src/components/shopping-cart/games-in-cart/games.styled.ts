@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 
 export const Oval = styled.div`
-    width: 300px;
+    width: 400px;
     height: 64px;
     border-radius: 20px;
     background-color: #F39A46;
@@ -11,7 +11,8 @@ export const Oval = styled.div`
     font-weight: bold;
     color: black;
     font-size: 4vh;
-    margin: 10px 100px 10px;
+    margin: 40px 300px 30px;
+
 `;
 
 export const Container_my = styled.div`
@@ -20,8 +21,8 @@ export const Container_my = styled.div`
     background-color: #18396C;
     padding: 0 5vh 5vh;
     margin: 0 auto;
-    margin-right:100px;    
-    margin-left:100px;
+    margin-right:300px;    
+    margin-left:300px;
 `;
 
 export const H1 = styled.p`
@@ -54,6 +55,8 @@ export const BigImage = styled.img`
 
 export const SmallImage = styled.img`
     position: absolute;
+    margin-left: 150px;
+    margin-top: 40px;
     top:200px;
     left: 1000px;
     max-width: 40px;

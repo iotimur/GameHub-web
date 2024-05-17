@@ -9,10 +9,13 @@ export const Delete1 = styled.p`
     position: absolute;
     right: 250px; /* Правый отступ */
     top: 1500px; /* Верхний отступ */
+    margin-top: 250px;
+    margin-right: 100px;
+    
 `;
 
 export const Oval1 = styled.div` 
-    width: 260px;
+    width: 300px;
     height: 60px;
     border-radius: 20px;
     background-color: #B0C15C;
@@ -23,12 +26,12 @@ export const Oval1 = styled.div`
     color: black; 
     font-size: 2.8vh; 
     margin-left: auto;
-    margin-right: 150px;
+    margin-right: 400px;
     margin-bottom:20px;
 `;
 
 export const Oval2 = styled.div` 
-    width: 260px;
+    width: 300px;
     height: 60px;
     border-radius: 20px;
     background-color: #B0C15C;
@@ -38,9 +41,10 @@ export const Oval2 = styled.div`
     font-weight: bold;
     color: black; 
     font-size: 2.8vh; 
-    margin-left: 750px;
+    margin-left: 850px;
     margin-right: auto;
     margin-top:-100px;
+    margin-bottom: 70px;
 `;
 
 
@@ -70,6 +74,7 @@ export const Info = styled.div`
     display: grid;
     grid-template-columns: auto;
     font-size: 3vh;
+    margin-left: 200px;
 `;
 
 export const H4 = styled.p`
@@ -87,6 +92,7 @@ export const NDS = styled.p`
     font-style: italic;
     margin-left:200px;
     margin-bottom:-1000px;
+    margin-left: 350px;
 `;
 
 
