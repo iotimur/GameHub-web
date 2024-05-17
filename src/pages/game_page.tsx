@@ -3,7 +3,7 @@ import React from 'react';
 
 import '../css/game_page.css';
 
-
+import { ErrorBoundary } from "../components/error-boundary";
 import  Header  from "../components/main/header/header";
 import { Footer } from '../components/footer/footer';
 import PriceBlock from '../components/game_page/price-block/price-block';
@@ -24,6 +24,7 @@ const comments = [
 const Game_page = () => {
   return (
     <div>       
+        <ErrorBoundary>
         <Header /> 
         <div className="main">
         <div className="header2">
@@ -42,7 +43,7 @@ const Game_page = () => {
         <SystemRequirements />
         <CommentsSection comments={comments}/>
         </div>
-
+        </ErrorBoundary>
         <Footer/>
     </div>
   );
