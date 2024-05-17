@@ -9,7 +9,8 @@ module.exports = {
   },
   /* use https://kc.admin.inno-js.ru/ to create config, navigations and features */
   navigations: {
-    'gamehub-web.main': '/gamehub-web'
+    'gamehub-web.main': '/gamehub-web',
+    "gamehub.categories": "/gamehub/categories"
   },
   features: {
     'gamehub-web': {
