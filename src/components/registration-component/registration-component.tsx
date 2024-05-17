@@ -5,7 +5,7 @@ const RegistrationComponent = () => {
     return (
         <RegistrStyled>
             <UpStyled>
-                <ButtonEntrStyled>Вход</ButtonEntrStyled>
+                <ButtonEntrStyled href="entrance">Вход</ButtonEntrStyled>
                 <RegStyled>Регистрация</RegStyled>
             </UpStyled>
             <HRStyled />

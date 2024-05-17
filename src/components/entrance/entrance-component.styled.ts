@@ -20,13 +20,13 @@ export const EntrStyled = styled.p`
     height: 48px;
 `;
 
-export const ButtonRegStyled = styled.button`
+export const ButtonRegStyled = styled.a`
     font-weight: 400;
     font-size: 25px;
     color: #080a21;
     background-color: transparent;
     border: none;
-    margin-left: 25px;
+    margin-left: 45px;
     cursor: pointer;
     display: inline;
     width: 180px;

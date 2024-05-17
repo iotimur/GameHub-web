@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   OuterMain,
   NavMain,
@@ -15,16 +16,16 @@ const Header = () => {
       <StyledHeader>
         <OuterMain>
           <NavMain>
-            <LabelMain>GameHub</LabelMain>
+              <LabelMain href="/gamehub">GameHub</LabelMain>
             <ul>
               <LiStyled>
-                <StyledLink href="categories">Категории</StyledLink>
+                <StyledLink href="/gamehub/categories">Категории</StyledLink>
               </LiStyled>
               <LiStyled>
-                <RestLinkStyled href="#">Войти</RestLinkStyled>
+                <RestLinkStyled href="/gamehub/entrance">Войти</RestLinkStyled>
               </LiStyled>
               <LiStyled>
-                <RestLinkStyled href="basket.html">Корзина</RestLinkStyled>
+                <RestLinkStyled href="/gamehub/shopping-cart">Корзина</RestLinkStyled>
               </LiStyled>
             </ul>
           </NavMain>

@@ -7,6 +7,7 @@ import Game_page from "./pages/game_page";
 import Personal_account from "./pages/personal-account";
 import Shopping_cart from "./pages/shopping_cart";
 import Entrance from "./pages/entrance";
+import Registration from "./pages/registration";
 
 export const PageRoutes = () => (
     <Routes>
@@ -15,6 +16,7 @@ export const PageRoutes = () => (
         <Route path="/gamehub/game-page" element={<Game_page/>}/>
         <Route path="/gamehub/personal-account" element={<Personal_account/>}/>
         <Route path="/gamehub/entrance" element={<Entrance/>}/>
+        <Route path="/gamehub/registration" element={<Registration/>}/>
         <Route path="/gamehub/shopping-cart" element={<Shopping_cart/>}/>
 
         <Route path="*" element={<h1>Page not found</h1>}/>

@@ -11,12 +11,14 @@ export const NavMain = styled.nav`
   width: 100%;
 `;
 
-export const LabelMain = styled.label`
+export const LabelMain = styled.a`
   color: white;
   font-size: 35px;
   line-height: 80px;
   margin: 0 50px;
   font-weight: bold;
+  border-radius: 10px;
+  padding: 7px 0px;
 `;
 
 export const LiStyled = styled.li`

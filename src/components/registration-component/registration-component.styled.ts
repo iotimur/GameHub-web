@@ -8,7 +8,7 @@ export const RegistrStyled = styled.div`
     margin: 200px auto;
 `;
 
-export const ButtonEntrStyled = styled.button`
+export const ButtonEntrStyled = styled.a`
     font-weight: 400;
     font-size: 25px;
     color: #080a21;
@@ -32,7 +32,7 @@ export const RegStyled = styled.p`
     color: #080a21;
     background-color: transparent;
     border: none;
-    margin-left: 15px;
+    margin-left: 35px;
     display: inline;
     width: 200px;
     height: 48px;
