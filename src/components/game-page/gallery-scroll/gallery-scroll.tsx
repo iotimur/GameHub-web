@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { GalleryContainer, GalleryWrapper, ScrollButton, ScreenshotImage } from './gallery-scroll.styled';
-import { screen1, screen2, screen3, screen4, screen5, screen6, screen7 } from './';
+import { screen1, screen2, screen3, screen4, screen5, screen6, screen7 } from '.';
 
 const screenshots = [screen1, screen2, screen3, screen4, screen5, screen6, screen7];
 

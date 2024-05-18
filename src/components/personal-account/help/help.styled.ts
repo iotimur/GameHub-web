@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const BlockHelpStyled = styled.div`
     background: #18396c;
     margin: 60px 35px;
+    color: #fff;
 `;
 
 export const LinksStyled = styled.div`

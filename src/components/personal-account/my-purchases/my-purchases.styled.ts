@@ -4,6 +4,7 @@ export const BlockPurchasesStyled = styled.div`
     background: #18396c;
     margin: 60px 35px;
     padding-bottom: 35px;
+    color: #fff;
 `;
 
 export const ShopsStyled = styled.div`  
@@ -43,6 +44,10 @@ export const ImageStyled = styled.img`
     margin-top: 35px;
     border-radius: 20px;
     margin-bottom: 35px;
+    @media screen and (max-width: 768px) {
+        margin-right: 100px;
+        margin-left: 20px;
+    }
 `;
 
 export const TextGameStyled = styled.p`  
@@ -58,6 +63,9 @@ export const TextBlockStyled = styled.div`
     flex-direction: row;
     align-items: flex-start;
     vertical-align: middle;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `;
 
 export const DFlexStyled = styled.div`  

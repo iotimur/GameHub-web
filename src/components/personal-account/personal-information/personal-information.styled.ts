@@ -11,6 +11,10 @@ export const FormsStyled = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 30px 40px;
+    @media screen and (max-width: 998px) {
+        display:block;
+        margin: 0 auto;
+    }
 `;
 
 export const IzmStyled = styled.button`  
@@ -29,8 +33,7 @@ export const IzmStyled = styled.button`
     &:hover {
         background: #9f7cd0;
         transition: 0.5s;
-    }
-    
+    }    
 `;
 
 export const TextStyled = styled.p`  
@@ -39,6 +42,7 @@ export const TextStyled = styled.p`
     padding-top: 20px;
     font-weight: 500;
     font-size: 25px;
+    color: #fff;
 `;
 
 export const BlockStyled = styled.div`  
@@ -75,4 +79,7 @@ export const FormsInFormStyled = styled.div`
     border: none;
     max-width: 100%;
     height: auto;
+    @media screen and (max-width: 998px) {
+        margin: auto;
+    }
 `;

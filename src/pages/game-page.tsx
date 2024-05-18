@@ -2,16 +2,16 @@ import React from 'react';
 import { ErrorBoundary } from "../components/error-boundary";
 import Header from "../components/main/header/header";
 import { Footer } from '../components/footer/footer';
-import PriceBlock from '../components/game_page/price-block/price-block';
-import GameInfo from '../components/game_page/game-info/game-info';
-import Trailer from '../components/game_page/trailer/trailer';
-import Gallery from '../components/game_page/gallery-scroll/gallery-scroll';
-import { AboutGame } from '../components/game_page/about-game/about-game';
-import RatingBlock from '../components/game_page/rating-block/rating-block';
-import SystemRequirements from '../components/game_page/system-requirements/system-requirements';
-import CommentsSection from '../components/game_page/comments-section/comment-section';
+import PriceBlock from '../components/game-page/price-block/price-block';
+import GameInfo from '../components/game-page/game-info/game-info';
+import Trailer from '../components/game-page/trailer/trailer';
+import Gallery from '../components/game-page/gallery-scroll/gallery-scroll';
+import { AboutGame } from '../components/game-page/about-game/about-game';
+import RatingBlock from '../components/game-page/rating-block/rating-block';
+import SystemRequirements from '../components/game-page/system-requirements/system-requirements';
+import CommentsSection from '../components/game-page/comments-section/comment-section';
 
-import * as Styled from '../components/game_page/game-page.styled';
+import * as Styled from '../components/game-page/game-page.styled';
 
 const comments = [
   { username: 'Пользователь1', text: 'Текст комментария 1' },
