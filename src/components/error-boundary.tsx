@@ -1,29 +1,21 @@
-import React, { ReactNode } from 'react';
+import React from 'react'
 
-interface ErrorBoundaryProps {
-  children: ReactNode;
-}
-
-interface ErrorBoundaryState {
-  error: boolean;
-}
-
-export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  state: ErrorBoundaryState = {
+export class ErrorBoundary extends React.Component<any, any> {
+  state = {
     error: false
-  };
+  }
 
   static getDerivedStateFromError() {
     return {
       error: true
-    };
+    }
   }
 
   render() {
     if (this.state.error) {
-      return <h1>Something went wrong.</h1>;
+      return <h1>Something went wrong.</h1>
     }
 
-    return this.props.children;
+    return this.props.children
   }
 }
