@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
     windows,
@@ -10,7 +10,23 @@ import {
     leaders_game6
 } from '../../../../assets/images'
 import { TitleRectangle, TitleCategory, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, FreePrice, NewPrice, OldPrice } from './leaders.styled';
-const Leaders = () => {
+const Leaders = ({ sortOption }) => {
+    const [games, setGames] = useState([
+        { id: 1, title: 'Elden Ring', price: 990, old_price: 1100, image: leaders_game2, os: windows },
+        { id: 2, title: 'Counter-Strike 2', price: 279, image: leaders_game1, os: windows },
+        { id: 3, title: 'PUBG: BATTLEGROUNDS', price: 199, image: leaders_game3, os: windows },
+    ]);
+
+    useEffect(() => {
+        const sortedGames = [...games];
+        if (sortOption === 'по цене max') {
+            sortedGames.sort((a, b) => b.price - a.price);
+        } else if (sortOption === 'по цене min') {
+            sortedGames.sort((a, b) => a.price - b.price);
+        }
+        setGames(sortedGames);
+    }, [sortOption, games]);
+
     const [showCard, setShowCard] = useState(false);
     const handleShowCard = () => {
         setShowCard(!showCard);
@@ -24,32 +40,20 @@ const Leaders = () => {
                 <TitleCategory>Лидеры продаж</TitleCategory>
             </TitleRectangle>
             <BigSeparator />
-            <Link to="/gamehub/game-page">
-                <Card>
-                    <CardImg src={leaders_game2} alt="Обложка игры Elden Ring" />
-                    <TitleGame>Elden Ring</TitleGame>
-                    <Windows src={windows} />
-                    <NewPrice>990 руб.</NewPrice>
-                    <OldPrice>1100 руб.</OldPrice>
-                </Card>
-            </Link>
-            <Separator />
-            <Link to="/gamehub/game-page">
-                <Card>
-                    <CardImg src={leaders_game1} alt="Обложка игры Counter-Strike 2" />
-                    <TitleGame>Counter-Strike 2</TitleGame>
-                    <Windows src={windows} />
-                    <FreePrice>Бесплатно</FreePrice>
-                </Card>
-            </Link>
-            <Separator />
-
-            <Card>
-                <CardImg src={leaders_game3} alt="Обложка игры PUBG: BATTLEGROUNDS" />
-                <TitleGame>PUBG: BATTLEGROUNDS</TitleGame>
-                <Windows src={windows} />
-                <FreePrice>Бесплатно</FreePrice>
-            </Card>
+            {games.map((game) => (
+                <div key={game.id}>
+                    <Link to={game.id === 1 ? "/gamehub/game-page" : "#"}>
+                        <Card>
+                            <CardImg src={game.image} alt={`Обложка игры ${game.title}`} />
+                            <TitleGame>{game.title}</TitleGame>
+                            <Windows src={game.os} />
+                            <NewPrice>{game.price} руб.</NewPrice>
+                            {game.old_price && <OldPrice>{game.old_price} руб.</OldPrice>}
+                        </Card>
+                    </Link>
+                    <Separator />
+                </div>
+            ))}
             <Separator />
             {!showCard && (
                 <BtnMoreStyled onClick={handleShowCard}>Показать больше</BtnMoreStyled>
@@ -79,7 +83,6 @@ const Leaders = () => {
                         <NewPrice>600 руб.</NewPrice>
                         <OldPrice>900 руб.</OldPrice>
                     </Card>
-                    {/* <BtnMoreStyled onClick={handleShowCard}>Скрыть</BtnMoreStyled> */}
                 </>
             )}
         </div>

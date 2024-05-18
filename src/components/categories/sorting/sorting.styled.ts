@@ -57,13 +57,15 @@ export const Dropdown = styled.div`
   
 `;
 
-export const DropdownItem = styled.div`
+export const DropdownItem = styled.button`
   padding: 8px 12px;
   cursor: pointer;
   width: 148px;
   border-radius: 10px;
   font-size: 16px;
   color: #fff;
+  background-color: rgba(24, 57, 108,0.5);
+  border: none;
   &:hover {
     background-color: #2E5A99;
     transition: 0.5s;

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { 
-    SortingString, 
+import {
+    SortingString,
     Sorting,
     SortingButton,
     DropdownItem,
-    Dropdown 
+    Dropdown
 } from './sorting.styled';
 
-const FilterSorting = () => {
+const FilterSorting = ({ onSort }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
+
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
@@ -17,8 +18,8 @@ const FilterSorting = () => {
     const handleOptionSelect = (option) => {
         setSelectedOption(option);
         setIsDropdownOpen(false);
+        onSort(option);
     };
-
     return (
         <div>
             <SortingString>Сортировать по</SortingString>
