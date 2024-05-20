@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
 
 export const ProductСardNews = styled.div`
-  flex: 0 0 44%;
-  min-width: 12em; /* Добавляем min-width */
+  flex: 1 0 calc((100% - 120px) / 2);
+  min-width: 20em; /* Добавляем min-width */
   background-color: #18396c;
   font-style: italic;
   margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
   height: 20em;
   border-radius: 0.5em;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 2);

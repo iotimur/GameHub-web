@@ -13,14 +13,3 @@ export const CardsMain = styled.div`
 align-items: center; */
   align-items: center;
 `;
-
-export const GalleryMain = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  overflow-x: scroll;
-  scroll-behavior: smooth; /* Делает скролл плавным */
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;

@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 
 export const ProductCardNewsResponsive = styled.div`
-  flex: 0 0 21%;
+  flex: 1 0 calc((100% - 60px) / 4);
+  /* flex: 0 0 21%; */
   width: 12em; /* Заменяем max-width на width */
   min-width: 12em; /* Добавляем min-width */
+
   background-color: #18396c;
   padding: 5px 5px;
   margin-right: 20px;
@@ -12,6 +14,7 @@ export const ProductCardNewsResponsive = styled.div`
   font-style: italic;
   border-radius: 0.5em;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 2);
+  /* box-shadow: 0 3px 3px #d2c1ec; */
 
   &:hover {
     background-color: #1450a5;
@@ -27,15 +30,16 @@ export const CategoriesСardImg = styled.img`
 `;
 
 export const TextCardCategories = styled.div`
-  width: 100%; /* Устанавливаем ширину изображения в 100% от родительского контейнера */
-  height: 20%;
-  /* padding-top: 5px; */
-  padding-left: 10px;
-  color: #fff;
   font-size: 1.2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  width: 100%; /* Устанавливаем ширину изображения в 100% от родительского контейнера */
+  height: 10%;
+  /* padding-top: 5px; */
+  padding-left: 10px;
+  color: #fff;
 `;
 
 const mediaQuery = "@media screen and (max-width: 576px)";
