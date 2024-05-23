@@ -1,5 +1,5 @@
 import React from 'react';
-import { mortal, windows, ved, fifa } from '../../../../assets/images';
+import { mortal, windows, ved, fifa } from './index';
 import {
     Oval, Container_my, H1, H2, H3, SmallImage, BigImage, Price, Delete, Hr
 } from '../games-in-cart/games.styled';
@@ -50,3 +50,6 @@ const Games = () => {
 };
 
 export default Games;
+
+
+
