@@ -23,6 +23,6 @@ module.exports = {
     },
   },
   config: {
-    key: 'value'
+    "gamehub.api": "/api"
   }
 }
