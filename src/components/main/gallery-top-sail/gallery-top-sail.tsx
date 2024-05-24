@@ -16,9 +16,9 @@ import {
   img_top_6,
   img_top_7,
   img_top_8,
-} from "../../../../assets/Images_main";
+} from "../../../assets/Images_main";
 
-import { arrow_left, arrow_right } from "../../../../assets/Images_main";
+import { arrow_left, arrow_right } from "../../../assets/Images_main";
 
 // Компонент галереи
 export const GalleryTopSail = () => {
