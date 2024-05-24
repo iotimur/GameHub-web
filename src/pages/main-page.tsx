@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/main/header/header";
 import MainContent from "../components/main/main-container/main";
+import { Footer } from "../components/footer/footer";
 
 import "../css/main_css/main.css";
 import "../css/header/menu.css";
@@ -13,6 +14,7 @@ const MainPage = () => {
     <div>
       <Header />
       <MainContent />
+      <Footer />
     </div>
   );
 };

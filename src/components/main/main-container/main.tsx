@@ -34,7 +34,6 @@ const MainContent = () => {
           <GalleryNews></GalleryNews>
         </CardsMain>
       </main>
-      <script src="./move-arrows.js"></script>
     </ContainerMain>
   );
 };

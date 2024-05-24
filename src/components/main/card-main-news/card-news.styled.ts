@@ -7,9 +7,9 @@ export const ProductСardNews = styled.div`
   font-style: italic;
   margin-right: 20px;
   margin-top: 10px;
-  margin-bottom: 5px;
   height: 20em;
   border-radius: 0.5em;
+  margin-bottom: 5px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 2);
 
   &:hover {
