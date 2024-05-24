@@ -4,7 +4,7 @@ export { default as img_top_3 } from "./Forza.jpg";
 export { default as img_top_4 } from "./atomic.jpg";
 export { default as img_top_5 } from "./CS2t.jpg";
 export { default as img_top_6 } from "./gta5.jpg";
-export { default as img_top_7 } from "./elden ring.jpg";
+export { default as img_top_7 } from "./assasins_creed.jpg";
 export { default as img_top_8 } from "./spider man.jpg";
 export { default as img_categories_1 } from "./гонки.jpg";
 export { default as img_categories_2 } from "./глубокий сюжет.jpg";
