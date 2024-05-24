@@ -32,11 +32,3 @@ export const TextCardNews = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
-const mediaQuery = "@media screen and (max-width: 576px)";
-
-const ProductCardNewsResponsive = styled(ProductСardNews)`
-  ${mediaQuery} {
-    font-size: 0.9em;
-  }
-`;

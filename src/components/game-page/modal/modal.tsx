@@ -1,6 +1,6 @@
 // Modal.tsx
 import React from 'react';
-import { ModalOverlay, ModalContent } from './modal.styled';
+import { ModalOverlay, ModalContent, ModalImage } from './modal.styled';
 
 
 
@@ -10,13 +10,14 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ onClose, imageUrl }) => {
-  return (
-    <ModalOverlay onClick={onClose}>
-      <ModalContent>
-        <img src={imageUrl} alt="Fullscreen" />
-      </ModalContent>
-    </ModalOverlay>
-  );
-};
+    return (
+      <ModalOverlay onClick={onClose}>
+        <ModalContent>
+          <ModalImage src={imageUrl} alt="Fullscreen" />
+        </ModalContent>
+      </ModalOverlay>
+    );
+  };
+  
 
 export default Modal;

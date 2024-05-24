@@ -14,6 +14,13 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
   background-color: white;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 0px;
+  border-radius: 0px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ModalImage = styled.img`
+  max-width: 920px; /* Устанавливаем максимальную ширину изображения равной ширине контейнера */
+  max-height: 600px; /* Устанавливаем максимальную высоту изображения равной высоте контейнера */
 `;
