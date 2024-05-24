@@ -1,26 +1,17 @@
 import React from 'react';
-import { Delete1, Total, TotalSpan, Info, H4, NDS, Oval1, Oval2, Price1, Hr } from '../information/information.styled';
+import {  Info, Title4, NDS, Oval1, Oval2, Hr } from '../information/information.styled';
 
 const Information = () => {
     return (
         <>
-            <Total>
-                <TotalSpan>Промежуточный итог:</TotalSpan>
-                <Price1>900 руб.</Price1>
-            </Total>
             <Hr/>
             <NDS>НДС: Все цены указаны с учетом НДС (где применимо)</NDS>
-            
             <Info>
-                <H4>Способ получения</H4>
-                <H4>Способ оплаты</H4>
+            <Title4><span>Способ получения</span></Title4>
+                <Title4><span>Способ оплаты</span></Title4>
             </Info>  
             <Oval1>Купить для себя</Oval1>
-            <Oval2>Купить в подарок</Oval2>                   
-            
-            <Delete1>
-                Удалить все товары
-            </Delete1>           
+            <Oval2>Купить в подарок</Oval2>                       
            
         </>
     );

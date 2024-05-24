@@ -36,7 +36,10 @@ export const Oval1 = styled.div`
     margin-left: auto;
     margin-right: 250px;
     margin-bottom: 20px;
-
+    &:hover {
+        background-color: #1450a5;
+        color: #fff;
+      }
     @media screen and (max-width: 1200px) {
         margin-right: 300px;
         margin-top: 10px;
@@ -62,7 +65,10 @@ export const Oval2 = styled.div`
     margin-right: auto;
     margin-top: -80px;
     margin-bottom: 70px;
-
+    &:hover {
+        background-color: #1450a5;
+        color: #fff;
+      }
     @media screen and (max-width: 1200px) {
         margin-top:10px;
         margin-left: 190px;
@@ -73,49 +79,7 @@ export const Oval2 = styled.div`
     }
 `;
 
-export const Price1 = styled.div`
-    font-weight: bold;
-    font-size: 3vh;
-    color: white;
-    margin-top: 5px;
-    margin-right: 250px;
 
-    @media screen and (max-width: 1200px) {
-        margin-top:5px;
-        margin-right: 200px;
-    }
-    @media screen and (max-width: 800px) {
-        margin-right: 150px;
-        font-size: 2.5vh;
-    }
-`;
-
-export const Total = styled.div`
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 150px;
-    font-weight: bold;
-    font-size: 30px;
-
-    @media screen and (max-width: 1200px) {
-        font-size: 26px;
-    }
-    @media screen and (max-width: 800px) {
-        font-size: 22px;
-    }
-`;
-
-export const TotalSpan = styled.span`
-    margin-left: 550px;
-
-    @media screen and (max-width: 1200px) {
-        margin-left: 200px;
-    }
-    @media screen and (max-width: 800px) {
-        margin-left: 200px;
-    }
-`;
 
 export const Info = styled.div`
     margin-top: 10px;
@@ -132,9 +96,10 @@ export const Info = styled.div`
         margin-left: 100px;
         font-size: 2vh;
     }
+   
 `;
 
-export const H4 = styled.p`
+export const Title4 = styled.p`
     margin-top: 30px;
     margin-left: 50px;
     color: white;
@@ -149,7 +114,12 @@ export const H4 = styled.p`
         margin-left: 100px;
         font-size: 2.5vh;
     }
+    &:hover {
+        background-color: #1450a5;
+        color: #fff;
+      }
 `;
+
 
 export const NDS = styled.p`
     display: inline;

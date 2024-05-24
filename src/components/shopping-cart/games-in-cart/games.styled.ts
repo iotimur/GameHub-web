@@ -27,6 +27,7 @@ export const Oval = styled.div`
 
 `;
 
+
 export const Container_my = styled.div`
     display: flex;
     align-items: flex-start;
@@ -124,9 +125,13 @@ export const SmallImage = styled.img`
 
 
 export const Price = styled.p`
-    font-weight: bold;
-    font-size: 3vh;
-    color: white;
+
+    font-family: var(--font-family);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 32px;
+    color: #f39a46;
+    
     margin: -10px 0 0 700px; /* Отрицательное значение для margin-left */
     @media screen and (max-width: 1920px) {
         margin-left: 600px;
@@ -147,6 +152,7 @@ export const Price = styled.p`
 
 
 export const Delete = styled.p`
+    cursor: pointer;
     margin: 130px auto 30px 700px;
     font-size: 2vh;
     font-weight: bold;
@@ -163,4 +169,51 @@ export const Hr = styled.hr`
     border: 0;
     border-top: 1px solid #ccc;
     margin: 20px 0;
+`;
+export const Price1 = styled.div`
+    font-weight: bold;
+    font-size: 3vh;
+    color: white;
+    margin-top: 5px;
+    margin-right: 270px;    
+    font-family: var(--font-family);
+    font-style: italic;
+    font-weight: 500;    
+    color: #f39a46;   
+
+    @media screen and (max-width: 1200px) {
+        margin-top:5px;
+        margin-right: 200px;
+    }
+    @media screen and (max-width: 800px) {
+        margin-right: 150px;
+        font-size: 2.5vh;
+    }
+`;
+
+export const Total = styled.div`
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
+    font-weight: bold;
+    font-size: 30px;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 26px;
+    }
+    @media screen and (max-width: 800px) {
+        font-size: 22px;
+    }
+`;
+
+export const TotalSpan = styled.span`
+    margin-left: 550px;
+
+    @media screen and (max-width: 1200px) {
+        margin-left: 200px;
+    }
+    @media screen and (max-width: 800px) {
+        margin-left: 200px;
+    }
 `;
