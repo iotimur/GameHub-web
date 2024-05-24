@@ -7,5 +7,8 @@ export const TitleMain = styled.div`
   height: max-content;
   margin-left: 50px;
   margin-top: 50px;
-  padding: 10px 15px;
+  padding: 1px 15px;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;

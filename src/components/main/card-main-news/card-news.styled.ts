@@ -11,6 +11,9 @@ export const ProductСardNews = styled.div`
   border-radius: 0.5em;
   margin-bottom: 5px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 2);
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 
   &:hover {
     background-color: #1450a5;
@@ -22,6 +25,9 @@ export const NewsСardImg = styled.img`
   width: 100%;
   height: 70%; /* Устанавливаем высоту равной ширине */
   border-radius: 0.52em 0.5em 0 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;
 
 export const TextCardNews = styled.div`
@@ -31,4 +37,7 @@ export const TextCardNews = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;

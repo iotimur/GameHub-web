@@ -15,6 +15,9 @@ export const ProductCardNewsResponsive = styled.div`
   border-radius: 0.5em;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 2);
   /* box-shadow: 0 3px 3px #d2c1ec; */
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 
   &:hover {
     background-color: #1450a5;
@@ -25,6 +28,9 @@ export const ProductCardNewsResponsive = styled.div`
 export const CategoriesСardImg = styled.img`
   width: 100%;
   height: 90%; /* Устанавливаем высоту равной ширине */
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 
   aspect-ratio: 1; /* Устанавливаем соотношение сторон 1:1 */
 `;
@@ -35,6 +41,9 @@ export const TextCardCategories = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
   width: 100%; /* Устанавливаем ширину изображения в 100% от родительского контейнера */
   height: 10%;
   /* padding-top: 5px; */

@@ -1,8 +1,22 @@
 # GameHub-web
 
+### Online store for computer games
+
 ![Logo Image](gamehub.jpeg)
 
-### Online store for computer games
+## Установка и запуск проекта
+
+### Устанавливаем зависимости
+
+```shell
+npm install
+```
+
+### Запуск
+
+```shell
+npm start
+```
 
 - **Main (Мухаметов Тимур)**
 

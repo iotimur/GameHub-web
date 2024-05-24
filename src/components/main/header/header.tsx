@@ -4,7 +4,6 @@ import {
   NavMain,
   LabelMain,
   LiStyled,
-  RestLinkStyled,
   StyledLink,
   StyledHeader,
 } from "./header.styled";
@@ -21,12 +20,10 @@ const Header = () => {
                 <StyledLink href="/gamehub/categories">Категории</StyledLink>
               </LiStyled>
               <LiStyled>
-                <RestLinkStyled href="/gamehub/entrance">Войти</RestLinkStyled>
+                <StyledLink href="/gamehub/entrance">Войти</StyledLink>
               </LiStyled>
               <LiStyled>
-                <RestLinkStyled href="/gamehub/shopping-cart">
-                  Корзина
-                </RestLinkStyled>
+                <StyledLink href="/gamehub/shopping-cart">Корзина</StyledLink>
               </LiStyled>
             </ul>
           </NavMain>

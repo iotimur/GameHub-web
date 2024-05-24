@@ -7,10 +7,25 @@ export const ContainerMain = styled.div`
   margin-bottom: 100px;
 `;
 
+export const CommonMain = styled.main`
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+`;
+
 export const CardsMain = styled.div`
   display: flex;
   flex-flow: row nowrap;
   /* justify-content: center;
 align-items: center; */
   align-items: center;
+`;
+
+export const PageContainer = styled.div`
+  background: #102d59;
 `;

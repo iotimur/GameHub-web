@@ -11,6 +11,9 @@ export const ProductCardTopSail = styled.div`
   font-style: italic;
   border-radius: 0.5em;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 2);
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 
   &:hover {
     background-color: #1450a5;
@@ -20,11 +23,14 @@ export const ProductCardTopSail = styled.div`
 
 export const TopSailImg = styled.img`
   vertical-align: middle;
-  width: 100%; /* Устанавливаем ширину изображения в 100% от родительского контейнера */
-  height: 80%; /* Позволяет изображению сохранять пропорции */
-  max-width: 100%; /* Устанавливаем максимальную ширину изображения в 100% от родительского контейнера */
+  width: 100%;
+  height: 80%;
+  max-width: 100%;
   max-height: 100%;
   border-radius: 0.52em 0.5em 0 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;
 
 export const TopSailTextCard = styled.div`
@@ -32,11 +38,13 @@ export const TopSailTextCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Устанавливаем ширину изображения в 100% от родительского контейнера */
+  width: 100%;
   height: 20%;
-  /* padding-top: 5px; */
   padding-left: 10px;
   color: #fff;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;
 
 export const TopSailTButton = styled.div`
@@ -49,6 +57,9 @@ export const TopSailTButton = styled.div`
   height: 100%;
   width: 25%;
   cursor: pointer;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;
 
 export const ButtonStyledTopSail = styled.button`
@@ -63,6 +74,9 @@ export const ButtonStyledTopSail = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 
   &:hover {
     color: #000;

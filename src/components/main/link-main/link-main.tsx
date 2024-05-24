@@ -4,7 +4,7 @@ import {
   apple_touch_icon,
   favicon_32x32,
   favicon_16x16,
-} from "../../../../assets/Images_main/favicon_io";
+} from "../../../assets/Images_main/favicon_io";
 
 const LinkMain = () => {
   return (

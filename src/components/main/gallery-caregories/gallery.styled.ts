@@ -5,6 +5,10 @@ export const GalleryContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;
 
 export const GalleryMain = styled.div`
@@ -12,6 +16,10 @@ export const GalleryMain = styled.div`
   transition: transform 1s ease;
   overflow: hidden;
   width: 100%; // Устанавливаем ширину для ограничения области видимости
+
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;
 
 interface ArrowButtonProps {
@@ -37,6 +45,10 @@ export const ArrowLeftMain = styled.button<ArrowButtonProps>`
   &:hover {
     filter: brightness(1.2);
   }
+
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 `;
 
 export const ArrowRightMain = styled.button<ArrowButtonProps>`
