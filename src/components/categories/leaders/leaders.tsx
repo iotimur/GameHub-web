@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {
-    windows,
-    leaders_game1,
-    leaders_game2,
-    leaders_game3,
-    leaders_game4,
-    leaders_game5,
-    leaders_game6
-} from '../../../../assets/images'
-import { TitleRectangle, TitleCategory, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, FreePrice, NewPrice, OldPrice } from './leaders.styled';
+import { windows,leaders_game1,leaders_game2,leaders_game3,leaders_game4,leaders_game5,leaders_game6} from '.'
+import { TitleRectangle, TitleCategory, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, NewPrice, OldPrice } from './leaders.styled';
 const Leaders = ({ sortOption }) => {
     const [games, setGames] = useState([
         { id: 1, title: 'Elden Ring', price: 990, old_price: 1100, image: leaders_game2, os: windows },
@@ -54,7 +46,6 @@ const Leaders = ({ sortOption }) => {
                     <Separator />
                 </div>
             ))}
-            <Separator />
             {!showCard && (
                 <BtnMoreStyled onClick={handleShowCard}>Показать больше</BtnMoreStyled>
             )}

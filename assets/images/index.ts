@@ -7,20 +7,6 @@
 // export { default as screen7 } from './Elden-Ring-Screenshot-017.jpg';
 // export { default as logo } from './logo_mic.png';
 
-export { default as switch_ } from './стрелка.png';
-export { default as leaders_game1 } from './image 4.jpg';
-export { default as leaders_game2 } from './image 5.jpg';
-export { default as leaders_game3 } from './image 6.jpg';
-export { default as leaders_game4 } from './witcher.jpg';
-export { default as leaders_game5 } from './atomic heart.jpg';
-export { default as leaders_game6 } from './crab game.jpg';
-export { default as new_game1 } from './alpha league.jpg';
-export { default as new_game2 } from './sons of the forests.jpg';
-export { default as new_game3 } from './pacific drive.jpg';
-export { default as sales_game1 } from './How to Survive.jpg';
-export { default as sales_game2 } from './Red Solstice 2 Survivors.jpg';
-export { default as windows } from './windows.png';
-
 export {default as mortal} from './mortal.png';
 export {default as cmc} from './cmc.jpg';
 export {default as f1} from './f1.png';

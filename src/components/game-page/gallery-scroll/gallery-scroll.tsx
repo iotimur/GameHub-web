@@ -1,12 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { GalleryContainer, GalleryWrapper, ScrollButton, ScreenshotImage } from './gallery-scroll.styled';
 import { screen1, screen2, screen3, screen4, screen5, screen6, screen7 } from '.';
-import Modal from '../modal/modal'; 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Modal from '../modal/modal';
+
+
 const screenshots = [screen1, screen2, screen3, screen4, screen5, screen6, screen7];
 
 const Gallery = ({ openModal })=> {
     const [index, setIndex] = useState(0);
-    const [selectedImage, setSelectedImage] = useState(null);
+
     const galleryRef = useRef<HTMLDivElement>(null);
 
     const handleNextClick = () => {
@@ -17,14 +20,7 @@ const Gallery = ({ openModal })=> {
         setIndex(prevIndex => (prevIndex - 3 + screenshots.length) % screenshots.length);
     };
 
-    const openImage = (src) => {
-        console.log('верго')
-        setSelectedImage(src);
-    };
 
-    const closeImage = () => {
-        setSelectedImage(null);
-    };
     // Функция, которая возвращает отображаемые элементы в галерее, включая круговую навигацию
     const getDisplayedScreenshots = () => {
         const displayedScreenshots = [];
