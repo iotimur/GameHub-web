@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import {
-  windows,
-  new_game1,
-  new_game2,
-  new_game3
-} from '../../../../assets/images'
+import { windows, new_game1, new_game2, new_game3 } from '.'
 import {
   TitleRectangle,
   TitleCategory,
@@ -16,7 +11,6 @@ import {
   TitleGame,
   CardImg,
   Windows,
-  FreePrice,
   NewPrice,
   OldPrice
 } from '../leaders/leaders.styled';
@@ -55,7 +49,6 @@ const NewGames = ({ sortOption }) => {
           <Separator />
         </div>
       ))}
-      <Separator />
       <BtnMoreStyled>
         Показать больше
       </BtnMoreStyled>
