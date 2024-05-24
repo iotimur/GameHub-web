@@ -1,5 +1,5 @@
 import { getNavigationsValue, getConfigValue } from '@ijl/cli';
-import { generatePath } from 'react-router-dom';
+
 
 const baseUrl = getNavigationsValue('gamehub.main');
 
