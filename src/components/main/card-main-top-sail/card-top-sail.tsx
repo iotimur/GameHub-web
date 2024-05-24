@@ -12,7 +12,9 @@ import {
 export const CardTopSail = (props) => {
   return (
     <ProductCardTopSail>
-      <TopSailImg src={props.img} alt="Card Product" />
+      <Link to="/gamehub/game-page">
+        <TopSailImg src={props.img} alt="Card Product" />
+      </Link>
       <TopSailTextCard>
         <span>{props.price}</span>
         <TopSailTButton>

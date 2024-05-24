@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   ProductСardCategories,
@@ -9,7 +10,9 @@ import {
 export const CardCategories = (props) => {
   return (
     <ProductСardCategories>
-      <CategoriesСardImg src={props.img} alt="Card Product" />
+      <Link to="/gamehub/categories">
+        <CategoriesСardImg src={props.img} alt="Card Product" />
+      </Link>
       <TextCardCategories>
         <span>{props.text}</span>
       </TextCardCategories>
