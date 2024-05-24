@@ -1,13 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { windows,leaders_game1,leaders_game2,leaders_game3,leaders_game4,leaders_game5,leaders_game6} from '.'
-import { TitleRectangle, TitleCategory, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, NewPrice, OldPrice } from './leaders.styled';
+import { windows, leaders_game1, leaders_game2, leaders_game3, leaders_game4, leaders_game5, leaders_game6 } from '.'
+import GameCard from '../card/card';
+import { Title } from '../title';
+import { ShowMoreBtn } from '../show-more-btn/show-more-btn.styled';
+
 const Leaders = ({ sortOption }) => {
     const [games, setGames] = useState([
         { id: 1, title: 'Elden Ring', price: 990, old_price: 1100, image: leaders_game2, os: windows },
         { id: 2, title: 'Counter-Strike 2', price: 279, image: leaders_game1, os: windows },
         { id: 3, title: 'PUBG: BATTLEGROUNDS', price: 199, image: leaders_game3, os: windows },
     ]);
+    const [games2] = useState([
+        { id: 4, title: 'The Witcher 3: Wild Hunt', price: 990, old_price: 1200, image: leaders_game4, os: windows },
+        { id: 5, title: 'Atomic Heart', price: 1200, old_price: 2500, image: leaders_game5, os: windows },
+        { id: 6, title: 'Crab Game', price: 600, old_price: 890, image: leaders_game6, os: windows },
+    ]);
+
+    const [showCard, setShowCard] = useState(false);
+    // const handleShowCard = () => {
+    //     setShowCard(!showCard);
+    // };
+
+    const handleShowMore = () => {
+        setShowCard(true);
+    };
 
     useEffect(() => {
         const sortedGames = [...games];
@@ -19,61 +36,26 @@ const Leaders = ({ sortOption }) => {
         setGames(sortedGames);
     }, [sortOption, games]);
 
-    const [showCard, setShowCard] = useState(false);
-    const handleShowCard = () => {
-        setShowCard(!showCard);
-    };
-
     return (
         <div>
-            <BigSeparator />
-            <BigSeparator />
-            <TitleRectangle>
-                <TitleCategory>Лидеры продаж</TitleCategory>
-            </TitleRectangle>
-            <BigSeparator />
+            <Title text="Лидеры продаж" />
             {games.map((game) => (
                 <div key={game.id}>
                     <Link to={game.id === 1 ? "/gamehub/game-page" : "#"}>
-                        <Card>
-                            <CardImg src={game.image} alt={`Обложка игры ${game.title}`} />
-                            <TitleGame>{game.title}</TitleGame>
-                            <Windows src={game.os} />
-                            <NewPrice>{game.price} руб.</NewPrice>
-                            {game.old_price && <OldPrice>{game.old_price} руб.</OldPrice>}
-                        </Card>
+                        <GameCard game={game} />
                     </Link>
-                    <Separator />
                 </div>
             ))}
             {!showCard && (
-                <BtnMoreStyled onClick={handleShowCard}>Показать больше</BtnMoreStyled>
+                <ShowMoreBtn onClick={handleShowMore}>Показать больше</ShowMoreBtn>
             )}
             {showCard && (
                 <>
-                    <Card>
-                        <CardImg src={leaders_game4} alt="Обложка игры The Witcher 3: Wild Hunt" />
-                        <TitleGame>The Witcher 3: Wild Hunt</TitleGame>
-                        <Windows src={windows} />
-                        <NewPrice>990 руб.</NewPrice>
-                        <OldPrice>1200 руб.</OldPrice>
-                    </Card>
-                    <Separator />
-                    <Card>
-                        <CardImg src={leaders_game5} alt="Обложка игры Atomic Heart" />
-                        <TitleGame>Atomic Heart</TitleGame>
-                        <Windows src={windows} />
-                        <NewPrice>1200 руб.</NewPrice>
-                        <OldPrice>2500 руб.</OldPrice>
-                    </Card>
-                    <Separator />
-                    <Card>
-                        <CardImg src={leaders_game6} alt="Обложка игры Crab Game" />
-                        <TitleGame>Crab Game</TitleGame>
-                        <Windows src={windows} />
-                        <NewPrice>600 руб.</NewPrice>
-                        <OldPrice>900 руб.</OldPrice>
-                    </Card>
+                    {games2.map((game) => (
+                        <div key={game.id}>
+                            <GameCard game={game} />
+                        </div>
+                    ))}
                 </>
             )}
         </div>

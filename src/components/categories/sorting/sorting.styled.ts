@@ -8,6 +8,7 @@ export const SortingString = styled.span`
   font-weight: 500;
   font-size: 20px;
   color: #fff;
+  margin-top:-45px;
   @media screen and (max-width: 1200px) {
       margin-left: 630px;
   }
@@ -30,6 +31,7 @@ export const SortingButton = styled.button`
   border: 1px solid #f39a46;
   justify-content: center;
   align-items: center;
+  margin-top:13px;
   @media screen and (max-width: 1200px) {
     margin-left: 800px;
 }
@@ -43,6 +45,7 @@ export const SortingButton = styled.button`
 
 export const Sorting = styled.span`
   color: rgb(255, 255, 255);
+  
 `;
 
 export const Dropdown = styled.div`
@@ -66,9 +69,9 @@ export const DropdownItem = styled.button`
   color: #fff;
   background-color: rgba(24, 57, 108,0.5);
   border: none;
+  
   &:hover {
     background-color: #2E5A99;
     transition: 0.5s;
-    // color: #000;
   }
 `;

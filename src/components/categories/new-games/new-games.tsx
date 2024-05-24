@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import { windows, new_game1, new_game2, new_game3 } from '.'
-import {
-  TitleRectangle,
-  TitleCategory,
-  Card,
-  BtnMoreStyled,
-  Separator,
-  BigSeparator,
-  TitleGame,
-  CardImg,
-  Windows,
-  NewPrice,
-  OldPrice
-} from '../leaders/leaders.styled';
+import GameCard from '../card/card';
+import { Title } from '../title';
+import { ShowMoreBtn } from '../show-more-btn/show-more-btn.styled';
+// import BtnMore from '../show-more-btn/show-more-btn';
 const NewGames = ({ sortOption }) => {
   const [games, setItems] = useState([
     { id: 4, title: 'Alpha League', price: 299, image: new_game1, os: windows },
@@ -31,29 +22,13 @@ const NewGames = ({ sortOption }) => {
   }, [sortOption, games]);
   return (
     <div>
-      <BigSeparator />
-      <BigSeparator />
-      <TitleRectangle>
-        <TitleCategory>Новинки</TitleCategory>
-      </TitleRectangle>
-      <BigSeparator />
+      <Title text="Новинки" />
       {games.map((game) => (
         <div key={game.id}>
-          <Card>
-            <CardImg src={game.image} alt={`Обложка игры ${game.title}`} />
-            <TitleGame>{game.title}</TitleGame>
-            <Windows src={game.os} />
-            <NewPrice>{game.price} руб.</NewPrice>
-            {game.old_price && <OldPrice>{game.old_price} руб.</OldPrice>}
-          </Card>
-          <Separator />
+          <GameCard game={game} />
         </div>
       ))}
-      <BtnMoreStyled>
-        Показать больше
-      </BtnMoreStyled>
-      <BigSeparator />
-      <BigSeparator />
+      <ShowMoreBtn>Показать больше</ShowMoreBtn>
     </div>
   );
 };

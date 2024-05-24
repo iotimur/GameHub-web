@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
+import { Title } from "../title";
 import { windows, new_game2, sales_game1, sales_game2 } from '.'
-import { TitleRectangle, TitleCategory, Card, BtnMoreStyled, Separator, BigSeparator, TitleGame, CardImg, Windows, NewPrice, OldPrice } from '../leaders/leaders.styled';
+import GameCard from '../card/card';
+import { ShowMoreBtn } from '../show-more-btn/show-more-btn.styled';
 
 const DiscountGames = ({ sortOption }) => {
   const [games, setGames] = useState([
@@ -22,29 +23,14 @@ const DiscountGames = ({ sortOption }) => {
 
   return (
     <div>
-      <BigSeparator />
-      <BigSeparator />
-      <TitleRectangle>
-        <TitleCategory>Скидки</TitleCategory>
-      </TitleRectangle>
-      <BigSeparator />
+      <Title text="Скидки" />
       {games.map((game) => (
         <div key={game.id}>
-          <Card>
-            <CardImg src={game.image} alt={`Обложка игры ${game.title}`} />
-            <TitleGame>{game.title}</TitleGame>
-            <Windows src={game.os} />
-            <NewPrice>{game.price} руб.</NewPrice>
-            {game.old_price && <OldPrice>{game.old_price} руб.</OldPrice>}
-          </Card>
-          <Separator />
+          <GameCard game={game} />
         </div>
       ))}
-      <BtnMoreStyled>
-        Показать больше
-      </BtnMoreStyled>
-      <BigSeparator />
-      <BigSeparator />
+      <ShowMoreBtn>Показать больше</ShowMoreBtn>
+      <div style={{ height: '20px'}}></div>
     </div>
   );
 };
