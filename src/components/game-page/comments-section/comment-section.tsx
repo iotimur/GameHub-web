@@ -1,28 +1,33 @@
-import React from 'react';
+// comment-section.tsx
+import React, { useState } from 'react';
 import { Comment } from './comment/comment';
-import { CommentsContainer, CommentsTitle, CommentBlock, ShowMoreButton } from './comment-section.styled';
-
-const comments = [
-    { username: 'Пользователь1', text: 'Текст комментария 1' },
-    { username: 'Пользователь2', text: 'Текст комментария 2' },
-    { username: 'Пользователь3', text: 'Текст комментария 3' },
-    { username: 'Пользователь4', text: 'Текст комментария 4' },
-];
+import { CommentsContainer, CommentsTitle, CommentBlock } from './comment-section.styled';
+import ShowMoreButton from './show-more-button/show-more-button';
 
 const CommentsSection = ({ comments }) => {
-    return (
-        <CommentsContainer>
-            <CommentsTitle>Комментарии</CommentsTitle>
-            <CommentBlock>
-                {comments.map((comment, index) => (
-                    <Comment key={index} username={comment.username} text={comment.text} />
-                ))}
-            </CommentBlock>
-            
-            <ShowMoreButton>Показать больше</ShowMoreButton>
-        </CommentsContainer>
-    );
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleShowMore = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const displayedComments = isExpanded ? comments : comments.slice(0, 2);
+
+  return (
+    <CommentsContainer>
+      <CommentsTitle>Комментарии</CommentsTitle>
+      <CommentBlock>
+        {displayedComments.map((comment, index) => (
+          <Comment key={index} username={comment.username} text={comment.text} />
+        ))}
+      </CommentBlock>
+      {comments.length > 2 && (
+        <ShowMoreButton onClick={handleShowMore} isExpanded={isExpanded} />
+      )}
+    </CommentsContainer>
+  );
 };
 
 export default CommentsSection;
+
 
