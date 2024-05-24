@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const GalleryContainer = styled.div`
     
-    
+    overflow-x: auto;
     width: 100%;
     clear: both; /* Очистка обтекания */
     position: relative; /* Установка позиции */
