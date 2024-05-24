@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   ProductCardTopSail,
@@ -15,9 +16,11 @@ export const CardTopSail = (props) => {
       <TopSailTextCard>
         <span>{props.price}</span>
         <TopSailTButton>
-          <ButtonStyledTopSail>
-            <i className="fa fa-shopping-cart"></i>
-          </ButtonStyledTopSail>
+          <Link to="/gamehub/shopping-cart">
+            <ButtonStyledTopSail>
+              <i className="fa fa-shopping-cart"></i>
+            </ButtonStyledTopSail>
+          </Link>
         </TopSailTButton>
       </TopSailTextCard>
     </ProductCardTopSail>
