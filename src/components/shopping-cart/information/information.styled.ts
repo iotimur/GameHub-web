@@ -100,8 +100,8 @@ export const NDS = styled.p`
         margin-left: 200px;
     }
     @media screen and (max-width: 800px) {
-        margin-left: 100px;
-        font-size: 2.5vh;
+        margin-left: 200px;
+        font-size: 2vh;
     }
 `;
 

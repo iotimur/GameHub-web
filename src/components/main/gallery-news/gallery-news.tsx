@@ -7,44 +7,37 @@ import {
   ArrowRightMain,
 } from "./gallery.styled";
 
-import {
-  img_news_1,
-  img_news_2,
-  img_news_3,
-  img_news_4,
-} from "../../../assets/Images_main";
-
 import { arrow_left, arrow_right } from "../../../assets/Images_main";
 
 // Компонент галереи
-export const GalleryNews = () => {
+export const GalleryNews = (props) => {
   const [index, setIndex] = useState(0);
   const cards: any = [
     {
-      img: img_news_3,
-      text: "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
+      img: props.img.news3,
+      text: props.data[2].text,
     },
     {
-      img: img_news_4,
-      text: "Авторы Skull and Bones расширяют планы на второй сезон",
+      img: props.img.news4,
+      text: props.data[3].text,
     },
     {
-      img: img_news_1,
-      text: "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+      img: props.img.news1,
+      text: props.data[0].text,
     },
     {
-      img: img_news_2,
-      text: "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+      img: props.img.news2,
+      text: props.data[1].text,
     },
   ];
   const [displayedCards, setdisplayedCards] = useState([
     {
-      img: img_news_1,
-      text: "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+      img: props.img.news1,
+      text: props.data[0].text,
     },
     {
-      img: img_news_2,
-      text: "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+      img: props.img.news2,
+      text: props.data[1].text,
     },
   ]);
 

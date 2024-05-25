@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ErrorBoundary } from "../components/error-boundary";
 import Header from "../components/main/header/header";
 import { Footer } from '../components/footer/footer';
@@ -11,19 +11,34 @@ import RatingBlock from '../components/game-page/rating-block/rating-block';
 import SystemRequirements from '../components/game-page/system-requirements/system-requirements';
 import CommentsSection from '../components/game-page/comments-section/comment-section';
 import Modal from '../components/game-page/modal/modal';
-
+import { URLs } from '../_data_/urls';
 import * as Styled from '../components/game-page/game-page.styled';
 
-const comments = [
-  { username: 'Пользователь1', text: 'Текст комментария 1' },
-  { username: 'Пользователь2', text: 'Текст комментария 2' },
-  { username: 'Пользователь3', text: 'Текст комментария 3' },
-  { username: 'Пользователь4', text: 'Текст комментария 4' },
-];
 
 const GamePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); 
+  const [comments, setComments] = useState([]);
+
+  // Функция для загрузки комментариев
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const response = await fetch(`${URLs.api.main}/game-page`); 
+        const result = await response.json();
+
+        if (result.status === "success") {
+          setComments(result.data.comments);
+        } else {
+          console.error('Failed to fetch comments');
+        }
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
+    };
+
+    fetchComments();
+  }, []);
 
   // Функция для открытия модального окна с изображением
   const openModal = (imageUrl) => {
