@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { mortal, windows, ved, fifa } from './index';
 import {
-    Oval, Container_my, Title1, Title2, Title3, SmallImage, BigImage, Price, Delete, Hr, Total, TotalSpan, Price1
+    Oval, Container_my, Title1, Title2, Title3, BigImage, Price, Delete, Hr, Total, TotalSpan, Price1
 } from '../games-in-cart/games.styled';
 
 const initialGames = [
