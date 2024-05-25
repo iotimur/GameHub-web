@@ -16,7 +16,7 @@ export const Card = styled.button`
 }
 `;
 export const CardImg = styled.img`
-    margin-left: 10px;
+    margin-left: 5px;
     width: 350px;
     height: 150px;
     border-radius: 10px;

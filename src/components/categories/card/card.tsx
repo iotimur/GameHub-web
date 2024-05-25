@@ -1,12 +1,13 @@
 import React from "react";
 
 import {  Card, TitleGame, CardImg, Windows, NewPrice, OldPrice } from './card.styled';
+import * as gameImg from '../discount-games/index'
 const GameCard = ({ game }) => {
     return (
       <Card>
-        <CardImg src={game.image} alt={`Обложка игры ${game.title}`} />
+        <CardImg src={gameImg[game.image]} alt={`Обложка игры ${game.title}`}/>
         <TitleGame>{game.title}</TitleGame>
-        <Windows src={game.os} />
+        <Windows src={gameImg[game.os]} />
         <NewPrice>{game.price} руб.</NewPrice>
         {game.old_price && <OldPrice>{game.old_price} руб.</OldPrice>}
       </Card>
