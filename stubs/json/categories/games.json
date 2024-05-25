@@ -1,0 +1,102 @@
+
+{
+    "games1": [
+        {
+            "id": 1,
+            "title": "How to Survive",
+            "price": 259,
+            "old_price": 500,
+            "image": "sales_game1",
+            "os": "windows"
+        },
+        {
+            "id": 2,
+            "title": "Red Solstice 2 Survivors",
+            "price": 561,
+            "image": "sales_game2",
+            "os": "windows"
+        },
+        {
+            "id": 3,
+            "title": "Sons Of The Forests",
+            "price": 820,
+            "old_price": 1100,
+            "image": "new_game2",
+            "os": "windows"
+        }
+    ],
+    "games2": [
+        {
+            "id": 1,
+            "title": "Alpha League",
+            "price": 299,
+            "image": "new_game1",
+            "os": "windows"
+        },
+        {
+            "id": 2,
+            "title": "Sons Of The Forests",
+            "price": 820,
+            "old_price": 1100,
+            "image": "new_game2",
+            "os": "windows"
+        },
+        {
+            "id": 3,
+            "title": "Pacific Drives",
+            "price": 1799,
+            "image": "new_game3",
+            "os": "windows"
+        }
+    ],
+    "games3": [
+        {
+            "id": 1,
+            "title": "Elden Ring",
+            "price": 990,
+            "old_price": 1100,
+            "image": "leaders_game2",
+            "os": "windows"
+        },
+        {
+            "id": 2,
+            "title": "Counter-Strike 2",
+            "price": 279,
+            "image": "leaders_game1",
+            "os": "windows"
+        },
+        {
+            "id": 3,
+            "title": "PUBG: BATTLEGROUNDS",
+            "price": 199,
+            "image": "leaders_game3",
+            "os": "windows"
+        }
+    ],
+    "games4": [
+        {
+            "id": 4,
+            "title": "The Witcher 3: Wild Hunt",
+            "price": 990,
+            "old_price": 1200,
+            "image": "leaders_game4",
+            "os": "windows"
+        },
+        {
+            "id": 5,
+            "title": "Atomic Heart",
+            "price": 1200,
+            "old_price": 2500,
+            "image": "leaders_game5",
+            "os": "windows"
+        },
+        {
+            "id": 6,
+            "title": "Crab Game",
+            "price": 600,
+            "old_price": 890,
+            "image": "leaders_game6",
+            "os": "windows"
+        }
+    ]
+}
