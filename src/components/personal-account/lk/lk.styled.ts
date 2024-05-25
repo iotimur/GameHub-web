@@ -9,7 +9,6 @@ export const ZagolovStyled = styled.div`
     font-weight: 500;
     font-size: 37px;
     text-align: center;
-    padding: 5px;
     margin: 35px 35px 0px 35px;
 `;
 
