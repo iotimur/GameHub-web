@@ -10,7 +10,7 @@ import { AboutGame } from '../components/game-page/about-game/about-game';
 import RatingBlock from '../components/game-page/rating-block/rating-block';
 import SystemRequirements from '../components/game-page/system-requirements/system-requirements';
 import CommentsSection from '../components/game-page/comments-section/comment-section';
-import Modal from '../components/game-page/modal/modal'; // Предполагается, что у вас есть компонент Modal
+import Modal from '../components/game-page/modal/modal';
 
 import * as Styled from '../components/game-page/game-page.styled';
 
@@ -23,7 +23,7 @@ const comments = [
 
 const GamePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null); // Предполагается, что у вас есть переменная для хранения URL выбранного изображения
+  const [selectedImage, setSelectedImage] = useState(null); 
 
   // Функция для открытия модального окна с изображением
   const openModal = (imageUrl) => {
@@ -38,7 +38,7 @@ const GamePage = () => {
   };
 
   return (
-    <Styled.Body>
+    <Styled.PageContainerGP>
       <ErrorBoundary>
         <Header />
         <Styled.Main>
@@ -61,7 +61,7 @@ const GamePage = () => {
       </ErrorBoundary>
       <Footer />
       {isModalOpen && <Modal imageUrl={selectedImage} onClose={closeModal} />}
-    </Styled.Body>
+    </Styled.PageContainerGP>
   );
 };
 

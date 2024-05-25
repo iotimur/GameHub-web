@@ -6,6 +6,7 @@ export const RegistrStyled = styled.div`
     background: #fff;
     border-radius: 23px;
     margin: 200px auto;
+    
 `;
 
 export const ButtonEntrStyled = styled.a`

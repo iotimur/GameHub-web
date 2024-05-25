@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Body = styled.div`
+export const PageContainerGP = styled.div`
   font-family: "Inter", sans-serif;
   background-color: #102D59;
   margin: 0;
