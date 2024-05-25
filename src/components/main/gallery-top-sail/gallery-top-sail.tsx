@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { CardTopSail } from "../card-main-top-sail";
-import { URLs } from "../../../_data_/urls";
 import {
   GalleryContainer,
   GalleryMain,
@@ -17,7 +16,7 @@ export const GalleryTopSail = (props) => {
   const [index, setIndex] = useState(0);
   console.log(22, props.img);
   const cards: any = [
-    { img: props.img.game1, price: props.data[4].price },
+    { img: props.img.game5, price: props.data[4].price },
     { img: props.img.game6, price: props.data[5].price },
     { img: props.img.game7, price: props.data[6].price },
     { img: props.img.game8, price: props.data[7].price },
