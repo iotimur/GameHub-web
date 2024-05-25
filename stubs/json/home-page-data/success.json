@@ -1,0 +1,90 @@
+{
+  "data": {
+    "topSail": [
+      {
+        "image": "game1",
+        "price": "$10"
+      },
+      {
+        "image": "game2",
+        "price": "$10"
+      },
+      {
+        "image": "game3",
+        "price": "$10"
+      },
+      {
+        "image": "game4",
+        "price": "$10"
+      },
+      {
+        "image": "game5",
+        "price": "$10"
+      },
+      {
+        "image": "game6",
+        "price": "$10"
+      },
+      {
+        "image": "game7",
+        "price": "$10"
+      },
+      {
+        "image": "game8",
+        "price": "$10"
+      }
+    ],
+    "categories": [
+      {
+        "image": "category1",
+        "text": "гонки"
+      },
+      {
+        "image": "category2",
+        "text": "глубокий сюжет"
+      },
+      {
+        "image": "category3",
+        "text": "симуляторы"
+      },
+      {
+        "image": "category4",
+        "text": "открытый мир"
+      },
+      {
+        "image": "category5",
+        "text": "экшен"
+      },
+      {
+        "image": "category6",
+        "text": "стратегии"
+      },
+      {
+        "image": "category7",
+        "text": "шутеры"
+      },
+      {
+        "image": "category8",
+        "text": "приключения"
+      }
+    ],
+    "news": [
+      {
+        "image": "news1",
+        "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare"
+      },
+      {
+        "image": "news2",
+        "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии"
+      },
+      {
+        "image": "news3",
+        "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony"
+      },
+      {
+        "image": "news4",
+        "text": "Авторы Skull and Bones расширяют планы на второй сезо"
+      }
+    ]
+  }
+}

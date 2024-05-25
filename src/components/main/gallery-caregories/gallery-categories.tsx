@@ -7,37 +7,26 @@ import {
   ArrowRightMain,
 } from "./gallery.styled";
 
-import {
-  img_categories_1,
-  img_categories_2,
-  img_categories_3,
-  img_categories_4,
-  img_categories_5,
-  img_categories_6,
-  img_categories_7,
-  img_categories_8,
-} from "../../../assets/Images_main";
-
 import { arrow_left, arrow_right } from "../../../assets/Images_main";
 
 // Компонент галереи
-export const GalleryCategories = () => {
+export const GalleryCategories = (props) => {
   const [index, setIndex] = useState(0);
   const cards: any = [
-    { img: img_categories_5, text: "экшен" },
-    { img: img_categories_6, text: "стратегии" },
-    { img: img_categories_7, text: "шутеры" },
-    { img: img_categories_8, text: "приключения" },
-    { img: img_categories_1, text: "гонки" },
-    { img: img_categories_2, text: "глубокий сюжет" },
-    { img: img_categories_3, text: "симуляторы" },
-    { img: img_categories_4, text: "открытый мир" },
+    { img: props.img.category5, text: props.data[4].text },
+    { img: props.img.category6, text: props.data[5].text },
+    { img: props.img.category7, text: props.data[6].text },
+    { img: props.img.category8, text: props.data[7].text },
+    { img: props.img.category1, text: props.data[0].text },
+    { img: props.img.category2, text: props.data[1].text },
+    { img: props.img.category3, text: props.data[2].text },
+    { img: props.img.category4, text: props.data[3].text },
   ];
   const [displayedCards, setdisplayedCards] = useState([
-    { img: img_categories_1, text: "гонки" },
-    { img: img_categories_2, text: "глубокий сюжет" },
-    { img: img_categories_3, text: "симуляторы" },
-    { img: img_categories_4, text: "открытый мир" },
+    { img: props.img.category1, text: props.data[0].text },
+    { img: props.img.category2, text: props.data[1].text },
+    { img: props.img.category3, text: props.data[2].text },
+    { img: props.img.category4, text: props.data[3].text },
   ]);
 
   const handleNextClick = () => {
