@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Title } from "../title";
-import { windows, new_game2, sales_game1, sales_game2 } from '.'
+// import { windows, new_game2, sales_game1, sales_game2 } from '.'
 import GameCard from '../card/card';
 import { ShowMoreBtn } from '../show-more-btn/show-more-btn.styled';
-
+import  {games1} from '../../../../stubs/json/games.json'
+import images from './index';
 const DiscountGames = ({ sortOption }) => {
-  const [games, setGames] = useState([
-    { id: 1, title: 'How to Survive', price: 259, old_price: 500, image: sales_game1, os: windows },
-    { id: 2, title: 'Red Solstice 2 Survivors', price: 561, image: sales_game2, os: windows },
-    { id: 3, title: 'Sons Of The Forests', price: 820, old_price: 1100, image: new_game2, os: windows },
-  ]);
-
+  // const [games, setGames] = useState([
+  //   { id: 1, title: 'How to Survive', price: 259, old_price: 500, image: sales_game1, os: windows },
+  //   { id: 2, title: 'Red Solstice 2 Survivors', price: 561, image: sales_game2, os: windows },
+  //   { id: 3, title: 'Sons Of The Forests', price: 820, old_price: 1100, image: new_game2, os: windows },
+  // ]);
+  const [games, setGames] = useState(games1);
   useEffect(() => {
     const sortedGames = [...games];
     if (sortOption === 'по цене max') {
@@ -27,6 +28,7 @@ const DiscountGames = ({ sortOption }) => {
       {games.map((game) => (
         <div key={game.id}>
           <GameCard game={game} />
+          
         </div>
       ))}
       <ShowMoreBtn>Показать больше</ShowMoreBtn>
