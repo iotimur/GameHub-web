@@ -34,8 +34,9 @@ export const Oval1 = styled.div`
     color: black;
     font-size: 2.8vh;
     margin-left: auto;
-    margin-right: 250px;
+    margin-right: 550px;
     margin-bottom: 20px;
+    matgin-top: -20px;
     &:hover {
         background-color: #1450a5;
         color: #fff;
@@ -46,35 +47,6 @@ export const Oval1 = styled.div`
     }
     @media screen and (max-width: 800px) {
         margin-right: 200px;
-        font-size: 2.5vh;
-    }
-`;
-
-export const Oval2 = styled.div`
-    width: 300px;
-    height: 60px;
-    border-radius: 20px;
-    background-color: #B0C15C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: black;
-    font-size: 2.8vh;
-    margin-left: 700px;
-    margin-right: auto;
-    margin-top: -80px;
-    margin-bottom: 70px;
-    &:hover {
-        background-color: #1450a5;
-        color: #fff;
-      }
-    @media screen and (max-width: 1200px) {
-        margin-top:10px;
-        margin-left: 190px;
-    }
-    @media screen and (max-width: 800px) {
-        margin-left: 450px;
         font-size: 2.5vh;
     }
 `;
@@ -114,10 +86,7 @@ export const Title4 = styled.p`
         margin-left: 100px;
         font-size: 2.5vh;
     }
-    &:hover {
-        background-color: #1450a5;
-        color: #fff;
-      }
+    
 `;
 
 

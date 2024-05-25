@@ -144,7 +144,7 @@ export const Price = styled.p`
         font-size: 2.5vh;
     }
     @media screen and (max-width: 800px) {
-        margin-left: 200px;
+        margin-left: 100px;
         text-align: center;
         font-size: 2vh;
     }

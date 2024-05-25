@@ -12,7 +12,7 @@ const initialGames = [
         releaseDate: "23 апр. 2019",
         description: "MORTAL KOMBAT 11 ULTIMATE ВКЛЮЧАЕТ В СЕБЯ БАЗОВУЮ ИГРУ МК11, КОМВАТ РАСК 1, ДОПОЛНЕНИЕ «ПОСЛЕДСТВИЯ» И НЕДАВНО ДОБАВЛЕННЫЙ НАБОР «КОМБАТ 2».",
         price: 300, 
-        icon: windows
+        
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const initialGames = [
         releaseDate: "30 сен. 2022",
         description: "В FIFA 23 всемирная игра становится еще лучше с технологией HyperMotion2, мужским и женским FIFA World Cup™, женскими командами, кроссплатформенной игрой и множеством прочих возможностей.",
         price: 300, 
-        icon: windows
+        
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const initialGames = [
         releaseDate: "18 мая 2015",
         description: "Вы — Геральт из Ривии, наемный убийца чудовищ. Вы путешествуете по миру, в котором бушует война и на каждом шагу подстерегают чудовища. Вам предстоит выполнить заказ и найти Цири — Дитя Предназначения, живое оружие, способное изменить облик этого мира.",
         price: 300, 
-        icon: windows
+        
     }
 ];
 
@@ -52,7 +52,7 @@ const Games = () => {
                     <BigImage src={game.image} alt={`Игра ${game.title}`} />
                     <div>
                         <Title1>{game.title}</Title1>
-                        <SmallImage src={game.icon} alt="Иконка Виндоус" />
+                        
                         <Price>{game.price} руб.</Price> 
                         <Title2>Дата выпуска: {game.releaseDate}</Title2>
                         <Title3>{game.description}</Title3>
