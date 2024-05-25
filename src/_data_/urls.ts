@@ -14,6 +14,6 @@ export const URLs = {
     'game-page': getNavigationsValue('gamehub.game-page') && `${baseUrl}${getNavigationsValue('gamehub.game-page')}`,
   },
   api: {
-    main: getConfigValue('r-and-m.api')
+    main: getConfigValue('gamehub.api')
   },
 }
