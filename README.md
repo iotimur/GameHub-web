@@ -8,20 +8,19 @@
 
   - Store logo
   - Main navigation menu, buttons for logging in or registering users
-  - Search bar
   - New products and bestsellers
 
 - **Shopping cart (Майорова Анастасия)**
 
   - Goods
   - Price list
-  - Shipping and payment method
+  - Description games
 
 - **Game page (Макарова Екатерина)**
 
   - About product
   - System requirements
-  - Reviews & ratings
+  - Comments & ratings
   - Price
 
 - **Categories (Ахмадуллина Эмилия)**
@@ -35,6 +34,6 @@
   - Entrance or authorisation
   - Personal Information
   - My purchases
-  - Help/Questions
+  - Help
 
 [Figma](https://www.figma.com/file/qURRXeUGf5GBGJcVyZkoyr/main_sheet?type=design&node-id=0%3A1&mode=design&t=2EXSWHVVS405mJid-1)
