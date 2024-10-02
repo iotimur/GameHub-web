@@ -8,9 +8,7 @@ const MainPage = () => {
   return (
     <div>
       <PageContainer>
-        <Header />
         <MainContent />
-        <Footer />
       </PageContainer>
     </div>
   );

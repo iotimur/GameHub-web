@@ -2,9 +2,9 @@ import React from "react";
 import {
   OuterMain,
   NavMain,
-  LabelMain,
   LiStyled,
   StyledLink,
+  StyledLinkNav,
   StyledHeader,
 } from "./header.styled";
 
@@ -14,16 +14,24 @@ const Header = () => {
       <StyledHeader>
         <OuterMain>
           <NavMain>
-            <LabelMain href="/gamehub">GameHub</LabelMain>
+            <StyledLink to="/gamehub" end>
+              GameHub
+            </StyledLink>
             <ul>
               <LiStyled>
-                <StyledLink href="/gamehub/categories">Категории</StyledLink>
+                <StyledLinkNav to="/gamehub/categories">
+                  Категории
+                </StyledLinkNav>
               </LiStyled>
+
               <LiStyled>
-                <StyledLink href="/gamehub/entrance">Войти</StyledLink>
+                <StyledLinkNav to="/gamehub/entrance">Войти</StyledLinkNav>
               </LiStyled>
+
               <LiStyled>
-                <StyledLink href="/gamehub/shopping-cart">Корзина</StyledLink>
+                <StyledLinkNav to="/gamehub/shopping-cart">
+                  Корзина
+                </StyledLinkNav>
               </LiStyled>
             </ul>
           </NavMain>

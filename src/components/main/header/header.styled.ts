@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 
 export const OuterMain = styled.div`
   max-width: 65rem;
@@ -51,14 +52,36 @@ export const LiStyled = styled.li`
   margin: 0 5px;
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(NavLink)`
   color: white;
   font-size: 17px;
   padding: 7px 13px;
   border-radius: 10px;
   text-transform: uppercase;
   text-decoration: none;
-  &.active,
+
+  @media (max-width: 952px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 858px) {
+    font-size: 10px;
+  }
+`;
+
+export const StyledLinkNav = styled(NavLink)`
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &.active {
+    background: #643aa0;
+    transition: 0.5s;
+  }
+
   &:hover {
     background: #643aa0;
     transition: 0.5s;

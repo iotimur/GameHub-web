@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/main/header/header";
-import { Footer } from '../components/footer/footer';
+import { Footer } from "../components/footer/footer";
 import { PageContainer } from "../components/main/main-container/main.styled";
 import FilterSorting from "../components/categories/sorting/sorting";
 import Leaders from "../components/categories/leaders/leaders";
@@ -9,25 +9,23 @@ import DiscountGames from "../components/categories/discount-games/discount-game
 import { CategoriesMain } from "../components/categories/categories.styled";
 
 const Categories = () => {
-    const [sortOption, setSortOption] = useState('');
+  const [sortOption, setSortOption] = useState("");
 
-    const handleSort = (option) => {
-        setSortOption(option);
-    };
-    return (
-        <>
-            <PageContainer>
-                <Header />
-                <CategoriesMain>
-                    <FilterSorting onSort={handleSort} />
-                    <Leaders sortOption={sortOption} />
-                    <NewGames sortOption={sortOption} />
-                    <DiscountGames sortOption={sortOption} />
-                </CategoriesMain>
-                <Footer />
-            </PageContainer>
-        </>
-    );
+  const handleSort = (option) => {
+    setSortOption(option);
+  };
+  return (
+    <>
+      <PageContainer>
+        <CategoriesMain>
+          <FilterSorting onSort={handleSort} />
+          <Leaders sortOption={sortOption} />
+          <NewGames sortOption={sortOption} />
+          <DiscountGames sortOption={sortOption} />
+        </CategoriesMain>
+      </PageContainer>
+    </>
+  );
 };
 
 export default Categories;
