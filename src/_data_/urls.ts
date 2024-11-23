@@ -1,4 +1,4 @@
-import { getNavigationsValue, getConfigValue } from '@ijl/cli';
+import { getNavigationsValue, getConfigValue } from '@brojs/cli';
 
 
 const baseUrl = getNavigationsValue('gamehub.main');

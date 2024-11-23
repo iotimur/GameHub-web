@@ -1,5 +1,5 @@
-/* eslint-disable */
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/display-name */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
   
@@ -9,13 +9,13 @@ export default () => <App/>;
   
 let rootElement: ReactDOM.Root
   
-export const mount = (Сomponent, element = document.getElementById('app')) => {
-  const rootElement = ReactDOM.createRoot(element);
-  rootElement.render(<Сomponent/>);
+export const mount = (Component, element = document.getElementById('app')) => {
+  rootElement = ReactDOM.createRoot(element);
+  rootElement.render(<Component/>);
 
   if(module.hot) {
       module.hot.accept('./app', ()=> {
-        rootElement.render(<Сomponent/>);
+        rootElement.render(<Component/>);
       })
   }
 };
