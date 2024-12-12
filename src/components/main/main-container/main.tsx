@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { URLs } from "../../../_data_/urls";
+import data from "../../../../stubs/json/home-page-data/success.json";
 
 import { ContainerMain, CardsMain, CommonMain } from "./main.styled";
 
@@ -63,17 +64,6 @@ const imagesNews = {
 };
 
 const MainContent = () => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch(`${URLs.api.main}/data`)
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data.data);
-      });
-  }, []);
-
-  if (!data) return null;
-  console.log(111, imagesTopSail);
   return (
     <CommonMain>
       <ContainerMain>
@@ -85,7 +75,7 @@ const MainContent = () => {
 
           <CardsMain>
             <GalleryTopSail
-              data={data.topSail}
+              data={data.data.topSail}
               img={imagesTopSail}
             ></GalleryTopSail>
           </CardsMain>
@@ -94,7 +84,7 @@ const MainContent = () => {
 
           <CardsMain>
             <GalleryCategories
-              data={data.categories}
+              data={data.data.categories}
               img={imagesCategories}
             ></GalleryCategories>
           </CardsMain>
@@ -102,7 +92,7 @@ const MainContent = () => {
           <Title text="Новости" />
 
           <CardsMain>
-            <GalleryNews data={data.news} img={imagesNews}></GalleryNews>
+            <GalleryNews data={data.data.news} img={imagesNews}></GalleryNews>
           </CardsMain>
         </main>
       </ContainerMain>
