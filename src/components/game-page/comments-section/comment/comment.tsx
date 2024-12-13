@@ -1,14 +1,16 @@
 import React from 'react';
-import './comment.css';
+import { Comment, Avatar, CommentContent, CommentName, CommentText } from './comment.styled';
 
-export function Comment({ username, text }) {
+export function CommentComponent({ username, text }) {
     return (
-        <div className="comment">
-            <div className="avatar"></div>
-            <div className="comment-content">
-                <h3 className="comment-name">{username}</h3>
-                <p className="comment-text">{text}</p>
-            </div>
-        </div>
+        <Comment>
+            <Avatar />
+            <CommentContent>
+                <CommentName>{username}</CommentName>
+                <CommentText>{text}</CommentText>
+            </CommentContent>
+        </Comment>
     );
 }
+
+export default CommentComponent;
