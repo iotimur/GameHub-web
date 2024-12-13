@@ -11,7 +11,9 @@ import RatingBlock from "../components/game-page/rating-block/rating-block";
 import SystemRequirements from "../components/game-page/system-requirements/system-requirements";
 import CommentsSection from "../components/game-page/comments-section/comment-section";
 import Modal from "../components/game-page/modal/modal";
-import { URLs } from "../_data_/urls";
+import commentsData from "../../stubs/json/gamepage/success.json"; 
+
+
 import * as Styled from "../components/game-page/game-page.styled";
 
 const GamePage = () => {
@@ -19,33 +21,18 @@ const GamePage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [comments, setComments] = useState([]);
 
-  // Функция для загрузки комментариев
+
   useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const response = await fetch(`${URLs.api.main}/game-page`);
-        const result = await response.json();
-
-        if (result.status === "success") {
-          setComments(result.data.comments);
-        } else {
-          console.error("Failed to fetch comments");
-        }
-      } catch (error) {
-        console.error("Error fetching comments:", error);
-      }
-    };
-
-    fetchComments();
+    setComments(commentsData.data.comments); // Используем данные из JSON
   }, []);
 
-  // Функция для открытия модального окна с изображением
+
   const openModal = (imageUrl) => {
     setSelectedImage(imageUrl);
     setIsModalOpen(true);
   };
 
-  // Функция для закрытия модального окна
+ 
   const closeModal = () => {
     setSelectedImage(null);
     setIsModalOpen(false);
