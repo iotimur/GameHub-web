@@ -68,12 +68,18 @@ const imagesNews = {
 };
 
 const MainContent = () => {
-  // const data = useSelector(getHomeSelectors.data)
-
   const { isFetching, isLoading, data, error } = mainApi.useHomePageQuery();
 
   if(isFetching) {
   return <div>Loading</div>
+  }
+
+  if(error) {
+    return <div>Error parser</div>
+  }
+
+  if(!data) {
+    return <div>Something was wrong</div>
   }
 
   console.log(isFetching, isLoading, data, error);
