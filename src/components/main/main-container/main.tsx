@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { URLs } from "../../../_data_/urls";
-import data from "../../../../stubs/json/home-page-data/success.json";
+// import data from "../../../../stubs/json/home-page-data/success.json";
 
 import { ContainerMain, CardsMain, CommonMain } from "./main.styled";
+
+import * as getHomeSelectors from "../../../_data_/selectors/home-page";
+import { useDispatch, useSelector } from "react-redux";
+import { mainApi } from "../../../_data_/service/main-api";
 
 import { Search } from "../search-line";
 import { Title } from "../title-main";
@@ -64,6 +68,16 @@ const imagesNews = {
 };
 
 const MainContent = () => {
+  // const data = useSelector(getHomeSelectors.data)
+
+  const { isFetching, isLoading, data, error } = mainApi.useHomePageQuery();
+
+  if(isFetching) {
+  return <div>Loading</div>
+  }
+
+  console.log(isFetching, isLoading, data, error);
+
   return (
     <CommonMain>
       <ContainerMain>
@@ -74,17 +88,14 @@ const MainContent = () => {
           <Title text="Лидеры продаж" />
 
           <CardsMain>
-            <GalleryTopSail
-              data={data.data.topSail}
-              img={imagesTopSail}
-            ></GalleryTopSail>
+            <GalleryTopSail data={data.topSail} img={imagesTopSail}></GalleryTopSail>
           </CardsMain>
 
           <Title text="Категории" />
 
           <CardsMain>
             <GalleryCategories
-              data={data.data.categories}
+              data={data.categories}
               img={imagesCategories}
             ></GalleryCategories>
           </CardsMain>
@@ -92,7 +103,7 @@ const MainContent = () => {
           <Title text="Новости" />
 
           <CardsMain>
-            <GalleryNews data={data.data.news} img={imagesNews}></GalleryNews>
+            <GalleryNews data={data.news} img={imagesNews}></GalleryNews>
           </CardsMain>
         </main>
       </ContainerMain>

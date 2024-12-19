@@ -58,7 +58,6 @@ export const GalleryNews = (props) => {
       displayedCards.push(cards[cardIndex]);
     }
     setdisplayedCards(displayedCards);
-    console.log(displayedCards);
   };
 
   return (

@@ -1,37 +1,38 @@
 {
+  "success": true,
   "data": {
     "topSail": [
       {
         "image": "game1",
-        "price": "$10"
+        "text": "$10"
       },
       {
         "image": "game2",
-        "price": "$10"
+        "text": "$10"
       },
       {
         "image": "game3",
-        "price": "$10"
+        "text": "$10"
       },
       {
         "image": "game4",
-        "price": "$10"
+        "text": "$10"
       },
       {
         "image": "game5",
-        "price": "$10"
+        "text": "$10"
       },
       {
         "image": "game6",
-        "price": "$10"
+        "text": "$10"
       },
       {
         "image": "game7",
-        "price": "$10"
+        "text": "$10"
       },
       {
         "image": "game8",
-        "price": "$10"
+        "text": "$10"
       }
     ],
     "categories": [

@@ -46,7 +46,6 @@ export const GalleryCategories = (props) => {
       displayedCards.push(cards[cardIndex]);
     }
     setdisplayedCards(displayedCards);
-    console.log(displayedCards);
   };
 
   return (
