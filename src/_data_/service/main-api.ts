@@ -2,6 +2,7 @@ import { getConfigValue } from "@brojs/cli";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Home, BaseResponse } from "../model/common_home";
 import { GamesResponse } from "../model/common_games"; // Импорт модели для нового эндпоинта
+import { CommentsResponse } from "../model/common_comments"; // Импорт модели для нового эндпоинта
 
 const baseUrl = getConfigValue("gamehub.api");
 
@@ -22,6 +23,17 @@ export const mainApi = createApi({
       },
     }),
 
+    commentsPage: builder.query<CommentsResponse, void>({
+      query: () => "/game-page", // Укажите правильный URL для вашего запроса
+      transformResponse: (response: BaseResponse<CommentsResponse>) => {
+        if (response.success === true) {
+          return response?.data || { comments: [] }; // Структура по умолчанию
+        } else {
+          return { comments: [] }; // Пустая структура в случае ошибки
+        }
+      },
+    }),
+
     // Эндпоинт для корзины
     gamesInCart: builder.query<GamesResponse, void>({
       query: () => "/shopping-cart/success", // URL для получения данных
@@ -37,6 +49,6 @@ export const mainApi = createApi({
 });
 
 // Экспортируем хуки для использования в компонентах
-export const { useHomePageQuery, useGamesInCartQuery } = mainApi;
+export const { useHomePageQuery,useCommentsPageQuery, useGamesInCartQuery } = mainApi;
 
 export default mainApi;
