@@ -25,9 +25,17 @@ export type News = {
   text: string;
 };
 
-// Переименовываем тип Data в Home
 export type Home = {
   topSail: Game[];
   categories: Category[];
   news: News[];
+  imgPath: News[];
+};
+
+export type AllGames = {
+  id: number;
+  name: string;
+  image: string;
+  text: string;
+  imgPath: string;
 };

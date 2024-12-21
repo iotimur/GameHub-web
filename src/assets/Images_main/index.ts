@@ -20,3 +20,7 @@ export { default as img_news_3 } from "./ghost tsus.jpg";
 export { default as img_news_4 } from "./skull of bones.jpg";
 export { default as arrow_left } from "./arrow_left.png";
 export { default as arrow_right } from "./arrow_right.png";
+export { default as img_top_9 } from "./mirage.jpg";
+export { default as img_top_10 } from "./valhalla.png";
+export { default as img_top_11 } from "./ark.jpg";
+export { default as img_top_12 } from "./fifa.png";

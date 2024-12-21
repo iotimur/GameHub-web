@@ -1,0 +1,89 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "name": "The Witcher 3: Wild_Hunt",
+      "image": "game1",
+      "text": "$10",
+      "imgPath": "img_top_1"
+    },
+    {
+      "id": 2,
+      "name": "Red Dead Redemption 2",
+      "image": "game2",
+      "text": "$10",
+      "imgPath": "img_top_2"
+    },
+    {
+      "id": 3,
+      "name": "Forza",
+      "image": "game3",
+      "text": "$10",
+      "imgPath": "img_top_3"
+    },
+    {
+      "id": 4,
+      "name": "Atomic Heart",
+      "image": "game4",
+      "text": "$10",
+      "imgPath": "img_top_4"
+    },
+    {
+      "id": 5,
+      "name": "Counter-Strike 2",
+      "image": "game5",
+      "text": "$10",
+      "imgPath": "img_top_5"
+    },
+    {
+      "id": 6,
+      "name": "Grand Theft Auto V",
+      "image": "game6",
+      "text": "$10",
+      "imgPath": "img_top_6"
+    },
+    {
+      "id": 7,
+      "name": "Assassin’s Creed IV: Black Flag",
+      "image": "game7",
+      "text": "$10",
+      "imgPath": "img_top_7"
+    },
+    {
+      "id": 8,
+      "name": "Spider-Man",
+      "image": "game8",
+      "text": "$10",
+      "imgPath": "img_top_8"
+    },
+    {
+      "id": 9,
+      "name": "Assassin’s Creed Mirage",
+      "image": "game9",
+      "text": "$10",
+      "imgPath": "img_top_9"
+    },
+    {
+      "id": 10,
+      "name": "Assassin’s Creed Valhalla",
+      "image": "game10",
+      "text": "$10",
+      "imgPath": "img_top_10"
+    },
+    {
+      "id": 11,
+      "name": "ARK: Survival Evolved",
+      "image": "game11",
+      "text": "$10",
+      "imgPath": "img_top_11"
+    },
+    {
+      "id": 12,
+      "name": "FIFA",
+      "image": "game12",
+      "text": "$10",
+      "imgPath": "img_top_12"
+    }
+  ]
+}
