@@ -37,3 +37,14 @@
   - Help
 
 [Figma](https://www.figma.com/file/qURRXeUGf5GBGJcVyZkoyr/main_sheet?type=design&node-id=0%3A1&mode=design&t=2EXSWHVVS405mJid-1)
+
+# Main page
+
+![web page](screenshot.png)
+
+Main (Мухаметов Тимур)
+
+- Store logo
+- Main navigation menu, buttons for logging in or registering users
+- Search bar
+- New products and bestsellers
