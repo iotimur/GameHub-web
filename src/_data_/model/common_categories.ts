@@ -1,4 +1,4 @@
-export type BaseResponse<Data> =
+export type BaseResponse2<Data> =
   | {
     success: true;
     data?: Data;
@@ -17,7 +17,6 @@ export type Game = {
   os: string;
 };
 
-// Определяем типы для категорий
 export type Categories = {
   games1: Game[];
   games2: Game[];
