@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import GameCard from '../card/card';
 import { Title } from '../title';
 import { ShowMoreBtn } from '../show-more-btn/show-more-btn.styled';
-import  {games2} from '../../../../stubs/json/categories/games.json'
+import  dataJson from '../../../../stubs/json/categories/success.json'
+const games2 = dataJson.data.games2;
 const NewGames = ({ sortOption }) => {
   const [games, setGames] = useState(games2);
   useEffect(() => {

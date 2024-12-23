@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../components/main/header/header";
-import { Footer } from "../components/footer/footer";
 import { PageContainer } from "../components/main/main-container/main.styled";
 import FilterSorting from "../components/categories/sorting/sorting";
 import Leaders from "../components/categories/leaders/leaders";

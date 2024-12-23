@@ -1,5 +1,6 @@
-
-{
+{   
+    "success": true,
+    "data": {
     "games1": [
         {
             "id": 1,
@@ -99,4 +100,5 @@
             "os": "windows"
         }
     ]
+}
 }

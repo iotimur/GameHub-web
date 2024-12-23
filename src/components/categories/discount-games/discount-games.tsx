@@ -3,8 +3,9 @@ import { Title } from "../title";
 
 import GameCard from '../card/card';
 import { ShowMoreBtn } from '../show-more-btn/show-more-btn.styled';
-import  {games1} from '../../../../stubs/json/categories/games.json'
-
+// import  {games1} from '../../../../stubs/json/categories/success.json'
+import  dataJson from '../../../../stubs/json/categories/success.json'
+const games1 = dataJson.data.games1;
 const DiscountGames = ({ sortOption }) => {
   const [games, setGames] = useState(games1);
   useEffect(() => {
