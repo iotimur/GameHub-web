@@ -5,7 +5,7 @@ router.get("/game-page", (request, response) => {
 });
 
 router.get("/categories", (request, response) => {
-  response.send(require("../json/gamepage/success.json"));
+  response.send(require("../json/categories/success.json"));
 });
 
 router.get("/shopping-cart", (request, response) => {
