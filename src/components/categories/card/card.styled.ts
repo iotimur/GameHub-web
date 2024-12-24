@@ -14,19 +14,24 @@ export const Card = styled.button`
   background: #2E5A99;
   transition: 0.5s;
 }
+  @media screen and (max-width: 800px) {
+  width: 80%;
+  height: 130px;
+}
 `;
 export const CardImg = styled.img`
     margin-left: 5px;
     width: 350px;
     height: 150px;
     border-radius: 10px;
-    object-fit: cover; // для сохранения пропорций
+    object-fit: cover; 
 @media screen and (max-width: 988px) {
   width: 320px;
 }
 
 @media screen and (max-width: 800px) {
-  max-width: 280px;
+  width: 40%;
+  height: 100px;
 }
 
 `;
@@ -48,7 +53,9 @@ export const TitleGame = styled.span`
     @media screen and (max-width: 998px) {
         width: 200px;
         font-size: 24px;
-       
+    }
+        @media screen and (max-width: 800px) {
+        font-size: 20px;
     }
     
 `;
@@ -74,6 +81,9 @@ export const NewPrice = styled.span`
   }
   @media screen and (max-width: 900px) {
     font-size: 20px;
+  }
+    @media screen and (max-width: 800px) {
+    font-size: 16px;
   }
   `;
 

@@ -24,6 +24,30 @@
             "old_price": 1100,
             "image": "new_game2",
             "os": "windows"
+        },
+        {
+            "id": 4,
+            "title": "The Witcher 3: Wild Hunt",
+            "price": 990,
+            "old_price": 1200,
+            "image": "leaders_game4",
+            "os": "windows"
+        },
+        {
+            "id": 5,
+            "title": "Atomic Heart",
+            "price": 1200,
+            "old_price": 2500,
+            "image": "leaders_game5",
+            "os": "windows"
+        },
+        {
+            "id": 6,
+            "title": "Crab Game",
+            "price": 600,
+            "old_price": 890,
+            "image": "leaders_game6",
+            "os": "windows"
         }
     ],
     "games2": [
@@ -48,21 +72,45 @@
             "price": 1799,
             "image": "new_game3",
             "os": "windows"
+        },
+        {
+            "id": 4,
+            "title": "The Witcher 3: Wild Hunt",
+            "price": 990,
+            "old_price": 1200,
+            "image": "leaders_game4",
+            "os": "windows"
+        },
+        {
+            "id": 5,
+            "title": "Atomic Heart",
+            "price": 1200,
+            "old_price": 2500,
+            "image": "leaders_game5",
+            "os": "windows"
+        },
+        {
+            "id": 6,
+            "title": "Crab Game",
+            "price": 600,
+            "old_price": 890,
+            "image": "leaders_game6",
+            "os": "windows"
         }
     ],
     "games3": [
         {
             "id": 1,
             "title": "Elden Ring",
-            "price": 990,
-            "old_price": 1100,
+            "price": 3295,
+            "old_price": 3599,
             "image": "leaders_game2",
             "os": "windows"
         },
         {
             "id": 2,
             "title": "Counter-Strike 2",
-            "price": 279,
+            "price": 479,
             "image": "leaders_game1",
             "os": "windows"
         },
@@ -72,9 +120,7 @@
             "price": 199,
             "image": "leaders_game3",
             "os": "windows"
-        }
-    ],
-    "games4": [
+        },
         {
             "id": 4,
             "title": "The Witcher 3: Wild Hunt",

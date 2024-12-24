@@ -18,6 +18,11 @@ width: 100%;
     background: #2E5A99;
     transition: 0.5s;
   }
+
+  @media screen and (max-width: 800px) {
+  width: 80%;
+  font-size: 14px;
+}
 `;
 
 

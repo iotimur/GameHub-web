@@ -1,64 +1,63 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import GameCard from '../card/card';
 import { Title } from '../title';
-import { ShowMoreBtn } from '../show-more-btn/show-more-btn.styled';
-// import  dataJson from '../../../../stubs/json/categories/success.json'
-// const games3 = dataJson.data.games3;
-// const games4 = dataJson.data.games4;
 import mainApi from "../../../_data_/service/main-api";
+import ShowMoreButton from "../show-more-btn/show-more-btn";
+
 const Leaders = ({ sortOption }) => {
   const { data, isLoading, error } = mainApi.useCategoriesPageQuery();
-  
   console.log(data, isLoading, error);
-  
+
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error loading comments</div>;
-  //  const [showCard, setShowCard] = useState(false);
-  //   const handleShowMore = () => {
-  //       setShowCard(true);
-  //   };
-  
- 
+  if (error) return <div>Error loading</div>;
+
+  const [showCard, setShowCard] = useState(false);
+  const handleShowMore = () => {
+    setShowCard(!showCard);
+  };
+
   let Games = [];
   if (data.games3) {
-    Games = data.games3; 
+    Games = data.games3;
   } else {
-    return <div>Массив пуст</div>
+    return <div>Array is empty</div>
   }
+
   const sortedGames = [...Games];
+
   if (sortOption === 'по цене max') {
     sortedGames.sort((a, b) => b.price - a.price);
   } else if (sortOption === 'по цене min') {
     sortedGames.sort((a, b) => a.price - b.price);
   }
+  const displayedGames = sortedGames.slice(0, 3);  // первые 3 игры из sortedGames
 
   return (
     <div>
       <Title text="Лидеры продаж" />
-      {sortedGames.length > 0
-        ? sortedGames.map((game) => (
+      {displayedGames.length > 0
+        ? displayedGames.map((game) => (
           <div key={game.id}>
-            <Link to={game.id === 1 ? "/gamehub/game-page" : "#"}>
+            <Link to={"/gamehub/game-page"}>
               <GameCard game={game} />
             </Link>
           </div>
         ))
-        : <div>Игр не найдено</div>}
-     {/* {!showCard && (
-       <ShowMoreBtn onClick={handleShowMore}>Показать больше</ShowMoreBtn>
+        : <div>No games found</div>}
+      {!showCard && (
+        <ShowMoreButton onClick={handleShowMore} isExpanded={showCard} />
       )}
 
       {showCard && (
         <>
-          {data.games4.map((game) => (
+          {sortedGames.slice(3).map((game) => ( // Отображение оставшихся игр после первых 3
             <div key={game.id}>
               <GameCard game={game} />
             </div>
           ))}
         </>
-      )} */}
+      )}
     </div>
   );
 };

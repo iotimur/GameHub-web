@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Home, BaseResponse } from "../model/common_home";
 import { GamesResponse } from "../model/common_games"; // Импорт модели для нового эндпоинта
 import { CommentsResponse } from "../model/common_comments"; // Импорт модели для нового эндпоинта
-import { BaseResponse2, Categories } from "../model/common_categories";
+import { Categories } from "../model/common_categories";
 
 
 const baseUrl = getConfigValue("gamehub.api");
@@ -40,9 +40,9 @@ export const mainApi = createApi({
       query: () => "/categories",
       transformResponse: (response: BaseResponse<Categories>): Categories => {
         if (response.success === true) {
-          return response.data || { games1: [], games2: [], games3: [], games4: [] };
+          return response.data || { games1: [], games2: [], games3: []};
         } else {
-          return { games1: [], games2: [], games3: [], games4: [] };
+          return { games1: [], games2: [], games3: []};
         }
       },
     }),

@@ -10,7 +10,7 @@ export const SortingString = styled.span`
   color: #fff;
   margin-top:-45px;
   @media screen and (max-width: 1200px) {
-      margin-left: 630px;
+    margin-left: 630px;
   }
   @media screen and (max-width: 998px) {
     display: none;
@@ -21,7 +21,8 @@ export const SortingButton = styled.button`
   position: absolute;
   display: flex;
   align-items: center;
-  margin-left: 970px;
+  // margin-left: 970px;
+  right: 0px;
   margin-top: 60px;
   border-radius: 10px;
   width: 150px;
@@ -32,20 +33,14 @@ export const SortingButton = styled.button`
   justify-content: center;
   align-items: center;
   margin-top:13px;
-  @media screen and (max-width: 1200px) {
-    margin-left: 800px;
-}
 @media screen and (max-width: 998px) {
-  margin-left: 600px;
-}
-@media screen and (max-width: 800px) {
-  margin-left: 450px;
+  width: 120px;
+  height: 20px;
 }
 `;
 
 export const Sorting = styled.span`
   color: rgb(255, 255, 255);
-  
 `;
 
 export const Dropdown = styled.div`
