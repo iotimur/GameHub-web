@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GameCard from '../card/card';
 import { Title } from '../title';
 import mainApi from '../../../_data_/service/main-api';
-import ShowMoreButton from '../show-more-btn/show-more-btn';
+// import ShowMoreButton from '../show-more-btn/show-more-btn';
 const NewGames = ({ sortOption }) => {
   const { data, isLoading, error } = mainApi.useCategoriesPageQuery();
   console.log(data, isLoading, error);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading</div>;
-  const [showCard, setShowCard] = useState(false);
-  const handleShowMore = () => {
-    setShowCard(!showCard);
-  };
+  // const [showCard, setShowCard] = useState(false);
+  // const handleShowMore = () => {
+  //   setShowCard(!showCard);
+  // };
 
   let Games = [];
   if (data.games2) {
@@ -37,7 +37,7 @@ const NewGames = ({ sortOption }) => {
           </div>
         ))
         : <div>No games found</div>}
-      {!showCard && (
+      {/* {!showCard && (
         <ShowMoreButton onClick={handleShowMore} isExpanded={showCard} />
       )}
 
@@ -49,7 +49,7 @@ const NewGames = ({ sortOption }) => {
             </div>
           ))}
         </>
-      )}
+      )} */}
     </div>
   );
 };

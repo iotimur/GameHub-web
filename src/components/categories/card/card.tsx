@@ -12,8 +12,10 @@ const GameCard = ({ game }) => {
         <Windows src={gameImg[game.os]} />
         <NewPrice>{game.price} руб.</NewPrice>
         {game.old_price && <OldPrice>{game.old_price} руб.</OldPrice>}
-      </Card></Link>
+      </Card>
+    </Link>
   );
 };
+
 
 export default GameCard;
