@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-
 import GameCard from '../card/card';
 import { Title } from '../title';
 import mainApi from '../../../_data_/service/main-api';
-import { Link } from 'react-router-dom';
 import ShowMoreButton from '../show-more-btn/show-more-btn';
 const NewGames = ({ sortOption }) => {
   const { data, isLoading, error } = mainApi.useCategoriesPageQuery();
@@ -35,9 +33,7 @@ const NewGames = ({ sortOption }) => {
       {displayedGames.length > 0
         ? displayedGames.map((game) => (
           <div key={game.id}>
-            <Link to={"/gamehub/game-page"}>
               <GameCard game={game} />
-            </Link>
           </div>
         ))
         : <div>No games found</div>}

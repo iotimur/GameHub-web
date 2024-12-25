@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Title } from "../title";
 import GameCard from '../card/card';
 import mainApi from '../../../_data_/service/main-api';
-import { Link } from 'react-router-dom';
 import ShowMoreButton from '../show-more-btn/show-more-btn';
 
 const DiscountGames = ({ sortOption }) => {
@@ -35,9 +34,7 @@ const DiscountGames = ({ sortOption }) => {
       {displayedGames.length > 0
         ? displayedGames.map((game) => (
           <div key={game.id}>
-            <Link to={"/gamehub/game-page"}>
               <GameCard game={game} />
-            </Link>
           </div>
         ))
         : <div>No games found</div>}
