@@ -18,8 +18,6 @@ import LinkMain from "../link-main/link-main";
 
 
 const MainContent = () => {
-  // const data = useSelector(getHomeSelectors.data)
-
   const { isFetching, isLoading, data, error } = mainApi.useHomePageQuery();
 
   if(isFetching) {

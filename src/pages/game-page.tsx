@@ -12,19 +12,17 @@ import SystemRequirements from "../components/game-page/system-requirements/syst
 import CommentsSection from "../components/game-page/comments-section/comment-section";
 import Modal from "../components/game-page/modal/modal";
 import commentsData from "../../stubs/json/gamepage/success.json"; 
-
+import { mainApi } from "../_data_/service/main-api"; // Импорт API
 
 import * as Styled from "../components/game-page/game-page.styled";
 
 const GamePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [comments, setComments] = useState([]);
+  const { data, isFetching, error } = mainApi.useCommentsPageQuery();
 
-
-  useEffect(() => {
-    setComments(commentsData.data.comments); // Используем данные из JSON
-  }, []);
+  if (isFetching) return <div>Loading...</div>;
+  if (error) return <div>Error loading comments</div>;
 
 
   const openModal = (imageUrl) => {
@@ -56,7 +54,7 @@ const GamePage = () => {
             <RatingBlock />
           </Styled.GroupRatingAboutGame>
           <SystemRequirements />
-          <CommentsSection comments={comments} />
+          <CommentsSection comments={data?.comments || []} />
         </Styled.Main>
       </ErrorBoundary>
       {isModalOpen && <Modal imageUrl={selectedImage} onClose={closeModal} />}

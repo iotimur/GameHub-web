@@ -25,7 +25,9 @@ export const TitleRectangle = styled.div`
       height: 50px;
     }
     @media screen and (max-width: 800px) {
-      height: 45px;
+      height: 40px;
+    padding: 5px 10px;
+
     }
 `;
 export const TitleCategory = styled.h2`
@@ -39,6 +41,6 @@ export const TitleCategory = styled.h2`
       font-size: 24px;
     }
     @media screen and (max-width: 800px) {
-      font-size: 20px;
+      font-size: 16px;
     }
 `;
