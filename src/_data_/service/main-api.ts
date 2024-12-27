@@ -22,11 +22,10 @@ export const mainApi = createApi({
               topSail: [],
               categories: [],
               news: [],
-              imgPath: [],
             }
           ); // Возвращаем корректную структуру по умолчанию
         } else {
-          return { topSail: [], categories: [], news: [], imgPath: [] }; // Пустая структура в случае ошибки
+          return { topSail: [], categories: [], news: []}; // Пустая структура в случае ошибки
         }
       },
     }),

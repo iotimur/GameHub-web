@@ -13,24 +13,26 @@ export type BaseResponse<Data> =
 export type Game = {
   image: string;
   text: string;
+  imgPath: string;
 };
 
 export type Category = {
   image: string;
   text: string;
+  imgPath: string;
   category: string;
 };
 
 export type News = {
   image: string;
   text: string;
+  imgPath: string;
 };
 
 export type Home = {
   topSail: Game[];
   categories: Category[];
   news: News[];
-  imgPath: News[];
 };
 
 export type AllGames = {
