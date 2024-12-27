@@ -17,7 +17,14 @@ export const mainApi = createApi({
       query: () => "/home", // URL для получения данных
       transformResponse: (response: BaseResponse<Home>) => {
         if (response.success === true) {
-          return response?.data || { topSail: [], categories: [], news: [], imgPath: [] }; // Возвращаем корректную структуру по умолчанию
+          return (
+            response?.data || {
+              topSail: [],
+              categories: [],
+              news: [],
+              imgPath: [],
+            }
+          ); // Возвращаем корректную структуру по умолчанию
         } else {
           return { topSail: [], categories: [], news: [], imgPath: [] }; // Пустая структура в случае ошибки
         }
@@ -49,30 +56,36 @@ export const mainApi = createApi({
       query: () => "/categories",
       transformResponse: (response: BaseResponse<Categories>): Categories => {
         if (response.success === true) {
-          return response.data || { games1: [], games2: [], games3: []};
+          return response.data || { games1: [], games2: [], games3: [] };
         } else {
-          return { games1: [], games2: [], games3: []};
+          return { games1: [], games2: [], games3: [] };
         }
       },
     }),
 
     // Эндпоинт для корзины
-    gamesInCart: builder.query<GamesResponse, void>({
-      query: () => "/shopping-cart/success", // URL для получения данных
-      transformResponse: (response: BaseResponse<GamesResponse>): GamesResponse => {
-        if (response.success === true) {
-          return response?.data || { GamesResponse: [] }; // Структура по умолчанию
-        } else {
-          return { Game: [], GamesResponse: [] }; // Пустая структура в случае ошибки
-        }
-      },
-    }),
-
+    // gamesInCart: builder.query<GamesResponse, void>({
+    //   query: () => "/shopping-cart/success", // URL для получения данных
+    //   transformResponse: (
+    //     response: BaseResponse<GamesResponse>
+    //   ): GamesResponse => {
+    //     if (response.success === true) {
+    //       return response?.data || { GamesResponse: [] }; // Структура по умолчанию
+    //     } else {
+    //       return { Game: [], GamesResponse: [] }; // Пустая структура в случае ошибки
+    //     }
+    //   },
+    // }),
   }),
 });
 
 // Экспортируем хуки для использования в компонентах
 
-export const { useHomePageQuery, useCommentsPageQuery, useCategoriesPageQuery, useGamesInCartQuery } = mainApi;
+export const {
+  useHomePageQuery,
+  useCommentsPageQuery,
+  useCategoriesPageQuery,
+  // useGamesInCartQuery,
+} = mainApi;
 
 export default mainApi;
