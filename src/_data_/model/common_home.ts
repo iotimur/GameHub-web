@@ -18,6 +18,7 @@ export type Game = {
 export type Category = {
   image: string;
   text: string;
+  category: string;
 };
 
 export type News = {
@@ -38,4 +39,6 @@ export type AllGames = {
   image: string;
   text: string;
   imgPath: string;
+  description: string;
+  category: string;
 };

@@ -13,20 +13,20 @@ import { arrow_left, arrow_right } from "../../../assets/Images_main";
 export const GalleryCategories = (props) => {
   const [index, setIndex] = useState(0);
   const cards: any = [
-    { img: props.img.category5, text: props.data[4].text },
-    { img: props.img.category6, text: props.data[5].text },
-    { img: props.img.category7, text: props.data[6].text },
-    { img: props.img.category8, text: props.data[7].text },
-    { img: props.img.category1, text: props.data[0].text },
-    { img: props.img.category2, text: props.data[1].text },
-    { img: props.img.category3, text: props.data[2].text },
-    { img: props.img.category4, text: props.data[3].text },
+    { img: props.img.category5, text: props.data[4].text, category: props.data[4].category},
+    { img: props.img.category6, text: props.data[5].text, category: props.data[5].category },
+    { img: props.img.category7, text: props.data[6].text, category: props.data[6].category },
+    { img: props.img.category8, text: props.data[7].text, category: props.data[7].category },
+    { img: props.img.category1, text: props.data[0].text, category: props.data[0].category },
+    { img: props.img.category2, text: props.data[1].text, category: props.data[1].category },
+    { img: props.img.category3, text: props.data[2].text, category: props.data[2].category },
+    { img: props.img.category4, text: props.data[3].text, category: props.data[3].category },
   ];
   const [displayedCards, setdisplayedCards] = useState([
-    { img: props.img.category1, text: props.data[0].text },
-    { img: props.img.category2, text: props.data[1].text },
-    { img: props.img.category3, text: props.data[2].text },
-    { img: props.img.category4, text: props.data[3].text },
+    { img: props.img.category1, text: props.data[0].text, category: props.data[0].category },
+    { img: props.img.category2, text: props.data[1].text, category: props.data[1].category },
+    { img: props.img.category3, text: props.data[2].text, category: props.data[2].category },
+    { img: props.img.category4, text: props.data[3].text, category: props.data[3].category },
   ]);
 
   const handleNextClick = () => {
@@ -57,7 +57,7 @@ export const GalleryCategories = (props) => {
       ></ArrowLeftMain>
       <GalleryMain>
         {displayedCards.map((card, i) => (
-          <CardCategories key={i} img={card.img} text={card.text} />
+          <CardCategories key={i} img={card.img} text={card.text} category={card.category} />
         ))}
       </GalleryMain>
 

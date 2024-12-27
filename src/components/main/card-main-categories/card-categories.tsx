@@ -10,7 +10,7 @@ import {
 export const CardCategories = (props) => {
   return (
     <ProductСardCategories>
-      <Link to="/gamehub/categories">
+      <Link to={`/gamehub/list-games?category=${encodeURIComponent(props.category)}`}>
         <CategoriesСardImg src={props.img} alt="Card Product" />
       </Link>
       <TextCardCategories>

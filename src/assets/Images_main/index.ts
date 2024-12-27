@@ -24,3 +24,7 @@ export { default as img_top_9 } from "./mirage.jpg";
 export { default as img_top_10 } from "./valhalla.png";
 export { default as img_top_11 } from "./ark.jpg";
 export { default as img_top_12 } from "./fifa.png";
+export { default as img_top_13 } from "./dirt5.jpg";
+export { default as img_top_14 } from "./cyberpank.jpg";
+export { default as img_top_15 } from "./empires4.jpg";
+export { default as img_top_16 } from "./civilisation.jpg";
