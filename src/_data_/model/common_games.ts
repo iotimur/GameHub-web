@@ -1,4 +1,4 @@
-export interface Game {
+export type Game = {
     id: number;
     title: string;
     image: string;
@@ -6,9 +6,4 @@ export interface Game {
     releaseDate: string;
     description: string;
     price: number;
-  }
-  
-  export interface GamesResponse {
-    success: boolean;
-    data: Game[];
   }

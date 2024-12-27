@@ -1,7 +1,7 @@
 import { getConfigValue } from "@brojs/cli";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Home, AllGames, BaseResponse } from "../model/common_home";
-import { GamesResponse } from "../model/common_games"; // Импорт модели для нового эндпоинта
+import { Game } from "../model/common_games"; // Импорт модели для нового эндпоинта
 import { CommentsResponse } from "../model/common_comments"; // Импорт модели для нового эндпоинта
 import { Categories } from "../model/common_categories";
 
@@ -25,7 +25,7 @@ export const mainApi = createApi({
             }
           ); // Возвращаем корректную структуру по умолчанию
         } else {
-          return { topSail: [], categories: [], news: []}; // Пустая структура в случае ошибки
+          return { topSail: [], categories: [], news: [] }; // Пустая структура в случае ошибки
         }
       },
     }),
@@ -62,19 +62,16 @@ export const mainApi = createApi({
       },
     }),
 
-    // Эндпоинт для корзины
-    // gamesInCart: builder.query<GamesResponse, void>({
-    //   query: () => "/shopping-cart/success", // URL для получения данных
-    //   transformResponse: (
-    //     response: BaseResponse<GamesResponse>
-    //   ): GamesResponse => {
-    //     if (response.success === true) {
-    //       return response?.data || { GamesResponse: [] }; // Структура по умолчанию
-    //     } else {
-    //       return { Game: [], GamesResponse: [] }; // Пустая структура в случае ошибки
-    //     }
-    //   },
-    // }),
+    gamesInCart: builder.query<Game[], void>({
+      query: () => "/shopping-cart", // URL для получения данных
+      transformResponse: (response: BaseResponse<Game[]>): Game[] => {
+        if (response.success === true) {
+          return response?.data || []; // Возвращаем корректную структуру по умолчанию
+        } else {
+          return []; // Пустая структура в случае ошибки
+        }
+      },
+    }),
   }),
 });
 
@@ -85,7 +82,7 @@ export const {
   useCommentsPageQuery,
   useCategoriesPageQuery,
   useAllGamesQuery,
-  // useGamesInCartQuery,
+  useGamesInCartQuery,
 } = mainApi;
 
 export default mainApi;

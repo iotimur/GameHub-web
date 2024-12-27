@@ -23,17 +23,17 @@ const images = {
 };
 
 const Games: React.FC = () => {
-  const { data, isLoading, error } = useGamesInCartQuery();
+  const { isFetching, isLoading, data, error } = useGamesInCartQuery();
 
   if (isLoading) {
     return <Oval>Загрузка...</Oval>;
   }
 
-  if (error || !data?.success) {
+  if (error) {
     return <Oval>Ошибка загрузки данных</Oval>;
   }
 
-  const games = data.data;
+  const games = data;
 
   const handleDelete = (id: number) => {
     console.log(`Удалить игру с ID: ${id}`);
