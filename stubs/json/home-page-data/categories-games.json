@@ -1,0 +1,221 @@
+{
+  "success": true,
+  "data": {
+    "race": [
+      {
+        "image": "game1",
+        "text": "$10",
+        "imgPath": "img_top_1"
+      },
+      {
+        "image": "game2",
+        "text": "$10",
+        "imgPath": "img_top_2"
+      },
+      {
+        "image": "game3",
+        "text": "$10",
+        "imgPath": "img_top_3"
+      },
+      {
+        "image": "game4",
+        "text": "$10",
+        "imgPath": "img_top_4"
+      },
+      {
+        "image": "game5",
+        "text": "$10",
+        "imgPath": "img_top_5"
+      },
+      {
+        "image": "game6",
+        "text": "$10",
+        "imgPath": "img_top_6"
+      },
+      {
+        "image": "game7",
+        "text": "$10",
+        "imgPath": "img_top_7"
+      },
+      {
+        "image": "game8",
+        "text": "$10",
+        "imgPath": "img_top_8"
+      }
+    ],
+    "deep plot": [
+      {
+        "image": "category1",
+        "text": "гонки",
+        "imgPath": "img_categories_1"
+      },
+      {
+        "image": "category2",
+        "text": "глубокий сюжет",
+        "imgPath": "img_categories_2"
+      },
+      {
+        "image": "category3",
+        "text": "симуляторы",
+        "imgPath": "img_categories_3"
+      },
+      {
+        "image": "category4",
+        "text": "открытый мир",
+        "imgPath": "img_categories_4"
+      },
+      {
+        "image": "category5",
+        "text": "экшен",
+        "imgPath": "img_categories_5"
+      },
+      {
+        "image": "category6",
+        "text": "стратегии",
+        "imgPath": "img_categories_6"
+      },
+      {
+        "image": "category7",
+        "text": "шутеры",
+        "imgPath": "img_categories_7"
+      },
+      {
+        "image": "category8",
+        "text": "приключения",
+        "imgPath": "img_categories_8"
+      }
+    ],
+    "simulators": [
+      {
+        "image": "news1",
+        "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+        "imgPath": "img_news_1"
+      },
+      {
+        "image": "news2",
+        "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+        "imgPath": "img_news_2"
+      },
+      {
+        "image": "news3",
+        "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
+        "imgPath": "img_news_3"
+      },
+      {
+        "image": "news4",
+        "text": "Авторы Skull and Bones расширяют планы на второй сезо",
+        "imgPath": "img_news_4"
+      }
+    ],
+    "rpg": [
+      {
+        "image": "news1",
+        "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+        "imgPath": "img_news_1"
+      },
+      {
+        "image": "news2",
+        "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+        "imgPath": "img_news_2"
+      },
+      {
+        "image": "news3",
+        "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
+        "imgPath": "img_news_3"
+      },
+      {
+        "image": "news4",
+        "text": "Авторы Skull and Bones расширяют планы на второй сезо",
+        "imgPath": "img_news_4"
+      }
+    ],
+    "actions": [
+      {
+        "image": "news1",
+        "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+        "imgPath": "img_news_1"
+      },
+      {
+        "image": "news2",
+        "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+        "imgPath": "img_news_2"
+      },
+      {
+        "image": "news3",
+        "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
+        "imgPath": "img_news_3"
+      },
+      {
+        "image": "news4",
+        "text": "Авторы Skull and Bones расширяют планы на второй сезо",
+        "imgPath": "img_news_4"
+      }
+    ],
+    "strategies": [
+      {
+        "image": "news1",
+        "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+        "imgPath": "img_news_1"
+      },
+      {
+        "image": "news2",
+        "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+        "imgPath": "img_news_2"
+      },
+      {
+        "image": "news3",
+        "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
+        "imgPath": "img_news_3"
+      },
+      {
+        "image": "news4",
+        "text": "Авторы Skull and Bones расширяют планы на второй сезо",
+        "imgPath": "img_news_4"
+      }
+    ],
+    "Shooters": [
+      {
+        "image": "news1",
+        "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+        "imgPath": "img_news_1"
+      },
+      {
+        "image": "news2",
+        "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+        "imgPath": "img_news_2"
+      },
+      {
+        "image": "news3",
+        "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
+        "imgPath": "img_news_3"
+      },
+      {
+        "image": "news4",
+        "text": "Авторы Skull and Bones расширяют планы на второй сезо",
+        "imgPath": "img_news_4"
+      }
+    ],
+    "adventures": [
+      {
+        "image": "news1",
+        "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+        "imgPath": "img_news_1"
+      },
+      {
+        "image": "news2",
+        "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+        "imgPath": "img_news_2"
+      },
+      {
+        "image": "news3",
+        "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
+        "imgPath": "img_news_3"
+      },
+      {
+        "image": "news4",
+        "text": "Авторы Skull and Bones расширяют планы на второй сезо",
+        "imgPath": "img_news_4"
+      }
+    ]
+  }
+}

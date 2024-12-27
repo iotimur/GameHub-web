@@ -1,0 +1,149 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "name": "The Witcher 3: Wild Hunt",
+      "image": "game1",
+      "text": "$10",
+      "imgPath": "img_top_1",
+      "description": "Эпическая RPG с открытым миром, в которой Геральт из Ривии охотится на монстров и раскрывает политические заговоры.",
+      "category": "RPG"
+    },
+    {
+      "id": 2,
+      "name": "Red Dead Redemption 2",
+      "image": "game2",
+      "text": "$10",
+      "imgPath": "img_top_2",
+      "description": "Приключенческая игра с открытым миром на Диком Западе, рассказывающая историю Артура Моргана.",
+      "category": "Adventures"
+    },
+    {
+      "id": 3,
+      "name": "Forza Horizon 5",
+      "image": "game3",
+      "text": "$10",
+      "imgPath": "img_top_3",
+      "description": "Гоночная игра с огромным открытым миром, действие которой происходит в Мексике.",
+      "category": "Race"
+    },
+    {
+      "id": 4,
+      "name": "Atomic Heart",
+      "image": "game4",
+      "text": "$10",
+      "imgPath": "img_top_4",
+      "description": "Экшен-шутер с элементами RPG, разворачивающийся в альтернативной Советской России.",
+      "category": "Shooters"
+    },
+    {
+      "id": 5,
+      "name": "Counter-Strike 2",
+      "image": "game5",
+      "text": "$10",
+      "imgPath": "img_top_5",
+      "description": "Популярный онлайн-шутер с соревновательным геймплеем и тактическими элементами.",
+      "category": "Shooters"
+    },
+    {
+      "id": 6,
+      "name": "Grand Theft Auto V",
+      "image": "game6",
+      "text": "$10",
+      "imgPath": "img_top_6",
+      "description": "Игра с открытым миром, где можно погрузиться в криминальный мир Лос-Сантоса.",
+      "category": "Adventures"
+    },
+    {
+      "id": 7,
+      "name": "Assassin’s Creed IV: Black Flag",
+      "image": "game7",
+      "text": "$10",
+      "imgPath": "img_top_7",
+      "description": "Приключенческая игра о пиратах и морских сражениях в эпоху золотого века пиратства.",
+      "category": "Adventures"
+    },
+    {
+      "id": 8,
+      "name": "Spider-Man",
+      "image": "game8",
+      "text": "$10",
+      "imgPath": "img_top_8",
+      "description": "Игра о супергерое Человеке-пауке с захватывающими битвами и паркуром по Нью-Йорку.",
+      "category": "Action"
+    },
+    {
+      "id": 9,
+      "name": "Assassin’s Creed Mirage",
+      "image": "game9",
+      "text": "$10",
+      "imgPath": "img_top_9",
+      "description": "Приключенческая игра с упором на скрытность, вдохновленная классическими частями серии.",
+      "category": "Action"
+    },
+    {
+      "id": 10,
+      "name": "Assassin’s Creed Valhalla",
+      "image": "game10",
+      "text": "$10",
+      "imgPath": "img_top_10",
+      "description": "RPG с открытым миром о викингах, включающая битвы, исследования и строительство поселений.",
+      "category": "RPG"
+    },
+    {
+      "id": 11,
+      "name": "ARK: Survival Evolved",
+      "image": "game11",
+      "text": "$10",
+      "imgPath": "img_top_11",
+      "description": "Выживание в открытом мире с динозаврами, строительством и многопользовательскими элементами.",
+      "category": "Simulators"
+    },
+    {
+      "id": 12,
+      "name": "FIFA 23",
+      "image": "game12",
+      "text": "$10",
+      "imgPath": "img_top_12",
+      "description": "Популярный футбольный симулятор с улучшенной графикой и реалистичным геймплеем.",
+      "category": "Sports"
+    },
+    {
+      "id": 13,
+      "name": "Dirt 5",
+      "image": "game13",
+      "text": "$10",
+      "imgPath": "img_top_13",
+      "description": "Аркадная гоночная игра с фокусом на ралли и внедорожных соревнованиях.",
+      "category": "Race"
+    },
+    {
+      "id": 14,
+      "name": "Cyberpunk 2077",
+      "image": "game14",
+      "text": "$10",
+      "imgPath": "img_top_14",
+      "description": "RPG в киберпанк-сеттинге с нелинейным сюжетом и детализированным открытым миром.",
+      "category": "RPG"
+    },
+    {
+      "id": 15,
+      "name": "Age of Empires IV",
+      "image": "game15",
+      "text": "$10",
+      "imgPath": "img_top_15",
+      "description": "Классическая стратегия в реальном времени с историческими кампаниями.",
+      "category": "Strategies"
+    },
+    {
+      "id": 16,
+      "name": "Civilization VI",
+      "image": "game16",
+      "text": "$10",
+      "imgPath": "img_top_16",
+      "description": "Глобальная пошаговая стратегия, в которой игроки строят и развивают цивилизации.",
+      "category": "Strategies"
+    }
+  ]
+}

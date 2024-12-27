@@ -1,10 +1,9 @@
 import { getConfigValue } from "@brojs/cli";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Home, BaseResponse } from "../model/common_home";
+import { Home, AllGames, BaseResponse } from "../model/common_home";
 import { GamesResponse } from "../model/common_games"; // Импорт модели для нового эндпоинта
 import { CommentsResponse } from "../model/common_comments"; // Импорт модели для нового эндпоинта
 import { Categories } from "../model/common_categories";
-
 
 const baseUrl = getConfigValue("gamehub.api");
 
@@ -18,9 +17,19 @@ export const mainApi = createApi({
       query: () => "/home", // URL для получения данных
       transformResponse: (response: BaseResponse<Home>) => {
         if (response.success === true) {
-          return response?.data || { topSail: [], categories: [], news: [] }; // Структура по умолчанию
+          return response?.data || { topSail: [], categories: [], news: [], imgPath: [] }; // Возвращаем корректную структуру по умолчанию
         } else {
-          return { topSail: [], categories: [], news: [] }; // Пустая структура в случае ошибки
+          return { topSail: [], categories: [], news: [], imgPath: [] }; // Пустая структура в случае ошибки
+        }
+      },
+    }),
+    allGames: builder.query<AllGames[], void>({
+      query: () => "/all-games", // Эндпоинт для получения данных
+      transformResponse: (response: BaseResponse<AllGames[]>) => {
+        if (response.success === true) {
+          return response?.data || []; // Возвращаем корректную структуру по умолчанию
+        } else {
+          return []; // Пустая структура в случае ошибки
         }
       },
     }),

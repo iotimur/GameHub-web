@@ -49,3 +49,29 @@ export const IconSearch = styled.div`
   list-style: none;
   text-decoration: none;
 `;
+
+// Стили для выпадающего компонента
+export const Dropdown = styled.div`
+  position: absolute;
+  top: 100%; /* Располагаем под поисковой строкой */
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 10;
+
+  p {
+    padding: 10px 15px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: #f0f0f0; /* Цвет подсветки */
+      color: #333; /* Цвет текста при наведении */
+    }
+  }
+`;
