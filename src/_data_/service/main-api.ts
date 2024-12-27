@@ -85,6 +85,7 @@ export const {
   useHomePageQuery,
   useCommentsPageQuery,
   useCategoriesPageQuery,
+  useAllGamesQuery,
   // useGamesInCartQuery,
 } = mainApi;
 
