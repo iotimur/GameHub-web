@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Oval,
   Container_my,
@@ -24,6 +24,14 @@ const images = {
 
 const Games: React.FC = () => {
   const { isFetching, isLoading, data, error } = useGamesInCartQuery();
+  const [games, setGames] = useState([]); // Локальное состояние для списка игр
+
+  // Сохраняем данные из запроса в состояние
+  useEffect(() => {
+    if (data) {
+      setGames(data);
+    }
+  }, [data]);
 
   if (isLoading) {
     return <Oval>Загрузка...</Oval>;
@@ -33,12 +41,12 @@ const Games: React.FC = () => {
     return <Oval>Ошибка загрузки данных</Oval>;
   }
 
-  const games = data;
-
+  // Удаление игры из состояния
   const handleDelete = (id: number) => {
-    console.log(`Удалить игру с ID: ${id}`);
+    setGames((prevGames) => prevGames.filter((game) => game.id !== id));
   };
 
+  // Подсчёт общей стоимости
   const totalPrice = games.reduce((total, game) => total + game.price, 0);
 
   return (
