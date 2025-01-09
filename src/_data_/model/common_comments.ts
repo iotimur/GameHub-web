@@ -1,11 +1,15 @@
 export type Comment = {
-    username: string;
-    text: string;
-  };
-  
+  username: string;
+  text: string;
+  likes: number;
+  rating: number;
+  date: string;
+};
+
   export type CommentsResponse = {
     comments: Comment[];
   };
+  
   
   export type BaseResponse<Data> =
     | {

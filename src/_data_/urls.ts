@@ -23,8 +23,12 @@ export const URLs = {
     "game-page":
       getNavigationValue("gamehub.game-page") &&
       `${baseUrl}${getNavigationValue("gamehub.game-page")}`,
+    "update-like":
+      getNavigationValue("gamehub.update-like") &&
+      `${baseUrl}${getNavigationValue("gamehub.update-like")}`,
   },
   api: {
     main: getConfigValue("gamehub.api"),
+    updateLike: `${baseUrl}/api/update-like`, // Добавляем URL для update-like
   },
 };

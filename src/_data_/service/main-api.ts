@@ -2,7 +2,7 @@ import { getConfigValue } from "@brojs/cli";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Home, AllGames, BaseResponse } from "../model/common_home";
 import { Game } from "../model/common_games"; // Импорт модели для нового эндпоинта
-import { CommentsResponse } from "../model/common_comments"; // Импорт модели для нового эндпоинта
+import { CommentsResponse, Comment } from "../model/common_comments"; // Импорт модели для нового эндпоинта
 import { Categories } from "../model/common_categories";
 
 const baseUrl = getConfigValue("gamehub.api");
@@ -41,15 +41,42 @@ export const mainApi = createApi({
     }),
 
     commentsPage: builder.query<CommentsResponse, void>({
-      query: () => "/game-page", // Укажите правильный URL для вашего запроса
+      query: () => "/game-page",
       transformResponse: (response: BaseResponse<CommentsResponse>) => {
         if (response.success === true) {
-          return response?.data || { comments: [] }; // Структура по умолчанию
+          return response?.data || { comments: [] };
         } else {
-          return { comments: [] }; // Пустая структура в случае ошибки
+          return { comments: [] };
         }
       },
     }),
+    updateLike: builder.mutation<void, { username: string; likes: number }>({
+      queryFn: ({ username, likes }, { dispatch }) => {
+        try {
+          // Обновляем локальный кэш
+          dispatch(
+            mainApi.util.updateQueryData("commentsPage", undefined, (draft) => {
+              const comment = draft.comments.find((c) => c.username === username);
+              if (comment) {
+                comment.likes = likes;
+              }
+            })
+          );
+          return { data: undefined }; // Возвращаем успешный результат
+        } catch (error) {
+          console.error("Ошибка при локальном обновлении лайков:", error);
+          return {
+            error: {
+              status: "CUSTOM_ERROR",
+              data: "Не удалось обновить лайки локально",
+            },
+          } as any; // Приведение к типу, чтобы удовлетворить TS
+        }
+      },
+    }),
+    
+    
+    
 
     categoriesPage: builder.query<Categories, void>({
       query: () => "/categories",
@@ -83,6 +110,8 @@ export const {
   useCategoriesPageQuery,
   useAllGamesQuery,
   useGamesInCartQuery,
+  useUpdateLikeMutation
+  
 } = mainApi;
 
 export default mainApi;

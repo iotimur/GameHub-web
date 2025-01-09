@@ -55,6 +55,7 @@ const GamePage = () => {
           </Styled.GroupRatingAboutGame>
           <SystemRequirements />
           <CommentsSection comments={data?.comments || []} />
+
         </Styled.Main>
       </ErrorBoundary>
       {isModalOpen && <Modal imageUrl={selectedImage} onClose={closeModal} />}
