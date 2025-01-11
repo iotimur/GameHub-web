@@ -1,7 +1,8 @@
 import styled from "@emotion/styled"
 
 export const ShowMoreBtn = styled.button`
-width: 100%;
+  width: 100%;
+  margin-bottom: 70px;
   height: 50px;
   background: #18396c;
   display: flex;

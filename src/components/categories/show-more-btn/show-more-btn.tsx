@@ -8,7 +8,9 @@ interface ShowMoreButtonProps {
 
 const ShowMoreButton: React.FC<ShowMoreButtonProps> = ({ onClick, isExpanded }) => {
   return (
-    <ShowMoreBtn onClick={onClick}>Показать больше</ShowMoreBtn>
+    <ShowMoreBtn onClick={onClick}>
+      {isExpanded ? 'Показать меньше' : 'Показать больше'}
+    </ShowMoreBtn>
   );
 };
 

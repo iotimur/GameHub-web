@@ -14,11 +14,10 @@ export const TitleRectangle = styled.div`
     border-radius: 25px;
     display: flex;
     align-items: center;
-    padding: 0 20px;
     background: #f39a46;
     width: fit-content;
     height: 50px;
-    margin-top:50px;
+    // margin-top:50px;
     padding: 10px 15px;
     margin-bottom:20px;
     @media screen and (max-width: 1200px) {

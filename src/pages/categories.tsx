@@ -44,7 +44,6 @@ const Categories = () => {
                       onFilter={handleFilter}
                   />
                   <FilterSorting onSort={handleSort} />
-                  
                   {isLeaders && <Leaders sortOption={sortOption} />}
                   {isNewGames && <NewGames sortOption={sortOption} />}
                   {isDiscountGames && <DiscountGames sortOption={sortOption} />}

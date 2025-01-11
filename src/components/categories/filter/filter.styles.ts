@@ -16,7 +16,6 @@ export const SortingButton = styled.button`
   display: flex;
   align-items: center;
   right: 0px;
-  margin-top: -30px;
   border-radius: 10px;
   width: 110px;
   height: 25px;

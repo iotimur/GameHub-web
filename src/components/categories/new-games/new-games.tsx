@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GameCard from '../card/card';
 import { Title } from '../title';
 import mainApi from '../../../_data_/service/main-api';
-// import ShowMoreButton from '../show-more-btn/show-more-btn';
+import ShowMoreButton from '../show-more-btn/show-more-btn';
 const NewGames = ({ sortOption }) => {
   const { data, isLoading, error } = mainApi.useCategoriesPageQuery();
+  const [isExpanded, setIsExpanded] = useState(false);
+  const handleShowMore = () => {
+    setIsExpanded(!isExpanded);
+  };
   console.log(data, isLoading, error);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading</div>;
-  // const [showCard, setShowCard] = useState(false);
-  // const handleShowMore = () => {
-  //   setShowCard(!showCard);
-  // };
+  
 
   let Games = [];
   if (data.games2) {
@@ -26,7 +27,8 @@ const NewGames = ({ sortOption }) => {
   } else if (sortOption === 'по цене min') {
     sortedGames.sort((a, b) => a.price - b.price);
   }
-  const displayedGames = sortedGames.slice(0, 3);  // первые 3 игры из sortedGames
+  const displayedGames = isExpanded ? sortedGames : sortedGames.slice(0, 3);
+
   return (
     <div>
       <Title text="Новинки" />
@@ -37,19 +39,9 @@ const NewGames = ({ sortOption }) => {
           </div>
         ))
         : <div>No games found</div>}
-      {/* {!showCard && (
-        <ShowMoreButton onClick={handleShowMore} isExpanded={showCard} />
+      {displayedGames.length >= 3 && (
+        <ShowMoreButton onClick={handleShowMore} isExpanded={isExpanded} />
       )}
-
-      {showCard && (
-        <>
-          {sortedGames.slice(3).map((game) => ( // Отображение оставшихся игр после первых 3
-            <div key={game.id}>
-              <GameCard game={game} />
-            </div>
-          ))}
-        </>
-      )} */}
     </div>
   );
 };
