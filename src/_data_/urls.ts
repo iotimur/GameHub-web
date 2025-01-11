@@ -29,6 +29,6 @@ export const URLs = {
   },
   api: {
     main: getConfigValue("gamehub.api"),
-    updateLike: `${baseUrl}/api/update-like`, // Добавляем URL для update-like
+
   },
 };

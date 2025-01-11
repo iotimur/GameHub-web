@@ -2,7 +2,7 @@ import { getConfigValue } from "@brojs/cli";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Home, AllGames, BaseResponse } from "../model/common_home";
 import { Game } from "../model/common_games"; // Импорт модели для нового эндпоинта
-import { CommentsResponse, Comment } from "../model/common_comments"; // Импорт модели для нового эндпоинта
+import { CommentsResponse } from "../model/common_comments"; // Импорт модели для нового эндпоинта
 import { Categories } from "../model/common_categories";
 
 const baseUrl = getConfigValue("gamehub.api");
@@ -51,9 +51,18 @@ export const mainApi = createApi({
       },
     }),
     updateLike: builder.mutation<void, { username: string; likes: number }>({
-      queryFn: ({ username, likes }, { dispatch }) => {
+      query: ({ username, likes }) => ({
+        url: '/update-like', // Используйте правильный путь
+        method: 'POST',
+        body: { username, likes },
+      }),
+      // После выполнения запроса, обновляем локальный кэш
+      async onQueryStarted({ username, likes }, { dispatch, queryFulfilled }) {
         try {
-          // Обновляем локальный кэш
+          // Ожидаем выполнения запроса
+          await queryFulfilled;
+      
+          // Обновление кэша
           dispatch(
             mainApi.util.updateQueryData("commentsPage", undefined, (draft) => {
               const comment = draft.comments.find((c) => c.username === username);
@@ -62,20 +71,15 @@ export const mainApi = createApi({
               }
             })
           );
-          return { data: undefined }; // Возвращаем успешный результат
+      
+          // Дополнительно, можно сделать перезапрос, чтобы убедиться, что данные актуальны
+          dispatch(mainApi.endpoints.commentsPage.initiate());
         } catch (error) {
-          console.error("Ошибка при локальном обновлении лайков:", error);
-          return {
-            error: {
-              status: "CUSTOM_ERROR",
-              data: "Не удалось обновить лайки локально",
-            },
-          } as any; // Приведение к типу, чтобы удовлетворить TS
+          console.error("Ошибка при обновлении лайков:", error);
         }
-      },
+      }
+      
     }),
-    
-    
     
 
     categoriesPage: builder.query<Categories, void>({
