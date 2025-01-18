@@ -5,6 +5,8 @@ export type Game = {
   old_price?: number; 
   image: string;
   os: string;
+  fav1: string;
+  fav2: string;
 };
 
 export type Categories = {
