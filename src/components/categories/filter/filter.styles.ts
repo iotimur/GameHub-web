@@ -1,39 +1,40 @@
 import styled from "@emotion/styled"
 
-export const SortingString = styled.span`
-  position: absolute;
-  margin-left: 800px;
-  // margin-top: 40px;
-  // margin-bottom: 100px;
+export const String = styled.span`
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
-  @media screen and (max-width: 1200px) {
-    margin-left: 630px;
-  }
   @media screen and (max-width: 998px) {
-    display: none;
-  }
+  font-size: 12px;
+}
 `;
 
 export const SortingButton = styled.button`
+  z-index: 100;
   position: absolute;
   display: flex;
   align-items: center;
   right: 0px;
-  // margin-top: 40px;
   border-radius: 10px;
-  width: 150px;
-  height: 27px;
+  width: 110px;
+  height: 25px;
   background: #18396c;
   cursor: pointer;
   border: 1px solid #f39a46;
   justify-content: center;
   align-items: center;
+  opacity: 0.5;
+  &:hover {
+    background-color: #2E5A99;
+    transition: 0.5s;
+    opacity: 1;
+  }
+
 @media screen and (max-width: 998px) {
-  width: 120px;
+  width: 90px;
   height: 20px;
+  font-size: 12px;
 }
 `;
 
@@ -49,25 +50,27 @@ export const Dropdown = styled.div`
   border: 1px solid #f39a46;
   border-radius: 10px;
   padding: 8px 0;
-  z-index: 1;
+  z-index: 100;
 `;
 
 export const DropdownItem = styled.button`
-  padding: 8px 12px;
+  padding: 2px 0px;
   cursor: pointer;
-  width: 148px;
+  width: 108px;
   border-radius: 10px;
   font-size: 16px;
   color: #fff;
   background-color: rgba(24, 57, 108,0.5);
   border: none;
+  
   &:hover {
     background-color: #2E5A99;
     transition: 0.5s;
   }
-`;
 
-export const All = styled.div`
-  padding-top:40px;
-  padding-bottom:20px;
+  @media screen and (max-width: 998px) {
+  width: 88px;
+  height: 20px;
+  font-size: 12px;
+}
 `;

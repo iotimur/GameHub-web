@@ -10,6 +10,7 @@ import Entrance from "./pages/entrance";
 import Registration from "./pages/registration";
 import Layout from "./components/layout/layout";
 import ListGames from "./components/list-games/list_games";
+import Favourites from "./pages/favourites";
 
 export const PageRoutes = () => (
   <Routes>
@@ -22,6 +23,7 @@ export const PageRoutes = () => (
       <Route path="registration" element={<Registration />} />
       <Route path="shopping-cart" element={<Shopping_cart />} />
       <Route path="list-games" element={<ListGames />} />
+      <Route path="favourites" element={<Favourites />} />
       <Route path="*" element={<h1>Page not found</h1>} />
     </Route>
   </Routes>

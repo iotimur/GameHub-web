@@ -1,7 +1,27 @@
 import styled from "@emotion/styled"
 
+// export const Card = styled.button`
+//     width: 80%;
+//     height: 170px;
+//     background: #18396C;
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     cursor: pointer;
+//     border: 1px solid #f39a46;
+//     margin-bottom: 5px;
+//   &:hover {
+//   background: #2E5A99;
+//   transition: 0.5s;
+// }
+//   @media screen and (max-width: 800px) {
+//   width: 80%;
+//   height: 130px;
+// }
+// `;
+
 export const Card = styled.button`
-    width: 100%;
+    width: 100%; /* Изменено на 90% для создания отступа */
     height: 170px;
     background: #18396C;
     display: flex;
@@ -9,24 +29,55 @@ export const Card = styled.button`
     position: relative;
     cursor: pointer;
     border: 1px solid #f39a46;
-    margin-bottom: 5px;
-  &:hover {
-  background: #2E5A99;
-  transition: 0.5s;
-}
+    // margin-bottom: 5px;
+    // margin-left: 10px;
+    &:hover {
+        background: #2E5A99;
+        transition: 0.5s;
+    }
+    @media screen and (max-width: 800px) {
+        width: 80%;
+        height: 130px;
+    }
 `;
+
+export const AllCard = styled.div`
+    width: 100%;
+    height: 170px;
+    display: flex; 
+    align-items: center; 
+    // border: 1px solid #f39a46;
+    margin-bottom: 5px;
+    &:hover img {
+        opacity: 1; 
+    }
+`;
+
+export const BtnFavourite = styled.button`
+    background: transparent;
+    border: none;
+    cursor: pointer;
+`;
+
+export const FavouriteImage = styled.img`
+    width: 30px; 
+    height: 30px; 
+    opacity: 0.5
+`;
+
 export const CardImg = styled.img`
     margin-left: 5px;
     width: 350px;
     height: 150px;
     border-radius: 10px;
-    object-fit: cover; // для сохранения пропорций
+    object-fit: cover; 
 @media screen and (max-width: 988px) {
   width: 320px;
 }
 
 @media screen and (max-width: 800px) {
-  max-width: 280px;
+  width: 40%;
+  height: 100px;
 }
 
 `;
@@ -48,7 +99,9 @@ export const TitleGame = styled.span`
     @media screen and (max-width: 998px) {
         width: 200px;
         font-size: 24px;
-       
+    }
+        @media screen and (max-width: 800px) {
+        font-size: 20px;
     }
     
 `;
@@ -74,6 +127,9 @@ export const NewPrice = styled.span`
   }
   @media screen and (max-width: 900px) {
     font-size: 20px;
+  }
+    @media screen and (max-width: 800px) {
+    font-size: 16px;
   }
   `;
 
@@ -104,4 +160,6 @@ export const OldPrice = styled.span`
   @media screen and (max-width: 800px) {
       display: none;
   }
-`;
+`
+
+

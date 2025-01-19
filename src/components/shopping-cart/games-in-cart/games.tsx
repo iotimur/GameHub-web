@@ -13,18 +13,8 @@ import {
   TotalSpan,
   Price1,
 } from "../games-in-cart/games.styled";
-import data from "../../../../stubs/json/shopping-cart/success.json";
+import { useGamesInCartQuery } from "../../../_data_/service/main-api";
 import { fifa, ved, mortal } from "../../../assets/images";
-
-interface Game {
-  id: number;
-  title: string;
-  image: string; // Здесь предполагается, что image - это ключ для объекта images
-  alt: string;
-  releaseDate: string;
-  description: string;
-  price: number;
-}
 
 const images = {
   mortal: mortal,
@@ -33,16 +23,30 @@ const images = {
 };
 
 const Games: React.FC = () => {
-  const [games, setGames] = useState<Game[]>([]);
+  const { isFetching, isLoading, data, error } = useGamesInCartQuery();
+  const [games, setGames] = useState([]); // Локальное состояние для списка игр
 
+  // Сохраняем данные из запроса в состояние
   useEffect(() => {
-    setGames(data.data);
-  }, []);
+    if (data) {
+      setGames(data);
+    }
+  }, [data]);
 
+  if (isLoading) {
+    return <Oval>Загрузка...</Oval>;
+  }
+
+  if (error) {
+    return <Oval>Ошибка загрузки данных</Oval>;
+  }
+
+  // Удаление игры из состояния
   const handleDelete = (id: number) => {
-    setGames(games.filter((game) => game.id !== id));
+    setGames((prevGames) => prevGames.filter((game) => game.id !== id));
   };
 
+  // Подсчёт общей стоимости
   const totalPrice = games.reduce((total, game) => total + game.price, 0);
 
   return (
@@ -50,8 +54,7 @@ const Games: React.FC = () => {
       <Oval>Ваша корзина</Oval>
       {games.map((game) => (
         <Container_my key={game.id}>
-          <BigImage src={images[game.image]} alt={game.alt} />{" "}
-          {/* Используем объект images для получения изображения */}
+          <BigImage src={images[game.image]} alt={game.alt} />
           <div>
             <Title1>{game.title}</Title1>
             <Price>{game.price} руб.</Price>

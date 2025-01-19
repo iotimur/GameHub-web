@@ -4,7 +4,8 @@ import {
     Sorting,
     SortingButton,
     DropdownItem,
-    Dropdown
+    Dropdown,
+    All
 } from './sorting.styled';
 
 const FilterSorting = ({ onSort }) => {
@@ -22,6 +23,7 @@ const FilterSorting = ({ onSort }) => {
     };
     return (
         <div>
+            <All>
             <SortingString>Сортировать по</SortingString>
             <SortingButton onClick={toggleDropdown}>
                 <Sorting>{selectedOption}</Sorting>
@@ -32,6 +34,7 @@ const FilterSorting = ({ onSort }) => {
                     </Dropdown>
                 )}
             </SortingButton>
+            </All>
         </div>
     );
 };
