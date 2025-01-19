@@ -21,3 +21,29 @@ router.get("/all-games", (request, response) => {
 });
 
 module.exports = router;
+
+const createEelemnt = (key, value, buttonTitle) => `
+    <label>
+        <input name="${key}" type="radio" ${stubs[key] === value && "checked"} onclick="fetch('/api/admin/set/${key}/${value}')"/>
+        ${buttonTitle || value}
+    </label>
+`
+
+router.get("/admin", (request, response) => {
+    response.send(`
+        <div>
+            <fieldset>
+                <legend>users</legend>
+                ${createEelemnt('users', 'success')}
+                ${createEelemnt('users', 'empty')}
+                ${createEelemnt('users', 'error')}
+            </fieldset>
+        </div>    
+    `)
+})
+
+router.get("/admin/set/:key/:value", (request, response) => {
+    const { key, value } = request.params;
+    stubs[key] = value;
+    response.send("Okay")
+})
