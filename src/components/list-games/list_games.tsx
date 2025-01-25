@@ -1,7 +1,6 @@
-import GameCard from "./card/card";
 import React, { useEffect, useState } from "react";
 import { Title } from "./title/title";
-import { ContainerMain, CardsMain, CommonMain } from "../main/main-container/main.styled";
+import { ContainerMain, CardsMain, CommonMain, PageContainer } from "../main/main-container/main.styled";
 
 import { useDispatch, useSelector } from "react-redux";
 import { homeSeachSlice } from "../../_data_/slices/home-app-search";
@@ -10,6 +9,8 @@ import { useSearchParams } from "react-router-dom";
 import { mainApi } from "../../_data_/service/main-api";
 
 import * as getHomeSearchSelectors from "../../_data_/selectors/home-app-search";
+import GameCard from "../card/card";
+import { CategoriesMain } from "../categories/categories.styled";
 
 const ListGames = () => {
   const dispatch = useDispatch();
@@ -26,13 +27,32 @@ const ListGames = () => {
 
   // Получаем параметры из URL
   const [searchParams] = useSearchParams();
-  
+
   // Извлекаем список ID из параметра q и преобразуем их в числа
   const query = searchParams.get("q");
   const ids = query ? query.split(",").map((id) => parseInt(id, 10)) : [];
-  
+
   // Извлекаем параметр category
   const category = searchParams.get('category');
+
+  const [favourites, setFavourites] = useState(() => { // Состояние для избранных игр
+    const savedFavourites = localStorage.getItem('favourites');
+    return savedFavourites ? JSON.parse(savedFavourites) : [];
+  });
+  const handleAddFavourite = (game) => {
+    setFavourites((prevFavourites) => {
+      const isAlreadyFavourite = prevFavourites.find(fav => fav.id === game.id);
+      let updatedFavourites;
+
+      if (isAlreadyFavourite) {
+        updatedFavourites = prevFavourites.filter(fav => fav.id !== game.id); // Удаляем из избранного
+      } else {
+        updatedFavourites = [...prevFavourites, game]; // Добавляем в избранное
+      }
+      localStorage.setItem('favourites', JSON.stringify(updatedFavourites));// Сохраняем новое состояние в localStorage
+      return updatedFavourites;
+    });
+  };
 
   // Условие для отображения в зависимости от данных
   if (isFetching || isLoading) {
@@ -60,22 +80,37 @@ const ListGames = () => {
 
   return (
     <div>
-      <CommonMain>
-        <ContainerMain>
+      {/* <CommonMain>
+        <ContainerMain> */}
+      <PageContainer>
+        <CategoriesMain>
           <Title text="Games List" />
 
-          {filteredGames.length > 0 ? (
+          {/* {filteredGames.length > 0 ? (
             filteredGames.map((game) => (
               <div key={game.id}>
-                {/* Передаем объект game в GameCard */}
                 <GameCard game={game} />
               </div>
             ))
           ) : (
             <p>Nothing found</p>
+          )} */}
+          {filteredGames.length > 0 ? (
+            filteredGames.map((game) => {
+              const isFavourite = favourites.some(fav => fav.id === game.id); // Проверяем, есть ли игра в избранном
+              return (
+                <div key={game.id}>
+                  <GameCard game={game} onAddFavourite={handleAddFavourite} isFavourite={isFavourite} />
+                </div>
+              );
+            })
+          ) : (
+            <div>No games found</div>
           )}
-        </ContainerMain>
-      </CommonMain>
+          {/* </ContainerMain>
+      </CommonMain> */}
+        </CategoriesMain>
+      </PageContainer>
     </div>
   );
 };

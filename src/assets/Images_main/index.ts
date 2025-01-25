@@ -28,3 +28,17 @@ export { default as img_top_13 } from "./dirt5.jpg";
 export { default as img_top_14 } from "./cyberpank.jpg";
 export { default as img_top_15 } from "./empires4.jpg";
 export { default as img_top_16 } from "./civilisation.jpg";
+export { default as windows } from "../images/windows.png";
+
+
+// export { default as sales_game1 } from "./How to Survive.jpg";
+// export { default as sales_game2 } from "./Red Solstice 2 Survivors.jpg";
+// export { default as new_game2 } from "./sons of the forests.jpg";
+// export { default as leaders_game1 } from "./Counter Strike 2 card.jpg";
+// export { default as leaders_game2 } from "./Elden Ring card.jpg";
+// export { default as leaders_game3 } from "./Pubg Battlegrounds.jpg";
+// export { default as leaders_game4 } from "./witcher.jpg";
+// export { default as leaders_game5 } from "./atomic heart.jpg";
+// export { default as leaders_game6 } from "./crab game.jpg";
+// export { default as new_game1 } from "./alpha league.jpg";
+// export { default as new_game3 } from "./pacific drive.jpg";

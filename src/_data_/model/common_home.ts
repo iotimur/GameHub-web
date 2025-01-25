@@ -12,7 +12,8 @@ export type BaseResponse<Data> =
 
 export type Game = {
   image: string;
-  text: string;
+  // text: string;
+  price: number,
   imgPath: string;
 };
 
@@ -37,10 +38,15 @@ export type Home = {
 
 export type AllGames = {
   id: number;
-  name: string;
+  // name: string;
+  title: string;
   image: string;
-  text: string;
+  price: number;
+  old_price?: number;
   imgPath: string;
   description: string;
   category: string;
+  os:string;
+  fav1: string;
+  fav2: string;
 };

@@ -9,10 +9,10 @@ const Favourites = () => {
       <PageContainer>
         {/* <CommonMain>
           <ContainerMain> */}
-            <CategoriesMain>
-            <FavouritesComponent />
-            </CategoriesMain>
-          {/* </ContainerMain>
+        <CategoriesMain>
+          <FavouritesComponent />
+        </CategoriesMain>
+        {/* </ContainerMain>
         </CommonMain> */}
       </PageContainer>
     </>
