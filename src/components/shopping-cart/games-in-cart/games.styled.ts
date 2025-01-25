@@ -197,3 +197,55 @@ export const TotalSpan = styled.span`
         margin-left: 200px;
     }
 `;
+
+export const PromoCodeContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0px 100px 700px;
+    max-width: 700px; // Максимальная ширина контейнера
+`;
+
+export const PromoCodeInput = styled.input`
+    width: calc(100% - 120px); // Занимает всю ширину за исключением кнопки
+    height: 64px; // Высота аналогична Oval
+    border-radius: 25px;
+    border: none;
+    padding: 0 20px;
+    font-size: 4vh;
+    color: black;
+    
+    @media screen and (max-width: 1200px) {
+        height: 50px;
+        font-size: 3.5vh;
+    }
+    
+    @media screen and (max-width: 800px) {
+        height: 45px;
+        font-size: 3vh;
+    }
+`;
+
+export const ApplyButton = styled.button`
+    width: 300px; // Ширина кнопки
+    height: 64px; // Высота аналогична Oval
+    border-radius: 25px;
+    margin-left: 30px;
+    background-color: #F39A46;
+    color: black;
+    font-weight: bold;
+    font-size: 4vh;
+    border: none;
+    
+    cursor: pointer;
+
+    @media screen and (max-width: 1200px) {
+        height: 50px;
+        font-size: 3.5vh;
+    }
+    
+    @media screen and (max-width: 800px) {
+        height: 45px;
+        font-size: 3vh;
+    }
+`;
