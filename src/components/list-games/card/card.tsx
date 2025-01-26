@@ -38,4 +38,4 @@ const GameCard = ({ game, handleCartUpdate }) => {
   );
 };
 
-export default GameCard;
+// export default GameCard;

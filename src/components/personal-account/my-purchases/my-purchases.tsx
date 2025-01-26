@@ -2,6 +2,7 @@ import React from 'react';
 import { BlockPurchasesStyled, ShopsStyled, AddStyled, TextZagolStyled, ImageStyled, TextGameStyled, TextBlockStyled, DFlexStyled } from './my-purchases.styled'
 import { Link } from 'react-router-dom';
 import { game11, game22 } from './index'
+import { URLs } from '../../../_data_/urls';
 
 export function MyPurchases() {
     return (

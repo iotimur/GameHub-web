@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GameCard from '../card/card';
+import GameCard from '../../card/card';
 import { Title } from '../title';
 import mainApi from "../../../_data_/service/main-api";
 import ShowMoreButton from "../show-more-btn/show-more-btn";
@@ -70,8 +70,6 @@ const Leaders = ({ sortOption }) => {
         <ShowMoreButton onClick={handleShowMore} isExpanded={isExpanded}>
         </ShowMoreButton>
       )}
-
-      <Link to="/gamehub/favourites"><h2>Избранное</h2></Link>
     </div>
   );
 };

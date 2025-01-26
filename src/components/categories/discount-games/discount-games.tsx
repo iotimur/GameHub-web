@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Title } from "../title";
-import GameCard from '../card/card';
+import GameCard from '../../card/card';
 import mainApi from '../../../_data_/service/main-api';
 import ShowMoreButton from '../show-more-btn/show-more-btn';
 import { Link } from 'react-router-dom';
@@ -71,9 +71,6 @@ const DiscountGames = ({ sortOption }) => {
         <ShowMoreButton onClick={handleShowMore} isExpanded={isExpanded}>
         </ShowMoreButton>
       )}
-
-      <Link to="/gamehub/favourites">Избранное</Link>
-
     </div>
   );
 };

@@ -7,7 +7,7 @@
             "title": "How to Survive",
             "price": 259,
             "old_price": 500,
-            "image": "sales_game1",
+            "imgPath": "sales_game1",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -16,17 +16,17 @@
             "id": 2,
             "title": "Red Solstice 2 Survivors",
             "price": 561,
-            "image": "sales_game2",
+            "imgPath": "sales_game2",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
         },
         {
-            "id": 3,
+            "id": 8,
             "title": "Sons Of The Forests",
             "price": 820,
             "old_price": 1100,
-            "image": "new_game2",
+            "imgPath": "new_game2",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -36,7 +36,7 @@
             "title": "The Witcher 3: Wild Hunt",
             "price": 990,
             "old_price": 1200,
-            "image": "leaders_game4",
+            "imgPath": "leaders_game4",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -46,7 +46,7 @@
             "title": "Atomic Heart",
             "price": 1200,
             "old_price": 2500,
-            "image": "leaders_game5",
+            "imgPath": "leaders_game5",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -56,7 +56,7 @@
             "title": "Crab Game",
             "price": 600,
             "old_price": 890,
-            "image": "leaders_game6",
+            "imgPath": "leaders_game6",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -67,7 +67,7 @@
             "id": 7,
             "title": "Alpha League",
             "price": 299,
-            "image": "new_game1",
+            "imgPath": "new_game1",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -77,7 +77,7 @@
             "title": "Sons Of The Forests",
             "price": 820,
             "old_price": 1100,
-            "image": "new_game2",
+            "imgPath": "new_game2",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -86,7 +86,7 @@
             "id": 9,
             "title": "Pacific Drives",
             "price": 1799,
-            "image": "new_game3",
+            "imgPath": "new_game3",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -96,7 +96,7 @@
             "title": "The Witcher 3: Wild Hunt",
             "price": 990,
             "old_price": 1200,
-            "image": "leaders_game4",
+            "imgPath": "leaders_game4",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -106,7 +106,7 @@
             "title": "Atomic Heart",
             "price": 1200,
             "old_price": 2500,
-            "image": "leaders_game5",
+            "imgPath": "leaders_game5",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -116,7 +116,7 @@
             "title": "Crab Game",
             "price": 600,
             "old_price": 890,
-            "image": "leaders_game6",
+            "imgPath": "leaders_game6",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -128,7 +128,7 @@
             "title": "Elden Ring",
             "price": 3295,
             "old_price": 3599,
-            "image": "leaders_game2",
+            "imgPath": "leaders_game2",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -137,7 +137,7 @@
             "id": 11,
             "title": "Counter-Strike 2",
             "price": 479,
-            "image": "leaders_game1",
+            "imgPath": "leaders_game1",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -146,7 +146,7 @@
             "id": 12,
             "title": "PUBG: BATTLEGROUNDS",
             "price": 199,
-            "image": "leaders_game3",
+            "imgPath": "leaders_game3",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -156,7 +156,7 @@
             "title": "The Witcher 3: Wild Hunt",
             "price": 990,
             "old_price": 1200,
-            "image": "leaders_game4",
+            "imgPath": "leaders_game4",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -166,7 +166,7 @@
             "title": "Atomic Heart",
             "price": 1200,
             "old_price": 2500,
-            "image": "leaders_game5",
+            "imgPath": "leaders_game5",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"
@@ -176,7 +176,7 @@
             "title": "Crab Game",
             "price": 600,
             "old_price": 890,
-            "image": "leaders_game6",
+            "imgPath": "leaders_game6",
             "os": "windows",
             "fav1": "star1",
             "fav2": "star2"

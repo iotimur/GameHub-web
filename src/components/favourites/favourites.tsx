@@ -1,6 +1,6 @@
 import React from "react";
 import { Title } from "../categories/title";
-import GameCard from "../categories/card/card";
+import GameCard from "../card/card";
 import { Span } from "./favoutites.styled";
 
 const FavouritesComponent = () => {

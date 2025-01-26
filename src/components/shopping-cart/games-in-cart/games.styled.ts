@@ -217,4 +217,3 @@ export const StyledText = styled.p`
     font-weight: 550;
     color: #000000;
 `
-

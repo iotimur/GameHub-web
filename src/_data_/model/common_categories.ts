@@ -3,7 +3,7 @@ export type Game = {
   title: string;
   price: number;
   old_price?: number; 
-  image: string;
+  imgPath: string;
   os: string;
   fav1: string;
   fav2: string;

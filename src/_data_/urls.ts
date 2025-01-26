@@ -8,6 +8,9 @@ export const URLs = {
     categories:
       getNavigationValue("gamehub.categories") &&
       `${baseUrl}${getNavigationValue("gamehub.categories")}`,
+    favourites:
+      getNavigationValue("gamehub.favourites") &&
+      `${baseUrl}${getNavigationValue("gamehub.favourites")}`,
     entrance:
       getNavigationValue("gamehub.entrance") &&
       `${baseUrl}${getNavigationValue("gamehub.entrance")}`,

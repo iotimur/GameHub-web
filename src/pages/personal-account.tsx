@@ -5,6 +5,7 @@ import { MyPurchases } from "../components/personal-account/my-purchases/my-purc
 import { Help } from "../components/personal-account/help/help";
 import { Footer } from "../components/footer/footer";
 import { Lk } from "../components/personal-account/lk/lk";
+import { Fv } from "../components/personal-account/favourites/favourites";
 import { PageContainer } from "../components/main/main-container/main.styled";
 import Header from "../components/main/header/header";
 
@@ -14,6 +15,7 @@ const PersonalAccount = () => {
       <PageContainer>
         <main className="container">
           <Lk />
+          <Fv />
           <PersonalInformation />
           <MyPurchases />
           <Help />
