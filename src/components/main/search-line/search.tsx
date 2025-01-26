@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { homeSeachSlice } from "../../../_data_/slices/home-app-search";
 import { Link } from "react-router-dom";
@@ -14,40 +14,32 @@ import {
   SearchInput,
   InputPlace,
   IconSearch,
-  Dropdown,
 } from "./search.styled";
 
 export const Search = () => {
   const dispatch = useDispatch();
 
-  // Получаем allGames из состояния
+  // Получаем данные из Redux Store
   const allGames = useSelector(getHomeSearchSelectors.allGames);
   const searchSimbols = useSelector(getHomeSearchSelectors.searchSimbols);
   const openDropDown = useSelector(getHomeSearchSelectors.openDropDown);
   const foundedID = useSelector(getHomeSearchSelectors.foundedID);
 
-  if (allGames) {
-    const { isFetching, isLoading, data, error } = mainApi.useAllGamesQuery();
+  // Выполняем запрос на получение игр
+  const { data, error, isFetching } = mainApi.useAllGamesQuery();
 
-    if (isFetching) {
-      return <div></div>;
-    }
-
-    if (error) {
-      return <div></div>;
-    }
-
-    if (!data) {
-      return <div></div>;
-    }
-
-    // console.log(isFetching, isLoading, data, error);
-
+  // **Используем useEffect для обновления store**
+  useEffect(() => {
     if (data) {
       dispatch(homeSeachSlice.actions.setAllGames(data));
     }
-  }
+  }, [data, dispatch]); // **Обновляем store ТОЛЬКО когда data изменяется**
 
+  // Проверка на загрузку или ошибку
+  if (isFetching) return <div>Loading...</div>;
+  if (error) return <div>Error loading games</div>;
+
+  // Обработчик ввода поиска
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;
     dispatch(homeSeachSlice.actions.setSimbols(inputValue)); // Обновляем searchSimbols в store
@@ -55,40 +47,30 @@ export const Search = () => {
     // Фильтруем allGames по совпадению с inputValue
     const matchingIds = allGames
       .filter((game) =>
-        game.name.toLowerCase().startsWith(inputValue.toLowerCase())
+        game.title.toLowerCase().startsWith(inputValue.toLowerCase())
       )
       .map((game) => game.id);
 
     // Сохраняем найденные ID в состояние
     dispatch(homeSeachSlice.actions.setIds(matchingIds));
-    // console.log(matchingIds);
 
-    if (matchingIds) {
-      // открываем выпадающий список
-      dispatch(homeSeachSlice.actions.setOpenDropDown(matchingIds));
-    }
+    // Открываем выпадающий список, если найдены совпадения
+    dispatch(homeSeachSlice.actions.setOpenDropDown(matchingIds.length > 0));
   };
-
-  // console.log(allGames);
 
   return (
     <WrapperSearch>
       <SearchInput>
-        <a href="" target="_blank" hidden></a>
         <InputPlace
           type="text"
-          placeholder="Type to search.."
-          onChange={handleInputChange} // Добавляем обработчик
+          placeholder="Type to search..."
+          onChange={handleInputChange}
         />
         {openDropDown && searchSimbols && (
           <SearchWithDropdown ids={foundedID} allGames={allGames} />
         )}
 
-        <Link
-          to={`/gamehub/list-games?q=${encodeURIComponent(
-            foundedID.join(",")
-          )}`}
-        >
+        <Link to={`/gamehub/list-games?q=${encodeURIComponent(foundedID.join(","))}`}>
           <IconSearch>
             <i className="fas fa-search"></i>
           </IconSearch>

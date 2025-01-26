@@ -36,14 +36,14 @@ export const GalleryTopSail = (props) => {
   const [displayedCards, setDisplayedCards] = useState([]);
 
   const cards = [
-    { img: props.img.game5, price: props.data[4].text, id: props.data[4] },
-    { img: props.img.game6, price: props.data[5].text, id: props.data[5] },
-    { img: props.img.game7, price: props.data[6].text, id: props.data[6] },
-    { img: props.img.game8, price: props.data[7].text, id: props.data[7] },
-    { img: props.img.game1, price: props.data[0].text, id: props.data[0] },
-    { img: props.img.game2, price: props.data[1].text, id: props.data[1] },
-    { img: props.img.game3, price: props.data[2].text, id: props.data[2] },
-    { img: props.img.game4, price: props.data[3].text, id: props.data[3] },
+    { img: props.img.game5, price: props.data[4].price, id: props.data[4] },
+    { img: props.img.game6, price: props.data[5].price, id: props.data[5] },
+    { img: props.img.game7, price: props.data[6].price, id: props.data[6] },
+    { img: props.img.game8, price: props.data[7].price, id: props.data[7] },
+    { img: props.img.game1, price: props.data[0].price, id: props.data[0] },
+    { img: props.img.game2, price: props.data[1].price, id: props.data[1] },
+    { img: props.img.game3, price: props.data[2].price, id: props.data[2] },
+    { img: props.img.game4, price: props.data[3].price, id: props.data[3] },
   ];
 
   useEffect(() => {

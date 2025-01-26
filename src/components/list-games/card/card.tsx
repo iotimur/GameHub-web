@@ -26,9 +26,9 @@ const GameCard = ({ game, handleCartUpdate }) => {
 
   return (
     <Card>
-      <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.name}`} />
-      <TitleGame>{game.name}</TitleGame>
-      <NewPrice>{game.text}</NewPrice>
+      <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.title}`} />
+      <TitleGame>{game.title}</TitleGame>
+      <NewPrice>{game.description}</NewPrice>
       {game.old_price && <OldPrice>{game.old_price} руб.</OldPrice>}
 
       <ButtonStyledTopSail isInCart={isInCart} onClick={() => handleCartUpdate(game.id)}>
@@ -38,4 +38,4 @@ const GameCard = ({ game, handleCartUpdate }) => {
   );
 };
 
-// export default GameCard;
+export default GameCard;

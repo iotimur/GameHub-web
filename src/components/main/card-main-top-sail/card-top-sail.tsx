@@ -68,7 +68,7 @@ export const CardTopSail = (props) => {
         <TopSailImg src={props.img} alt="Card Product" />
       </Link>
       <TopSailTextCard>
-        <span>{props.price}</span>
+        <span>{props.price} ₽</span>
         <TopSailTButton>
           <ButtonStyledTopSail
             isInCart={isInCart}

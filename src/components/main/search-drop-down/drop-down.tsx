@@ -27,8 +27,8 @@ export const SearchWithDropdown = ({ ids, allGames }) => {
         <DropdownItem key={game.id}>
           <DropdownImage src={gameImages[game.id]} alt={game.name} />
           <DropdownText>
-            <h4>{game.name}</h4>
-            <p>{game.text}</p>
+            <h4>{game.title}</h4>
+            <p>{game.description}</p>
           </DropdownText>
         </DropdownItem>
       ))}

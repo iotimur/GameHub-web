@@ -38,25 +38,6 @@ const ListGames = () => {
   const ids = query ? query.split(",").map((id) => parseInt(id, 10)) : [];
   const category = searchParams.get("category");
 
-  const [favourites, setFavourites] = useState(() => { // Состояние для избранных игр
-    const savedFavourites = localStorage.getItem('favourites');
-    return savedFavourites ? JSON.parse(savedFavourites) : [];
-  });
-  const handleAddFavourite = (game) => {
-    setFavourites((prevFavourites) => {
-      const isAlreadyFavourite = prevFavourites.find(fav => fav.id === game.id);
-      let updatedFavourites;
-
-      if (isAlreadyFavourite) {
-        updatedFavourites = prevFavourites.filter(fav => fav.id !== game.id); // Удаляем из избранного
-      } else {
-        updatedFavourites = [...prevFavourites, game]; // Добавляем в избранное
-      }
-      localStorage.setItem('favourites', JSON.stringify(updatedFavourites));// Сохраняем новое состояние в localStorage
-      return updatedFavourites;
-    });
-  };
-
   // Условие для отображения в зависимости от данных
   if (isFetching || isLoading) {
     return <div>Loading...</div>;
@@ -102,10 +83,8 @@ const ListGames = () => {
 
   return (
     <div>
-      {/* <CommonMain>
-        <ContainerMain> */}
-      <PageContainer>
-        <CategoriesMain>
+      <CommonMain>
+        <ContainerMain>
           <Title text="Games List" />
           {filteredGames.length > 0 ? (
             filteredGames.map((game) => (
@@ -126,23 +105,9 @@ const ListGames = () => {
             ))
           ) : (
             <p>Nothing found</p>
-          )} */}
-          {filteredGames.length > 0 ? (
-            filteredGames.map((game) => {
-              const isFavourite = favourites.some(fav => fav.id === game.id); // Проверяем, есть ли игра в избранном
-              return (
-                <div key={game.id}>
-                  <GameCard game={game} onAddFavourite={handleAddFavourite} isFavourite={isFavourite} />
-                </div>
-              );
-            })
-          ) : (
-            <div>No games found</div>
           )}
-          {/* </ContainerMain>
-      </CommonMain> */}
-        </CategoriesMain>
-      </PageContainer>
+        </ContainerMain>
+      </CommonMain>
     </div>
   );
 };
