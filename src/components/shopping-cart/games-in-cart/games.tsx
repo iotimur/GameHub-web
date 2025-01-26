@@ -60,10 +60,12 @@ const Games: React.FC = () => {
     allGamesData?.filter((game) => cartIds.includes(game.id)) || [];
 
   // Подсчет общей стоимости
-  const totalPrice = gamesInCart.reduce(
-    (total, game) => total + parseFloat(game.text.replace("$", "")),
-    0
-  );
+  // Подсчет общей стоимости
+const totalPrice = gamesInCart.reduce((total, game) => {
+  const priceNumber = game.price; // Убираем все символы кроме чисел и запятой/точки
+  return total + (isNaN(priceNumber) ? 0 : priceNumber);
+}, 0);
+
 
   // Функция для удаления игры из корзины
   const handleDelete = async (id: number) => {
@@ -102,10 +104,10 @@ const Games: React.FC = () => {
         <>
           {gamesInCart.map((game) => (
             <Container_my key={game.id}>
-              <BigImage src={images[game.imgPath]} alt={game.name} />
+              <BigImage src={images[game.imgPath]} alt={game.title} />
               <div>
-                <Title1>{game.name}</Title1>
-                <Price>{game.text}</Price>
+                <Title1>{game.title}</Title1>
+                <Price>{game.price} ₽</Price>
                 <Title2>Категория: {game.category}</Title2>
                 <Title3>{game.description}</Title3>
                 <Delete onClick={() => handleDelete(game.id)}>Удалить</Delete>
@@ -115,7 +117,7 @@ const Games: React.FC = () => {
           ))}
           <Total>
             <TotalSpan>Промежуточный итог:</TotalSpan>
-            <Price1>${totalPrice}</Price1>
+            <Price1>{totalPrice.toFixed(2)} ₽</Price1> {/* Добавлен знак рубля */}
           </Total>
         </>
       )}
