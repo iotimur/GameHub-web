@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { URLs } from "../../../_data_/urls";
 // import data from "../../../../stubs/json/home-page-data/success.json";
-import * as images from "../../../assets/Images_main"
+import * as images from "../../../assets/Images_main";
 
-import { ContainerMain, CardsMain, CommonMain } from "./main.styled";
+import {
+  ContainerMain,
+  CardsMain,
+  CommonMain,
+  LottieWrapper,
+  AnimationContainer,
+  StyledText,
+} from "./main.styled";
 
 import * as getHomeSelectors from "../../../_data_/selectors/home-page";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,26 +22,52 @@ import { GalleryTopSail } from "../gallery-top-sail";
 import { GalleryCategories } from "../gallery-caregories";
 import { GalleryNews } from "../gallery-news";
 import LinkMain from "../link-main/link-main";
-
+import Lottie from "lottie-react"; // Импортируем для анимаций
+import somethingWrong from "../../../assets/Images_main/something_wrong_cat.json"; // что-то пошло не так
+import errorAnimation from "../../../assets/Images_main/error_dog.json"; // Анимация ошибки
 
 const MainContent = () => {
   const { isFetching, isLoading, data, error } = mainApi.useHomePageQuery();
 
-  if(isFetching) {
-    return <div>Loading</div>
-    }
-  
-    if(error) {
-      return <div>Error parser</div>
-    }
-  
-    if(!data) {
-      return <div>Something was wrong</div>
-    }
-  
-    console.log(isFetching, isLoading, data, error);
+  console.log(isFetching, isLoading, data, error);
 
-    // Генерация объекта изображений на основе JSON данных
+  // Если идет загрузка, показываем анимацию загрузки или текст
+  if (isFetching || isLoading) {
+    return (
+      <AnimationContainer style={{ textAlign: "center" }}>
+        <LottieWrapper>
+          <Lottie animationData={somethingWrong} />
+        </LottieWrapper>
+        <StyledText>Загрузка данных ... </StyledText>
+      </AnimationContainer>
+    );
+  }
+
+  // Если ошибка при запросе данных, показываем анимацию ошибки
+  if (error) {
+    return (
+      <AnimationContainer style={{ textAlign: "center" }}>
+        <LottieWrapper>
+          <Lottie animationData={errorAnimation} />
+        </LottieWrapper>
+        <StyledText>Ошибка загрузки данных...</StyledText>
+      </AnimationContainer>
+    );
+  }
+
+  // Если данные пустые, показываем анимацию для пустых данных
+  if (!data || !data.topSail || data.topSail.length === 0) {
+    return (
+      <AnimationContainer style={{ textAlign: "center" }}>
+        <LottieWrapper>
+          <Lottie animationData={somethingWrong} />
+        </LottieWrapper>
+        <StyledText>Загрузка данных ... </StyledText>
+      </AnimationContainer>
+    );
+  }
+
+  // Генерация объекта изображений на основе JSON данных
   const generateImages = (data) =>
     data.reduce((acc, item) => {
       acc[item.image] = images[item.imgPath]; // Связываем имена с импортированными изображениями
@@ -43,7 +76,7 @@ const MainContent = () => {
 
   const imagesTopSail = generateImages(data.topSail);
   const imagesCategories = generateImages(data.categories);
-  const imagesNews = generateImages(data.news)
+  const imagesNews = generateImages(data.news);
 
   return (
     <CommonMain>
@@ -55,7 +88,10 @@ const MainContent = () => {
           <Title text="Лидеры продаж" />
 
           <CardsMain>
-            <GalleryTopSail data={data.topSail} img={imagesTopSail}></GalleryTopSail>
+            <GalleryTopSail
+              data={data.topSail}
+              img={imagesTopSail}
+            ></GalleryTopSail>
           </CardsMain>
 
           <Title text="Категории" />

@@ -1,4 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../../_data_/slices/cart-games"; // Путь к слайсу корзины
+import { useAllGamesQuery } from "../../../_data_/service/main-api"; // Для получения всех игр
+import * as images from "../../../assets/Images_main"; // Импортируем изображения
+import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games";
+import { useAddToCartMutation } from "../../../_data_/service/main-api";
+import Lottie from "lottie-react";
+import emptyCartAnimation from "../../../assets/Images_main/emty basket.json"; // Анимация пустой корзины
+import errorAnimation from "../../../assets/Images_main/error_dog.json"; // Анимация ошибки
+
 import {
   Oval,
   Container_my,
@@ -12,63 +22,103 @@ import {
   Total,
   TotalSpan,
   Price1,
+  LottieWrapper,
+  AnimationContainer,
+  StyledText,
 } from "../games-in-cart/games.styled";
-import { useGamesInCartQuery } from "../../../_data_/service/main-api";
-import { fifa, ved, mortal } from "../../../assets/images";
-
-const images = {
-  mortal: mortal,
-  fifa: fifa,
-  ved: ved,
-};
 
 const Games: React.FC = () => {
-  const { isFetching, isLoading, data, error } = useGamesInCartQuery();
-  const [games, setGames] = useState([]); // Локальное состояние для списка игр
+  const dispatch = useDispatch();
+  const cartIds = useSelector(getCartGamesSelectors.ids);
 
-  // Сохраняем данные из запроса в состояние
-  useEffect(() => {
-    if (data) {
-      setGames(data);
-    }
-  }, [data]);
+  const [modifyCart] = useAddToCartMutation();
 
-  if (isLoading) {
+  // Запрашиваем все игры
+  const {
+    isLoading: isGamesLoading,
+    data: allGamesData,
+    error: gamesError,
+  } = useAllGamesQuery();
+
+  if (isGamesLoading) {
     return <Oval>Загрузка...</Oval>;
   }
 
-  if (error) {
-    return <Oval>Ошибка загрузки данных</Oval>;
+  // Показываем анимацию ошибки при загрузке данных
+  if (gamesError) {
+    return (
+      <AnimationContainer style={{ textAlign: "center" }}>
+        <LottieWrapper>
+          <Lottie animationData={errorAnimation} />
+        </LottieWrapper>
+        <StyledText>Ошибка загрузки данных...</StyledText>
+      </AnimationContainer>
+    );
   }
+  // Фильтруем игры, чтобы оставить только те, которые есть в корзине
+  const gamesInCart =
+    allGamesData?.filter((game) => cartIds.includes(game.id)) || [];
 
-  // Удаление игры из состояния
-  const handleDelete = (id: number) => {
-    setGames((prevGames) => prevGames.filter((game) => game.id !== id));
+  // Подсчет общей стоимости
+  const totalPrice = gamesInCart.reduce(
+    (total, game) => total + parseFloat(game.text.replace("$", "")),
+    0
+  );
+
+  // Функция для удаления игры из корзины
+  const handleDelete = async (id: number) => {
+    const action = "remove"; // Указываем действие
+
+    // Сначала обновляем локальный Redux store, удаляя товар
+    dispatch(removeFromCart(id));
+
+    try {
+      // Отправляем запрос на сервер для удаления товара
+      await modifyCart({ id, action }).unwrap();
+    } catch (error) {
+      console.error("Ошибка при удалении товара из корзины:", error);
+
+      // Откатываем изменения в Redux, если запрос не удался
+      dispatch(addToCart(id));
+    }
   };
 
-  // Подсчёт общей стоимости
-  const totalPrice = games.reduce((total, game) => total + game.price, 0);
+  // Функция для добавления игры в корзину (на случай, если нужно вернуть товары)
+  const handleAdd = (id: number) => {
+    dispatch(addToCart(id)); // Добавляем товар в корзину
+  };
 
   return (
     <>
       <Oval>Ваша корзина</Oval>
-      {games.map((game) => (
-        <Container_my key={game.id}>
-          <BigImage src={images[game.image]} alt={game.alt} />
-          <div>
-            <Title1>{game.title}</Title1>
-            <Price>{game.price} руб.</Price>
-            <Title2>Дата выпуска: {game.releaseDate}</Title2>
-            <Title3>{game.description}</Title3>
-            <Delete onClick={() => handleDelete(game.id)}>Удалить</Delete>
-            <Hr />
-          </div>
-        </Container_my>
-      ))}
-      <Total>
-        <TotalSpan>Промежуточный итог:</TotalSpan>
-        <Price1>{totalPrice} руб.</Price1>
-      </Total>
+      {gamesInCart.length === 0 ? (
+        <AnimationContainer style={{ textAlign: "center" }}>
+          <LottieWrapper>
+            <Lottie animationData={emptyCartAnimation} />
+          </LottieWrapper>
+          <StyledText>Ваша корзина пуста...</StyledText>
+        </AnimationContainer>
+      ) : (
+        <>
+          {gamesInCart.map((game) => (
+            <Container_my key={game.id}>
+              <BigImage src={images[game.imgPath]} alt={game.name} />
+              <div>
+                <Title1>{game.name}</Title1>
+                <Price>{game.text}</Price>
+                <Title2>Категория: {game.category}</Title2>
+                <Title3>{game.description}</Title3>
+                <Delete onClick={() => handleDelete(game.id)}>Удалить</Delete>
+                <Hr />
+              </div>
+            </Container_my>
+          ))}
+          <Total>
+            <TotalSpan>Промежуточный итог:</TotalSpan>
+            <Price1>${totalPrice}</Price1>
+          </Total>
+        </>
+      )}
     </>
   );
 };

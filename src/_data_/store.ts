@@ -1,21 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-import { homeSlice } from './slices/home-app'
-import { homeSeachSlice } from './slices/home-app-search'
+import { homeSlice } from "./slices/home-app";
+import { homeSeachSlice } from "./slices/home-app-search";
+import { cartSlice } from "./slices/cart-games";
 
-import { mainApi } from './service/main-api'
+import { mainApi } from "./service/main-api";
 
 export const store = configureStore({
   reducer: {
     [homeSlice.reducerPath]: homeSlice.reducer,
     [homeSeachSlice.reducerPath]: homeSeachSlice.reducer,
+    [cartSlice.reducerPath]: cartSlice.reducer,
     [mainApi.reducerPath]: mainApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(mainApi.middleware),
   devTools: {
-    name: 'bro-cms',
+    name: "bro-cms",
   },
-})
+});
 
-export type AppState = ReturnType<typeof store.getState>
+export type AppState = ReturnType<typeof store.getState>;

@@ -11,6 +11,7 @@ export type BaseResponse<Data> =
     };
 
 export type Game = {
+  id: number;
   image: string;
   text: string;
   imgPath: string;
@@ -33,6 +34,10 @@ export type Home = {
   topSail: Game[];
   categories: Category[];
   news: News[];
+};
+
+export type Cart = {
+  ids: number[]; // Список ID игр, добавленных в корзину
 };
 
 export type AllGames = {

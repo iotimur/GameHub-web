@@ -29,3 +29,23 @@ align-items: center; */
 export const PageContainer = styled.div`
   background: #102d59;
 `;
+
+export const AnimationContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 50px;
+`
+
+export const LottieWrapper = styled.div`
+    width: 550px;
+    height: 550px;
+`
+
+export const StyledText = styled.p`
+    font-size: 25px;
+    font-weight: 550;
+    color: #000000;
+`

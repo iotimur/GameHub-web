@@ -3,41 +3,49 @@
   "data": {
     "topSail": [
       {
+        "id": 1,
         "image": "game1",
         "text": "$10",
         "imgPath": "img_top_1"
       },
       {
+        "id": 2,
         "image": "game2",
         "text": "$10",
         "imgPath": "img_top_2"
       },
       {
+        "id": 3,
         "image": "game3",
         "text": "$10",
         "imgPath": "img_top_3"
       },
       {
+        "id": 4,
         "image": "game4",
         "text": "$10",
         "imgPath": "img_top_4"
       },
       {
+        "id": 5,
         "image": "game5",
         "text": "$10",
         "imgPath": "img_top_5"
       },
       {
+        "id": 6,
         "image": "game6",
         "text": "$10",
         "imgPath": "img_top_6"
       },
       {
+        "id": 7,
         "image": "game7",
         "text": "$10",
         "imgPath": "img_top_7"
       },
       {
+        "id": 8,
         "image": "game8",
         "text": "$10",
         "imgPath": "img_top_8"
