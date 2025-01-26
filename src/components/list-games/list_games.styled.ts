@@ -105,3 +105,35 @@ export const OldPrice = styled.span`
       display: none;
   }
 `;
+
+interface ButtonProps {
+  isInCart: boolean;
+}
+
+export const ButtonStyledTopSail = styled.button<ButtonProps>`
+  background-color: ${(props) => (props.isInCart ? "#28a745" : "#2092c5")}; /* Зелёный, если в корзине */
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 100%;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  i {
+    transition: color 0.3s ease;
+    color: ${(props) => (props.isInCart ? "#fff" : "#000")}; /* Белая иконка на зелёном фоне */
+  }
+
+  &:hover {
+    background-color: ${(props) => (props.isInCart ? "#218838" : "#186f91")}; /* Темнее при наведении */
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+`;

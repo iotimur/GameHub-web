@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { homeSeachSlice } from "../../../_data_/slices/home-app-search";
 import { Link } from "react-router-dom";
 
-import { AppState } from "../../../_data_/store"; // Предполагается, что store экспортирует RootState
-
 import { mainApi } from "../../../_data_/service/main-api";
 
 import * as getHomeSearchSelectors from "../../../_data_/selectors/home-app-search";
@@ -43,7 +41,7 @@ export const Search = () => {
       return <div></div>;
     }
 
-    console.log(isFetching, isLoading, data, error);
+    // console.log(isFetching, isLoading, data, error);
 
     if (data) {
       dispatch(homeSeachSlice.actions.setAllGames(data));
@@ -63,7 +61,7 @@ export const Search = () => {
 
     // Сохраняем найденные ID в состояние
     dispatch(homeSeachSlice.actions.setIds(matchingIds));
-    console.log(matchingIds);
+    // console.log(matchingIds);
 
     if (matchingIds) {
       // открываем выпадающий список
@@ -71,7 +69,7 @@ export const Search = () => {
     }
   };
 
-  console.log(allGames);
+  // console.log(allGames);
 
   return (
     <WrapperSearch>

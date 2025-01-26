@@ -62,23 +62,35 @@ export const TopSailTButton = styled.div`
   text-decoration: none;
 `;
 
-export const ButtonStyledTopSail = styled.button`
-  background-color: #2092c5;
+interface ButtonProps {
+  isInCart: boolean;
+}
+
+export const ButtonStyledTopSail = styled.button<ButtonProps>`
+  background-color: ${(props) => (props.isInCart ? "#28a745" : "#2092c5")}; /* Зелёный, если в корзине */
   color: #fff;
   border: none;
-  /* border-radius: 50%; */
   width: 50px;
   height: 100%;
-  /* height: 25px; */
   font-size: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  i {
+    transition: color 0.3s ease;
+    color: ${(props) => (props.isInCart ? "#fff" : "#000")}; /* Белая иконка на зелёном фоне */
+  }
 
   &:hover {
-    color: #000;
+    background-color: ${(props) => (props.isInCart ? "#218838" : "#186f91")}; /* Темнее при наведении */
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `;
+

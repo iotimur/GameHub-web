@@ -3,41 +3,49 @@
   "data": {
     "topSail": [
       {
+        "id": 1,
         "image": "game1",
         "price": 1500,
         "imgPath": "img_top_1"
       },
       {
+        "id": 2,
         "image": "game2",
         "price": 980,
         "imgPath": "img_top_2"
       },
       {
+        "id": 3,
         "image": "game3",
         "price": 1900,
         "imgPath": "img_top_3"
       },
       {
+        "id": 4,
         "image": "game4",
         "price": 1200,
         "imgPath": "img_top_4"
       },
       {
+        "id": 5,
         "image": "game5",
         "price": 479,
         "imgPath": "img_top_5"
       },
       {
+        "id": 6,
         "image": "game6",
         "price": 700,
         "imgPath": "img_top_6"
       },
       {
+        "id": 7,
         "image": "game7",
         "price": 1100,
         "imgPath": "img_top_7"
       },
       {
+        "id": 8,
         "image": "game8",
         "price": 3800,
         "imgPath": "img_top_8"
