@@ -1,0 +1,158 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "title": "The Witcher 3: Wild Hunt",
+      "image": "game1",
+      "price": 990,
+      "old_price": 1200,
+      "imgPath": "img_top_1",
+      "description": "Эпическая RPG с открытым миром, в которой Геральт из Ривии охотится на монстров и раскрывает политические заговоры.",
+      "category": "RPG"
+      
+    },
+    {
+      "id": 2,
+      "title": "Red Dead Redemption 2",
+      "image": "game2",
+      "price": 980,
+      "old_price": 3800,
+      "imgPath": "img_top_2",
+      "description": "Приключенческая игра с открытым миром на Диком Западе, рассказывающая историю Артура Моргана.",
+      "category": "Adventures"
+    },
+    {
+      "id": 3,
+      "title": "Forza Horizon 5",
+      "image": "game3",
+      "price": 1900,
+      "imgPath": "img_top_3",
+      "description": "Гоночная игра с огромным открытым миром, действие которой происходит в Мексике.",
+      "category": "Race"
+    },
+    {
+      "id": 4,
+      "title": "Atomic Heart",
+      "image": "game4",
+      "price": 1200,
+      "old_price": 2500,
+      "imgPath": "img_top_4",
+      "description": "Экшен-шутер с элементами RPG, разворачивающийся в альтернативной Советской России.",
+      "category": "Shooters"
+    },
+    {
+      "id": 5,
+      "title": "Counter-Strike 2",
+      "image": "game5",
+      "price": 479,
+      "imgPath": "img_top_5",
+      "description": "Популярный онлайн-шутер с соревновательным геймплеем и тактическими элементами.",
+      "category": "Shooters"
+    },
+    {
+      "id": 6,
+      "title": "Grand Theft Auto V",
+      "image": "game6",
+      "price": 700,
+      "imgPath": "img_top_6",
+      "description": "Игра с открытым миром, где можно погрузиться в криминальный мир Лос-Сантоса.",
+      "category": "Adventures"
+    },
+    {
+      "id": 7,
+      "title": "Assassin’s Creed IV: Black Flag",
+      "image": "game7",
+      "price": 1100,
+      
+      "imgPath": "img_top_7",
+      "description": "Приключенческая игра о пиратах и морских сражениях в эпоху золотого века пиратства.",
+      "category": "Adventures"
+    },
+    {
+      "id": 8,
+      "title": "Spider-Man",
+      "image": "game8",
+      "price": 3800,
+      
+      "imgPath": "img_top_8",
+      "description": "Игра о супергерое Человеке-пауке с захватывающими битвами и паркуром по Нью-Йорку.",
+      "category": "Action"
+    },
+    {
+      "id": 9,
+      "title": "Assassin’s Creed Mirage",
+      "image": "game9",
+      "price": 1600,
+      
+      "imgPath": "img_top_9",
+      "description": "Приключенческая игра с упором на скрытность, вдохновленная классическими частями серии.",
+      "category": "Action"
+    },
+    {
+      "id": 10,
+      "title": "Assassin’s Creed Valhalla",
+      "image": "game10",
+      "price": 800,
+      "old_price": 2200,
+      "imgPath": "img_top_10",
+      "description": "RPG с открытым миром о викингах, включающая битвы, исследования и строительство поселений.",
+      "category": "RPG"
+    },
+    {
+      "id": 11,
+      "title": "ARK: Survival Evolved",
+      "image": "game11",
+      "price": 790,
+      
+      "imgPath": "img_top_11",
+      "description": "Выживание в открытом мире с динозаврами, строительством и многопользовательскими элементами.",
+      "category": "Simulators"
+    },
+    {
+      "id": 12,
+      "title": "FIFA 23",
+      "image": "game12",
+      "price": 3900,
+      "imgPath": "img_top_12",
+      "description": "Популярный футбольный симулятор с улучшенной графикой и реалистичным геймплеем.",
+      "category": "Sports"
+    },
+    {
+      "id": 13,
+      "title": "Dirt 5",
+      "image": "game13",
+      "price": 2300,
+      "imgPath": "img_top_13",
+      "description": "Аркадная гоночная игра с фокусом на ралли и внедорожных соревнованиях.",
+      "category": "Race"
+    },
+    {
+      "id": 14,
+      "title": "Cyberpunk 2077",
+      "image": "game14",
+      "price": 3400,
+      "imgPath": "img_top_14",
+      "description": "RPG в киберпанк-сеттинге с нелинейным сюжетом и детализированным открытым миром.",
+      "category": "RPG"
+    },
+    {
+      "id": 15,
+      "title": "Age of Empires IV",
+      "image": "game15",
+      "price": 3200,
+      "imgPath": "img_top_15",
+      "description": "Классическая стратегия в реальном времени с историческими кампаниями.",
+      "category": "Strategies"
+    },
+    {
+      "id": 16,
+      "title": "Civilization VI",
+      "image": "game16",
+      "price": 4200,
+      "imgPath": "img_top_16",
+      "description": "Глобальная пошаговая стратегия, в которой игроки строят и развивают цивилизации.",
+      "category": "Strategies"
+    }
+  ]
+}

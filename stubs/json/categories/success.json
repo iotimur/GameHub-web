@@ -1,0 +1,186 @@
+{   
+    "success": true,
+    "data": {
+    "games1": [
+        {
+            "id": 1,
+            "title": "How to Survive",
+            "price": 259,
+            "old_price": 500,
+            "imgPath": "sales_game1",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 2,
+            "title": "Red Solstice 2 Survivors",
+            "price": 561,
+            "imgPath": "sales_game2",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 8,
+            "title": "Sons Of The Forests",
+            "price": 820,
+            "old_price": 1100,
+            "imgPath": "new_game2",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 4,
+            "title": "The Witcher 3: Wild Hunt",
+            "price": 990,
+            "old_price": 1200,
+            "imgPath": "leaders_game4",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 5,
+            "title": "Atomic Heart",
+            "price": 1200,
+            "old_price": 2500,
+            "imgPath": "leaders_game5",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 6,
+            "title": "Crab Game",
+            "price": 600,
+            "old_price": 890,
+            "imgPath": "leaders_game6",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        }
+    ],
+    "games2": [
+        {
+            "id": 7,
+            "title": "Alpha League",
+            "price": 299,
+            "imgPath": "new_game1",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 8,
+            "title": "Sons Of The Forests",
+            "price": 820,
+            "old_price": 1100,
+            "imgPath": "new_game2",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 9,
+            "title": "Pacific Drives",
+            "price": 1799,
+            "imgPath": "new_game3",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 4,
+            "title": "The Witcher 3: Wild Hunt",
+            "price": 990,
+            "old_price": 1200,
+            "imgPath": "leaders_game4",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 5,
+            "title": "Atomic Heart",
+            "price": 1200,
+            "old_price": 2500,
+            "imgPath": "leaders_game5",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 6,
+            "title": "Crab Game",
+            "price": 600,
+            "old_price": 890,
+            "imgPath": "leaders_game6",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        }
+    ],
+    "games3": [
+        {
+            "id": 10,
+            "title": "Elden Ring",
+            "price": 3295,
+            "old_price": 3599,
+            "imgPath": "leaders_game2",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 11,
+            "title": "Counter-Strike 2",
+            "price": 479,
+            "imgPath": "leaders_game1",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 12,
+            "title": "PUBG: BATTLEGROUNDS",
+            "price": 199,
+            "imgPath": "leaders_game3",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 4,
+            "title": "The Witcher 3: Wild Hunt",
+            "price": 990,
+            "old_price": 1200,
+            "imgPath": "leaders_game4",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 5,
+            "title": "Atomic Heart",
+            "price": 1200,
+            "old_price": 2500,
+            "imgPath": "leaders_game5",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        },
+        {
+            "id": 6,
+            "title": "Crab Game",
+            "price": 600,
+            "old_price": 890,
+            "imgPath": "leaders_game6",
+            "os": "windows",
+            "fav1": "star1",
+            "fav2": "star2"
+        }
+    ]
+}
+}

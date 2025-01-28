@@ -1,0 +1,127 @@
+{
+  "success": true,
+  "data": {
+    "topSail": [
+      {
+        "id": 1,
+        "image": "game1",
+        "price": 1500,
+        "imgPath": "img_top_1"
+      },
+      {
+        "id": 2,
+        "image": "game2",
+        "price": 980,
+        "imgPath": "img_top_2"
+      },
+      {
+        "id": 3,
+        "image": "game3",
+        "price": 1900,
+        "imgPath": "img_top_3"
+      },
+      {
+        "id": 4,
+        "image": "game4",
+        "price": 1200,
+        "imgPath": "img_top_4"
+      },
+      {
+        "id": 5,
+        "image": "game5",
+        "price": 479,
+        "imgPath": "img_top_5"
+      },
+      {
+        "id": 6,
+        "image": "game6",
+        "price": 700,
+        "imgPath": "img_top_6"
+      },
+      {
+        "id": 7,
+        "image": "game7",
+        "price": 1100,
+        "imgPath": "img_top_7"
+      },
+      {
+        "id": 8,
+        "image": "game8",
+        "price": 3800,
+        "imgPath": "img_top_8"
+      }
+    ],
+    "categories": [
+      {
+        "image": "category1",
+        "text": "гонки",
+        "imgPath": "img_categories_1",
+        "category": "Race"
+      },
+      {
+        "image": "category2",
+        "text": "глубокий сюжет",
+        "imgPath": "img_categories_2",
+        "category": ""
+      },
+      {
+        "image": "category3",
+        "text": "симуляторы",
+        "imgPath": "img_categories_3",
+        "category": "Simulators"
+      },
+      {
+        "image": "category4",
+        "text": "открытый мир",
+        "imgPath": "img_categories_4",
+        "category": "RPG"
+      },
+      {
+        "image": "category5",
+        "text": "экшен",
+        "imgPath": "img_categories_5",
+        "category": "Action"
+      },
+      {
+        "image": "category6",
+        "text": "стратегии",
+        "imgPath": "img_categories_6",
+        "category": "Strategies"
+      },
+      {
+        "image": "category7",
+        "text": "шутеры",
+        "imgPath": "img_categories_7",
+        "category": "Shooters"
+      },
+      {
+        "image": "category8",
+        "text": "приключения",
+        "imgPath": "img_categories_8",
+        "category": "Adventures"
+      }
+    ],
+    "news": [
+      {
+        "image": "news1",
+        "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
+        "imgPath": "img_news_1"
+      },
+      {
+        "image": "news2",
+        "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
+        "imgPath": "img_news_2"
+      },
+      {
+        "image": "news3",
+        "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
+        "imgPath": "img_news_3"
+      },
+      {
+        "image": "news4",
+        "text": "Авторы Skull and Bones расширяют планы на второй сезо",
+        "imgPath": "img_news_4"
+      }
+    ]
+  }
+}
