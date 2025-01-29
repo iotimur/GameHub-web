@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 
 export const ShowMoreBtn = styled.button`
-  width:  calc(100% - 42px);
+  width:100%;
   margin-bottom: 70px;
   height: 50px;
   background: #18396c;
@@ -11,10 +11,10 @@ export const ShowMoreBtn = styled.button`
   cursor: pointer;
   border: 1px solid #f39a46;
   font-family: var(--font-family);
-  font-style: italic;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
+  border-radius: 10px;
   &:hover {
     background: #2E5A99;
     transition: 0.5s;
@@ -25,6 +25,3 @@ export const ShowMoreBtn = styled.button`
   font-size: 14px;
 }
 `;
-
-
-

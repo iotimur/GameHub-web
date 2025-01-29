@@ -6,15 +6,11 @@ import { CategoriesMain } from "../components/categories/categories.styled";
 const Favourites = () => {
   return (
     <>
-      <PageContainer>
-        {/* <CommonMain>
-          <ContainerMain> */}
-        <CategoriesMain>
+      <CommonMain>
+        <ContainerMain>
           <FavouritesComponent />
-        </CategoriesMain>
-        {/* </ContainerMain>
-        </CommonMain> */}
-      </PageContainer>
+        </ContainerMain>
+      </CommonMain>
     </>
   );
 };

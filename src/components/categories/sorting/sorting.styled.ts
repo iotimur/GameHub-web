@@ -2,12 +2,11 @@ import styled from "@emotion/styled"
 
 export const SortingString = styled.span`
   position: absolute;
-  margin-left: 800px;
-  // margin-top: 40px;
-  // margin-bottom: 100px;
+  margin-left: 750px;
+  margin-top:2px;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
   @media screen and (max-width: 1200px) {
     margin-left: 630px;
@@ -21,10 +20,10 @@ export const SortingButton = styled.button`
   position: absolute;
   display: flex;
   align-items: center;
-  right: 0px;
+  right: 123px;
   // margin-top: 40px;
   border-radius: 10px;
-  width: 150px;
+  width: 120px;
   height: 27px;
   background: #18396c;
   cursor: pointer;
@@ -53,9 +52,9 @@ export const Dropdown = styled.div`
 `;
 
 export const DropdownItem = styled.button`
-  padding: 8px 12px;
+  padding: 8px 10px;
   cursor: pointer;
-  width: 148px;
+  width: 118px;
   border-radius: 10px;
   font-size: 16px;
   color: #fff;
@@ -69,5 +68,5 @@ export const DropdownItem = styled.button`
 
 export const All = styled.div`
   padding-top:40px;
-  padding-bottom:20px;
+  padding-bottom:10px;
 `;

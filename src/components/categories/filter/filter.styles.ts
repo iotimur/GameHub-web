@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 export const String = styled.span`
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   @media screen and (max-width: 998px) {
   font-size: 12px;
@@ -11,10 +11,12 @@ export const String = styled.span`
 `;
 
 export const SortingButton = styled.button`
-  z-index: 100;
+margin-top:10px;
+  // z-index: 100;
+  // margin-left:auto;
+  margin-right:123px;
   position: absolute;
   display: flex;
-  align-items: center;
   right: 0px;
   border-radius: 10px;
   width: 110px;
