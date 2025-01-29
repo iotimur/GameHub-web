@@ -9,7 +9,7 @@ router.get("/update-like", (request, response) => {
 });
 
 router.get("/categories", (request, response) => {
-  response.send(require("../json/categories/success.json"));
+  response.send(require("../json/home-page-data/all-games.json"));
 });
 
 // router.get("/shopping-cart", (request, response) => {
