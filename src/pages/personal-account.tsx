@@ -7,19 +7,20 @@ import { Footer } from "../components/footer/footer";
 import { Lk } from "../components/personal-account/lk/lk";
 import { Fv } from "../components/personal-account/favourites/favourites";
 import { PageContainer } from "../components/main/main-container/main.styled";
+import { PersonalAccountMain } from "../components/personal-account/personalaccount.styled";
 import Header from "../components/main/header/header";
 
 const PersonalAccount = () => {
   return (
     <>
       <PageContainer>
-        <main className="container">
-          <Lk />
+        <PersonalAccountMain className="container">
           <Fv />
+          <Lk />
           <PersonalInformation />
           <MyPurchases />
           <Help />
-        </main>
+        </PersonalAccountMain>
       </PageContainer>
     </>
   );

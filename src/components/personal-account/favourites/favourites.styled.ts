@@ -2,25 +2,33 @@ import styled from "@emotion/styled";
 
 export const ZagolovStyle = styled.div` 
     width: 150px;
-    padding-top: 5px;
-    height: 40px;
-    font-weight: 600;
+    height: 33px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 530;
     font-size: 20px;
     letter-spacing: 0.1em;
-    text-align: center;
-    color: #000;
-    border-radius: 5px;
-    background: #d2c1ec;
     cursor: pointer;
+    margin: 35px 35px 35px 35px; 
+    justify-content: right;
+    position: absolute;
+    display: flex;
+    right: 0px;
+    // margin-top: 40px;
+    border-radius: 10px;
+    background: #18396c;
+    border: 1px solid #f39a46;
+    justify-content: center;
     align-items: center;
-    margin: 35px 35px 0px 35px;
-    &:hover {
-        background: #9f7cd0;
-        transition: 0.5s;
-    }   
+
     
-
-
 `;
 
 
+export const But = styled.div` 
+
+    display: flex;
+    justify-content: right;
+    
+    
+`;

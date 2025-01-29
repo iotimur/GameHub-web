@@ -1,10 +1,10 @@
 import React from 'react';
-import { ZagolovStyled } from './lk.styled'
+import { ZagolovStyled, TextStyled } from './lk.styled'
 
 export function Lk() {
     return (
         <ZagolovStyled>
-            <p>Личный кабинет</p> 
+            <TextStyled>Личный кабинет</TextStyled> 
         </ZagolovStyled>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { DFlexStyled, FormsStyled, IzmStyled, TextStyled, BlockStyled, InputStyled, ChangeStyled, FormStyled, FormsInFormStyled } from './personal-information.styled'
+import { DFlexStyled, FormsStyled, Lin, IzmStyled, TextStyled, BlockStyled, InputStyled, ChangeStyled, FormStyled, FormsInFormStyled } from './personal-information.styled'
 
 export function PersonalInformation() {
     return (
@@ -12,7 +12,7 @@ export function PersonalInformation() {
                     <IzmStyled>Изменить</IzmStyled>
                 </ChangeStyled>
             </DFlexStyled>
-            <hr />
+            <Lin/>
             <div>
                 <FormsStyled>
                     <FormsInFormStyled>

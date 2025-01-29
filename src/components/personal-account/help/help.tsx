@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlockHelpStyled, LinksStyled, TextHelpStyled, TextStyled, TextZagolovkaStyled } from './help.styled'
+import { BlockHelpStyled, Lin, LinksStyled, TextHelpStyled, TextStyled, TextZagolovkaStyled } from './help.styled'
 
 export function Help() {
     return (
@@ -7,7 +7,7 @@ export function Help() {
             <div className="top">
                 <TextHelpStyled>Помощь</TextHelpStyled>
             </div>
-            <hr />
+            <Lin />
             <div className="d-flex">
                 <LinksStyled>
                     <TextZagolovkaStyled>Оформление заказа</TextZagolovkaStyled>

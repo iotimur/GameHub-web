@@ -1,6 +1,6 @@
 import React from 'react';
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
-import { HRStyled, FigcaptionStyled, AStyled, InFooterFirstStyled, ImgStyled, InFooterStyled, TextEndStyled, TextStyled, TextZagolovokStyled, FigureImgStyled, FigureStyled, FooterStyled, BottStyled, } from './footer.styled'
+import { HRStyled, FigcaptionStyled, AStyled, InFooterFirstStyled, ImgStyled, InFooterStyled, TextEndStyled, TextStyled, TextZagolovokStyled, FigureImgStyled, FigureStyled, FooterStyled, BottStyled } from './footer.styled'
 import { f1, f2, f3, f4, cmc } from './index'
 
 export function Footer() {

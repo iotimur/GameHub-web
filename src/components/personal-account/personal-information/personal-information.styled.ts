@@ -18,36 +18,37 @@ export const FormsStyled = styled.div`
 `;
 
 export const IzmStyled = styled.button`  
-    margin-right: 15px;
-    width: 141px;
-    height: 35px;
-    font-weight: 600;
+      width: 150px;
+    height: 33px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 530;
     font-size: 20px;
     letter-spacing: 0.1em;
-    text-align: center;
-    color: #000;
-    border-radius:5px;
-    background: #d2c1ec;
     cursor: pointer;
+    margin: 0px 35px 0px 35px; 
+    
+    // margin-top: 40px;
+    border-radius: 10px;
+    background: #18396c;
+    border: 1px solid #f39a46;
+    justify-content: center;
     align-items: center;
-    &:hover {
-        background: #9f7cd0;
-        transition: 0.5s;
-    }    
 `;
 
 export const TextStyled = styled.p`  
     margin-left: 40px;
     margin-bottom: 20px;
-    padding-top: 20px;
     font-weight: 500;
-    font-size: 25px;
     color: #fff;
+    font-size: 24px;
 `;
 
 export const BlockStyled = styled.div`  
     background: #18396c;
-    margin: 60px 35px;
+    max-width: 1120px;
+    margin: 0 auto;
+    border: 1px solid #f39a46;
 `;
 
 export const InputStyled = styled.input`  
@@ -70,7 +71,11 @@ export const ChangeStyled = styled.div`
 `;
 
 export const FormStyled = styled.form`
-    margin: 40px 0px;
+    margin: 20px 0px;
+`;
+
+export const Lin = styled.hr`
+    border: 1px solid #f39a46;
 `;
 
 export const FormsInFormStyled = styled.div`

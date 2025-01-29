@@ -2,8 +2,15 @@ import styled from "@emotion/styled";
 
 export const BlockHelpStyled = styled.div`
     background: #18396c;
-    margin: 60px 35px;
     color: #fff;
+    max-width: 1120px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 1px solid #f39a46;
+`;
+
+export const Lin = styled.hr`
+    border: 1px solid #f39a46;
 `;
 
 export const LinksStyled = styled.div`
@@ -14,9 +21,8 @@ export const LinksStyled = styled.div`
 export const TextHelpStyled = styled.p`
     margin-left: 40px;
     margin-bottom: 20px;
-    padding-top: 20px;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 24px;
 `;
 
 export const TextZagolovkaStyled = styled.p`

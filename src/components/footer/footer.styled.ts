@@ -9,6 +9,10 @@ export const FigcaptionStyled = styled.figcaption`
     font-size: 25px;
     display: table;
     text-align: center;
+    @media screen and (max-width: 900px) {
+        font-weight: 200;
+        font-size: 20px;
+    }
 `;
 
 export const FigureImgStyled = styled.img`
@@ -16,12 +20,21 @@ export const FigureImgStyled = styled.img`
     height: 54px;
     vertical-align: top;
     display: inline;
+    @media screen and (max-width: 768px) {
+        width: 40px;
+        height: 44px;
+    }
 `;
 
 export const FigureStyled = styled.figure`
     display: inline-block;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+    @media screen and (max-width: 768px) {
+        display: block;
+        margin: auto;
+    }
+    
 `;
 
 export const BottStyled = styled.div`
@@ -37,13 +50,19 @@ export const TextStyled = styled.p`
     font-weight: 700;
     margin-top: 20px;
     margin-bottom: 10px;
+    @media screen and (max-width: 900px) {
+        margin-left: 20px;
+    }
 `;
 
 export const TextZagolovokStyled = styled.p`
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 30px;
+    }
 `;
 
 export const AStyled = styled.a`
@@ -58,6 +77,9 @@ export const InFooterFirstStyled = styled.div`
     align-items: flex-start; 
     display: flex;
     justify-content: space-between;
+    max-width: 1120px;
+    margin: 0 auto;
+    
 `;
 
 export const InFooterStyled = styled.div`
@@ -65,7 +87,11 @@ export const InFooterStyled = styled.div`
     justify-content: space-between;
     max-width: 1440px;
     margin: 0 auto;
-    align-items: flex-start;
+    @media screen and (max-width: 768px) {
+        display: block;
+        margin: auto;
+    }
+    width: 90%; 
 `;
 
 export const ImgStyled = styled.img`
@@ -74,6 +100,9 @@ export const ImgStyled = styled.img`
     margin-top: 10px;
     display: inline;
     margin-right: 8px;
+    @media screen and (max-width: 900px) {
+        margin-left: 20px;
+    }
 `;
 
 export const FooterStyled = styled.div`
@@ -84,4 +113,5 @@ export const FooterStyled = styled.div`
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+
 `;

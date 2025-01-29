@@ -2,9 +2,15 @@ import styled from "@emotion/styled";
 
 export const BlockPurchasesStyled = styled.div`  
     background: #18396c;
-    margin: 60px 35px;
     padding-bottom: 35px;
     color: #fff;
+    max-width: 1120px;
+    margin: 40px auto;
+    border: 1px solid #f39a46;
+`;
+
+export const Lin = styled.hr`
+    border: 1px solid #f39a46;
 `;
 
 export const ShopsStyled = styled.div`  
@@ -33,9 +39,8 @@ export const AddStyled = styled.button`
 export const TextZagolStyled = styled.p`  
     margin-left: 40px;
     margin-bottom: 20px;
-    padding-top: 20px;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 24px;
 `;
 
 export const ImageStyled = styled.img`  
