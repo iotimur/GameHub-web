@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 export const String = styled.span`
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   @media screen and (max-width: 998px) {
   font-size: 12px;
@@ -12,12 +12,12 @@ export const String = styled.span`
 
 export const SortingButton = styled.button`
 margin-top:10px;
-  z-index: 100;
-  margin-left:auto;
+  // z-index: 100;
+  // margin-left:auto;
+  margin-right:123px;
   position: absolute;
   display: flex;
-  align-items: center;
- right: 100px;
+  right: 0px;
   border-radius: 10px;
   width: 110px;
   height: 25px;
@@ -53,7 +53,6 @@ export const Dropdown = styled.div`
   border-radius: 10px;
   padding: 8px 0;
   z-index: 100;
-  
 `;
 
 export const DropdownItem = styled.button`
@@ -65,8 +64,7 @@ export const DropdownItem = styled.button`
   color: #fff;
   background-color: rgba(24, 57, 108,0.5);
   border: none;
-  // z-index: 100;
-  margin-left:auto;
+  
   &:hover {
     background-color: #2E5A99;
     transition: 0.5s;

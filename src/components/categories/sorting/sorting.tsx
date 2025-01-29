@@ -29,8 +29,8 @@ const FilterSorting = ({ onSort }) => {
                 <Sorting>{selectedOption}</Sorting>
                 {isDropdownOpen && (
                     <Dropdown>
-                        <DropdownItem onClick={() => handleOptionSelect('по цене max')}>по цене max</DropdownItem>
-                        <DropdownItem onClick={() => handleOptionSelect('по цене min')}>по цене min</DropdownItem>
+                        <DropdownItem onClick={() => handleOptionSelect('По цене max')}>По цене max</DropdownItem>
+                        <DropdownItem onClick={() => handleOptionSelect('По цене min')}>По цене min</DropdownItem>
                     </Dropdown>
                 )}
             </SortingButton>

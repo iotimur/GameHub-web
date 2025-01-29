@@ -15,7 +15,8 @@ import * as getHomeSearchSelectors from "../../_data_/selectors/home-app-search"
 import * as getCartGamesSelectors from "../../_data_/selectors/cart-games"; // Подключаем селектор корзины
 import { cartSlice } from "../../_data_/slices/cart-games";
 import { ButtonStyledTopSail } from "./list_games.styled"; // Подключаем стилизованную кнопку
-
+import * as getFavGamesSelectors from "../../_data_/selectors/favourites-games"
+import { favouritesGamesSlice } from "../../_data_/slices/favourites-games";
 // const ListGames = () => {
 //   const dispatch = useDispatch();
 //   const [modifyCart] = useAddToCartMutation();
@@ -141,6 +142,8 @@ const ListGames = () => {
   const [modifyCart] = useAddToCartMutation();
   const allGames = useSelector(getHomeSearchSelectors.allGames);
   const cartIds = useSelector(getCartGamesSelectors.ids);
+  const cartFav = useSelector(getFavGamesSelectors.ids);
+
   const [favourites, setFavourites] = useState(() => {
     const savedFavourites = localStorage.getItem('favourites');
     return savedFavourites ? JSON.parse(savedFavourites) : [];
@@ -175,18 +178,24 @@ const ListGames = () => {
     }
   };
 
-  const handleToggleFavourite = (gameId) => {
-    if (favourites.find(fav => fav.id === gameId)) {
-      // Убрать из избранного
-      setFavourites(favourites.filter(fav => fav.id !== gameId));
+  const handleToggleFavourite = (game) => {
+    if (favourites.find(fav => fav.id === game.id)) {
+        // Удаляем из избранного
+        handleRemoveFavourite(game);
     } else {
-      // Добавить в избранное
-      const gameToAdd = allGames.find(game => game.id === gameId);
-      if (gameToAdd) {
-        setFavourites([...favourites, gameToAdd]);
-      }
+        // Добавляем в избранное
+        const updatedFavourites = [...favourites, game];
+        setFavourites(updatedFavourites);
+        localStorage.setItem('favourites', JSON.stringify(updatedFavourites));
     }
-  };
+};
+const handleRemoveFavourite = (game) => {
+
+    const updatedFavourites = favourites.filter(fav => fav.id !== game.id);
+    setFavourites(updatedFavourites);
+    localStorage.setItem('favourites', JSON.stringify(updatedFavourites));
+};
+
 
   if (isFetching || isLoading) {
     return <div>Loading...</div>;

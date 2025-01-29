@@ -12,9 +12,9 @@ const initialState: CartState = {
   ids: [] as number[], // Обеспечиваем, что ids всегда будет массивом
 };
 
-export const favoriteGameSlice = createSlice({
+export const favouritesGamesSlice = createSlice({
   initialState,
-  name: "favorites-games",
+  name: "favourites-games",
   reducers: {
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
@@ -41,6 +41,6 @@ export const favoriteGameSlice = createSlice({
 });
 
 export const { setLoading, setData, setError, addToCart, removeFromCart } =
-  favoriteGameSlice.actions;
+favouritesGamesSlice.actions;
 
-export default favoriteGameSlice.reducer;
+export default favouritesGamesSlice.reducer;

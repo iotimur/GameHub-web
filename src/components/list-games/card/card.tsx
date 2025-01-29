@@ -19,7 +19,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const GameCard = ({ game, handleCartUpdate, handleToggleFavourite }) => {
   const cartIds = useSelector(getCartGamesSelectors.ids); // Получаем ID игр в корзине
-  const cartIdFav = useSelector(getCartGamesSelectors.ids);// 
+  const cartIdFav = useSelector(getFavGamesSelectors.ids);// 
 
   const gameImages = useMemo(() => {
     return {
@@ -44,7 +44,7 @@ const GameCard = ({ game, handleCartUpdate, handleToggleFavourite }) => {
 
       <ButtonFavourite isInFav={isInFav} onClick={() => handleToggleFavourite(game.id)}
         title={isInFav ? 'Убрать из избранного' : 'Добавить в избранное'}>
-        <FontAwesomeIcon icon={faStar} />
+        <FontAwesomeIcon icon={faStar} style={{ color: isInFav ? 'yellow':'gray' }} />
       </ButtonFavourite>
     </Card>
   );
