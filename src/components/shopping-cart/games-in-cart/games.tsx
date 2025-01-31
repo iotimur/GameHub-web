@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../../_data_/slices/cart-games"; // Путь к слайсу корзины
 import { useAllGamesQuery } from "../../../_data_/service/main-api"; // Для получения всех игр
@@ -25,6 +25,9 @@ import {
   LottieWrapper,
   AnimationContainer,
   StyledText,
+  PromoCodeContainer,
+  PromoCodeInput, // Импортируем стилизованный компонент для ввода промокода
+  ApplyButton, // Импортируем стилизованный компонент для кнопки применения промокода
 } from "../games-in-cart/games.styled";
 
 const Games: React.FC = () => {
@@ -32,6 +35,10 @@ const Games: React.FC = () => {
   const cartIds = useSelector(getCartGamesSelectors.ids);
 
   const [modifyCart] = useAddToCartMutation();
+  
+  // Состояние для хранения промокода и его применения
+  const [promoCode, setPromoCode] = useState("");
+  const [discount, setDiscount] = useState(0); // Состояние для хранения скидки
 
   // Запрашиваем все игры
   const {
@@ -55,17 +62,25 @@ const Games: React.FC = () => {
       </AnimationContainer>
     );
   }
+
   // Фильтруем игры, чтобы оставить только те, которые есть в корзине
   const gamesInCart =
     allGamesData?.filter((game) => cartIds.includes(game.id)) || [];
 
   // Подсчет общей стоимости
-  // Подсчет общей стоимости
-const totalPrice = gamesInCart.reduce((total, game) => {
-  const priceNumber = game.price; // Убираем все символы кроме чисел и запятой/точки
-  return total + (isNaN(priceNumber) ? 0 : priceNumber);
-}, 0);
+  const totalPrice = gamesInCart.reduce((total, game) => {
+    const priceNumber = game.price; // Убираем все символы кроме чисел и запятой/точки
+    return total + (isNaN(priceNumber) ? 0 : priceNumber);
+  }, 0);
 
+  // Применение промокода
+  const handleApplyPromoCode = () => {
+    if (promoCode === "10") {
+      setDiscount(totalPrice * 0.1); // Пример скидки в 10%
+    } else {
+      alert("Неверный промокод");
+    }
+  };
 
   // Функция для удаления игры из корзины
   const handleDelete = async (id: number) => {
@@ -115,9 +130,20 @@ const totalPrice = gamesInCart.reduce((total, game) => {
               </div>
             </Container_my>
           ))}
+          {/* Поле для ввода промокода */}
+          <PromoCodeContainer>
+            <PromoCodeInput 
+              type="text" 
+              value={promoCode} 
+              onChange={(e) => setPromoCode(e.target.value)} 
+              placeholder="Введите промокод" 
+            />
+            <ApplyButton onClick={handleApplyPromoCode}>Применить</ApplyButton>
+            </PromoCodeContainer>
           <Total>
             <TotalSpan>Промежуточный итог:</TotalSpan>
-            <Price1>{totalPrice.toFixed(2)} ₽</Price1> {/* Добавлен знак рубля */}
+            <Price1>{(totalPrice - discount).toFixed(2)} ₽</Price1> {/* Добавлен знак рубля */}
+            
           </Total>
         </>
       )}

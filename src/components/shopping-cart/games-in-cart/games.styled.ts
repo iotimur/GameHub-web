@@ -155,7 +155,7 @@ export const Price1 = styled.div`
   font-size: 3vh;
   color: white;
   margin-top: 5px;
-  margin-right: 270px;
+  margin-right: 400px;
   font-family: var(--font-family);
   font-style: italic;
   font-weight: 500;
@@ -188,7 +188,7 @@ export const Total = styled.div`
 `;
 
 export const TotalSpan = styled.span`
-  margin-left: 550px;
+  margin-left: 650px;
 
   @media screen and (max-width: 1200px) {
     margin-left: 200px;
@@ -213,7 +213,64 @@ export const LottieWrapper = styled.div`
 `
 
 export const StyledText = styled.p`
-    font-size: 25px;
-    font-weight: 550;
-    color: #000000;
+    margin-right: 2000px;
+    margin-top: 100px;
+
+  @media screen and (max-width: 1200px) {
+    margin-left: 200px;
+  }
+  @media screen and (max-width: 800px) {
+    margin-left: 200px;
+  }
 `
+export const PromoCodeContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0px 100px 700px;
+    max-width: 700px; // Максимальная ширина контейнера
+`;
+
+export const PromoCodeInput = styled.input`
+    width: calc(100% - 120px); // Занимает всю ширину за исключением кнопки
+    height: 64px; // Высота аналогична Oval
+    border-radius: 25px;
+    border: none;
+    padding: 0 20px;
+    font-size: 4vh;
+    color: black;
+    
+    @media screen and (max-width: 1200px) {
+        height: 50px;
+        font-size: 3.5vh;
+    }
+    
+    @media screen and (max-width: 800px) {
+        height: 45px;
+        font-size: 3vh;
+    }
+`;
+
+export const ApplyButton = styled.button`
+    width: 300px; // Ширина кнопки
+    height: 64px; // Высота аналогична Oval
+    border-radius: 25px;
+    margin-left: 30px;
+    background-color: #F39A46;
+    color: black;
+    font-weight: bold;
+    font-size: 4vh;
+    border: none;
+    
+    cursor: pointer;
+
+    @media screen and (max-width: 1200px) {
+        height: 50px;
+        font-size: 3.5vh;
+    }
+    
+    @media screen and (max-width: 800px) {
+        height: 45px;
+        font-size: 3vh;
+    }
+`;
