@@ -2,7 +2,7 @@
 
 ![Логотип](newlogo.jpg)
 
-### Онлайн-магазин компьютерных игр ![GameHub!](https://img.shields.io/badge/GameHub!-blue)
+### Онлайн-магазин компьютерных игр ![GameHub!](https://img.shields.io/badge/Game%10Hub!-blue)
 
 ---
 
