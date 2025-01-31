@@ -2,11 +2,10 @@ import styled from "@emotion/styled";
 
 export const RegistrStyled = styled.div`
     width: 374px;
-    height: 471px;
+    height: 500px;
     background: #fff;
     border-radius: 23px;
     margin: 200px auto;
-    
 `;
 
 export const ButtonEntrStyled = styled.a`
