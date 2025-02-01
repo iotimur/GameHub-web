@@ -5,12 +5,14 @@ import { CommentsContainer, CommentsTitle, CommentBlock } from './comment-sectio
 import ShowMoreButton from './show-more-button/show-more-button';
 import { Comment } from '../../../_data_/model/common_comments';
 import {mainApi} from '../../../_data_/service/main-api'
+import { useTranslation } from 'react-i18next';
 
 export type CommentsSectionProps = {
   comments?: Comment[];
 };
 
 const CommentsSection: React.FC<CommentsSectionProps> = () => {
+  const { t } = useTranslation();
   const { data: queryData } = useCommentsPageQuery();
   const [updateLike] = useUpdateLikeMutation();
   const [sortBy, setSortBy] = useState("likes");
@@ -47,15 +49,15 @@ const CommentsSection: React.FC<CommentsSectionProps> = () => {
 
   return (
     <CommentsContainer>
-      <CommentsTitle>Комментарии</CommentsTitle>
+      <CommentsTitle>{t('comments_title')}</CommentsTitle>
       <div>
         <label>
-          Сортировать по:
+          {t('comments_sort_by')}
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="likes">Полезные</option>
-            <option value="date">Новые</option>
-            <option value="rating">Положительные</option>
-            <option value="negative">Отрицательные</option>
+            <option value="likes">{t('comments_sort_likes')}</option>
+            <option value="date">{t('comments_sort_date')}</option>
+            <option value="rating">{t('comments_sort_positive')}</option>
+            <option value="negative">{t('comments_sort_negative')}</option>
           </select>
         </label>
       </div>

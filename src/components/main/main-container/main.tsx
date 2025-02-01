@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { URLs } from "../../../_data_/urls";
 // import data from "../../../../stubs/json/home-page-data/success.json";
 import * as images from "../../../assets/Images_main";
+import { useTranslation } from 'react-i18next';
 
 import {
   ContainerMain,
@@ -27,6 +28,7 @@ import somethingWrong from "../../../assets/Images_main/something_wrong_cat.json
 import errorAnimation from "../../../assets/Images_main/error_dog.json"; // Анимация ошибки
 
 const MainContent = () => {
+  const { t } = useTranslation(); 
   const { isFetching, isLoading, data, error } = mainApi.useHomePageQuery();
 
   console.log(isFetching, isLoading, data, error);
@@ -38,7 +40,7 @@ const MainContent = () => {
         <LottieWrapper>
           <Lottie animationData={somethingWrong} />
         </LottieWrapper>
-        <StyledText>Загрузка данных ... </StyledText>
+        <StyledText>{t('main_loading')}</StyledText>
       </AnimationContainer>
     );
   }
@@ -50,7 +52,7 @@ const MainContent = () => {
         <LottieWrapper>
           <Lottie animationData={errorAnimation} />
         </LottieWrapper>
-        <StyledText>Ошибка загрузки данных...</StyledText>
+        <StyledText>{t('main_error')}</StyledText>
       </AnimationContainer>
     );
   }
@@ -62,7 +64,7 @@ const MainContent = () => {
         <LottieWrapper>
           <Lottie animationData={somethingWrong} />
         </LottieWrapper>
-        <StyledText>Загрузка данных ... </StyledText>
+        <StyledText>{t('main_empty')}</StyledText>
       </AnimationContainer>
     );
   }
@@ -85,7 +87,7 @@ const MainContent = () => {
 
         <main>
           <Search />
-          <Title text="Лидеры продаж" />
+          <Title text={t("main_sales_leaders")} />
 
           <CardsMain>
             <GalleryTopSail
@@ -94,7 +96,7 @@ const MainContent = () => {
             ></GalleryTopSail>
           </CardsMain>
 
-          <Title text="Категории" />
+          <Title text={t("main_categories")} />
 
           <CardsMain>
             <GalleryCategories
@@ -103,7 +105,7 @@ const MainContent = () => {
             ></GalleryCategories>
           </CardsMain>
 
-          <Title text="Новости" />
+          <Title text={t("main_news")} />
 
           <CardsMain>
             <GalleryNews data={data.news} img={imagesNews}></GalleryNews>

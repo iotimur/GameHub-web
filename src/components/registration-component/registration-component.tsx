@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { RegistrStyled, ButtonEntrStyled, RegStyled, ButtonStyled, InputStyled, HRStyled, UpStyled, DownStyled } from './registration-component.styled';
 import { useNavigate, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'; 
 
 const RegistrationComponent = () => {
+    const { t } = useTranslation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
@@ -14,29 +16,29 @@ const RegistrationComponent = () => {
         setError('');
 
         if (!email || !password || !password2) {
-            setError("Пожалуйста, заполните все поля.");
+            setError(t("registration_error_fields"));
             return;
         }
 
         if (password.length < 4) {
-            setError("Пароль должен содержать минимум 4 символа.");
+            setError(t("registration_error_password_length"));
             return;
         }
 
         if (!/\d/.test(password)) {
-            setError("Пароль должен содержать хотя бы 1 цифру.");
+            setError(t("registration_error_password_digit"));
              return;
          }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            setError("Некорректный формат email.");
+            setError(t("registration_error_email"));
             return;
         }
 
 
         if (password !== password2) {
-             setError("Пароли не совпадают.");
+             setError(t("registration_error_password_match"));
             return;
          }
 
@@ -45,7 +47,7 @@ const RegistrationComponent = () => {
             const existingUser = users.find(user => user.email === email);
 
              if (existingUser) {
-               setError("Пользователь с таким email уже зарегистрирован.");
+               setError(t("registration_error_email_exists"));
                 return;
             }
 
@@ -58,10 +60,10 @@ const RegistrationComponent = () => {
             users = [...users, newUser];
             localStorage.setItem('users', JSON.stringify(users));
 
-            alert("Регистрация прошла успешно!");
+            alert(t("registration_success"));
             navigate('/gamehub/personal-account');
         } catch (error) {
-            setError("Ошибка при регистрации.");
+            setError(t("registration_error"));
              console.error("Ошибка регистрации:", error);
         }
     };
@@ -70,9 +72,9 @@ const RegistrationComponent = () => {
         <RegistrStyled>
             <UpStyled>
                 <Link to="/gamehub/entrance" style={{ textDecoration: 'none' }}>
-                    <ButtonEntrStyled>Вход</ButtonEntrStyled>
+                    <ButtonEntrStyled>{t("registration_login")}</ButtonEntrStyled>
                 </Link>
-                <RegStyled>Регистрация</RegStyled>
+                <RegStyled>{t("registration_register")}</RegStyled>
             </UpStyled>
             <HRStyled />
             <DownStyled>
@@ -81,7 +83,7 @@ const RegistrationComponent = () => {
                         <InputStyled type="text" name="user_email" placeholder="Введите Email" value={email} onChange={e => setEmail(e.target.value)} />
                         <InputStyled type="password" name="user_password" placeholder="Введите пароль" value={password} onChange={e => setPassword(e.target.value)} />
                         <InputStyled type="password" name="user_password2" placeholder="Повторите пароль" value={password2} onChange={e => setPassword2(e.target.value)} />
-                        <ButtonStyled type="submit">Регистрация</ButtonStyled>
+                        <ButtonStyled type="submit">{t("registration_button")}</ButtonStyled>
                     </form>
                     {error && <p style={{ color: "red" }}>{error}</p>}
                 </div>

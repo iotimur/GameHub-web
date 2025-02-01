@@ -2,45 +2,47 @@ import React from 'react';
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import { HRStyled, FigcaptionStyled, AStyled, InFooterFirstStyled, ImgStyled, InFooterStyled, TextEndStyled, TextStyled, TextZagolovokStyled, FigureImgStyled, FigureStyled, FooterStyled, BottStyled } from './footer.styled'
 import { f1, f2, f3, f4, cmc } from './index'
+import { useTranslation } from 'react-i18next';
 
 export function Footer() {
+    const { t } = useTranslation();
     return (
         <FooterStyled>
             <InFooterFirstStyled>
                 <FigureStyled>
                     <FigureImgStyled src={f1} alt="Лучшая цена" />
-                    <FigcaptionStyled>Лучшая цена</FigcaptionStyled>
+                    <FigcaptionStyled>{t('footer.bestPrice')}</FigcaptionStyled>
                 </FigureStyled>
                 <FigureStyled>
                     <FigureImgStyled src={f2} alt="Гарантия 100%" />
-                    <FigcaptionStyled>Гарантия 100%</FigcaptionStyled>
+                    <FigcaptionStyled>{t('footer.guarantee')}</FigcaptionStyled>
                 </FigureStyled>
                 <FigureStyled>
                     <FigureImgStyled src={f3} alt="Все способы оплаты" />
-                    <FigcaptionStyled>Все способы оплаты</FigcaptionStyled>
+                    <FigcaptionStyled>{t('footer.paymentMethods')}</FigcaptionStyled>
                 </FigureStyled>
                 <FigureStyled>
                     <FigureImgStyled src={f4} alt="Регулярные акции и скидки" />
-                    <FigcaptionStyled>Регулярные акции и скидки</FigcaptionStyled>
+                    <FigcaptionStyled>{t('footer.discounts')}</FigcaptionStyled>
                 </FigureStyled>
             </InFooterFirstStyled>
             <HRStyled />
             <InFooterStyled>
                 <div className="left">
-                    <TextZagolovokStyled>Наши контакты:</TextZagolovokStyled>
+                    <TextZagolovokStyled>{t('footer.contacts')}</TextZagolovokStyled>
                     <nav>
-                        <TextStyled>Техническая поддержка по общим вопросам:</TextStyled>
+                        <TextStyled>{t('footer.support')}</TextStyled>
                         <ImgStyled src={cmc} alt="cmc" />
                         <AStyled href="gamehub@gmail.com">gamehub@gmail.com</AStyled>
                     </nav>
                     <nav>
-                        <TextStyled>Администрация:</TextStyled>
+                        <TextStyled>{t('footer.admin')}</TextStyled>
                         <ImgStyled src={cmc} alt="cmc" />
                         <AStyled href="gamehub_admin@gmail.com">gamehub_admin@gmail.com</AStyled>
                     </nav>
                 </div>
                 <div className="right">
-                    <TextZagolovokStyled>Схема проезда:</TextZagolovokStyled>
+                    <TextZagolovokStyled>{t('footer.map')}</TextZagolovokStyled>
                     <YMaps>
                         <div>
                             <Map defaultState={{ center: [55.78, 49.13], zoom: 13 }} >
@@ -51,7 +53,7 @@ export function Footer() {
                 </div>
             </InFooterStyled>
             <BottStyled>
-                <TextEndStyled>Казань, 2024</TextEndStyled>
+                <TextEndStyled>{t('footer.location')}</TextEndStyled>
             </BottStyled>
         </FooterStyled>
     );

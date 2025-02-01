@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { 
     SystemRequirementsContainer, 
@@ -11,34 +12,36 @@ import {
 } from './system-requirements.styled';
 
 const SystemRequirements = () => {
+    const { t } = useTranslation();
+
     return (
         <SystemRequirementsContainer>
-            <Title>СИСТЕМНЫЕ ТРЕБОВАНИЯ</Title>
+            <Title>{t('requirements_title')}</Title>
             <ColumnsWrapper>
                 <Column>
-                    <Subtitle>РЕКОМЕНДУЕМЫЕ:</Subtitle>
+                    <Subtitle>{t('requirements_recommended')}</Subtitle>
                     <RequirementsList>
-                        <RequirementItem>64-разрядные процессор и операционная система</RequirementItem>
-                        <RequirementItem>ОС: Windows 10</RequirementItem>
-                        <RequirementItem>Процессор: INTEL CORE I5-8400 or AMD RYZEN 3 3300X</RequirementItem>
-                        <RequirementItem>Оперативная память: 12 GB ОЗУ</RequirementItem>
-                        <RequirementItem>Видеокарта: NVIDIA GEFORCE GTX 1060 3 GB or AMDRADEON RX 580 4 GB</RequirementItem>
-                        <RequirementItem>DirectX: версии 12</RequirementItem>
-                        <RequirementItem>Место на диске: 60 GB</RequirementItem>
-                        <RequirementItem>Звуковая карта: Windows Compatible Audio Device</RequirementItem>
+                        <RequirementItem>{t('requirements_recommended_1')}</RequirementItem>
+                        <RequirementItem>{t('requirements_recommended_2')}</RequirementItem>
+                        <RequirementItem>{t('requirements_recommended_3')}</RequirementItem>
+                        <RequirementItem>{t('requirements_recommended_4')}</RequirementItem>
+                        <RequirementItem>{t('requirements_recommended_5')}</RequirementItem>
+                        <RequirementItem>{t('requirements_recommended_6')}</RequirementItem>
+                        <RequirementItem>{t('requirements_recommended_7')}</RequirementItem>
+                        <RequirementItem>{t('requirements_recommended_8')}</RequirementItem>
                     </RequirementsList>
                 </Column>
                 <Column>
-                    <Subtitle>МИНИМАЛЬНЫЕ:</Subtitle>
+                    <Subtitle>{t('requirements_minimum')}</Subtitle>
                     <RequirementsList>
-                        <RequirementItem>64-разрядные процессор и операционная система</RequirementItem>
-                        <RequirementItem>ОС: Windows 10/11</RequirementItem>
-                        <RequirementItem>Процессор: INTEL CORE I7-8700K or AMD RYZEN 5 3600X</RequirementItem>
-                        <RequirementItem>Оперативная память: 16 GB ОЗУ</RequirementItem>
-                        <RequirementItem>Видеокарта: NVIDIA GEFORCE GTX 1070 8 GB or AMD RADEON RX VEGA 56 8 GB</RequirementItem>
-                        <RequirementItem>DirectX: версии 12</RequirementItem>
-                        <RequirementItem>Место на диске: 60 GB</RequirementItem>
-                        <RequirementItem>Звуковая карта: Windows Compatible Audio Device</RequirementItem>
+                        <RequirementItem>{t('requirements_minimum_1')}</RequirementItem>
+                        <RequirementItem>{t('requirements_minimum_2')}</RequirementItem>
+                        <RequirementItem>{t('requirements_minimum_3')}</RequirementItem>
+                        <RequirementItem>{t('requirements_minimum_4')}</RequirementItem>
+                        <RequirementItem>{t('requirements_minimum_5')}</RequirementItem>
+                        <RequirementItem>{t('requirements_minimum_6')}</RequirementItem>
+                        <RequirementItem>{t('requirements_minimum_7')}</RequirementItem>
+                        <RequirementItem>{t('requirements_minimum_8')}</RequirementItem>
                     </RequirementsList>
                 </Column>
             </ColumnsWrapper>

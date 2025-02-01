@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import '../../../css/game_page.css'
-
+import { useTranslation } from 'react-i18next';
 
 import {
     PriceBlockContainer,
@@ -15,29 +14,28 @@ import {
     PriceNew
 } from './price-block.styled';
 
-// Импортируйте изображение логотипа (если необходимо)
-
 const PriceBlock: React.FC = () => {
+    const { t } = useTranslation();
+
     return (
         <PriceBlockContainer>
             <AdditionalRectangle>
-                <Discount>-8%</Discount>
+                <Discount>{t('price.discount')}</Discount>
             </AdditionalRectangle>
             <PriceDetails>
-                <PriceNew>3295руб/</PriceNew>
-                <PriceOld>3599руб</PriceOld>
+                <PriceNew>{t('price.newPrice')}</PriceNew>
+                <PriceOld>{t('price.oldPrice')}</PriceOld>
             </PriceDetails>
             <PriceImage>
                 {/* Изображение логотипа */}
             </PriceImage>
             <Link to="/gamehub/shopping-cart">
-            <PriceRectangle>
-                <PriceText>В корзину</PriceText>
-            </PriceRectangle>
+                <PriceRectangle>
+                    <PriceText>{t('price.addToCart')}</PriceText>
+                </PriceRectangle>
             </Link>
         </PriceBlockContainer>
     );
 }
 
 export default PriceBlock;
-

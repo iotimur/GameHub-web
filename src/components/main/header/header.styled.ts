@@ -115,3 +115,19 @@ export const CheckButton = styled.div`
   cursor: pointer;
   display: none;
 `;
+
+
+export const LangButton = styled.button`
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 10px; /* Отступ справа, чтобы не сдвигать элементы */
+
+  &:hover {
+    background: white;
+    color: black;
+  }
+`;
