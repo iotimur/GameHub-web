@@ -43,9 +43,9 @@ export const CardImg = styled.img`
   height: 125px;
 }
 
-@media screen and (max-width: 800px) {
- 
-}
+  @media screen and (max-width: 440px) {
+   width: 90px;
+  }
 `;
 
 export const TitleGame = styled.h3`
@@ -60,10 +60,14 @@ export const TitleGame = styled.h3`
   width:150px;
 }
 
-@media screen and (max-width: 800px) {
- font-size: 14px;
+  @media screen and (max-width: 800px) {
+  font-size: 14px;
   width:100px;
-}
+  }
+  @media screen and (max-width: 440px) {
+  font-size: 10px;
+  width:80px;
+  }
 `;
 
 export const NewPrice = styled.span`
@@ -73,7 +77,7 @@ display: flex;
   font-size: 20px;
   color: #f39a46;
   font-weight: 500;
-  margin-left: 20px; /* Увеличиваем верхний отступ (margin-top) */
+  margin-left: 20px; 
   position: absolute;
   right:20px;
   top:90px;
@@ -83,7 +87,9 @@ display: flex;
   top:70px;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 440px) {
+  font-size:14px;
+  right:10px;
   }
 `;
 
@@ -140,9 +146,9 @@ export const Description = styled.span`
 }
 
 @media screen and (max-width: 800px) {
- font-size: 10px;
+ font-size: 12px;
   width:300px;
-  left: 250px;
+  left: 280px;
 }
   @media screen and (max-width: 700px) {
    font-size: 8px;
@@ -152,6 +158,9 @@ export const Description = styled.span`
   @media screen and (max-width: 600px) {
   width:100px;
 }
+  @media screen and (max-width: 440px) {
+  left:200px;
+  }
 `;
 interface ButtonProps {
   isInCart: boolean;
@@ -198,7 +207,10 @@ export const ButtonStyledTopSail = styled.button<ButtonProps>`
   font-size:1em;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 440px) {
+  height: 30px;
+  width: 30px;
+  font-size:0.7em;
   }
 `;
 
@@ -237,7 +249,9 @@ i {
   width:40px;
   font-size:1em;
   }
-
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 440px) {
+  height: 30px;
+  width: 30px;
+  font-size:0.7em;
   }
 `;

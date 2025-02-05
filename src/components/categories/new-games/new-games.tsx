@@ -12,7 +12,7 @@ import { cartSlice } from "../../../_data_/slices/cart-games";
 import ShowMoreButton from "../show-more-btn/show-more-btn";
 import { Title } from "../title";
 
-const NewGames = ({ sortOption, isExpanded, setIsExpanded }) => {
+const NewGames = ({ sortOption }) => {
   const dispatch = useDispatch();
   const [modifyCart] = useAddToCartMutation();
   const allGames = useSelector(getHomeSearchSelectors.allGames);
@@ -22,6 +22,11 @@ const NewGames = ({ sortOption, isExpanded, setIsExpanded }) => {
     const savedFavourites = localStorage.getItem('favourites');
     return savedFavourites ? JSON.parse(savedFavourites) : [];
   });
+  const [isExpanded, setIsExpanded] = useState(false);
+  const handleShowMore = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   useEffect(() => {
     if (data) {
       dispatch(homeSeachSlice.actions.setAllGames(data));
@@ -104,7 +109,7 @@ const NewGames = ({ sortOption, isExpanded, setIsExpanded }) => {
         <div>No games found</div>
       )}
       {displayedGames.length >= 3 && (
-        <ShowMoreButton onClick={() => setIsExpanded(!isExpanded)} isExpanded={isExpanded} />
+        <ShowMoreButton onClick={handleShowMore} isExpanded={isExpanded}></ShowMoreButton>
       )}
     </div>
   );

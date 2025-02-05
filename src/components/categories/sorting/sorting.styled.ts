@@ -2,25 +2,30 @@ import styled from "@emotion/styled"
 
 export const SortingString = styled.span`
   position: absolute;
-  margin-left: 750px;
+  // margin-left: 750px;
+  right:130px;
+  width:150px;
   margin-top:2px;
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 18px;
   color: #fff;
-  @media screen and (max-width: 1200px) {
-    margin-left: 630px;
-  }
   @media screen and (max-width: 998px) {
-    display: none;
+    font-size: 14px;
+    width:130px;
+  }
+    @media screen and (max-width: 800px) {
+    font-size: 12px;
+    width:100px;
   }
 `;
 
 export const SortingButton = styled.button`
   position: absolute;
   display: flex;
+  justify-content: center;
   align-items: center;
-  right: 123px;
+  right: 0px;
   // margin-top: 40px;
   border-radius: 10px;
   width: 120px;
@@ -28,12 +33,11 @@ export const SortingButton = styled.button`
   background: #18396c;
   cursor: pointer;
   border: 1px solid #f39a46;
-  justify-content: center;
-  align-items: center;
 @media screen and (max-width: 998px) {
   width: 120px;
   height: 20px;
 }
+
 `;
 
 export const SortingSpan = styled.span`
@@ -69,4 +73,12 @@ export const DropdownItem = styled.button`
 export const All = styled.div`
   padding-top:40px;
   padding-bottom:10px;
+`;
+
+export const ContainerMain = styled.div`
+  max-width: 65rem;
+  margin: 0 auto;
+  // padding: 0 0.75rem;
+  // margin-bottom: 100px;
+  position: relative;
 `;

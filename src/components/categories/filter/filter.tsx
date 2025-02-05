@@ -5,6 +5,7 @@ import {
     DropdownItem,
     Dropdown
 } from './filter.styles';
+import { ContainerMain } from '../sorting/sorting.styled';
 
 // const Filter = ({ isLeaders, isNewGames, isDiscountGames, onFilter }) => {
 //     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -79,6 +80,7 @@ const Filter = ({ isLeaders, isNewGames, isDiscountGames, onFilter, isDropdownOp
 
     return (
         <div>
+            <ContainerMain>
             <SortingButton onClick={toggleDropdown}>
                 <String>Фильтр</String>
                 {isDropdownOpen && (
@@ -116,6 +118,7 @@ const Filter = ({ isLeaders, isNewGames, isDiscountGames, onFilter, isDropdownOp
                     </Dropdown>
                 )}
             </SortingButton>
+            </ContainerMain>
         </div>
     );
 };

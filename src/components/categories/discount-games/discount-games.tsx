@@ -13,7 +13,7 @@ import ShowMoreButton from "../show-more-btn/show-more-btn";
 import { Title } from "../title";
 
 
-const DiscountGames = ({ sortOption, isExpanded, setIsExpanded }) => {
+const DiscountGames = ({ sortOption}) => {
 
   const dispatch = useDispatch();
   const [modifyCart] = useAddToCartMutation();
@@ -24,6 +24,10 @@ const DiscountGames = ({ sortOption, isExpanded, setIsExpanded }) => {
     const savedFavourites = localStorage.getItem('favourites');
     return savedFavourites ? JSON.parse(savedFavourites) : [];
   });
+  const [isExpanded, setIsExpanded] = useState(false);
+      const handleShowMore = () => {
+        setIsExpanded(!isExpanded);
+      };
   useEffect(() => {
     if (data) {
       dispatch(homeSeachSlice.actions.setAllGames(data));
@@ -103,7 +107,7 @@ const DiscountGames = ({ sortOption, isExpanded, setIsExpanded }) => {
         <div>No games found</div>
       )}
       {displayedGames.length >= 3 && (
-        <ShowMoreButton onClick={() => setIsExpanded(!isExpanded)} isExpanded={isExpanded} />
+        <ShowMoreButton onClick={handleShowMore} isExpanded={isExpanded}></ShowMoreButton>
       )}
     </div>
   );

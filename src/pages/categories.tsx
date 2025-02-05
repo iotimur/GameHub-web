@@ -13,8 +13,6 @@ const Categories = () => {
     const [isDiscountGames, setIsDiscountGames] = useState(true);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isSortingDropdownOpen, setIsSortingDropdownOpen] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(false);
-
     const [selectedOption, setSelectedOption] = useState('');
 
     const handleSort = (option) => {
@@ -64,17 +62,11 @@ const Categories = () => {
                         toggleDropdown={toggleSortingDropdown}
                     />
                     {isLeaders && <Leaders
-                        sortOption={sortOption}
-                        isExpanded={isExpanded}
-                        setIsExpanded={setIsExpanded} />}
+                        sortOption={sortOption}/>}
                     {isNewGames && <NewGames
-                        sortOption={sortOption}
-                        isExpanded={isExpanded}
-                        setIsExpanded={setIsExpanded} />}
+                        sortOption={sortOption}/>}
                     {isDiscountGames && <DiscountGames
-                        sortOption={sortOption}
-                        isExpanded={isExpanded}
-                        setIsExpanded={setIsExpanded} />}
+                        sortOption={sortOption} />}
                 </ContainerMain>
             </CommonMain>
         </>
