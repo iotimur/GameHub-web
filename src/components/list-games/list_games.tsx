@@ -25,7 +25,10 @@ const ListGames = () => {
 
   // Запрос для получения всех игр
   const { isFetching, isLoading, data, error } = mainApi.useAllGamesQuery();
-
+  const [favourites, setFavourites] = useState(() => {
+    const savedFavourites = localStorage.getItem('favourites');
+    return savedFavourites ? JSON.parse(savedFavourites) : [];
+  });
   useEffect(() => {
     if (data) {
       dispatch(homeSeachSlice.actions.setAllGames(data));
@@ -58,6 +61,21 @@ const ListGames = () => {
     filteredGames = filteredGames.filter((game) => game.category === category);
   }
 
+  const handleAddFavourite = (game) => {
+    setFavourites((prevFavourites) => {
+      const isAlreadyFavourite = prevFavourites.find(fav => fav.id === game.id);
+      let updatedFavourites;
+
+      console.log(data, isLoading, error);
+      if (isAlreadyFavourite) {
+        updatedFavourites = prevFavourites.filter(fav => fav.id !== game.id); // Удаляем из избранного
+      } else {
+        updatedFavourites = [...prevFavourites, game]; // Добавляем в избранное
+      }
+      localStorage.setItem('favourites', JSON.stringify(updatedFavourites));// Сохраняем новое состояние в localStorage
+      return updatedFavourites;
+    });
+  };
   const handleCartUpdate = async (gameId) => {
     const isInCart = cartIds.includes(gameId); // Проверяем, в корзине ли игра
     const action = isInCart ? "remove" : "add";
@@ -86,25 +104,22 @@ const ListGames = () => {
       <CommonMain>
         <ContainerMain>
           <Title text="Games List" />
-          {filteredGames.length > 0 ? (
-            filteredGames.map((game) => (
-              <div
-                key={game.id}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <GameCard
-                  game={game}
-                  inCart={cartIds}
-                  handleCartUpdate={handleCartUpdate}
-                />
-              </div>
-            ))
+          {filteredGames.length ? (
+            filteredGames.map((game) => {
+              const isFavourite = favourites.some(fav => fav.id === game.id); // Проверяем, есть ли игра в избранном
+              return (
+                <div key={game.id}>
+                  <GameCard
+                    game={game}
+                    handleCartUpdate={handleCartUpdate}
+                    onAddFavourite={handleAddFavourite}
+                    isFavourite={isFavourite}
+                  />
+                </div>
+              );
+            })
           ) : (
-            <p>Nothing found</p>
+            <div>No games found</div>
           )}
         </ContainerMain>
       </CommonMain>

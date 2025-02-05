@@ -1,41 +1,67 @@
 import React, { useState } from 'react';
 import {
     SortingString,
-    Sorting,
+    SortingSpan,
     SortingButton,
     DropdownItem,
     Dropdown,
     All
 } from './sorting.styled';
 
-const FilterSorting = ({ onSort }) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState('');
+// const FilterSorting = ({ onSort }) => {
+//     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+//     const [selectedOption, setSelectedOption] = useState('');
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
-    };
+//     const toggleDropdown = () => {
+//         setIsDropdownOpen(!isDropdownOpen);
+//     };
 
+//     const handleOptionSelect = (option) => {
+//         setSelectedOption(option);
+//         setIsDropdownOpen(false);
+//         onSort(option);
+//     };
+//     return (
+//         <div>
+//             <All>
+//             <SortingString>Сортировать по</SortingString>
+//             <SortingButton onClick={toggleDropdown}>
+//                 <Sorting>{selectedOption}</Sorting>
+//                 {isDropdownOpen && (
+//                     <Dropdown>
+//                         <DropdownItem onClick={() => handleOptionSelect('По цене max')}>По цене max</DropdownItem>
+//                         <DropdownItem onClick={() => handleOptionSelect('По цене min')}>По цене min</DropdownItem>
+//                     </Dropdown>
+//                 )}
+//             </SortingButton>
+//             </All>
+//         </div>
+//     );
+// };
+// export default FilterSorting;
+
+
+const Sorting = ({ onSort, selectedOption, isDropdownOpen, toggleDropdown }) => {
     const handleOptionSelect = (option) => {
-        setSelectedOption(option);
-        setIsDropdownOpen(false);
-        onSort(option);
+        onSort(option); // Используем onSort для передачи выбранной опции
+        toggleDropdown(); // Закрываем выпадающий список после выбора
     };
     return (
         <div>
             <All>
-            <SortingString>Сортировать по</SortingString>
-            <SortingButton onClick={toggleDropdown}>
-                <Sorting>{selectedOption}</Sorting>
-                {isDropdownOpen && (
-                    <Dropdown>
-                        <DropdownItem onClick={() => handleOptionSelect('По цене max')}>По цене max</DropdownItem>
-                        <DropdownItem onClick={() => handleOptionSelect('По цене min')}>По цене min</DropdownItem>
-                    </Dropdown>
-                )}
-            </SortingButton>
+                <SortingString>Сортировать по</SortingString>
+                <SortingButton onClick={toggleDropdown}>
+                    <SortingSpan>{selectedOption}</SortingSpan>
+                    {isDropdownOpen && (
+                        <Dropdown>
+                            <DropdownItem onClick={() => handleOptionSelect('По цене max')}>По цене max</DropdownItem>
+                            <DropdownItem onClick={() => handleOptionSelect('По цене min')}>По цене min</DropdownItem>
+                        </Dropdown>
+                    )}
+                </SortingButton>
             </All>
         </div>
     );
 };
-export default FilterSorting;
+
+export default Sorting;

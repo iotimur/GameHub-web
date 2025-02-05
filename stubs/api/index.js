@@ -12,6 +12,10 @@ router.get("/categories", (request, response) => {
   response.send(require("../json/home-page-data/all-games.json"));
 });
 
+router.get("/favourites", (request, response) => {
+  response.send(require("../json/home-page-data/all-games.json"));
+});
+
 // router.get("/shopping-cart", (request, response) => {
 //   response.send(require("../json/shopping-cart/success.json"));
 // });

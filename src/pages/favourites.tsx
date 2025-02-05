@@ -1,7 +1,6 @@
 import React from "react";
 import FavouritesComponent from "../components/favourites/favourites";
-import { CommonMain, ContainerMain, PageContainer } from "../components/main/main-container/main.styled";
-import { CategoriesMain } from "../components/categories/categories.styled";
+import { CommonMain, ContainerMain} from "../components/main/main-container/main.styled";
 
 const Favourites = () => {
   return (

@@ -36,7 +36,7 @@ export const SortingButton = styled.button`
 }
 `;
 
-export const Sorting = styled.span`
+export const SortingSpan = styled.span`
   color: rgb(255, 255, 255);
 `;
 

@@ -28,6 +28,8 @@ export { default as img_top_13 } from "./dirt5.jpg";
 export { default as img_top_14 } from "./cyberpank.jpg";
 export { default as img_top_15 } from "./empires4.jpg";
 export { default as img_top_16 } from "./civilisation.jpg";
+export { default as img_top_17 } from "./elden ring.jpg";
+
 export { default as windows } from "../images/windows.png";
 
 

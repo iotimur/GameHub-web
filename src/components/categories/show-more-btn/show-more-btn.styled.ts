@@ -21,7 +21,9 @@ export const ShowMoreBtn = styled.button`
   }
 
   @media screen and (max-width: 800px) {
-  width: 80%;
   font-size: 14px;
-}
+  }
+  @media screen and (max-width: 700px) {
+  font-size: 12px;
+  }
 `;

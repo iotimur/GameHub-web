@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, {useMemo } from "react";
 import { useSelector } from "react-redux";
 import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games";
 import * as getFavGamesSelectors from "../../../_data_/selectors/favourites-games";
@@ -17,7 +17,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-const GameCard = ({ game, handleCartUpdate, handleToggleFavourite }) => {
+const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
+  const handleToggleFavourite = () => {
+      onAddFavourite(game); // Передаем игру для добавления или удаления
+  };
+  
   const cartIds = useSelector(getCartGamesSelectors.ids); // Получаем ID игр в корзине
   const cartIdFav = useSelector(getFavGamesSelectors.ids);// 
 
@@ -34,7 +38,7 @@ const GameCard = ({ game, handleCartUpdate, handleToggleFavourite }) => {
     <Card>
       <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.title}`} />
       <TitleGame>{game.title}</TitleGame>
-      <Description>{game.description}</Description>
+      <Description className="description">{game.description}</Description>
       <NewPrice>{game.price} ₽</NewPrice>
       {game.old_price && <OldPrice>{game.old_price} ₽</OldPrice>}
 
@@ -42,9 +46,9 @@ const GameCard = ({ game, handleCartUpdate, handleToggleFavourite }) => {
         <FontAwesomeIcon icon={faShoppingCart} />
       </ButtonStyledTopSail>
 
-      <ButtonFavourite isInFav={isInFav} onClick={() => handleToggleFavourite(game.id)}
-        title={isInFav ? 'Убрать из избранного' : 'Добавить в избранное'}>
-        <FontAwesomeIcon icon={faStar} style={{ color: isInFav ? 'yellow':'gray' }} />
+      <ButtonFavourite onClick={handleToggleFavourite}
+        title={isFavourite ? 'Убрать из избранного' : 'Добавить в избранное'} >
+        <FontAwesomeIcon icon={faStar} style={{ color: isFavourite ?  'rgba(255, 223, 15, 0.91)':'gray'}} />
       </ButtonFavourite>
     </Card>
   );
