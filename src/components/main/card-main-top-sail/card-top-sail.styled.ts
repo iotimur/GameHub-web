@@ -94,3 +94,32 @@ export const ButtonStyledTopSail = styled.button<ButtonProps>`
   }
 `;
 
+export const ButtonFavourite = styled.button`
+  border: none;
+  width: 30px;
+  height: 30px; 
+  font-size: 1em; /* Увеличиваем размер иконки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Фиксируем кнопку в правом верхнем углу */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top:5px;
+  margin-left:175px;
+  border-radius: 50%; 
+i {
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+   
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+`;
+

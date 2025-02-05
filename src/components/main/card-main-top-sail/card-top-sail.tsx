@@ -12,7 +12,10 @@ import {
   TopSailTextCard,
   TopSailTButton,
   ButtonStyledTopSail,
+  ButtonFavourite,
 } from "./card-top-sail.styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export const CardTopSail = (props) => {
   const dispatch = useDispatch();
@@ -31,7 +34,9 @@ export const CardTopSail = (props) => {
       console.log("Корзина загружена:", cartIds);
     }
   }, [cartIds]);
-
+  //   const handleToggleFavourite = () => {
+  //     onAddFavourite(game); // Передаем игру для добавления или удаления
+  // };
   const handleCartUpdate = async (id) => {
     if (isUpdating) return;
 
@@ -64,11 +69,22 @@ export const CardTopSail = (props) => {
 
   return (
     <ProductCardTopSail>
+
+      {/* <ButtonFavourite
+        onClick={handleToggleFavourite}
+        title={isFavourite ? 'Убрать из избранного' : 'Добавить в избранное'}
+      >
+        <FontAwesomeIcon icon={faStar}
+          style={{ color: isFavourite ? 'rgba(255, 223, 15, 0.91)' : 'gray' }}
+        />
+      </ButtonFavourite> */}
       <Link to="/gamehub/game-page">
         <TopSailImg src={props.img} alt="Card Product" />
+
       </Link>
       <TopSailTextCard>
         <span>{props.price} ₽</span>
+
         <TopSailTButton>
           <ButtonStyledTopSail
             isInCart={isInCart}
