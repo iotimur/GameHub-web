@@ -11,59 +11,60 @@ import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games"; /
 import { cartSlice } from "../../../_data_/slices/cart-games";
 import ShowMoreButton from "../show-more-btn/show-more-btn";
 import { Title } from "../title";
+import Page from "../page/page";
 
 const NewGames = ({ sortOption }) => {
-  const dispatch = useDispatch();
-  const [modifyCart] = useAddToCartMutation();
+  // const dispatch = useDispatch();
+  // const [modifyCart] = useAddToCartMutation();
   const allGames = useSelector(getHomeSearchSelectors.allGames);
-  const cartIds = useSelector(getCartGamesSelectors.ids);
+  // const cartIds = useSelector(getCartGamesSelectors.ids);
   const { isFetching, isLoading, data, error } = mainApi.useAllGamesQuery();
-  const [favourites, setFavourites] = useState(() => { // Состояние для избранных игр
-    const savedFavourites = localStorage.getItem('favourites');
-    return savedFavourites ? JSON.parse(savedFavourites) : [];
-  });
-  const [isExpanded, setIsExpanded] = useState(false);
-  const handleShowMore = () => {
-    setIsExpanded(!isExpanded);
-  };
+  // const [favourites, setFavourites] = useState(() => { // Состояние для избранных игр
+  //   const savedFavourites = localStorage.getItem('favourites');
+  //   return savedFavourites ? JSON.parse(savedFavourites) : [];
+  // });
+  // const [isExpanded, setIsExpanded] = useState(false);
+  // const handleShowMore = () => {
+  //   setIsExpanded(!isExpanded);
+  // };
 
-  useEffect(() => {
-    if (data) {
-      dispatch(homeSeachSlice.actions.setAllGames(data));
-    }
-  }, [data, dispatch]);
+  // useEffect(() => {
+  //   if (data) {
+  //     dispatch(homeSeachSlice.actions.setAllGames(data));
+  //   }
+  // }, [data, dispatch]);
 
-  const handleCartUpdate = async (gameId) => {
-    const isInCart = cartIds.includes(gameId);
-    const action = isInCart ? "remove" : "add";
+  // const handleCartUpdate = async (gameId) => {
+  //   const isInCart = cartIds.includes(gameId);
+  //   const action = isInCart ? "remove" : "add";
 
-    try {
-      await modifyCart({ id: gameId, action }).unwrap();
-      if (isInCart) {
-        dispatch(cartSlice.actions.removeFromCart(gameId));
-      } else {
-        dispatch(cartSlice.actions.addToCart(gameId));
-      }
-    } catch (error) {
-      console.error("Ошибка при обновлении корзины:", error);
-    }
-  };
+  //   try {
+  //     await modifyCart({ id: gameId, action }).unwrap();
+  //     if (isInCart) {
+  //       dispatch(cartSlice.actions.removeFromCart(gameId));
+  //     } else {
+  //       dispatch(cartSlice.actions.addToCart(gameId));
+  //     }
+  //   } catch (error) {
+  //     console.error("Ошибка при обновлении корзины:", error);
+  //   }
+  // };
 
-  const handleAddFavourite = (game) => {
-    setFavourites((prevFavourites) => {
-      const isAlreadyFavourite = prevFavourites.find(fav => fav.id === game.id);
-      let updatedFavourites;
+  // const handleAddFavourite = (game) => {
+  //   setFavourites((prevFavourites) => {
+  //     const isAlreadyFavourite = prevFavourites.find(fav => fav.id === game.id);
+  //     let updatedFavourites;
 
-      console.log(data, isLoading, error);
-      if (isAlreadyFavourite) {
-        updatedFavourites = prevFavourites.filter(fav => fav.id !== game.id); // Удаляем из избранного
-      } else {
-        updatedFavourites = [...prevFavourites, game]; // Добавляем в избранное
-      }
-      localStorage.setItem('favourites', JSON.stringify(updatedFavourites));// Сохраняем новое состояние в localStorage
-      return updatedFavourites;
-    });
-  };
+  //     console.log(data, isLoading, error);
+  //     if (isAlreadyFavourite) {
+  //       updatedFavourites = prevFavourites.filter(fav => fav.id !== game.id); // Удаляем из избранного
+  //     } else {
+  //       updatedFavourites = [...prevFavourites, game]; // Добавляем в избранное
+  //     }
+  //     localStorage.setItem('favourites', JSON.stringify(updatedFavourites));// Сохраняем новое состояние в localStorage
+  //     return updatedFavourites;
+  //   });
+  // };
 
 
   if (isFetching || isLoading) {
@@ -79,18 +80,20 @@ const NewGames = ({ sortOption }) => {
   let Games = [];
   Games = allGames.slice(allGames.length / 3, 1 + allGames.length * 2 / 3);
 
-  const sortedGames = [...Games];
-  if (sortOption === 'По цене max') {
-    sortedGames.sort((a, b) => b.price - a.price);
-  } else if (sortOption === 'По цене min') {
-    sortedGames.sort((a, b) => a.price - b.price);
-  }
+  // const sortedGames = [...Games];
+  // if (sortOption === 'По цене max') {
+  //   sortedGames.sort((a, b) => b.price - a.price);
+  // } else if (sortOption === 'По цене min') {
+  //   sortedGames.sort((a, b) => a.price - b.price);
+  // }
 
-  const displayedGames = isExpanded ? sortedGames : sortedGames.slice(0, 3);
+  // const displayedGames = isExpanded ? sortedGames : sortedGames.slice(0, 3);
   console.log("сортировка:", sortOption);
   return (
     <div>
-      <Title text="Новинки" />
+      <Page title="Новинки" games={Games} sortOption={sortOption}/>;
+
+      {/* <Title text="Новинки" />
       {displayedGames.length > 0 ? (
         displayedGames.map((game) => {
           const isFavourite = favourites.some(fav => fav.id === game.id); // Проверяем, есть ли игра в избранном
@@ -110,7 +113,7 @@ const NewGames = ({ sortOption }) => {
       )}
       {displayedGames.length >= 3 && (
         <ShowMoreButton onClick={handleShowMore} isExpanded={isExpanded}></ShowMoreButton>
-      )}
+      )} */}
     </div>
   );
 };
