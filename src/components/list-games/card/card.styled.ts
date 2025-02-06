@@ -9,7 +9,7 @@ export const Card = styled.div`
   position: relative;
   border: 1px solid #f39a46;
   margin-bottom: 10px;
-  padding: 15px;
+  padding: 11px;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -35,14 +35,13 @@ overflow: hidden;
 
 export const CardImg = styled.img`
   width: 120px; /* Уменьшаем ширину изображения */
-  height: 145px;
+  height: 155px;
   object-fit: cover;
   border-radius: 10px;
   margin-right: 20px; /* Добавляем отступ между картинкой и текстом */
   @media screen and (max-width: 988px) {
   height: 125px;
 }
-
   @media screen and (max-width: 440px) {
    width: 90px;
   }

@@ -19,7 +19,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
-  const handleToggleFavourite = () => {
+  const handleToggleFavourite = (e) => {
+    e.preventDefault();
     onAddFavourite(game); // Передаем игру для добавления или удаления
   };
 
@@ -36,9 +37,9 @@ const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
   const isInCart = cartIdFav.includes(game.id);
 
   return (
-    <Link to={"/gamehub/game-page"} style={{ flex: 1 }} >
-    <Card>
-      
+    <Link to={`/gamehub/game-page`} >
+      <Card>
+
         <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.title}`} />
         <TitleGame>{game.title}</TitleGame>
         <Description className="description">{game.description}</Description>
@@ -53,9 +54,8 @@ const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
           title={isFavourite ? 'Убрать из избранного' : 'Добавить в избранное'} >
           <FontAwesomeIcon icon={faStar} style={{ color: isFavourite ? 'rgba(255, 207, 15, 0.91)' : 'gray' }} />
         </ButtonFavourite>
-    </Card>
+      </Card>
     </Link>
-
   );
 };
 

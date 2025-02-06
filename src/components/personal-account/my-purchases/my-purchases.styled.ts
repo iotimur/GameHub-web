@@ -16,6 +16,10 @@ export const Lin = styled.hr`
 export const ShopsStyled = styled.div`  
     padding-left: 60px;
     padding-right: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивная сетка */
+    gap: 20px; /* Расстояние между элементами */
+    margin-bottom: 20px;
 `;
 
 export const AddStyled = styled.button`  
@@ -34,6 +38,18 @@ export const AddStyled = styled.button`
         transition: 0.5s;
         border-radius: 5px;
     }
+
+    width: 230px;
+    height: 40px;
+    text-align: center;
+    font-weight: 530;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    display: flex;
+    background: #18396c;
+    border: 1px solid #f39a46;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const TextZagolStyled = styled.p`  
