@@ -10,7 +10,7 @@ import * as getHomeSearchSelectors from "../../../_data_/selectors/home-app-sear
 import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games"; // Подключаем селектор корзины
 import { cartSlice } from "../../../_data_/slices/cart-games";
 import { ButtonStyledTopSail } from "../../list-games/list_games.styled"; // Подключаем стилизованную кнопку
-import { CommonMain, ContainerMain } from "../../main/main-container/main.styled";
+// import { CommonMain, ContainerMain } from "../../main/main-container/main.styled";
 import ShowMoreButton from "../show-more-btn/show-more-btn";
 import { Title } from "../title";
 
