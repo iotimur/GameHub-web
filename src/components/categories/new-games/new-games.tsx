@@ -18,11 +18,10 @@ const NewGames = ({ sortOption }) => {
   }
 
   let Games = [];
-  Games = allGames.slice(allGames.length / 3, 1 + allGames.length * 2 / 3);
-  console.log("сортировка:", sortOption);
+  Games = allGames.slice((allGames.length / 2) + 1, allGames.length);
   return (
     <div>
-      <Page title="Новинки" games={Games} sortOption={sortOption}/>;
+      <Page title="Новинки" games={Games} sortOption={sortOption} />
     </div>
   );
 };

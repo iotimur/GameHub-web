@@ -39,7 +39,6 @@ const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
   return (
     <Link to={`/gamehub/game-page`} >
       <Card>
-
         <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.title}`} />
         <TitleGame>{game.title}</TitleGame>
         <Description className="description">{game.description}</Description>
@@ -60,3 +59,5 @@ const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
 };
 
 export default GameCard;
+
+

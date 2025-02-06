@@ -70,7 +70,7 @@ export const TitleGame = styled.h3`
 `;
 
 export const NewPrice = styled.span`
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
@@ -79,11 +79,11 @@ display: flex;
   margin-left: 20px; 
   position: absolute;
   right:20px;
-  top:90px;
+  top:80px;
 
   @media screen and (max-width: 988px) {
   font-size:16px;
-  top:70px;
+  top:65px;
   }
 
   @media screen and (max-width: 440px) {
@@ -101,7 +101,7 @@ export const OldPrice = styled.span`
   align-items: center;
   position: absolute;
   right:10px;
-  top:70px;
+  top:65px;
   &::before {
     content: "";
     position: absolute;

@@ -27,6 +27,9 @@ export const TitleRectangle = styled.div`
     @media screen and (max-width: 800px) {
       height: 45px;
     }
+      @media screen and (max-width: 440px) {
+    height: 30px;
+  }
 `;
 export const TitleCategory = styled.h2`
     font-family: var(--font-family);

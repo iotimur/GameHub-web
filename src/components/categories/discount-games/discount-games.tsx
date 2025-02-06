@@ -31,7 +31,7 @@ const DiscountGames = ({ sortOption}) => {
 
   return (
     <div>
-       <Page title="Скидки" games={Games} sortOption={sortOption}/>;
+       <Page title="Скидки" games={Games} sortOption={sortOption}/>
     </div>
   );
 };
