@@ -1,11 +1,13 @@
 import React from 'react';
-import { ZagolovStyled, TextStyled } from './lk.styled'
+import { useTranslation } from 'react-i18next';
+import { ZagolovStyled, TextStyled } from './lk.styled';
 
 export function Lk() {
+    const { t } = useTranslation();
+
     return (
         <ZagolovStyled>
-            <TextStyled>Личный кабинет</TextStyled> 
+            <TextStyled>{t("profile_title")}</TextStyled> 
         </ZagolovStyled>
     );
 }
-

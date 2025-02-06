@@ -1,14 +1,16 @@
 import React from 'react';
-import { BlockPurchasesStyled, Lin, ShopsStyled, AddStyled, TextZagolStyled, ImageStyled, TextGameStyled, TextBlockStyled, DFlexStyled } from './my-purchases.styled'
+import { useTranslation } from 'react-i18next';
+import { BlockPurchasesStyled, Lin, ShopsStyled, AddStyled, TextZagolStyled, ImageStyled, TextGameStyled, TextBlockStyled, DFlexStyled } from './my-purchases.styled';
 import { Link } from 'react-router-dom';
-import { game11, game22 } from './index'
-import { URLs } from '../../../_data_/urls';
+import { game11, game22 } from './index';
 
 export function MyPurchases() {
+    const { t } = useTranslation();
+
     return (
         <BlockPurchasesStyled>
             <div className="top">
-                <TextZagolStyled>Мои покупки</TextZagolStyled>
+                <TextZagolStyled>{t("my_purchases")}</TextZagolStyled>
             </div>
             <Lin />
             <ShopsStyled>
@@ -18,9 +20,12 @@ export function MyPurchases() {
                             <ImageStyled src={game11} alt="game1_photo" />
                         </div>
                     </Link>
-
                     <TextBlockStyled>
-                        <TextGameStyled>Дата покупки: 18.01.24 <br />Сумма: 300 руб. <br /> Статус: оплачено</TextGameStyled>
+                        <TextGameStyled>
+                            {t("purchase_date", { date: "18.01.24" })} <br />
+                            {t("purchase_amount", { amount: 300 })} <br />
+                            {t("purchase_status")}
+                        </TextGameStyled>
                     </TextBlockStyled>
                     <Link to="/gamehub/game-page">
                         <div>
@@ -28,14 +33,17 @@ export function MyPurchases() {
                         </div>
                     </Link>
                     <TextBlockStyled>
-                        <TextGameStyled>Дата покупки: 18.01.24 <br />Сумма: 300 руб. <br /> Статус: оплачено</TextGameStyled>
+                        <TextGameStyled>
+                            {t("purchase_date", { date: "18.01.24" })} <br />
+                            {t("purchase_amount", { amount: 300 })} <br />
+                            {t("purchase_status")}
+                        </TextGameStyled>
                     </TextBlockStyled>
                 </DFlexStyled>
             </ShopsStyled>
             <div className="bott">
-                <AddStyled>Показать еще</AddStyled>
+                <AddStyled>{t("show_more")}</AddStyled>
             </div>
         </BlockPurchasesStyled>
     );
 }
-

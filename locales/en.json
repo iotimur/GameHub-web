@@ -98,7 +98,56 @@
     "footer.support": "Technical Support for General Questions:",
     "footer.admin": "Administration:",
     "footer.map": "Directions:",
-    "footer.location": "Kazan, 2024"
+    "footer.location": "Kazan, 2024",
+
+    "leadersTitle": "Best Sellers",
+    "loading": "Loading...",
+    "error": "Error",
+    "noGames": "No games found",
+    "priceMax": "By price max",
+    "priceMin": "By price min",
+
+
+    "games": {
+      "1": {
+        "title": "Elden Ring",
+        "description": "A large-scale RPG set in a vast open world with rich mythology and many dangerous enemies."
+      },
+      "2": {
+        "title": "The Witcher 3: Wild Hunt",
+        "description": "An epic open-world RPG where Geralt of Rivia hunts monsters and uncovers political conspiracies."
+      }
+    },
+
+
+    
+      "help_title": "Help",
+      "help_order_title": "Placing an order",
+      "help_order_description": "Select products and add them to the cart. Complete your order. Confirm and pay.",
+      "help_payment_title": "Payment methods",
+      "help_payment_description": "Bank card or e-wallet.",
+      "help_profile_title": "Changing personal data",
+      "help_profile_description": "Here are some details you can change in your profile: first name, last name, phone number, email.",
+      "help_cart_title": "Adding an item to the cart",
+      "help_cart_description": "To add an item to the cart, click 'Buy for yourself' or 'Buy as a gift' on the product card.",
+
+      "profile_title": "Profile",
+       "favourites_title": "Favourites",
+
+
+       "my_purchases": "My Purchases",
+       "purchase_date": "Purchase Date: {{date}}",
+       "purchase_amount": "Amount: {{amount}} RUB",
+       "purchase_status": "Status: Paid",
+       "show_more": "Show More",
+       "personal_info": "Personal Information",
+       "edit": "Edit",
+       "your_name": "Your Name:",
+       "your_surname": "Your Surname:",
+       "your_phone": "Your Phone Number:",
+       "your_email": "Your Email:",
+       "your_login": "Your Login:",
+       "your_birth_date": "Your Birth Date:"
 
 
     

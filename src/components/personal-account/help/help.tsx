@@ -1,26 +1,35 @@
 import React from 'react';
-import { BlockHelpStyled, Lin, LinksStyled, TextHelpStyled, TextStyled, TextZagolovkaStyled } from './help.styled'
+import { useTranslation } from 'react-i18next';
+import { 
+    BlockHelpStyled, Lin, LinksStyled, 
+    TextHelpStyled, TextStyled, 
+    TextZagolovkaStyled 
+} from './help.styled';
 
 export function Help() {
+    const { t } = useTranslation();
+
     return (
         <BlockHelpStyled>
             <div className="top">
-                <TextHelpStyled>Помощь</TextHelpStyled>
+                <TextHelpStyled>{t("help_title")}</TextHelpStyled>
             </div>
             <Lin />
             <div className="d-flex">
                 <LinksStyled>
-                    <TextZagolovkaStyled>Оформление заказа</TextZagolovkaStyled>
-                    <TextStyled>Выберите товары и добавьте их в корзину. Оформите заказ. Подтвердите и оплатите заказ.</TextStyled>
-                    <TextZagolovkaStyled>Способы оплаты</TextZagolovkaStyled>
-                    <TextStyled>Банковская карта или электронный кошелёк.</TextStyled>
-                    <TextZagolovkaStyled>Изменение личных данных</TextZagolovkaStyled>
-                    <TextStyled>Вот некоторые данные, которые можно изменить в профиле: имя, фамилия, номер телефона, электронная почта.</TextStyled>
-                    <TextZagolovkaStyled>Добавление товара в корзину</TextZagolovkaStyled>
-                    <TextStyled>Чтобы добавить товар в корзину, нажмите кнопку «Купить для себя» или «Купить в подарок» на карточке товара.</TextStyled>
+                    <TextZagolovkaStyled>{t("help_order_title")}</TextZagolovkaStyled>
+                    <TextStyled>{t("help_order_description")}</TextStyled>
+
+                    <TextZagolovkaStyled>{t("help_payment_title")}</TextZagolovkaStyled>
+                    <TextStyled>{t("help_payment_description")}</TextStyled>
+
+                    <TextZagolovkaStyled>{t("help_profile_title")}</TextZagolovkaStyled>
+                    <TextStyled>{t("help_profile_description")}</TextStyled>
+
+                    <TextZagolovkaStyled>{t("help_cart_title")}</TextZagolovkaStyled>
+                    <TextStyled>{t("help_cart_description")}</TextStyled>
                 </LinksStyled>
             </div>
         </BlockHelpStyled>
     );
 }
-

@@ -13,9 +13,10 @@ import { ButtonStyledTopSail } from "../../list-games/list_games.styled"; // П�
 // import { CommonMain, ContainerMain } from "../../main/main-container/main.styled";
 import ShowMoreButton from "../show-more-btn/show-more-btn";
 import { Title } from "../title";
-
+import { useTranslation } from "react-i18next";
 
 const Leaders = ({ sortOption}) => {
+  const { t } = useTranslation();
  const dispatch = useDispatch();
   const [modifyCart] = useAddToCartMutation();
   const allGames = useSelector(getHomeSearchSelectors.allGames);
@@ -81,9 +82,9 @@ const Leaders = ({ sortOption}) => {
   Games = allGames.slice(0, 1 + (allGames.length / 3));
 
   const sortedGames = [...Games];
-  if (sortOption === 'По цене max') {
+  if (sortOption === t("priceMax")) {
     sortedGames.sort((a, b) => b.price - a.price);
-  } else if (sortOption === 'По цене min') {
+  } else if (sortOption === t("priceMin")) {
     sortedGames.sort((a, b) => a.price - b.price);
   }
 
@@ -91,7 +92,7 @@ const Leaders = ({ sortOption}) => {
   console.log("сортировка:", sortOption);
   return (
     <div>
-      <Title text="Лидеры продаж" />
+      <Title text={t("leadersTitle")} />
       {displayedGames.length > 0 ? (
         displayedGames.map((game) => {
           const isFavourite = favourites.some(fav => fav.id === game.id); // Проверяем, есть ли игра в избранном
