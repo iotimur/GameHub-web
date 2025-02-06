@@ -51,6 +51,11 @@ export const BlockStyled = styled.div`
     border: 1px solid #f39a46;
 `;
 
+export const Er = styled.div`
+    margin-left: 20px;
+    margin-bottom: 20px;
+`;
+
 export const InputStyled = styled.input`  
     border: 1px solid #2092c5;
     border-radius: 5px;
@@ -62,6 +67,12 @@ export const InputStyled = styled.input`
     color: rgba(0, 0, 0, 0.55);
     font-style: italic;
     padding: 8px;
+    &:disabled {
+    background-color: #f0f0f0;
+        color: #555;
+        border: 1px solid #ccc;
+  }
+
 `;
 
 export const ChangeStyled = styled.div`  
