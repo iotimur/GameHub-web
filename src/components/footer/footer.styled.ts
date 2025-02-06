@@ -31,8 +31,9 @@ export const FigureStyled = styled.figure`
     text-align: center;
     margin-bottom: 0px;
     @media screen and (max-width: 768px) {
-        display: block;
-        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрируем содержимое */
     }
     
 `;
@@ -101,7 +102,7 @@ export const ImgStyled = styled.img`
     display: inline;
     margin-right: 8px;
     @media screen and (max-width: 900px) {
-        margin-left: 20px;
+        
     }
 `;
 

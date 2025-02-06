@@ -135,19 +135,24 @@
        "favourites_title": "Favourites",
 
 
-       "my_purchases": "My Purchases",
-       "purchase_date": "Purchase Date: {{date}}",
-       "purchase_amount": "Amount: {{amount}} RUB",
-       "purchase_status": "Status: Paid",
-       "show_more": "Show More",
-       "personal_info": "Personal Information",
-       "edit": "Edit",
-       "your_name": "Your Name:",
-       "your_surname": "Your Surname:",
-       "your_phone": "Your Phone Number:",
-       "your_email": "Your Email:",
-       "your_login": "Your Login:",
-       "your_birth_date": "Your Birth Date:"
+       "personal_information_title": "Personal Information",
+       "personal_information_edit_button": "Edit",
+       "personal_information_save_button": "Save",
+       "personal_information_name_placeholder": "Your Name:",
+       "personal_information_surname_placeholder": "Your Surname:",
+       "personal_information_phone_placeholder": "Your Phone Number:",
+       "personal_information_email_placeholder": "Your Email:",
+       "personal_information_login_placeholder": "Your Login:",
+       "personal_information_dob_placeholder": "Your Date of Birth:",
+       "personal_information_phone_error_invalid": "The phone number must start with +7.",
+       "personal_information_phone_error_length": "The phone number must contain 10 digits after +7.",
+       "personal_information_email_error_invalid": "Please enter a valid email address.",
+       "my_purchases_title": "My Purchases",
+       "my_purchases_show_more": "Show More",
+       "my_purchases_show_less": "Show Less",
+       "my_purchases_date": "Purchase Date:",
+       "my_purchases_amount": "Amount:",
+       "my_purchases_status": "Status:"
 
 
     

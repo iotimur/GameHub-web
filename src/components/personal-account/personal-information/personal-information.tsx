@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { DFlexStyled, FormsStyled, Lin, IzmStyled, TextStyled, BlockStyled, InputStyled, ChangeStyled, FormStyled, FormsInFormStyled, Er } from './personal-information.styled'
+import { useTranslation } from 'react-i18next';
+import { DFlexStyled, FormsStyled, Lin, IzmStyled, TextStyled, BlockStyled, InputStyled, ChangeStyled, FormStyled, FormsInFormStyled, Er } from './personal-information.styled';
 
 export function PersonalInformation() {
+    const { t } = useTranslation();
     const [isEditing, setIsEditing] = useState(false);
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
@@ -9,10 +11,9 @@ export function PersonalInformation() {
     const [email, setEmail] = useState('');
     const [login, setLogin] = useState('');
     const [date, setDate] = useState('');
-    const [error, setError] = useState(''); // Состояние для сообщения об ошибке
+    const [error, setError] = useState('');
 
     useEffect(() => {
-        // Загрузка данных из Local Storage при монтировании
         const storedName = localStorage.getItem('userName');
         if (storedName) setName(storedName);
 
@@ -42,25 +43,24 @@ export function PersonalInformation() {
       return emailRegex.test(email);
     };
 
-   const handleSaveClick = () => {
+    const handleSaveClick = () => {
         if (!tel.startsWith('+7')) {
-            setError('Номер телефона должен начинаться с +7.');
+            setError(t('personal_information_phone_error_invalid'));
             return;
         }
 
-      const telWithoutPlus7 = tel.startsWith('+7') ? tel.slice(2) : tel;
+        const telWithoutPlus7 = tel.startsWith('+7') ? tel.slice(2) : tel;
 
         if (telWithoutPlus7.length !== 10) {
-            setError('Номер телефона должен содержать 10 цифр после +7.');
+            setError(t('personal_information_phone_error_length'));
             return;
         }
 
         if (!isValidEmail(email)) {
-          setError('Пожалуйста, введите правильный email адрес.');
-          return;
+            setError(t('personal_information_email_error_invalid'));
+            return;
         }
 
-        // Сохранение данных в Local Storage
         localStorage.setItem('userName', name);
         localStorage.setItem('userSurname', surname);
         localStorage.setItem('userTel', tel);
@@ -72,7 +72,7 @@ export function PersonalInformation() {
         setError('');
     };
 
-     const handleTelChange = (e) => {
+    const handleTelChange = (e) => {
         let value = e.target.value;
         const hasPlus7 = value.startsWith('+7');
 
@@ -87,7 +87,7 @@ export function PersonalInformation() {
     };
 
     const handleTelFocus = (e) => {
-        if (tel === '') { 
+        if (tel === '') {
             setTel('+7');
         }
     };
@@ -96,17 +96,17 @@ export function PersonalInformation() {
         <BlockStyled>
             <DFlexStyled>
                 <div className="top">
-                    <TextStyled>Личная информация</TextStyled>
+                    <TextStyled>{t('personal_information_title')}</TextStyled>
                 </div>
                 <ChangeStyled>
                     {isEditing ? (
-                        <IzmStyled onClick={handleSaveClick}>Сохранить</IzmStyled>
+                        <IzmStyled onClick={handleSaveClick}>{t('personal_information_save_button')}</IzmStyled>
                     ) : (
-                        <IzmStyled onClick={handleEditClick}>Изменить</IzmStyled>
+                        <IzmStyled onClick={handleEditClick}>{t('personal_information_edit_button')}</IzmStyled>
                     )}
                 </ChangeStyled>
             </DFlexStyled>
-            <Lin/>
+            <Lin />
             <div>
                 <FormsStyled>
                     <FormsInFormStyled>
@@ -114,7 +114,7 @@ export function PersonalInformation() {
                             <InputStyled
                                 type="text"
                                 name="user_name"
-                                placeholder="Ваше имя:"
+                                placeholder={t('personal_information_name_placeholder')}
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 disabled={!isEditing}
@@ -124,7 +124,7 @@ export function PersonalInformation() {
                             <InputStyled
                                 type="text"
                                 name="user_surname"
-                                placeholder="Ваша фамилия:"
+                                placeholder={t('personal_information_surname_placeholder')}
                                 value={surname}
                                 onChange={(e) => setSurname(e.target.value)}
                                 disabled={!isEditing}
@@ -136,7 +136,7 @@ export function PersonalInformation() {
                             <InputStyled
                                 type="tel"
                                 name="user_tel"
-                                placeholder="Ваш номер телефона:"
+                                placeholder={t('personal_information_phone_placeholder')}
                                 value={tel}
                                 onChange={handleTelChange}
                                 onFocus={handleTelFocus}
@@ -147,7 +147,7 @@ export function PersonalInformation() {
                             <InputStyled
                                 type="email"
                                 name="user_mail"
-                                placeholder="Ваш Email:"
+                                placeholder={t('personal_information_email_placeholder')}
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 disabled={!isEditing}
@@ -159,7 +159,7 @@ export function PersonalInformation() {
                             <InputStyled
                                 type="text"
                                 name="user_login"
-                                placeholder="Ваш логин:"
+                                placeholder={t('personal_information_login_placeholder')}
                                 value={login}
                                 onChange={(e) => setLogin(e.target.value)}
                                 disabled={!isEditing}
@@ -169,13 +169,13 @@ export function PersonalInformation() {
                             <InputStyled
                                 type="date"
                                 name="user_date"
-                                placeholder="Ваша дата рождения:"
+                                placeholder={t('personal_information_dob_placeholder')}
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
                                 disabled={!isEditing}
                             />
                         </FormStyled>
-                    </FormsInFormStyled>   
+                    </FormsInFormStyled>
                 </FormsStyled>
             </div>
             <Er>

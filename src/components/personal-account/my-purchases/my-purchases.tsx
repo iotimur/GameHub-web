@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { BlockPurchasesStyled, Lin, ShopsStyled, AddStyled, TextZagolStyled, ImageStyled, TextGameStyled, TextBlockStyled, DFlexStyled } from './my-purchases.styled'
+import { useTranslation } from 'react-i18next';
+import { BlockPurchasesStyled, Lin, ShopsStyled, AddStyled, TextZagolStyled, ImageStyled, TextGameStyled, TextBlockStyled, DFlexStyled } from './my-purchases.styled';
 import { Link } from 'react-router-dom';
-import { game11, game22, game33, game44, game55, game66 } from './index' // Добавил больше игр
+import { game11, game22, game33, game44, game55, game66 } from './index';
 
 const initialPurchases = [
     { id: 1, image: game11, date: '18.01.24', sum: '300 руб.', status: 'оплачено' },
@@ -13,20 +14,21 @@ const initialPurchases = [
 ];
 
 export function MyPurchases() {
-    const [isExpanded, setIsExpanded] = useState(false); // Состояние для развернутого/свернутого
+    const { t } = useTranslation();
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
     };
 
-    const displayedPurchases = isExpanded ? initialPurchases : initialPurchases.slice(0, 2); // Показываем 2, если не развернуто
+    const displayedPurchases = isExpanded ? initialPurchases : initialPurchases.slice(0, 2);
 
-    const buttonText = isExpanded ? 'Показать меньше' : 'Показать больше';
+    const buttonText = isExpanded ? t('my_purchases_show_less') : t('my_purchases_show_more');
 
     return (
         <BlockPurchasesStyled>
             <div className="top">
-                <TextZagolStyled>Мои покупки</TextZagolStyled>
+                <TextZagolStyled>{t('my_purchases_title')}</TextZagolStyled>
             </div>
             <Lin />
             <ShopsStyled>
@@ -39,9 +41,9 @@ export function MyPurchases() {
                         </Link>
                         <TextBlockStyled>
                             <TextGameStyled>
-                                Дата покупки: {purchase.date} <br />
-                                Сумма: {purchase.sum} <br />
-                                Статус: {purchase.status}
+                                {t('my_purchases_date')}: {purchase.date} <br />
+                                {t('my_purchases_amount')}: {purchase.sum} <br />
+                                {t('my_purchases_status')}: {purchase.status}
                             </TextGameStyled>
                         </TextBlockStyled>
                     </div>

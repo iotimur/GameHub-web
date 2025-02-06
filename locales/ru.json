@@ -136,18 +136,23 @@
   "favourites_title": "Избранное",
 
 
-  "my_purchases": "Мои покупки",
-  "purchase_date": "Дата покупки: {{date}}",
-  "purchase_amount": "Сумма: {{amount}} руб.",
-  "purchase_status": "Статус: оплачено",
-  "show_more": "Показать еще",
-  "personal_info": "Личная информация",
-  "edit": "Изменить",
-  "your_name": "Ваше имя:",
-  "your_surname": "Ваша фамилия:",
-  "your_phone": "Ваш номер телефона:",
-  "your_email": "Ваш Email:",
-  "your_login": "Ваш логин:",
-  "your_birth_date": "Ваша дата рождения:"
+  "personal_information_title": "Личная информация",
+  "personal_information_edit_button": "Изменить",
+  "personal_information_save_button": "Сохранить",
+  "personal_information_name_placeholder": "Ваше имя:",
+  "personal_information_surname_placeholder": "Ваша фамилия:",
+  "personal_information_phone_placeholder": "Ваш номер телефона:",
+  "personal_information_email_placeholder": "Ваш Email:",
+  "personal_information_login_placeholder": "Ваш логин:",
+  "personal_information_dob_placeholder": "Ваша дата рождения:",
+  "personal_information_phone_error_invalid": "Номер телефона должен начинаться с +7.",
+  "personal_information_phone_error_length": "Номер телефона должен содержать 10 цифр после +7.",
+  "personal_information_email_error_invalid": "Пожалуйста, введите правильный email адрес.",
+  "my_purchases_title": "Мои покупки",
+  "my_purchases_show_more": "Показать больше",
+  "my_purchases_show_less": "Показать меньше",
+  "my_purchases_date": "Дата покупки:",
+  "my_purchases_amount": "Сумма:",
+  "my_purchases_status": "Статус:"
   }
   
