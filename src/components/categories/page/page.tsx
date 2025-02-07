@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import GameCard from "../../list-games/card/card";
 import { useDispatch, useSelector } from "react-redux";
 import { homeSeachSlice } from "../../../_data_/slices/home-app-search";
-import { useSearchParams } from "react-router-dom";
 import { useAddToCartMutation } from "../../../_data_/service/main-api";
 import { mainApi } from "../../../_data_/service/main-api";
 import * as getHomeSearchSelectors from "../../../_data_/selectors/home-app-search";

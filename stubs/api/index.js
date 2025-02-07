@@ -193,6 +193,32 @@ router.get("/admin/home", (request, response) => {
     `);
 });
 
+router.get("/admin/categories", (request, response) => {
+  response.send(`
+        <div>
+            <fieldset>
+                <legend>Настройка данных для /categories</legend>
+                ${createElement("categories", "success", "Отдать успешный ответ")}
+                ${createElement("categories", "empty", "Отдать пустой массив")}
+                ${createElement("categories", "error", "Отдать ошибку")}
+            </fieldset>
+        </div>    
+    `);
+});
+
+router.get("/admin/favourites", (request, response) => {
+  response.send(`
+        <div>
+            <fieldset>
+                <legend>Настройка данных для /favourites</legend>
+                ${createElement("favourites", "success", "Отдать успешный ответ")}
+                ${createElement("favourites", "empty", "Отдать пустой массив")}
+                ${createElement("favourites", "error", "Отдать ошибку")}
+            </fieldset>
+        </div>    
+    `);
+});
+
 router.get("/admin/set/:key/:value", (request, response) => {
   const { key, value } = request.params;
   stubs[key] = value;
