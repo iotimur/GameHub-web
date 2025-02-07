@@ -9,7 +9,7 @@
     "build": "npm run clean && brojs build --dev",
     "build:prod": "npm run clean && brojs build",
     "clean": "rimraf dist",
-    "lint": "npx eslint src"
+    "eslint": "npx eslint src"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,8 @@
     "@reduxjs/toolkit": "^2.5.0",
     "@types/react": "^18.2.77",
     "@types/react-dom": "^18.2.25",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "eslint-plugin-react": "^7.34.1",
     "express": "^4.21.2",
     "i18next": "^24.2.2",
     "lottie-react": "^2.4.0",
@@ -33,5 +35,12 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.23.1",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.34.1",
+    "globals": "^15.3.0",
+    "typescript-eslint": "^7.10.0"
   }
 }

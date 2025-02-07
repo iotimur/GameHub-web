@@ -7,6 +7,10 @@ import ShowMoreButton from './show-more-button/show-more-button';
 import { Comment } from '../../../_data_/model/common_comments';
 import { useTranslation } from 'react-i18next';
 
+// import config from '../../../../bro.config.js';
+
+// const isSortEnabled = config?.features?.["gamehub"]?.["sort-comments"]?.on ?? true;
+
 export type CommentsSectionProps = {
   comments?: Comment[];
 };
