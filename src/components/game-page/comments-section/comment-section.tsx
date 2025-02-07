@@ -6,7 +6,9 @@ import { CommentsContainer, CommentsTitle, CommentBlock } from './comment-sectio
 import ShowMoreButton from './show-more-button/show-more-button';
 import { Comment } from '../../../_data_/model/common_comments';
 import { useTranslation } from 'react-i18next';
-
+import Lottie from "lottie-react";
+import loadingAnimation from "../../../assets/Images_main/something_wrong_cat.json";
+import errorAnimation from "../../../assets/Images_main/error_dog.json";
 // import config from '../../../../bro.config.js';
 
 // const isSortEnabled = config?.features?.["gamehub"]?.["sort-comments"]?.on ?? true;
@@ -17,7 +19,7 @@ export type CommentsSectionProps = {
 
 const CommentsSection: React.FC<CommentsSectionProps> = () => {
   const { t } = useTranslation();
-  const { data: queryData } = useCommentsPageQuery();
+  const { data: queryData, isFetching, isLoading, error  } = useCommentsPageQuery();
   const [updateLike] = useUpdateLikeMutation();
   
   const { register, watch } = useForm({
@@ -38,6 +40,26 @@ const CommentsSection: React.FC<CommentsSectionProps> = () => {
     }
   };
 
+
+    // Если идет загрузка, показываем анимацию
+    if (isFetching || isLoading) {
+      return (
+        <CommentsContainer style={{ textAlign: "center" }}>
+          <Lottie animationData={loadingAnimation} style={{ width: 150, height: 150 }} />
+          <p>{t('comments_loading')}</p>
+        </CommentsContainer>
+      );
+    }
+  
+    // Если произошла ошибка, показываем анимацию ошибки
+    if (error) {
+      return (
+        <CommentsContainer style={{ textAlign: "center" }}>
+          <Lottie animationData={errorAnimation} style={{ width: 150, height: 150 }} />
+          <p>{t('comments_error')}</p>
+        </CommentsContainer>
+      );
+    }
   // Сортировка комментариев
   const sortedComments =
     queryData?.comments?.slice().sort((a, b) => {
