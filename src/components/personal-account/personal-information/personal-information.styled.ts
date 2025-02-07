@@ -49,6 +49,7 @@ export const BlockStyled = styled.div`
     max-width: 1120px;
     margin: 0 auto;
     border: 1px solid #f39a46;
+    padding-top: 15px;
 `;
 
 export const Er = styled.div`
@@ -79,6 +80,7 @@ export const ChangeStyled = styled.div`
     display: inline;
     display: flex;
     flex-direction: row;
+    padding-bottom: 15px;
 `;
 
 export const FormStyled = styled.form`

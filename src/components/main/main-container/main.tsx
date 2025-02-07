@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { URLs } from "../../../_data_/urls";
-// import data from "../../../../stubs/json/home-page-data/success.json";
+import React from "react";
 import * as images from "../../../assets/Images_main";
 import { useTranslation } from 'react-i18next';
 
@@ -13,8 +11,6 @@ import {
   StyledText,
 } from "./main.styled";
 
-import * as getHomeSelectors from "../../../_data_/selectors/home-page";
-import { useDispatch, useSelector } from "react-redux";
 import { mainApi } from "../../../_data_/service/main-api";
 
 import { Search } from "../search-line";
@@ -27,12 +23,12 @@ import Lottie from "lottie-react"; // Импортируем для анимац
 import somethingWrong from "../../../assets/Images_main/something_wrong_cat.json"; // что-то пошло не так
 import errorAnimation from "../../../assets/Images_main/error_dog.json"; // Анимация ошибки
 
-import { getNavigationValue, getConfigValue, getFeatures } from '@brojs/cli';
+import { getFeatures } from '@brojs/cli';
 
 const MainContent = () => {
   const getGameHubFeatures = () => getFeatures('gamehub');
-  console.log(getGameHubFeatures()?.['home-search-games']["on"])
-  const display_search_line = getGameHubFeatures()?.['home-search-games']?.['on'] ?? false;
+  const display_search_line = !!getGameHubFeatures()?.['home-search-games'] || false;
+  console.log("Отображение поиска", display_search_line)
 
   const { t } = useTranslation();
   const { isFetching, isLoading, data, error } = mainApi.useHomePageQuery();

@@ -30,7 +30,12 @@ module.exports = {
             "on": false,
             "value": "true",
             "key": "add-game-to-cart"
-        }
+        },
+        "sort-comments": {
+          "on": true,
+          "value": "true",
+          "key": "sort-comments"
+      }
     }
   },
   config: {

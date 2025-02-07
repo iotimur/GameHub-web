@@ -1,61 +1,86 @@
-import React from "react";
-import { useTranslation } from 'react-i18next'
-
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   OuterMain,
   NavMain,
-  LiStyled,
   StyledLink,
   StyledLinkNav,
   StyledHeader,
   LangButton,
+  CheckButton,
+  MobileMenu,
+  TransparentBackground,
 } from "./header.styled";
 
+const MOBILE_WIDTH = 858;
+
 const Header = () => {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_WIDTH);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= MOBILE_WIDTH);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const changeLanguageToRu = () => {
-    i18n.changeLanguage('ru')
-  }
+    i18n.changeLanguage("ru");
+  };
 
   const changeLanguageToEn = () => {
-    i18n.changeLanguage('en')
-  }
-// const toggleLanguage = () => {
-//   i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
-// };
+    i18n.changeLanguage("en");
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div>
       <StyledHeader>
         <OuterMain>
           <NavMain>
-            <StyledLink to="/gamehub" end>
-              GameHub
-            </StyledLink>
-            <ul>
-              <LiStyled>
-              {/* <LangButton onClick={toggleLanguage}> */}
+            {!isMobile && (
+              <>
+                <StyledLink to="/gamehub" end>
+                  GameHub
+                </StyledLink>
+                <div className="desktop-menu">
+                  <StyledLinkNav to="/gamehub/categories">{t("header_categories")}</StyledLinkNav>
+                  <StyledLinkNav to="/gamehub/entrance">{t("header_login")}</StyledLinkNav>
+                  <StyledLinkNav to="/gamehub/shopping-cart">{t("header_cart")}</StyledLinkNav>
+                </div>
+              </>
+            )}
+            <div className="lang-switcher">
               <LangButton onClick={changeLanguageToRu}>ru</LangButton>
               <LangButton onClick={changeLanguageToEn}>en</LangButton>
-                {/* {i18n.language === "ru" ? "EN" : "RU"}
-              </LangButton> */}
-                <StyledLinkNav to="/gamehub/categories">
-                  {t("header_categories")}
-                </StyledLinkNav>
-              </LiStyled>
-
-              <LiStyled>
-                <StyledLinkNav to="/gamehub/entrance">{t("header_login")}</StyledLinkNav>
-              </LiStyled>
-
-              <LiStyled>
-                <StyledLinkNav to="/gamehub/shopping-cart">
-                  {t("header_cart")}
-                </StyledLinkNav>
-              </LiStyled>
-            </ul>
+            </div>
+            {isMobile && <CheckButton onClick={toggleMenu}>☰</CheckButton>}
           </NavMain>
         </OuterMain>
       </StyledHeader>
+
+      {isMobile && isMenuOpen && <TransparentBackground onClick={toggleMenu} />}
+
+      {isMobile && (
+        <MobileMenu isOpen={isMenuOpen}>
+          <StyledLinkNav to="/gamehub/categories" onClick={toggleMenu}>
+            {t("header_categories")}
+          </StyledLinkNav>
+          <StyledLinkNav to="/gamehub/entrance" onClick={toggleMenu}>
+            {t("header_login")}
+          </StyledLinkNav>
+          <StyledLinkNav to="/gamehub/shopping-cart" onClick={toggleMenu}>
+            {t("header_cart")}
+          </StyledLinkNav>
+        </MobileMenu>
+      )}
     </div>
   );
 };

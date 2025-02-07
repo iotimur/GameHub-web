@@ -21,7 +21,7 @@ export const Search = () => {
   // Получаем данные из Redux Store
   const allGames = useSelector(getHomeSearchSelectors.allGames);
   const searchSimbols = useSelector(getHomeSearchSelectors.searchSimbols);
-  const openDropDown = useSelector(getHomeSearchSelectors.openDropDown);
+  // const openDropDown = useSelector(getHomeSearchSelectors.openDropDown);
   const foundedID = useSelector(getHomeSearchSelectors.foundedID);
 
   // Выполняем запрос на получение игр
@@ -50,13 +50,13 @@ export const Search = () => {
       .map((game) => game.id);
 
     dispatch(homeSeachSlice.actions.setIds(matchingIds));
-    dispatch(homeSeachSlice.actions.setOpenDropDown(matchingIds.length > 0));
+    // dispatch(homeSeachSlice.actions.setOpenDropDown(matchingIds.length > 0));
   };
 
   return (
     <WrapperSearch>
       <SearchInput>
-        {( // 🔥 Скрываем input, если фича выключена
+        {(
           <InputPlace
             type="text"
             placeholder="Type to search..."
@@ -64,7 +64,7 @@ export const Search = () => {
           />
         )}
 
-        {openDropDown && searchSimbols && (
+        {searchSimbols && (
           <SearchWithDropdown ids={foundedID} allGames={allGames} />
         )}
 

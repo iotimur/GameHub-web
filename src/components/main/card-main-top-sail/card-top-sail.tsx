@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import { useAddToCartMutation } from "../../../_data_/service/main-api";
 import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games";
 import { cartSlice } from "../../../_data_/slices/cart-games";
-import styled from "@emotion/styled";
 
-import { getNavigationValue, getConfigValue, getFeatures } from "@brojs/cli";
+import {getFeatures } from "@brojs/cli";
 
 import {
   ProductCardTopSail,
@@ -16,20 +15,21 @@ import {
   ButtonStyledTopSail,
   ButtonFavourite,
 } from "./card-top-sail.styled";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export const CardTopSail = (props) => {
   const getGameHubFeatures = () => getFeatures("gamehub");
-  console.log(getGameHubFeatures()?.["add-game-to-cart"]["on"]);
-  const addCartFeature =
-    getGameHubFeatures()?.["add-game-to-cart"]?.["on"] ?? false;
+  const addCartFeature = !!getGameHubFeatures()?.['add-game-to-cart'] || false;
+  console.log("Возможность добавлять в корзину", addCartFeature)
 
   const dispatch = useDispatch();
   const cartIds = useSelector(getCartGamesSelectors.ids);
   const [modifyCart] = useAddToCartMutation();
   const [isUpdating, setIsUpdating] = useState(false);
 
+  // Определение, находится ли игра в корзине
+  // Если props.id.id есть в cartIds, значит, игра уже в корзине.
   const isInCart = useMemo(
     () => cartIds.includes(props.id.id),
     [cartIds, props.id.id]

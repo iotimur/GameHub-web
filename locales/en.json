@@ -70,6 +70,7 @@
 
     "main_loading": "Loading data ...",
     "main_error": "Error loading data...",
+    "main_nothing_found": "Nothing founded...",
     "main_empty": "No data to display",
     "main_sales_leaders": "Sales Leaders",
     "main_categories": "Categories",

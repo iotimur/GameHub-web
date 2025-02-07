@@ -7,6 +7,7 @@ export const BlockPurchasesStyled = styled.div`
     max-width: 1120px;
     margin: 40px auto;
     border: 1px solid #f39a46;
+    padding-top: 15px;
 `;
 
 export const Lin = styled.hr`
