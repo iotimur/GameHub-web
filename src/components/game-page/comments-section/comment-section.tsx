@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import { useCommentsPageQuery, useUpdateLikeMutation } from '../../../_data_/service/main-api';
 import CommentComponent from './comment/comment';
 import { CommentsContainer, CommentsTitle, CommentBlock } from './comment-section.styled';
 import ShowMoreButton from './show-more-button/show-more-button';
 import { Comment } from '../../../_data_/model/common_comments';
-import {mainApi} from '../../../_data_/service/main-api'
 import { useTranslation } from 'react-i18next';
 
 export type CommentsSectionProps = {
@@ -15,20 +15,24 @@ const CommentsSection: React.FC<CommentsSectionProps> = () => {
   const { t } = useTranslation();
   const { data: queryData } = useCommentsPageQuery();
   const [updateLike] = useUpdateLikeMutation();
-  const [sortBy, setSortBy] = useState("likes");
-  const [isExpanded, setIsExpanded] = useState(false);
+  
+  const { register, watch } = useForm({
+    defaultValues: {
+      sortBy: "likes",
+    },
+  });
+
+  const sortBy = watch("sortBy");
+  const [isExpanded, setIsExpanded] = React.useState(false);
 
   const handleLike = async (username: string, currentLikes: number) => {
     try {
-      // Оптимистичное обновление
       console.log("Отправляем запрос:", { username, likes: currentLikes + 1 });
-
       await updateLike({ username, likes: currentLikes + 1 });
     } catch (error) {
       console.error("Ошибка при обновлении лайков:", error);
     }
   };
-  
 
   // Сортировка комментариев
   const sortedComments =
@@ -53,7 +57,7 @@ const CommentsSection: React.FC<CommentsSectionProps> = () => {
       <div>
         <label>
           {t('comments_sort_by')}
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          <select {...register("sortBy")}>
             <option value="likes">{t('comments_sort_likes')}</option>
             <option value="date">{t('comments_sort_date')}</option>
             <option value="rating">{t('comments_sort_positive')}</option>
