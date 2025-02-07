@@ -7,8 +7,12 @@ export const GameInfoContainer = styled.div`
     color: white;
     border-radius: 0;
     padding: 15px; /* Общий внутренний отступ */
-    margin-left: 15px;
-    box-sizing: border-box; /* Общий размер включая padding и border */
+    box-sizing: border-box; /* Размер включает padding и border */
+    
+    @media (max-width: 768px) {
+        margin-left: 0; /* Убираем левый отступ на мобильных */
+        padding: 10px; /* Уменьшаем отступы на мобильных */
+    }
 `;
 
 export const GameInfoText = styled.div`

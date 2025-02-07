@@ -4,12 +4,16 @@ import styled from "@emotion/styled";
 
 export const SystemRequirementsContainer = styled.div`
     margin-top: 15px;
-    width: calc(100% - 70px); /* Ширина блока от начала до конца (70px = 35px padding справа и слева) */
+    width: calc(100%) /* Ширина блока от начала до конца (70px = 35px padding справа и слева) */
     min-height: 390px; /* Высота блока */
     background-color: #021B40; /* Цвет фона блока */
     position: relative;
     color: white;
     padding: 35px;
+
+        @media (max-width: 750px) {
+        padding: 8px; /* Уменьшаем отступы для мобильных */
+    }
 `;
 
 export const Title = styled.h2`

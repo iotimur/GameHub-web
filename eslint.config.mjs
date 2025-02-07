@@ -1,14 +1,30 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 
 export default [
-  { languageOptions: { globals: globals.browser } },
-  { ignores: ["stubs/"] },
+  { 
+    languageOptions: { 
+      globals: globals.browser, 
+      parser: tsParser 
+    } 
+  },
+  { ignores: ["stubs/", "bro.config.js"] },
   pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReactConfig,
+  {
+    plugins: { "@typescript-eslint": tsPlugin },
+    rules: tsPlugin.configs.recommended.rules,
+  },
+  {
+    ...pluginReactConfig,
+    settings: {
+      react: {
+        version: "detect" // 🔥 Автоопределение версии React
+      }
+    }
+  },
   {
     rules: {
       "react/prop-types": "off",
