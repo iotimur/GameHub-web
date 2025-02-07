@@ -193,6 +193,21 @@ router.get("/admin/home", (request, response) => {
     `);
 });
 
+
+router.get("/admin/game-page", (request, response) => {
+  response.send(`
+        <div>
+            <fieldset>
+                <legend>Настройка данных для /game-page</legend>
+                ${createElement("game-page", "success", "Отдать успешный ответ")}
+                ${createElement("game-page", "empty", "Отдать пустой массив")}
+                ${createElement("game-page", "error", "Отдать ошибку")}
+
+            </fieldset>
+        </div>    
+    `);
+});
+
 router.get("/admin/categories", (request, response) => {
   response.send(`
         <div>
@@ -201,7 +216,7 @@ router.get("/admin/categories", (request, response) => {
                 ${createElement("categories", "success", "Отдать успешный ответ")}
                 ${createElement("categories", "empty", "Отдать пустой массив")}
                 ${createElement("categories", "error", "Отдать ошибку")}
-            </fieldset>
+                </fieldset>
         </div>    
     `);
 });
