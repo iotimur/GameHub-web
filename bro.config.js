@@ -20,13 +20,18 @@ module.exports = {
     "gamehub.favourites": "/gamehub/favourites",
   },
   features: {
-    "home-search-games": {
-      homeSearchGames: {
-        on: true,
-        value: "true",
-        key: "homeSearchGames",
-      },
-    },
+    "gamehub": {
+        "home-search-games": {
+            "on": false,
+            "value": "true",
+            "key": "home-search-games"
+        },
+        "add-game-to-cart": {
+            "on": false,
+            "value": "true",
+            "key": "add-game-to-cart"
+        }
+    }
   },
   config: {
     "gamehub.api": "/api",

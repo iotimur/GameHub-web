@@ -4,7 +4,6 @@ import { homeSeachSlice } from "../../../_data_/slices/home-app-search";
 import { Link } from "react-router-dom";
 
 import { mainApi } from "../../../_data_/service/main-api";
-import { getFeatures } from "@brojs/cli";
 import * as getHomeSearchSelectors from "../../../_data_/selectors/home-app-search";
 
 import { SearchWithDropdown } from "../search-drop-down/drop-down";
@@ -25,18 +24,15 @@ export const Search = () => {
   const openDropDown = useSelector(getHomeSearchSelectors.openDropDown);
   const foundedID = useSelector(getHomeSearchSelectors.foundedID);
 
-  const { homeSearchGames } = getFeatures("home-search-games");
-  console.log(homeSearchGames)
-
   // Выполняем запрос на получение игр
   const { data, error, isFetching } = mainApi.useAllGamesQuery();
 
   // **Используем useEffect для обновления store**
   useEffect(() => {
-    if (data && homeSearchGames) {
+    if (data) {
       dispatch(homeSeachSlice.actions.setAllGames(data));
     }
-  }, [data, dispatch, homeSearchGames]);
+  }, [data, dispatch]);
 
   // Проверка на загрузку или ошибку
   if (isFetching) return <div>Loading...</div>;
@@ -44,8 +40,6 @@ export const Search = () => {
 
   // Обработчик ввода поиска (добавлена проверка !homeSearchGames)
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!homeSearchGames) return; // 🔥 Если фича отключена, выходим
-
     const inputValue = event.target.value;
     dispatch(homeSeachSlice.actions.setSimbols(inputValue));
 
@@ -62,7 +56,7 @@ export const Search = () => {
   return (
     <WrapperSearch>
       <SearchInput>
-        {homeSearchGames && ( // 🔥 Скрываем input, если фича выключена
+        {( // 🔥 Скрываем input, если фича выключена
           <InputPlace
             type="text"
             placeholder="Type to search..."
@@ -70,7 +64,7 @@ export const Search = () => {
           />
         )}
 
-        {homeSearchGames && openDropDown && searchSimbols && (
+        {openDropDown && searchSimbols && (
           <SearchWithDropdown ids={foundedID} allGames={allGames} />
         )}
 

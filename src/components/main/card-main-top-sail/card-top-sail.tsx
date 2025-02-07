@@ -6,6 +6,8 @@ import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games";
 import { cartSlice } from "../../../_data_/slices/cart-games";
 import styled from "@emotion/styled";
 
+import { getNavigationValue, getConfigValue, getFeatures } from "@brojs/cli";
+
 import {
   ProductCardTopSail,
   TopSailImg,
@@ -15,6 +17,11 @@ import {
 } from "./card-top-sail.styled";
 
 export const CardTopSail = (props) => {
+  const getGameHubFeatures = () => getFeatures("gamehub");
+  console.log(getGameHubFeatures()?.["add-game-to-cart"]["on"]);
+  const addCartFeature =
+    getGameHubFeatures()?.["add-game-to-cart"]?.["on"] ?? false;
+
   const dispatch = useDispatch();
   const cartIds = useSelector(getCartGamesSelectors.ids);
   const [modifyCart] = useAddToCartMutation();
@@ -33,12 +40,14 @@ export const CardTopSail = (props) => {
   }, [cartIds]);
 
   const handleCartUpdate = async (id) => {
+    if (!addCartFeature) return;
+
     if (isUpdating) return;
 
     setIsUpdating(true);
 
     // Определяем, нужно ли добавить или удалить товар
-    const action = isInCart ? 'remove' : 'add';
+    const action = isInCart ? "remove" : "add";
 
     if (isInCart) {
       dispatch(cartSlice.actions.removeFromCart(id.id));
