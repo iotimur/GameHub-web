@@ -21,9 +21,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export const CardTopSail = (props) => {
   const getGameHubFeatures = () => getFeatures("gamehub");
-  console.log(getGameHubFeatures()?.["add-game-to-cart"]["on"]);
-  const addCartFeature =
-    getGameHubFeatures()?.["add-game-to-cart"]?.["on"] ?? false;
+  const addCartFeature = !!getGameHubFeatures()?.['add-game-to-cart'] || false;
+  console.log("Возможность добавлять в корзину", addCartFeature)
 
   const dispatch = useDispatch();
   const cartIds = useSelector(getCartGamesSelectors.ids);

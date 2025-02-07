@@ -27,12 +27,12 @@ import Lottie from "lottie-react"; // Импортируем для анимац
 import somethingWrong from "../../../assets/Images_main/something_wrong_cat.json"; // что-то пошло не так
 import errorAnimation from "../../../assets/Images_main/error_dog.json"; // Анимация ошибки
 
-import { getNavigationValue, getConfigValue, getFeatures } from '@brojs/cli';
+import { getFeatures } from '@brojs/cli';
 
 const MainContent = () => {
   const getGameHubFeatures = () => getFeatures('gamehub');
-  console.log(getGameHubFeatures()?.['home-search-games']["on"])
-  const display_search_line = getGameHubFeatures()?.['home-search-games']?.['on'] ?? false;
+  const display_search_line = !!getGameHubFeatures()?.['home-search-games'] || false;
+  console.log("Отображение поиска", display_search_line)
 
   const { t } = useTranslation();
   const { isFetching, isLoading, data, error } = mainApi.useHomePageQuery();
