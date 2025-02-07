@@ -213,9 +213,6 @@ export const ButtonStyledTopSail = styled.button<ButtonProps>`
   }
 `;
 
-interface ButtonPropsFav {
-  isInFav: boolean;
-}
 export const ButtonFavourite = styled.button`
   border: none;
   width: 50px;
