@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import { game11, game22, game33, game44, game55, game66 } from './index';
 
 const initialPurchases = [
-    { id: 1, image: game11, date: '18.01.24', sum: '300 руб.', status: 'оплачено' },
-    { id: 2, image: game22, date: '18.01.24', sum: '300 руб.', status: 'оплачено' },
-    { id: 3, image: game33, date: '20.01.24', sum: '450 руб.', status: 'оплачено' },
-    { id: 4, image: game44, date: '22.01.24', sum: '200 руб.', status: 'оплачено' },
-    { id: 5, image: game55, date: '25.01.24', sum: '500 руб.', status: 'оплачено' },
-    { id: 6, image: game66, date: '28.01.24', sum: '350 руб.', status: 'оплачено' },
+    { id: 1, image: game11, date: '18.01.24', sum: '300 руб.' },
+    { id: 2, image: game22, date: '18.01.24', sum: '300 руб.' },
+    { id: 3, image: game33, date: '20.01.24', sum: '450 руб.'  },
+    { id: 5, image: game55, date: '25.01.24', sum: '500 руб.' },
+    { id: 6, image: game66, date: '28.01.24', sum: '350 руб.' },
+    { id: 4, image: game44, date: '22.01.24', sum: '200 руб.'},
 ];
 
 export function MyPurchases() {
@@ -41,9 +41,8 @@ export function MyPurchases() {
                         </Link>
                         <TextBlockStyled>
                             <TextGameStyled>
-                                {t('my_purchases_date')}: {purchase.date} <br />
-                                {t('my_purchases_amount')}: {purchase.sum} <br />
-                                {t('my_purchases_status')}: {purchase.status}
+                                {t('my_purchases_date')} {purchase.date} <br />
+                                {t('my_purchases_amount')} {purchase.sum}
                             </TextGameStyled>
                         </TextBlockStyled>
                     </div>

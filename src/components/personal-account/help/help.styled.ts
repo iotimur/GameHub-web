@@ -7,6 +7,7 @@ export const BlockHelpStyled = styled.div`
     margin: 0 auto;
     margin-bottom: 30px;
     border: 1px solid #f39a46;
+    padding-top: 15px;
 `;
 
 export const Lin = styled.hr`
