@@ -9,9 +9,10 @@ export default [
     languageOptions: { 
       globals: globals.browser, 
       parser: tsParser 
-    } 
+    },
+    files: ["src/**/*.{js,jsx,ts,tsx}"] // Добавлено, чтобы ESLint искал файлы
   },
-  { ignores: ["stubs/", "bro.config.js"] },
+  { ignores: ["stubs/", "bro.config.js","server.ts", "src/_data_/server/server.ts","src/index.tsx", "src/i18next.ts"] },
   pluginJs.configs.recommended,
   {
     plugins: { "@typescript-eslint": tsPlugin },
@@ -35,7 +36,6 @@ export default [
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/no-var-requires": "off",
       "@typescript-eslint/no-explicit-any": "off",
-    },
-    ignores: ["src/index.tsx"],
+    }
   },
 ];
