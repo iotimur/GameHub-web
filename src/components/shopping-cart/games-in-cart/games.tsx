@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../../../_data_/slices/cart-games"; // Путь к слайсу корзины
-import { useAllGamesQuery } from "../../../_data_/service/main-api"; // Для получения всех игр
-import * as images from "../../../assets/Images_main"; // Импортируем изображения
+import { addToCart, removeFromCart } from "../../../_data_/slices/cart-games";
+import { useAllGamesQuery } from "../../../_data_/service/main-api";
+import * as images from "../../../assets/Images_main";
 import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games";
 import { useAddToCartMutation } from "../../../_data_/service/main-api";
 import Lottie from "lottie-react";
-import emptyCartAnimation from "../../../assets/Images_main/emty basket.json"; // Анимация пустой корзины
-import errorAnimation from "../../../assets/Images_main/error_dog.json"; // Анимация ошибки
-
+import emptyCartAnimation from "../../../assets/Images_main/emty basket.json";
+import errorAnimation from "../../../assets/Images_main/error_dog.json";
+import Modal from "./Modal";
+import Chat from "./Chat"; // Импортируем компонент чата
 import {
   Oval,
   Container_my,
@@ -26,21 +27,21 @@ import {
   AnimationContainer,
   StyledText,
   PromoCodeContainer,
-  PromoCodeInput, // Импортируем стилизованный компонент для ввода промокода
-  ApplyButton, // Импортируем стилизованный компонент для кнопки применения промокода
+  PromoCodeInput,
+  ApplyButton,
+  FloatingButton, // Импортируем стилизованную кнопку
 } from "../games-in-cart/games.styled";
 
 const Games: React.FC = () => {
   const dispatch = useDispatch();
   const cartIds = useSelector(getCartGamesSelectors.ids);
-
   const [modifyCart] = useAddToCartMutation();
-  
-  // Состояние для хранения промокода и его применения
   const [promoCode, setPromoCode] = useState("");
-  const [discount, setDiscount] = useState(0); // Состояние для хранения скидки
+  const [discount, setDiscount] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedGameId, setSelectedGameId] = useState<number | null>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false); // Состояние для открытия/закрытия чата
 
-  // Запрашиваем все игры
   const {
     isLoading: isGamesLoading,
     data: allGamesData,
@@ -51,7 +52,6 @@ const Games: React.FC = () => {
     return <Oval>Загрузка...</Oval>;
   }
 
-  // Показываем анимацию ошибки при загрузке данных
   if (gamesError) {
     return (
       <AnimationContainer style={{ textAlign: "center" }}>
@@ -63,46 +63,30 @@ const Games: React.FC = () => {
     );
   }
 
-  // Фильтруем игры, чтобы оставить только те, которые есть в корзине
-  const gamesInCart =
-    allGamesData?.filter((game) => cartIds.includes(game.id)) || [];
+  const gamesInCart = allGamesData?.filter((game) => cartIds.includes(game.id)) || [];
+  const totalPrice = gamesInCart.reduce((total, game) => total + (isNaN(game.price) ? 0 : game.price), 0);
 
-  // Подсчет общей стоимости
-  const totalPrice = gamesInCart.reduce((total, game) => {
-    const priceNumber = game.price; // Убираем все символы кроме чисел и запятой/точки
-    return total + (isNaN(priceNumber) ? 0 : priceNumber);
-  }, 0);
-
-  // Применение промокода
   const handleApplyPromoCode = () => {
     if (promoCode === "10") {
-      setDiscount(totalPrice * 0.1); // Пример скидки в 10%
-    } else {
-      alert("Неверный промокод");
+      setDiscount(totalPrice * 0.1);
     }
   };
 
-  // Функция для удаления игры из корзины
   const handleDelete = async (id: number) => {
-    const action = "remove"; // Указываем действие
-
-    // Сначала обновляем локальный Redux store, удаляя товар
+    const action = "remove";
     dispatch(removeFromCart(id));
-
     try {
-      // Отправляем запрос на сервер для удаления товара
       await modifyCart({ id, action }).unwrap();
     } catch (error) {
       console.error("Ошибка при удалении товара из корзины:", error);
-
-      // Откатываем изменения в Redux, если запрос не удался
       dispatch(addToCart(id));
     }
+    setIsModalOpen(false);
   };
 
-  // Функция для добавления игры в корзину (на случай, если нужно вернуть товары)
-  const handleAdd = (id: number) => {
-    dispatch(addToCart(id)); // Добавляем товар в корзину
+  const openDeleteModal = (id: number) => {
+    setSelectedGameId(id);
+    setIsModalOpen(true);
   };
 
   return (
@@ -125,28 +109,41 @@ const Games: React.FC = () => {
                 <Price>{game.price} ₽</Price>
                 <Title2>Категория: {game.category}</Title2>
                 <Title3>{game.description}</Title3>
-                <Delete onClick={() => handleDelete(game.id)}>Удалить</Delete>
+                <Delete onClick={() => openDeleteModal(game.id)}>Удалить</Delete>
                 <Hr />
               </div>
             </Container_my>
           ))}
-          {/* Поле для ввода промокода */}
           <PromoCodeContainer>
-            <PromoCodeInput 
-              type="text" 
-              value={promoCode} 
-              onChange={(e) => setPromoCode(e.target.value)} 
-              placeholder="Введите промокод" 
+            <PromoCodeInput
+              type="text"
+              value={promoCode}
+              onChange={(e) => setPromoCode(e.target.value)}
+              placeholder="Введите промокод"
             />
             <ApplyButton onClick={handleApplyPromoCode}>Применить</ApplyButton>
-            </PromoCodeContainer>
+          </PromoCodeContainer>
           <Total>
             <TotalSpan>Промежуточный итог:</TotalSpan>
-            <Price1>{(totalPrice - discount).toFixed(2)} ₽</Price1> {/* Добавлен знак рубля */}
-            
+            <Price1>{(totalPrice - discount).toFixed(2)} ₽</Price1>
           </Total>
         </>
       )}
+
+      {/* Модальное окно для подтверждения удаления */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={() => selectedGameId && handleDelete(selectedGameId)}
+      />
+
+      {/* Кнопка в правом нижнем углу */}
+      <FloatingButton onClick={() => setIsChatOpen(!isChatOpen)}>
+        {isChatOpen ? "✕" : "💬"}
+      </FloatingButton>
+
+      {/* Чат с менеджером */}
+      {isChatOpen && <Chat onClose={() => setIsChatOpen(false)} />}
     </>
   );
 };
