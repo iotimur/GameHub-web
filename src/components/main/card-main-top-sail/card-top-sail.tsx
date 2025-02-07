@@ -28,6 +28,8 @@ export const CardTopSail = (props) => {
   const [modifyCart] = useAddToCartMutation();
   const [isUpdating, setIsUpdating] = useState(false);
 
+  // Определение, находится ли игра в корзине
+  // Если props.id.id есть в cartIds, значит, игра уже в корзине.
   const isInCart = useMemo(
     () => cartIds.includes(props.id.id),
     [cartIds, props.id.id]

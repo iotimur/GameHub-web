@@ -27,11 +27,11 @@ const Page = ({ games,title, sortOption}) => {
       const handleShowMore = () => {
         setIsExpanded(!isExpanded);
       };
-  useEffect(() => {
-    if (data) {
-      dispatch(homeSeachSlice.actions.setAllGames(data));
-    }
-  }, [data, dispatch]);
+  // useEffect(() => {
+  //   if (data) {
+  //     dispatch(homeSeachSlice.actions.setAllGames(data));
+  //   }
+  // }, [data, dispatch]);
 
   const handleCartUpdate = async (gameId) => {
     const isInCart = cartIds.includes(gameId);

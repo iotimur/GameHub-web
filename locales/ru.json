@@ -70,6 +70,7 @@
 
   "main_loading": "Загрузка данных ...",
   "main_error": "Ошибка загрузки данных...",
+  "main_nothing_found": "Ничего не найдено...",
   "main_empty": "Нет данных для отображения",
   "main_sales_leaders": "Лидеры продаж",
   "main_categories": "Категории",

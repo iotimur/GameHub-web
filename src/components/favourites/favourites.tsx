@@ -44,11 +44,11 @@ const FavouritesComponent = () => {
         localStorage.setItem('favourites', JSON.stringify(updatedFavourites));// Обновляем localStorage
     };
 
-    useEffect(() => {
-        if (data) {
-            dispatch(homeSeachSlice.actions.setAllGames(data));
-        }
-    }, [data, dispatch]);
+    // useEffect(() => {
+    //     if (data) {
+    //         dispatch(homeSeachSlice.actions.setAllGames(data));
+    //     }
+    // }, [data, dispatch]);
 
     return (
         <div>
