@@ -4,13 +4,22 @@ import axios from "axios";
 export const useChatBot = () => {
   const [isLoading, setIsLoading] = useState(false);
 
+  // Шаблонные фразы-ответы
+  const templateResponses = [
+    "Здравствуйте! Чем могу помочь?",
+    "Пожалуйста, уточните ваш вопрос.",
+    "Спасибо за обращение! Мы свяжемся с вами в ближайшее время.",
+    "К сожалению, я не могу ответить на этот вопрос. Обратитесь в поддержку.",
+    "Пожалуйста, подождите, я проверю информацию.",
+  ];
+
   const sendMessageToBot = async (text: string) => {
     const headers = {
       "Content-Type": "application/json",
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15",
-      Origin: "https://yandex.ru",
-      Referer: "https://yandex.ru/",
+      "Origin": "https://yandex.ru",
+      "Referer": "https://yandex.ru/",
     };
 
     const payload = {
@@ -21,14 +30,14 @@ export const useChatBot = () => {
 
     try {
       setIsLoading(true);
-      const response = await axios.post("https://xu.su/api/send", payload, { headers });
 
-      // Проверяем, что ответ содержит данные
-      if (response.data) {
-        return response.data; // Возвращаем ответ бота
-      } else {
-        throw new Error("Пустой ответ от сервера");
-      }
+      // Имитация запроса к API с использованием шаблонных фраз
+      const randomResponse = templateResponses[Math.floor(Math.random() * templateResponses.length)];
+
+      // Имитация задержки ответа (например, 1 секунда)
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      return randomResponse; // Возвращаем случайный шаблонный ответ
     } catch (error) {
       console.error("Ошибка при отправке сообщения:", error);
 
