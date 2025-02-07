@@ -32,7 +32,7 @@ module.exports = {
             "key": "add-game-to-cart"
         },
         "sort-comments": {
-          "on": true,
+          "on": false,
           "value": "true",
           "key": "sort-comments"
       }
