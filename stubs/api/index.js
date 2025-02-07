@@ -193,6 +193,18 @@ router.get("/admin/home", (request, response) => {
     `);
 });
 
+router.get("/admin/game-page", (request, response) => {
+  response.send(`
+        <div>
+            <fieldset>
+                <legend>Настройка данных для /game-page</legend>
+                ${createElement("game-page", "success", "Отдать успешный ответ")}
+                ${createElement("game-page", "empty", "Отдать пустой массив")}
+                ${createElement("game-page", "error", "Отдать ошибку")}
+            </fieldset>
+        </div>    
+    `);
+});
 router.get("/admin/set/:key/:value", (request, response) => {
   const { key, value } = request.params;
   stubs[key] = value;
