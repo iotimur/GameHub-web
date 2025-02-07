@@ -98,7 +98,61 @@
     "footer.support": "Technical Support for General Questions:",
     "footer.admin": "Administration:",
     "footer.map": "Directions:",
-    "footer.location": "Kazan, 2024"
+    "footer.location": "Kazan, 2024",
+
+    "leadersTitle": "Best Sellers",
+    "loading": "Loading...",
+    "error": "Error",
+    "noGames": "No games found",
+    "priceMax": "By price max",
+    "priceMin": "By price min",
+
+
+    "games": {
+      "1": {
+        "title": "Elden Ring",
+        "description": "A large-scale RPG set in a vast open world with rich mythology and many dangerous enemies."
+      },
+      "2": {
+        "title": "The Witcher 3: Wild Hunt",
+        "description": "An epic open-world RPG where Geralt of Rivia hunts monsters and uncovers political conspiracies."
+      }
+    },
+
+
+    
+      "help_title": "Help",
+      "help_order_title": "Placing an order",
+      "help_order_description": "Select products and add them to the cart. Complete your order. Confirm and pay.",
+      "help_payment_title": "Payment methods",
+      "help_payment_description": "Bank card or e-wallet.",
+      "help_profile_title": "Changing personal data",
+      "help_profile_description": "Here are some details you can change in your profile: first name, last name, phone number, email.",
+      "help_cart_title": "Adding an item to the cart",
+      "help_cart_description": "To add an item to the cart, click 'Buy for yourself' or 'Buy as a gift' on the product card.",
+
+      "profile_title": "Profile",
+       "favourites_title": "Favourites",
+
+
+       "personal_information_title": "Personal Information",
+       "personal_information_edit_button": "Edit",
+       "personal_information_save_button": "Save",
+       "personal_information_name_placeholder": "Your Name:",
+       "personal_information_surname_placeholder": "Your Surname:",
+       "personal_information_phone_placeholder": "Your Phone Number:",
+       "personal_information_email_placeholder": "Your Email:",
+       "personal_information_login_placeholder": "Your Login:",
+       "personal_information_dob_placeholder": "Your Date of Birth:",
+       "personal_information_phone_error_invalid": "The phone number must start with +7.",
+       "personal_information_phone_error_length": "The phone number must contain 10 digits after +7.",
+       "personal_information_email_error_invalid": "Please enter a valid email address.",
+       "my_purchases_title": "My Purchases",
+       "my_purchases_show_more": "Show More",
+       "my_purchases_show_less": "Show Less",
+       "my_purchases_date": "Purchase Date:",
+       "my_purchases_amount": "Amount:",
+       "my_purchases_status": "Status:"
 
 
     

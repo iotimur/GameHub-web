@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { CommonMain, ContainerMain, PageContainer } from "../components/main/main-container/main.styled";
-import FilterSorting from "../components/categories/sorting/sorting";
+import { CommonMain, ContainerMain} from "../components/main/main-container/main.styled";
+import Sorting from "../components/categories/sorting/sorting";
 import Leaders from "../components/categories/leaders/leaders";
 import NewGames from "../components/categories/new-games/new-games";
 import DiscountGames from "../components/categories/discount-games/discount-games";
-import { CategoriesMain } from "../components/categories/categories.styled";
 import Filter from "../components/categories/filter/filter";
 
 const Categories = () => {
@@ -12,11 +11,14 @@ const Categories = () => {
     const [isLeaders, setIsLeaders] = useState(true);
     const [isNewGames, setIsNewGames] = useState(true);
     const [isDiscountGames, setIsDiscountGames] = useState(true);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isSortingDropdownOpen, setIsSortingDropdownOpen] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('');
 
     const handleSort = (option) => {
         setSortOption(option);
+        setSelectedOption(option);
     };
-
     const handleFilter = (category, visible) => {
         switch (category) {
             case 'leaders':
@@ -33,6 +35,14 @@ const Categories = () => {
         }
     };
 
+    const toggleDropdown = () => {
+        setIsDropdownOpen(prev => !prev);
+    };
+    const toggleSortingDropdown = () => {
+        setIsSortingDropdownOpen(prev => !prev);
+    };
+
+
     return (
         <>
             <CommonMain>
@@ -42,11 +52,21 @@ const Categories = () => {
                         isNewGames={isNewGames}
                         isDiscountGames={isDiscountGames}
                         onFilter={handleFilter}
+                        isDropdownOpen={isDropdownOpen}
+                        toggleDropdown={toggleDropdown}
                     />
-                    <FilterSorting onSort={handleSort} />
-                    {isLeaders && <Leaders sortOption={sortOption} />}
-                    {isNewGames && <NewGames sortOption={sortOption} />}
-                    {isDiscountGames && <DiscountGames sortOption={sortOption} />}
+                    <Sorting
+                        onSort={handleSort}
+                        selectedOption={selectedOption}
+                        isDropdownOpen={isSortingDropdownOpen}
+                        toggleDropdown={toggleSortingDropdown}
+                    />
+                    {isLeaders && <Leaders
+                        sortOption={sortOption}/>}
+                    {isNewGames && <NewGames
+                        sortOption={sortOption}/>}
+                    {isDiscountGames && <DiscountGames
+                        sortOption={sortOption} />}
                 </ContainerMain>
             </CommonMain>
         </>

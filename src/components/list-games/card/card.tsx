@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games";
 import * as getFavGamesSelectors from "../../../_data_/selectors/favourites-games";
@@ -16,8 +16,14 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-const GameCard = ({ game, handleCartUpdate, handleToggleFavourite }) => {
+const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
+  const handleToggleFavourite = (e) => {
+    e.preventDefault();
+    onAddFavourite(game); // Передаем игру для добавления или удаления
+  };
+
   const cartIds = useSelector(getCartGamesSelectors.ids); // Получаем ID игр в корзине
   const cartIdFav = useSelector(getFavGamesSelectors.ids);// 
 
@@ -31,23 +37,27 @@ const GameCard = ({ game, handleCartUpdate, handleToggleFavourite }) => {
   const isInCart = cartIdFav.includes(game.id);
 
   return (
-    <Card>
-      <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.title}`} />
-      <TitleGame>{game.title}</TitleGame>
-      <Description>{game.description}</Description>
-      <NewPrice>{game.price} ₽</NewPrice>
-      {game.old_price && <OldPrice>{game.old_price} ₽</OldPrice>}
+    <Link to={`/gamehub/game-page`} >
+      <Card>
+        <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.title}`} />
+        <TitleGame>{game.title}</TitleGame>
+        <Description className="description">{game.description}</Description>
+        <NewPrice>{game.price} ₽</NewPrice>
+        {game.old_price && <OldPrice>{game.old_price} ₽</OldPrice>}
 
-      <ButtonStyledTopSail isInCart={isInCart} onClick={() => handleCartUpdate(game.id)}>
-        <FontAwesomeIcon icon={faShoppingCart} />
-      </ButtonStyledTopSail>
+        <ButtonStyledTopSail isInCart={isInCart} onClick={() => handleCartUpdate(game.id)}>
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </ButtonStyledTopSail>
 
-      <ButtonFavourite isInFav={isInFav} onClick={() => handleToggleFavourite(game.id)}
-        title={isInFav ? 'Убрать из избранного' : 'Добавить в избранное'}>
-        <FontAwesomeIcon icon={faStar} style={{ color: isInFav ? 'yellow':'gray' }} />
-      </ButtonFavourite>
-    </Card>
+        <ButtonFavourite onClick={handleToggleFavourite}
+          title={isFavourite ? 'Убрать из избранного' : 'Добавить в избранное'} >
+          <FontAwesomeIcon icon={faStar} style={{ color: isFavourite ? 'rgba(255, 207, 15, 0.91)' : 'gray' }} />
+        </ButtonFavourite>
+      </Card>
+    </Link>
   );
 };
 
 export default GameCard;
+
+

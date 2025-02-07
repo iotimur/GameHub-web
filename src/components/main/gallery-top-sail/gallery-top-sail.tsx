@@ -34,7 +34,10 @@ export const GalleryTopSail = (props) => {
 
   const [index, setIndex] = useState(0);
   const [displayedCards, setDisplayedCards] = useState([]);
-
+ const [favourites, setFavourites] = useState(() => {
+    const savedFavourites = localStorage.getItem('favourites');
+    return savedFavourites ? JSON.parse(savedFavourites) : [];
+  });
   const cards = [
     { img: props.img.game5, price: props.data[4].price, id: props.data[4] },
     { img: props.img.game6, price: props.data[5].price, id: props.data[5] },
@@ -45,7 +48,21 @@ export const GalleryTopSail = (props) => {
     { img: props.img.game3, price: props.data[2].price, id: props.data[2] },
     { img: props.img.game4, price: props.data[3].price, id: props.data[3] },
   ];
+  // const handleAddFavourite = (game) => {
+  //   setFavourites((prevFavourites) => {
+  //     const isAlreadyFavourite = prevFavourites.find(fav => fav.id === game.id);
+  //     let updatedFavourites;
 
+  //     console.log(data, isLoading, error);
+  //     if (isAlreadyFavourite) {
+  //       updatedFavourites = prevFavourites.filter(fav => fav.id !== game.id); // Удаляем из избранного
+  //     } else {
+  //       updatedFavourites = [...prevFavourites, game]; // Добавляем в избранное
+  //     }
+  //     localStorage.setItem('favourites', JSON.stringify(updatedFavourites));// Сохраняем новое состояние в localStorage
+  //     return updatedFavourites;
+  //   });
+  // };
   useEffect(() => {
     const updatedDisplayedCards = [];
     for (let i = index; i < index + 4; i++) {
@@ -68,7 +85,13 @@ export const GalleryTopSail = (props) => {
       />
       <GalleryMain>
         {displayedCards.map((card, i) => (
-          <CardTopSail key={i} id={card.id} img={card.img} price={card.price} />
+          // const isFavourite = favourites.some(fav => fav.id === card.id);
+
+          <CardTopSail key={i} id={card.id} img={card.img} price={card.price} 
+          // game={card}
+          // onAddFavourite={handleAddFavourite}
+          // isFavourite ={0}
+          />
         ))}
       </GalleryMain>
       <ArrowRightMain

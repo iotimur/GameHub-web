@@ -3,41 +3,43 @@
   "data": [
     {
       "id": 1,
+      "title": "Elden Ring",
+      "image": "game17",
+      "price": 3295,
+      "old_price": 3599,
+      "imgPath": "img_top_17",
+      "description": "Крупномасштабная RPG, действие которой происходит в обширном открытом мире c богатой мифологией и множеством опасных врагов.",
+      "category": "RPG"
+    },
+    {
+      "id": 2,
       "title": "The Witcher 3: Wild Hunt",
       "image": "game1",
       "price": 990,
       "old_price": 1200,
-      "os": "windows",
       "imgPath": "img_top_1",
       "description": "Эпическая RPG с открытым миром, в которой Геральт из Ривии охотится на монстров и раскрывает политические заговоры.",
       "category": "RPG"
-      ,"fav1": "star1",
-            "fav2": "star2"
+      
     },
     {
-      "id": 2,
+      "id": 17,
       "title": "Red Dead Redemption 2",
       "image": "game2",
       "price": 980,
       "old_price": 3800,
-      "os": "windows",
       "imgPath": "img_top_2",
       "description": "Приключенческая игра с открытым миром на Диком Западе, рассказывающая историю Артура Моргана.",
       "category": "Adventures"
-    ,"fav1": "star1",
-            "fav2": "star2"
     },
     {
       "id": 3,
       "title": "Forza Horizon 5",
       "image": "game3",
       "price": 1900,
-      "os": "windows",
       "imgPath": "img_top_3",
       "description": "Гоночная игра с огромным открытым миром, действие которой происходит в Мексике.",
       "category": "Race"
-    ,"fav1": "star1",
-            "fav2": "star2"
     },
     {
       "id": 4,
@@ -45,72 +47,66 @@
       "image": "game4",
       "price": 1200,
       "old_price": 2500,
-      "os": "windows",
+      
       "imgPath": "img_top_4",
       "description": "Экшен-шутер с элементами RPG, разворачивающийся в альтернативной Советской России.",
       "category": "Shooters"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 5,
       "title": "Counter-Strike 2",
       "image": "game5",
       "price": 479,
-      "os": "windows",
+      
       "imgPath": "img_top_5",
       "description": "Популярный онлайн-шутер с соревновательным геймплеем и тактическими элементами.",
       "category": "Shooters"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 6,
       "title": "Grand Theft Auto V",
       "image": "game6",
       "price": 700,
-      "os": "windows",
+      
       "imgPath": "img_top_6",
       "description": "Игра с открытым миром, где можно погрузиться в криминальный мир Лос-Сантоса.",
       "category": "Adventures"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 7,
       "title": "Assassin’s Creed IV: Black Flag",
       "image": "game7",
       "price": 1100,
-      "os": "windows",
+      
       "imgPath": "img_top_7",
       "description": "Приключенческая игра о пиратах и морских сражениях в эпоху золотого века пиратства.",
       "category": "Adventures"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 8,
       "title": "Spider-Man",
       "image": "game8",
       "price": 3800,
-      "os": "windows",
+      
       "imgPath": "img_top_8",
       "description": "Игра о супергерое Человеке-пауке с захватывающими битвами и паркуром по Нью-Йорку.",
       "category": "Action"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 9,
       "title": "Assassin’s Creed Mirage",
       "image": "game9",
       "price": 1600,
-      "os": "windows",
+      
       "imgPath": "img_top_9",
       "description": "Приключенческая игра с упором на скрытность, вдохновленная классическими частями серии.",
       "category": "Action"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 10,
@@ -118,79 +114,72 @@
       "image": "game10",
       "price": 800,
       "old_price": 2200,
-      "os": "windows",
+      
       "imgPath": "img_top_10",
       "description": "RPG с открытым миром о викингах, включающая битвы, исследования и строительство поселений.",
       "category": "RPG"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 11,
       "title": "ARK: Survival Evolved",
       "image": "game11",
       "price": 790,
-      "os": "windows",
+      
       "imgPath": "img_top_11",
       "description": "Выживание в открытом мире с динозаврами, строительством и многопользовательскими элементами.",
       "category": "Simulators"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 12,
       "title": "FIFA 23",
       "image": "game12",
       "price": 3900,
-      "os": "windows",
+      
       "imgPath": "img_top_12",
       "description": "Популярный футбольный симулятор с улучшенной графикой и реалистичным геймплеем.",
       "category": "Sports"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 13,
       "title": "Dirt 5",
       "image": "game13",
       "price": 2300,
-      "os": "windows",
+      
       "imgPath": "img_top_13",
       "description": "Аркадная гоночная игра с фокусом на ралли и внедорожных соревнованиях.",
       "category": "Race"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 14,
       "title": "Cyberpunk 2077",
       "image": "game14",
       "price": 3400,
-      "os": "windows",
+      
       "imgPath": "img_top_14",
       "description": "RPG в киберпанк-сеттинге с нелинейным сюжетом и детализированным открытым миром.",
       "category": "RPG"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 15,
       "title": "Age of Empires IV",
       "image": "game15",
       "price": 3200,
-      "os": "windows",
+      
       "imgPath": "img_top_15",
       "description": "Классическая стратегия в реальном времени с историческими кампаниями.",
       "category": "Strategies"
-    ,"fav1": "star1",
-            "fav2": "star2"
+    
     },
     {
       "id": 16,
       "title": "Civilization VI",
       "image": "game16",
       "price": 4200,
-      "os": "windows",
       "imgPath": "img_top_16",
       "description": "Глобальная пошаговая стратегия, в которой игроки строят и развивают цивилизации.",
       "category": "Strategies"

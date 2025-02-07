@@ -11,10 +11,8 @@ export const String = styled.span`
 `;
 
 export const SortingButton = styled.button`
-margin-top:10px;
+  margin-top:10px;
   // z-index: 100;
-  // margin-left:auto;
-  margin-right:123px;
   position: absolute;
   display: flex;
   right: 0px;

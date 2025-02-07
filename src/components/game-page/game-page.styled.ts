@@ -5,15 +5,17 @@ export const PageContainerGP = styled.div`
   background-color: #102D59;
   margin: 0;
   padding: 0;
+  width: 100vw;
   min-height: 100%;
+  min-width: 100%;
   height: auto;
   position: relative;
 `;
 
 export const Main = styled.div`
   max-width: 1120px;
-  width: 90%;
-  min-width: 600px;
+  width: 100%;
+
   margin: 0 auto;
   color: white;
 `;

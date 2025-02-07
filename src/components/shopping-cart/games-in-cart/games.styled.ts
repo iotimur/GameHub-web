@@ -1,8 +1,15 @@
 import styled from "@emotion/styled";
 
 export const Oval = styled.div`
-  width: 300px;
-  height: 64px;
+background-color: #f39a46;
+//   border-radius: 25px;
+  width: max-content;
+  height: 50px;
+//   margin-top: 50px;
+  padding: 10px 15px;
+  // margin-bottom: 20px;
+  // width: 300px;
+  // height: 64px;
   border-radius: 25px;
   background-color: #f39a46;
   display: flex;
@@ -11,20 +18,20 @@ export const Oval = styled.div`
   font-weight: bold;
   color: black;
   font-size: 4vh;
-  margin: 40px 330px 30px;
+  margin: 40px 40px 30px;
   @media screen and (max-width: 1200px) {
     height: 50px;
     font-size: 3.5vh;
-    max-width: 300px;
-    text-align: center;
-    margin-left: 420px;
+    // max-width: 300px;
+    // text-align: center;
+    // margin-left: 420px;
   }
   @media screen and (max-width: 800px) {
     height: 45px;
     font-size: 3vh;
-    max-width: 250px;
-    text-align: center;
-    margin-left: 230px;
+    // max-width: 250px;
+    // text-align: center;
+    // margin-left: 230px;
   }
 `;
 

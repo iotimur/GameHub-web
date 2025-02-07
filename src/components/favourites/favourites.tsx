@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import GameCard from "../list-games/card/card";
 import mainApi, { useAddToCartMutation } from "../../_data_/service/main-api";
@@ -12,50 +12,36 @@ import { cartSlice } from "../../_data_/slices/cart-games";
 
 const FavouritesComponent = () => {
 
-const { isFetching, isLoading, data, error } = mainApi.useAllGamesQuery();
-    const dispatch = useDispatch();
-    const [modifyCart] = useAddToCartMutation();
-    
-    const [favourites, setFavourites] = React.useState(() => {
+    const [favourites, setFavourites] = useState(() => { // Состояние для избранных игр
         const savedFavourites = localStorage.getItem('favourites');
         return savedFavourites ? JSON.parse(savedFavourites) : [];
     });
 
-    const cartIds = useSelector(getCartGamesSelectors.ids); 
+    const { isFetching, isLoading, data, error } = mainApi.useAllGamesQuery();
+    const dispatch = useDispatch();
+    const [modifyCart] = useAddToCartMutation();
+    const cartIds = useSelector(getCartGamesSelectors.ids);
 
     const handleCartUpdate = async (gameId) => {
-    
+
         const isInCart = cartIds.includes(gameId);
         const action = isInCart ? "remove" : "add";
-    
-        try {
-          await modifyCart({ id: gameId, action }).unwrap();
-          if (isInCart) {
-            dispatch(cartSlice.actions.removeFromCart(gameId));
-          } else {
-            dispatch(cartSlice.actions.addToCart(gameId));
-          }
-        } catch (error) {
-          console.error("Ошибка при обновлении корзины:", error);
-        }
-      };
 
-    const handleToggleFavourite = (game) => {
-        if (favourites.find(fav => fav.id === game.id)) {
-            // Удаляем из избранного
-            handleRemoveFavourite(game);
-        } else {
-            // Добавляем в избранное
-            const updatedFavourites = [...favourites, game];
-            setFavourites(updatedFavourites);
-            localStorage.setItem('favourites', JSON.stringify(updatedFavourites));
+        try {
+            await modifyCart({ id: gameId, action }).unwrap();
+            if (isInCart) {
+                dispatch(cartSlice.actions.removeFromCart(gameId));
+            } else {
+                dispatch(cartSlice.actions.addToCart(gameId));
+            }
+        } catch (error) {
+            console.error("Ошибка при обновлении корзины:", error);
         }
     };
-
     const handleRemoveFavourite = (game) => {
-        const updatedFavourites = favourites.filter(fav => fav.id !== game.id);
+        const updatedFavourites = favourites.filter(fav => fav.id !== game.id); // Удаляем игру
         setFavourites(updatedFavourites);
-        localStorage.setItem('favourites', JSON.stringify(updatedFavourites));
+        localStorage.setItem('favourites', JSON.stringify(updatedFavourites));// Обновляем localStorage
     };
 
     useEffect(() => {
@@ -67,17 +53,26 @@ const { isFetching, isLoading, data, error } = mainApi.useAllGamesQuery();
     return (
         <div>
             <Title text="Избранное" />
-            {favourites.map(game => (
-                <GameCard
-                    key={game.id}
-                    game={game}
-                    handleCartUpdate={handleCartUpdate}
-                    handleToggleFavourite={() => handleToggleFavourite(game.id)}
+            {favourites.length > 0 ? (
+                favourites.map((game) => {
+                    const isFavourite = favourites.some(fav => fav.id === game.id); // Проверяем, есть ли игра в избранном
+                    return (
+                        <div key={game.id}>
+                            <GameCard key={game.id}
+                                game={game}
+                                handleCartUpdate={handleCartUpdate}
+                                onAddFavourite={handleRemoveFavourite}
+                                isFavourite={isFavourite} />
+                        </div>
+                    );
+                })
+            ) : (
+                <div>No games found</div>
+            )}
 
-                />
-            ))}
         </div>
     );
 };
 
 export default FavouritesComponent;
+
