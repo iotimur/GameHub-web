@@ -10,7 +10,7 @@ import Lottie from "lottie-react";
 import loadingAnimation from "../../../assets/Images_main/something_wrong_cat.json";
 import errorAnimation from "../../../assets/Images_main/error_dog.json";
 // import config from '../../../../bro.config.js';
-
+import { getFeatures } from '@brojs/cli';
 // const isSortEnabled = config?.features?.["gamehub"]?.["sort-comments"]?.on ?? true;
 
 export type CommentsSectionProps = {
@@ -18,6 +18,9 @@ export type CommentsSectionProps = {
 };
 
 const CommentsSection: React.FC<CommentsSectionProps> = () => {
+  const getGameHubFeatures = () => getFeatures('gamehub');
+  const isSortEnabled = !!getGameHubFeatures()?.['sort-comments'] || false;
+
   const { t } = useTranslation();
   const { data: queryData, isFetching, isLoading, error  } = useCommentsPageQuery();
   const [updateLike] = useUpdateLikeMutation();
@@ -80,6 +83,7 @@ const CommentsSection: React.FC<CommentsSectionProps> = () => {
   return (
     <CommentsContainer>
       <CommentsTitle>{t('comments_title')}</CommentsTitle>
+      {isSortEnabled && (
       <div>
         <label>
           {t('comments_sort_by')}
@@ -91,6 +95,7 @@ const CommentsSection: React.FC<CommentsSectionProps> = () => {
           </select>
         </label>
       </div>
+      )}
       <CommentBlock>
         {displayedComments.map((comment) => (
           <CommentComponent
