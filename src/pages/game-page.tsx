@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ErrorBoundary } from "../components/error-boundary";
-import Header from "../components/main/header/header";
-import { Footer } from "../components/footer/footer";
+
+
 import PriceBlock from "../components/game-page/price-block/price-block";
 import GameInfo from "../components/game-page/game-info/game-info";
 import Trailer from "../components/game-page/trailer/trailer";
@@ -11,7 +11,7 @@ import RatingBlock from "../components/game-page/rating-block/rating-block";
 import SystemRequirements from "../components/game-page/system-requirements/system-requirements";
 import CommentsSection from "../components/game-page/comments-section/comment-section";
 import Modal from "../components/game-page/modal/modal";
-import commentsData from "../../stubs/json/gamepage/success.json"; 
+
 import { mainApi } from "../_data_/service/main-api"; // Импорт API
 
 import * as Styled from "../components/game-page/game-page.styled";
