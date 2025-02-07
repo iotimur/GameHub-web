@@ -6,12 +6,9 @@ import {
   ArrowLeftMain,
   ArrowRightMain,
 } from "./gallery.styled";
-import { useDispatch, useSelector } from "react-redux";
-import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games";
+import { useDispatch } from "react-redux";
 import {
   useGetCartQuery,
-  useAllGamesQuery,
-  useAddToCartMutation,
 } from "../../../_data_/service/main-api";
 import { arrow_left, arrow_right } from "../../../assets/Images_main";
 import { cartSlice } from "../../../_data_/slices/cart-games";

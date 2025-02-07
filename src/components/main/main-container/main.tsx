@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { URLs } from "../../../_data_/urls";
-// import data from "../../../../stubs/json/home-page-data/success.json";
+import React from "react";
 import * as images from "../../../assets/Images_main";
 import { useTranslation } from 'react-i18next';
 
@@ -13,8 +11,6 @@ import {
   StyledText,
 } from "./main.styled";
 
-import * as getHomeSelectors from "../../../_data_/selectors/home-page";
-import { useDispatch, useSelector } from "react-redux";
 import { mainApi } from "../../../_data_/service/main-api";
 
 import { Search } from "../search-line";

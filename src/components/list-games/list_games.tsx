@@ -3,7 +3,6 @@ import GameCard from "./card/card";
 import { Title } from "./title/title";
 import {
   ContainerMain,
-  CardsMain,
   CommonMain,
 } from "../main/main-container/main.styled";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,14 +13,13 @@ import { mainApi } from "../../_data_/service/main-api";
 import * as getHomeSearchSelectors from "../../_data_/selectors/home-app-search";
 import * as getCartGamesSelectors from "../../_data_/selectors/cart-games"; // Подключаем селектор корзины
 import { cartSlice } from "../../_data_/slices/cart-games";
-import { ButtonStyledTopSail } from "./list_games.styled"; // Подключаем стилизованную кнопку
 
 const ListGames = () => {
   const dispatch = useDispatch();
   const [modifyCart] = useAddToCartMutation();
   const allGames = useSelector(getHomeSearchSelectors.allGames);
   const cartIds = useSelector(getCartGamesSelectors.ids); // Получаем список id игр в корзине
-  const [isUpdating, setIsUpdating] = useState(false); // Флаг для состояния обновления
+  const [setIsUpdating] = useState(false); // Флаг для состояния обновления
 
   // Запрос для получения всех игр
   const { isFetching, isLoading, data, error } = mainApi.useAllGamesQuery();

@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import { useAddToCartMutation } from "../../../_data_/service/main-api";
 import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games";
 import { cartSlice } from "../../../_data_/slices/cart-games";
-import styled from "@emotion/styled";
 
-import { getNavigationValue, getConfigValue, getFeatures } from "@brojs/cli";
+import {getFeatures } from "@brojs/cli";
 
 import {
   ProductCardTopSail,
@@ -16,8 +15,8 @@ import {
   ButtonStyledTopSail,
   ButtonFavourite,
 } from "./card-top-sail.styled";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export const CardTopSail = (props) => {
   const getGameHubFeatures = () => getFeatures("gamehub");
