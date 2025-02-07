@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import GameCard from "./card/card";
 import { Title } from "./title/title";
+import { useTranslation } from 'react-i18next';
 import {
   ContainerMain,
-  CardsMain,
   CommonMain,
 } from "../main/main-container/main.styled";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,26 +14,70 @@ import { mainApi } from "../../_data_/service/main-api";
 import * as getHomeSearchSelectors from "../../_data_/selectors/home-app-search";
 import * as getCartGamesSelectors from "../../_data_/selectors/cart-games"; // Подключаем селектор корзины
 import { cartSlice } from "../../_data_/slices/cart-games";
-import { ButtonStyledTopSail } from "./list_games.styled"; // Подключаем стилизованную кнопку
+
+import somethingWrong from "../../assets/Images_main/something_wrong_cat.json"; // что-то пошло не так
+import errorAnimation from "../../assets/Images_main/error_dog.json"; // Анимация ошибки
+import nothingFound from "../../assets/Images_main/nothing-found.json";
+
+import Lottie from "lottie-react"; // Импортируем для анимаций
+
+import {
+  LottieWrapper,
+  AnimationContainer,
+  StyledText,
+} from "../main/main-container/main.styled";
 
 const ListGames = () => {
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
   const [modifyCart] = useAddToCartMutation();
   const allGames = useSelector(getHomeSearchSelectors.allGames);
   const cartIds = useSelector(getCartGamesSelectors.ids); // Получаем список id игр в корзине
-  const [isUpdating, setIsUpdating] = useState(false); // Флаг для состояния обновления
+  const [isUpdating, setIsUpdating] = useState(false);
 
   // Запрос для получения всех игр
   const { isFetching, isLoading, data, error } = mainApi.useAllGamesQuery();
+
+  // Условие для отображения в зависимости от данных
+  // Если идет загрузка, показываем анимацию загрузки или текст
+  if (isFetching || isLoading) {
+    return (
+      <AnimationContainer style={{ textAlign: "center" }}>
+        <LottieWrapper>
+          <Lottie animationData={somethingWrong} />
+        </LottieWrapper>
+        <StyledText>{t('main_loading')}</StyledText>
+      </AnimationContainer>
+    );
+  }
+
+  if (error) {
+    return (
+      <AnimationContainer style={{ textAlign: "center" }}>
+        <LottieWrapper>
+          <Lottie animationData={errorAnimation} />
+        </LottieWrapper>
+        <StyledText>{t('main_error')}</StyledText>
+      </AnimationContainer>
+    );
+  }
+
+  if (!data && !allGames) {
+    return (
+      <AnimationContainer style={{ textAlign: "center" }}>
+        <LottieWrapper>
+          <Lottie animationData={nothingFound} />
+        </LottieWrapper>
+        <StyledText>{t('main_empty')}</StyledText>
+      </AnimationContainer>
+    );
+  }
+
   const [favourites, setFavourites] = useState(() => {
     const savedFavourites = localStorage.getItem('favourites');
     return savedFavourites ? JSON.parse(savedFavourites) : [];
   });
-  useEffect(() => {
-    if (data) {
-      dispatch(homeSeachSlice.actions.setAllGames(data));
-    }
-  }, [data, dispatch]);
 
   // Получаем параметры из URL
   const [searchParams] = useSearchParams();
@@ -41,32 +85,27 @@ const ListGames = () => {
   const ids = query ? query.split(",").map((id) => parseInt(id, 10)) : [];
   const category = searchParams.get("category");
 
-  // Условие для отображения в зависимости от данных
-  if (isFetching || isLoading) {
-    return <div>Loading...</div>;
-  }
-  if (error) {
-    return <div>Error</div>;
-  }
-  if (!data && !allGames) {
-    return <div>No games found</div>;
-  }
-
   // Фильтрация по ID и категории
-  let filteredGames = allGames;
+  let filteredGames = allGames; // Переместили это за условие
+
   if (ids.length > 0) {
+    
     filteredGames = filteredGames.filter((game) => ids.includes(game.id));
   }
-  if (category) {
+  else if (category) {
     filteredGames = filteredGames.filter((game) => game.category === category);
   }
+  else {
+    filteredGames = []
+  }
+
+  console.log("filteredGames", filteredGames)
 
   const handleAddFavourite = (game) => {
     setFavourites((prevFavourites) => {
       const isAlreadyFavourite = prevFavourites.find(fav => fav.id === game.id);
       let updatedFavourites;
 
-      console.log(data, isLoading, error);
       if (isAlreadyFavourite) {
         updatedFavourites = prevFavourites.filter(fav => fav.id !== game.id); // Удаляем из избранного
       } else {
@@ -76,17 +115,17 @@ const ListGames = () => {
       return updatedFavourites;
     });
   };
+
   const handleCartUpdate = async (gameId) => {
-    const isInCart = cartIds.includes(gameId); // Проверяем, в корзине ли игра
+    const isInCart = cartIds.includes(gameId);
     const action = isInCart ? "remove" : "add";
-
+  
     setIsUpdating(true);
-
+  
     try {
-      // Отправляем запрос на изменение корзины
       await modifyCart({ id: gameId, action }).unwrap();
-
-      // Обновляем Redux-хранилище
+      
+      // Локальное обновление store
       if (isInCart) {
         dispatch(cartSlice.actions.removeFromCart(gameId));
       } else {
@@ -98,6 +137,7 @@ const ListGames = () => {
       setIsUpdating(false);
     }
   };
+  
 
   return (
     <div>
@@ -119,12 +159,18 @@ const ListGames = () => {
               );
             })
           ) : (
-            <div>No games found</div>
+            <AnimationContainer style={{ textAlign: "center" }}>
+              <LottieWrapper>
+                <Lottie animationData={nothingFound} />
+              </LottieWrapper>
+              <StyledText>{t('main_nothing_found')}</StyledText>
+            </AnimationContainer>
           )}
         </ContainerMain>
       </CommonMain>
     </div>
   );
 };
+
 
 export default ListGames;

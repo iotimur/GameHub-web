@@ -2,10 +2,6 @@ import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
 
-interface MobileMenuProps {
-  isOpen: boolean;
-}
-
 // Стили для скрытия элементов на мобильной версии, когда меню открыто
 export const HideOnMobile = styled.div<{ isMenuOpen: boolean }>`
   display: block;
@@ -98,10 +94,6 @@ export const StyledLink = styled(NavLink)`
     font-size: 10px;
   }
 `;
-
-interface MobileMenuProps {
-  isOpen: boolean;
-}
 
 interface MobileMenuProps {
   isOpen: boolean;

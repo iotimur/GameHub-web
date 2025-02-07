@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Home, AllGames, BaseResponse, Cart } from "../model/common_home";
 import { Game } from "../model/common_games"; // Импорт модели для нового эндпоинта
 import { CommentsResponse } from "../model/common_comments"; // Импорт модели для нового эндпоинта
-import { Categories } from "../model/common_categories";
+// import { Categories } from "../model/common_categories";
 
 const baseUrl = getConfigValue("gamehub.api");
 
@@ -31,6 +31,16 @@ export const mainApi = createApi({
     }),
     allGames: builder.query<AllGames[], void>({
       query: () => "/all-games", // Эндпоинт для получения данных
+      transformResponse: (response: BaseResponse<AllGames[]>) => {
+        if (response.success === true) {
+          return response?.data || []; // Возвращаем корректную структуру по умолчанию
+        } else {
+          return []; // Пустая структура в случае ошибки
+        }
+      },
+    }),
+    categories: builder.query<AllGames[], void>({
+      query: () => "/categories", // Эндпоинт для получения данных
       transformResponse: (response: BaseResponse<AllGames[]>) => {
         if (response.success === true) {
           return response?.data || []; // Возвращаем корректную структуру по умолчанию
@@ -136,16 +146,16 @@ export const mainApi = createApi({
       },
     }),
 
-    categoriesPage: builder.query<Categories, void>({
-      query: () => "/categories",
-      transformResponse: (response: BaseResponse<Categories>): Categories => {
-        if (response.success === true) {
-          return response.data || { games1: [], games2: [], games3: [] };
-        } else {
-          return { games1: [], games2: [], games3: [] };
-        }
-      },
-    }),
+    // categoriesPage: builder.query<Categories, void>({
+    //   query: () => "/categories",
+    //   transformResponse: (response: BaseResponse<Categories>): Categories => {
+    //     if (response.success === true) {
+    //       return response.data || { games1: [], games2: [], games3: [] };
+    //     } else {
+    //       return { games1: [], games2: [], games3: [] };
+    //     }
+    //   },
+    // }),
 
     gamesInCart: builder.query<Game[], void>({
       query: () => "/shopping-cart", // URL для получения данных
@@ -166,7 +176,7 @@ export const {
   useGetCartQuery,
   useHomePageQuery,
   useCommentsPageQuery,
-  useCategoriesPageQuery,
+  // useCategoriesPageQuery,
   useAllGamesQuery,
   useGamesInCartQuery,
   useUpdateLikeMutation,

@@ -281,3 +281,185 @@ export const ApplyButton = styled.button`
         font-size: 3vh;
     }
 `;
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+export const ModalContent = styled.div`
+  background-color: #18396c; // Цвет фона, как у Container_my
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  color: white; // Цвет текста
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white; // Цвет иконки закрытия
+`;
+
+export const ModalTitle = styled.h2`
+  font-size: 3vh;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+`;
+
+export const ModalText = styled.p`
+  font-size: 2.5vh;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+`;
+
+export const ModalButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+`;
+
+interface ModalButtonProps {
+  primary?: boolean; // Делаем проп необязательным
+}
+
+export const ModalButton = styled.button<ModalButtonProps>`
+  flex: 1;
+  height: 50px;
+  border-radius: 25px;
+  background-color: ${(props) => (props.primary ? "#F39A46" : "#ccc")};
+  color: black;
+  font-weight: bold;
+  font-size: 2.5vh;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
+export const FloatingButton = styled.button`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f39a46;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &:hover {
+    background-color: #e88e3a;
+  }
+`;
+
+export const ChatContainer = styled.div`
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+`;
+
+export const ChatHeader = styled.div`
+  background-color: #18396c;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+// export const CloseButton = styled.button`
+//   background: none;
+//   border: none;
+//   color: white;
+//   font-size: 20px;
+//   cursor: pointer;
+
+//   &:hover {
+//     color: #f39a46;
+//   }
+// `;
+
+export const ChatMessages = styled.div`
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+`;
+
+export const Message = styled.div<{ isManager?: boolean }>`
+  background-color: ${(props) => (props.isManager ? "#18396c" : "#f39a46")};
+  color: ${(props) => (props.isManager ? "white" : "black")};
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  align-self: ${(props) => (props.isManager ? "flex-start" : "flex-end")};
+`;
+
+export const ChatInputContainer = styled.div`
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: white;
+`;
+
+export const ChatInput = styled.input`
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+`;
+
+export const SendButton = styled.button`
+  background-color: #f39a46;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e88e3a;
+  }
+`;
