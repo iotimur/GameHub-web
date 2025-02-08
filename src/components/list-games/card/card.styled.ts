@@ -32,7 +32,12 @@ overflow: hidden;
  
   }
 `;
-
+export const Card2 = styled.div`
+ display: flex; 
+  align-items: center; /* Выравниваем элементы по вертикали внутри Card2 */
+  flex-grow: 1; /* Это позволяет Card2 занимать все доступное пространство */
+  position: relative; 
+`;
 export const CardImg = styled.img`
   width: 120px; /* Уменьшаем ширину изображения */
   height: 155px;
@@ -48,12 +53,15 @@ export const CardImg = styled.img`
 `;
 
 export const TitleGame = styled.h3`
-  font-family: var(--font-family);
-  font-weight: bold;
-  color: #fff;
+display: flex;
+  // justify-content: center;
+  align-items: center;
   font-size: 20px;
-  margin-bottom: 5px;
+  color: #fff;
+  font-weight: 500;
   width:250px;
+  
+
   @media screen and (max-width: 988px) {
   font-size: 16px;
   width:150px;
@@ -122,21 +130,14 @@ export const OldPrice = styled.span`
   }
 `;
 export const Description = styled.span`
-  width:500px;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   font-size: 18px;
   color: #7693bb;
   font-weight: 500;
-  margin-left: 20px; /* Увеличиваем верхний отступ (margin-top) */
-  position: absolute;
-  left:400px;
-
-  // &:hover {
-  //   color:rgb(163, 200, 252);
-  //   transition: 0.3s;
-  // }
+  margin-left: 20px;
+  width:500px;
 
   @media screen and (max-width: 988px) {
   font-size: 14px;

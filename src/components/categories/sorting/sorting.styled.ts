@@ -17,6 +17,11 @@ export const SortingString = styled.span`
     @media screen and (max-width: 800px) {
     font-size: 12px;
     width:100px;
+    right:100px;
+  }
+    @media screen and (max-width: 600px) {
+    font-size: 10px;
+    width:90px;
   }
 `;
 
@@ -37,6 +42,10 @@ export const SortingButton = styled.button`
   width: 120px;
   height: 20px;
 }
+   @media screen and (max-width: 800px) {
+    font-size: 12px;
+    width:100px;
+  }
 
 `;
 
@@ -67,6 +76,10 @@ export const DropdownItem = styled.button`
   &:hover {
     background-color: #2E5A99;
     transition: 0.5s;
+  }
+     @media screen and (max-width: 800px) {
+    font-size: 12px;
+    width:100px;
   }
 `;
 
