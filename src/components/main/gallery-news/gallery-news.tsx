@@ -16,28 +16,34 @@ export const GalleryNews = (props) => {
     {
       img: props.img.news3,
       text: props.data[2].text,
+      link: props.data[2].link,
     },
     {
       img: props.img.news4,
       text: props.data[3].text,
+      link: props.data[3].link,
     },
     {
       img: props.img.news1,
       text: props.data[0].text,
+      link: props.data[0].link,
     },
     {
       img: props.img.news2,
       text: props.data[1].text,
+      link: props.data[1].link,
     },
   ];
   const [displayedCards, setdisplayedCards] = useState([
     {
       img: props.img.news1,
       text: props.data[0].text,
+      link: props.data[0].link,
     },
     {
       img: props.img.news2,
       text: props.data[1].text,
+      link: props.data[1].link,
     },
   ]);
 
@@ -69,7 +75,7 @@ export const GalleryNews = (props) => {
       ></ArrowLeftMain>
       <GalleryMain>
         {displayedCards.map((card, i) => (
-          <CardNews key={i} img={card.img} text={card.text} />
+          <CardNews key={i} img={card.img} text={card.text} link={card.link}/>
         ))}
       </GalleryMain>
 

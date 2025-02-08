@@ -105,22 +105,26 @@
       {
         "image": "news1",
         "text": "Разработчики Delta Force: Hawk Ops представили крупномасштабный режим Havoc Warfare",
-        "imgPath": "img_news_1"
+        "imgPath": "img_news_1",
+        "link": "https://gamemag.ru/news/185583/delta-force-hawk-ops-gameplay-showcase-havoc-warfare"
       },
       {
         "image": "news2",
         "text": "Первый трейлер Assassin’s Creed Shadows — с темнокожим самураем в феодальной Японии",
-        "imgPath": "img_news_2"
+        "imgPath": "img_news_2",
+        "link": "https://stopgame.ru/newsdata/62686/pervyy_trailer_assassin_s_creed_shadows_s_temnokozhim_samuraem_v_feodalnoy_yaponii"
       },
       {
         "image": "news3",
         "text": "Призрак Цусимы» вышел на ПК — и уже ставит рекорды для Sony",
-        "imgPath": "img_news_3"
+        "imgPath": "img_news_3",
+        "link": "https://stopgame.ru/newsdata/62706/prizrak_cusimy_vyshel_na_pk_i_uzhe_stavit_rekordy_dlya_sony"
       },
       {
         "image": "news4",
-        "text": "Авторы Skull and Bones расширяют планы на второй сезо",
-        "imgPath": "img_news_4"
+        "text": "Авторы Skull and Bones расширяют планы на второй сезон",
+        "imgPath": "img_news_4",
+        "link": "https://stopgame.ru/newsdata/62711/avtory_skull_and_bones_rasshiryayut_plany_na_vtoroy_sezon"
       }
     ]
   }

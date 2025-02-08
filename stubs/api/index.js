@@ -8,6 +8,10 @@ router.get("/update-like", (request, response) => {
   response.send(require("../json/gamepage/success.json"));
 });
 
+router.get("/add-to-cart", (request, response) => {
+  response.send(require("./json/home-page-data/games-in-cart.json"));
+});
+
 router.get("/categories", (request, response) => {
   response.send(require("../json/home-page-data/all-games.json"));
 });

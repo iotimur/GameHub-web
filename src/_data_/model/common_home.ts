@@ -28,6 +28,7 @@ export type News = {
   image: string;
   text: string;
   imgPath: string;
+  link: string;
 };
 
 export type Home = {
