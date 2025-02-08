@@ -8,11 +8,12 @@ import mainApi from "../../_data_/service/main-api";
 import { AnimationContainer, LottieWrapper, StyledText } from "../main/main-container/main.styled";
 import Lottie from "lottie-react";
 import { t } from "i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as getHomeSearchSelectors from "../../_data_/selectors/home-app-search";
 import somethingWrong from "../../assets/Images_main/something_wrong_cat.json"; // что-то пошло не так
 import errorAnimation from "../../assets/Images_main/error_dog.json"; // Анимация ошибки
 // import empty from "../../assets/Images_main/sleep cat.json";
+import { homeSeachSlice } from '../../_data_/slices/home-app-search'; 
 
 const AllCategories = () => {
     const [sortOption, setSortOption] = useState("");
@@ -23,6 +24,7 @@ const AllCategories = () => {
     const [isSortingDropdownOpen, setIsSortingDropdownOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
     const allGames = useSelector(getHomeSearchSelectors.allGames);
+    const dispatch = useDispatch();
 
     const handleSort = (option) => {
         setSortOption(option);
@@ -98,6 +100,8 @@ const AllCategories = () => {
     discountGames = allGames.filter(game => game.old_price !== undefined)
         .sort((a, b) => a.title.localeCompare(b.title))
         .slice(0, allGames.length);
+
+    dispatch(homeSeachSlice.actions.setAllGames(data)); // Сохраняем данные в Redux store
     console.log("err: ", error)
     return (
         <>

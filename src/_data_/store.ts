@@ -4,6 +4,8 @@ import { homeSlice } from "./slices/home-app";
 import { homeSeachSlice } from "./slices/home-app-search";
 import { cartSlice } from "./slices/cart-games";
 import {favouritesGamesSlice} from "./slices/favourites-games";
+// import {categoriesGamesSlice} from "./slices/cat";
+
 import { mainApi } from "./service/main-api";
 
 export const store = configureStore({

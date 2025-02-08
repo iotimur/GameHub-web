@@ -31,6 +31,29 @@ const Page = ({ games,title, sortOption}) => {
   //     dispatch(homeSeachSlice.actions.setAllGames(data));
   //   }
   // }, [data, dispatch]);
+  useEffect(() => {
+    const savedCartIds = localStorage.getItem('cartIds');
+    if (savedCartIds) {
+      try {
+        const parsedCartIds = JSON.parse(savedCartIds);
+        // Dispatch actions to add items to the cart
+        parsedCartIds.forEach((gameId: number) => {
+          dispatch(cartSlice.actions.addToCart(gameId));  // Assuming addToCart is defined in cartSlice
+        });
+
+      } catch (error) {
+        console.error("Error parsing cartIds from localStorage:", error);
+        // Handle the error, maybe clear the localStorage item
+        localStorage.removeItem('cartIds');
+      }
+    }
+  }, [dispatch]); // Dependency: dispatch to avoid warnings.
+  // Save cart state to localStorage whenever cartIds changes
+  useEffect(() => {
+    localStorage.setItem('cartIds', JSON.stringify(cartIds));
+  }, [cartIds]);
+
+
 
   const handleCartUpdate = async (gameId) => {
     const isInCart = cartIds?.includes(gameId);
@@ -72,9 +95,7 @@ const Page = ({ games,title, sortOption}) => {
   if (!data && !allGames) {
     return <div>No games found</div>;
   }
-//   let Games = [];
-//   Games = allGames.slice((allGames.length * 2 / 3) - 1, allGames.length);
-// Загрузка игр из переданного массива
+
 let Games = []
 Games=games || allGames;
 if (!Games) {
