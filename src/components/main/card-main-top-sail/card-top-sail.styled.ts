@@ -19,6 +19,13 @@ export const ProductCardTopSail = styled.div`
     background-color: #1450a5;
     color: #fff;
   }
+  
+
+  @media (max-width: 480px) {
+  flex: 1 0 100%;
+  height: 14em;
+  margin-right: 0;
+  }
 `;
 
 export const TopSailImg = styled.img`
