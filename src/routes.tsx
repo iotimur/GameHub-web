@@ -12,11 +12,13 @@ import Layout from "./components/layout/layout";
 import ListGames from "./components/list-games/list_games";
 import Favourites from "./pages/favourites";
 
+import { URLs } from './_data_/urls';
+
 export const PageRoutes = () => (
   <Routes>
-    <Route path="/gamehub" element={<Layout />}>
+    <Route path={URLs.baseUrl} element={<Layout />}>
       <Route index element={<MainPage />} />
-      <Route path="categories" element={<Categories />} />
+      <Route path={URLs.ui.categories} element={<Categories />} />
       <Route path="game-page" element={<Game_page />} />
       <Route path="personal-account" element={<PersonalAccount />} />
       <Route path="entrance" element={<Entrance />} />

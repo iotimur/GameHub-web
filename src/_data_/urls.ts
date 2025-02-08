@@ -7,7 +7,7 @@ export const URLs = {
   ui: {
     categories:
       getNavigationValue("gamehub.categories") &&
-      `${baseUrl}${getNavigationValue("gamehub.categories")}`,
+      `${getNavigationValue("gamehub.categories")}`,
     favourites:
       getNavigationValue("gamehub.favourites") &&
       `${baseUrl}${getNavigationValue("gamehub.favourites")}`,
@@ -22,7 +22,7 @@ export const URLs = {
       `${baseUrl}${getNavigationValue("gamehub.personal-account")}`,
     "shopping-cart":
       getNavigationValue("gamehub.shopping-cart") &&
-      `${baseUrl}${getNavigationValue("gamehub.shopping-cart")}`,
+      `${getNavigationValue("gamehub.shopping-cart")}`,
     "game-page":
       getNavigationValue("gamehub.game-page") &&
       `${baseUrl}${getNavigationValue("gamehub.game-page")}`,
