@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import GameCard from "./card/card";
 import { Title } from "./title/title";
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,6 @@ import {
   CommonMain,
 } from "../main/main-container/main.styled";
 import { useDispatch, useSelector } from "react-redux";
-import { homeSeachSlice } from "../../_data_/slices/home-app-search";
 import { useSearchParams } from "react-router-dom";
 import { useAddToCartMutation } from "../../_data_/service/main-api";
 import { mainApi } from "../../_data_/service/main-api";

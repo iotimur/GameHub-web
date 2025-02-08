@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CommonMain, ContainerMain} from "../components/main/main-container/main.styled";
 import AllCategories from "../components/categories/allCategories";
 

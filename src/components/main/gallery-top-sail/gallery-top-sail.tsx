@@ -12,7 +12,6 @@ import {
   useGetCartQuery
 } from "../../../_data_/service/main-api";
 import { arrow_left, arrow_right } from "../../../assets/Images_main";
-import { cartSlice } from "../../../_data_/slices/cart-games";
 
 // Компонент галереи
 export const GalleryTopSail = (props) => {

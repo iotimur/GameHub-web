@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import * as getCartGamesSelectors from "../../../_data_/selectors/cart-games"; // Подключаем селектор корзины
 import { useAddToCartMutation } from "../../../_data_/service/main-api";

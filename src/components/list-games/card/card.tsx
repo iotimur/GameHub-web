@@ -35,7 +35,6 @@ const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
   }, [game]);
 
   const isInCart = cartIds?.includes(game.id);
-  const isInFav = cartIdFav?.includes(game.id);
 
   return (
     <Card>
