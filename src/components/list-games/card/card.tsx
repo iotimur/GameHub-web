@@ -12,6 +12,7 @@ import {
   ButtonStyledTopSail,
   ButtonFavourite,
   Description,
+  Card2,
 } from "./card.styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
@@ -33,28 +34,32 @@ const GameCard = ({ game, handleCartUpdate, onAddFavourite, isFavourite }) => {
     };
   }, [game]);
 
-  const isInCart = cartIds?.includes(game.id); 
+  const isInCart = cartIds?.includes(game.id);
   const isInFav = cartIdFav?.includes(game.id);
 
   return (
-    <Link to={`/gamehub/game-page`} >
-      <Card>
-        <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.title}`} />
-        <TitleGame>{game.title}</TitleGame>
-        <Description className="description">{game.description}</Description>
-        <NewPrice>{game.price} ₽</NewPrice>
-        {game.old_price && <OldPrice>{game.old_price} ₽</OldPrice>}
+    <Card>
 
-        <ButtonFavourite onClick={handleToggleFavourite}
-          title={isFavourite ? 'Убрать из избранного' : 'Добавить в избранное'} >
-          <FontAwesomeIcon icon={faStar} style={{ color: isFavourite ? 'rgba(255, 207, 15, 0.91)' : 'gray' }} />
-        </ButtonFavourite>
+      <Card2>
+        <Link to={`/gamehub/game-page`} style={{ width: '100%', height: '100%', display: 'flex', textDecoration: 'none' }}>
+          <CardImg src={gameImages[game.image]} alt={`Обложка игры ${game.title}`} />
+          <TitleGame>{game.title}</TitleGame>
+          <Description className="description">{game.description}</Description>
+          <NewPrice>{game.price} ₽</NewPrice>
+          {game.old_price && <OldPrice>{game.old_price} ₽</OldPrice>}
+        </Link>
 
-        <ButtonStyledTopSail isInCart={isInCart} onClick={() => handleCartUpdate(game.id)}>
-          <FontAwesomeIcon icon={faShoppingCart} />
-        </ButtonStyledTopSail>
-      </Card>
-    </Link>
+      </Card2>
+
+      <ButtonFavourite onClick={handleToggleFavourite}
+        title={isFavourite ? 'Убрать из избранного' : 'Добавить в избранное'} >
+        <FontAwesomeIcon icon={faStar} style={{ color: isFavourite ? 'rgba(255, 207, 15, 0.91)' : 'gray' }} />
+      </ButtonFavourite>
+
+      <ButtonStyledTopSail isInCart={isInCart} onClick={() => handleCartUpdate(game.id)}>
+        <FontAwesomeIcon icon={faShoppingCart} />
+      </ButtonStyledTopSail>
+    </Card>
   );
 };
 
