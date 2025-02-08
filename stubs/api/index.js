@@ -9,7 +9,7 @@ router.get("/update-like", (request, response) => {
 });
 
 router.get("/add-to-cart", (request, response) => {
-  response.send(require("./json/home-page-data/games-in-cart.json"));
+  response.send(require("../json/home-page-data/games-in-cart.json"));
 });
 
 router.get("/categories", (request, response) => {
@@ -175,35 +175,39 @@ router.post("/add-to-cart", async (req, res) => {
 
 module.exports = router;
 
-const createElement = (key, value, buttonTitle) => `
+const createElement = (key, value, buttonTitle, basePath) => `
     <label>
         <input name="${key}" type="radio" ${
   stubs[key] === value ? "checked" : ""
-} onclick="fetch('/api/admin/set/${key}/${value}')"/>
+} onclick="fetch('${basePath}/admin/set/${key}/${value}')"/>
         ${buttonTitle || value}
     </label>
 `;
 
 router.get("/admin/home", (request, response) => {
+  const basePath = request.baseUrl; // Получаем базовый путь маршрутизатора
   response.send(`
         <div>
             <fieldset>
                 <legend>Настройка данных для /home</legend>
-                ${createElement("home", "success", "Отдать успешный ответ")}
-                ${createElement("home", "empty", "Отдать пустой массив")}
-                ${createElement("home", "error", "Отдать ошибку")}
+                ${createElement("home", "success", "Отдать успешный ответ", basePath)}
+                ${createElement("home", "empty", "Отдать пустой массив", basePath)}
+                ${createElement("home", "error", "Отдать ошибку", basePath)}
             </fieldset>
         </div>    
     `);
 });
-
 
 router.get("/admin/game-page", (request, response) => {
   response.send(`
         <div>
             <fieldset>
                 <legend>Настройка данных для /game-page</legend>
-                ${createElement("game-page", "success", "Отдать успешный ответ")}
+                ${createElement(
+                  "game-page",
+                  "success",
+                  "Отдать успешный ответ"
+                )}
                 ${createElement("game-page", "empty", "Отдать пустой массив")}
                 ${createElement("game-page", "error", "Отдать ошибку")}
 
@@ -217,7 +221,11 @@ router.get("/admin/categories", (request, response) => {
         <div>
             <fieldset>
                 <legend>Настройка данных для /categories</legend>
-                ${createElement("categories", "success", "Отдать успешный ответ")}
+                ${createElement(
+                  "categories",
+                  "success",
+                  "Отдать успешный ответ"
+                )}
                 ${createElement("categories", "empty", "Отдать пустой массив")}
                 ${createElement("categories", "error", "Отдать ошибку")}
                 </fieldset>
@@ -230,7 +238,11 @@ router.get("/admin/favourites", (request, response) => {
         <div>
             <fieldset>
                 <legend>Настройка данных для /favourites</legend>
-                ${createElement("favourites", "success", "Отдать успешный ответ")}
+                ${createElement(
+                  "favourites",
+                  "success",
+                  "Отдать успешный ответ"
+                )}
                 ${createElement("favourites", "empty", "Отдать пустой массив")}
                 ${createElement("favourites", "error", "Отдать ошибку")}
             </fieldset>
