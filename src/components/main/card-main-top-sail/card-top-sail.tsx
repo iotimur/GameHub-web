@@ -30,7 +30,7 @@ export const CardTopSail = (props) => {
   // Если props.id.id есть в cartIds, значит, игра уже в корзине.
   console.log("Начальное значение cartIds в CardTopSail", cartIds)
   const isInCart = useMemo(
-    () => cartIds.includes(props.id.id),
+    () => cartIds?.includes(props.id.id),
     [cartIds, props.id.id]
   );
 

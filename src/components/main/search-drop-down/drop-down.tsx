@@ -19,7 +19,7 @@ export const SearchWithDropdown = ({ ids, allGames }) => {
   const gameImages = generateImages(allGames);
 
   // Отфильтруем игры по id и ограничим первые пять
-  const filteredGames = allGames.filter((game) => ids.includes(game.id)).slice(0, 5);
+  const filteredGames = allGames.filter((game) => ids?.includes(game.id)).slice(0, 5);
 
   return (
     <DropdownWrapper>

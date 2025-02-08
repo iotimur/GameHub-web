@@ -33,7 +33,7 @@ const Page = ({ games,title, sortOption}) => {
   // }, [data, dispatch]);
 
   const handleCartUpdate = async (gameId) => {
-    const isInCart = cartIds.includes(gameId);
+    const isInCart = cartIds?.includes(gameId);
     const action = isInCart ? "remove" : "add";
 
     try {

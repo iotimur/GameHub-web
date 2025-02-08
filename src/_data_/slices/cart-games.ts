@@ -29,7 +29,7 @@ export const cartSlice = createSlice({
     },
     // Редьюсер для добавления ID в корзину
     addToCart: (state, action: PayloadAction<number>) => {
-      if (!state.ids.includes(action.payload)) {
+      if (!state.ids?.includes(action.payload)) {
         state.ids.push(action.payload); // Добавляем ID, если его еще нет в корзине
       }
     },

@@ -90,7 +90,7 @@ const ListGames = () => {
 
   if (ids.length > 0) {
     
-    filteredGames = filteredGames.filter((game) => ids.includes(game.id));
+    filteredGames = filteredGames.filter((game) => ids?.includes(game.id));
   }
   else if (category) {
     filteredGames = filteredGames.filter((game) => game.category === category);
@@ -117,7 +117,7 @@ const ListGames = () => {
   };
 
   const handleCartUpdate = async (gameId) => {
-    const isInCart = cartIds.includes(gameId);
+    const isInCart = cartIds?.includes(gameId);
     const action = isInCart ? "remove" : "add";
   
     setIsUpdating(true);

@@ -139,12 +139,12 @@ router.post("/add-to-cart", async (req, res) => {
 
     if (action === "add") {
       // Если action "add", добавляем товар, если его нет в корзине
-      if (!ids.includes(id)) {
+      if (!ids?.includes(id)) {
         ids.push(id);
       }
     } else if (action === "remove") {
       // Если action "remove", удаляем товар, если он есть в корзине
-      if (ids.includes(id)) {
+      if (ids?.includes(id)) {
         ids = ids.filter((item) => item !== id);
       }
     } else {

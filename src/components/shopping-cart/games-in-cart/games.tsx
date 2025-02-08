@@ -63,7 +63,7 @@ const Games: React.FC = () => {
     );
   }
 
-  const gamesInCart = allGamesData?.filter((game) => cartIds.includes(game.id)) || [];
+  const gamesInCart = allGamesData?.filter((game) => cartIds?.includes(game.id)) || [];
   const totalPrice = gamesInCart.reduce((total, game) => total + (isNaN(game.price) ? 0 : game.price), 0);
 
   const handleApplyPromoCode = () => {

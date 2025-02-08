@@ -65,7 +65,7 @@ export const mainApi = createApi({
             mainApi.util.updateQueryData("getCart", undefined, (draft) => {
               if (action === "add") {
                 // Добавляем товар в корзину
-                if (!draft.ids.includes(id)) {
+                if (!draft.ids?.includes(id)) {
                   draft.ids.push(id);
                 }
               } else if (action === "remove") {

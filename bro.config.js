@@ -9,7 +9,7 @@ module.exports = {
   },
   /* use https://kc.admin.inno-js.ru/ to create config, navigations and features */
   navigations: {
-    "gamehub-web.main": "/gamehub-web",
+    "gamehub.main": "/gamehub",
     "gamehub.categories": "/gamehub/categories",
     "gamehub.personal-account": "/gamehub/personal-account",
     "gamehub.shopping-cart": "/gamehub/shopping-cart",
@@ -17,8 +17,8 @@ module.exports = {
     "gamehub.entrance": "/gamehub/entrance",
     "gamehub.registration": "/gamehub/registration",
     "gamehub.list-games": "/gamehub/list-games",
-    "gamehub.favourites": "/gamehub/favourites",
-  },
+    "gamehub.favourites": "/gamehub/favourites"
+},
   features: {
     "gamehub": {
         "home-search-games": {
