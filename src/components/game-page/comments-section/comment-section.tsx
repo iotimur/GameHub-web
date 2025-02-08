@@ -20,6 +20,7 @@ export type CommentsSectionProps = {
 const CommentsSection: React.FC<CommentsSectionProps> = () => {
   const getGameHubFeatures = () => getFeatures('gamehub');
   const isSortEnabled = !!getGameHubFeatures()?.['sort-comments'] || false;
+  console.log("Отображение сорт", isSortEnabled);
 
   const { t } = useTranslation();
   const { data: queryData, isFetching, isLoading, error  } = useCommentsPageQuery();
