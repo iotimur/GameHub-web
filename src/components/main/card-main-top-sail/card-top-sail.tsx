@@ -15,8 +15,6 @@ import {
   ButtonStyledTopSail,
   ButtonFavourite,
 } from "./card-top-sail.styled";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export const CardTopSail = (props) => {
   const getGameHubFeatures = () => getFeatures("gamehub");
@@ -64,7 +62,8 @@ export const CardTopSail = (props) => {
     }
 
     try {
-      console.log("Отправляем запрос на изменение корзины");
+      console.log("Отправляем запрос на изменение корзины: id:", id.id);
+      console.log("Отправляем запрос на изменение корзины: action:", action);
       // Отправляем запрос на изменение корзины с двумя параметрами: id и action
       await modifyCart({ id: id.id, action }).unwrap();
     } catch (error) {
